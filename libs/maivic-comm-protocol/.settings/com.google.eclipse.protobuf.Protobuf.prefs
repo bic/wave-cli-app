@@ -1,4 +1,9 @@
-compiler.cppOutputDirectory=src-gen/cpp
-compiler.javaOutputDirectory=src-gen/java
-compiler.pythonOutputDirectory=src-gen/python
+compiler.compileProtoFiles=true
+compiler.cppCodeGenerationEnabled=true
+compiler.cppOutputDirectory=src/gen/cpp
+compiler.enableProjectSettings=true
+compiler.javaCodeGenerationEnabled=true
+compiler.javaOutputDirectory=src/gen/java
+compiler.pythonCodeGenerationEnabled=true
+compiler.pythonOutputDirectory=src/gen/python
 eclipse.preferences.version=1
