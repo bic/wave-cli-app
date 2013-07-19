@@ -1,0 +1,62 @@
+syntax = "proto2";
+package net.maivic.protobuf;
+
+message MaivicCommDeviceID{
+	enum DeviceType{
+		COMPUTER = 0;
+		MOBILEDEVICE = 1;
+		VIRTUAL=2;
+		OTHER = 2147483647;
+	}
+	required DeviceType type = 1;
+	/**
+	 * 14 digit MEID in case of MOBILEDEVICE
+	 *
+	 * If the IMEI is not available for generating a MEID
+	 * the Unique device id is used.
+	 */
+	required bytes id = 2;
+}
+
+
+message SequenceItem {
+	required uint64 index = 1;
+	optional uint64 estimated_length = 2;
+	optional uint64 length = 3;
+}
+/*
+ * Messages transfer the data between endpoints
+ */
+message MaivicMessage {
+	/*
+	 * topic this message subscribes to
+	 * Special Topics are:
+	 *  <li>maivic.topic.subscriprions</li>
+	 */
+	required string topic = 1;
+	/*
+	 * Topic is closed when the last message in
+	 * the topic is sent.
+	 *
+	 * RPC Calls typically keep a topic open until the
+	 * result has been sent, Although progress Updates can be
+	 * sent before the result
+	 *
+	 * Streaming on the other Hand involves multiple sending
+	 * and occasional receipts;
+	 */
+	optional bool lastMessageInTopic =2;
+	optional MaivicCommDeviceID from = 3;
+	optional MaivicCommDeviceID to = 4;
+	required uint32 thread = 5 [default=0];
+	optional SequenceItem streamSequenceItem = 6;
+	extensions 16 to 255;
+}
+message SignableMessage {
+	required MaivicMessage m = 1;
+	optional bytes signature = 2;
+}
+
+
+
+
