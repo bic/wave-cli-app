@@ -1,0 +1,199 @@
+syntax = "proto2";
+package net.maivic.protobuf;
+
+
+
+message VersionedID {
+	required uint64 id = 1;
+	optional uint64 version = 2;
+}
+message MaivicMessage {
+	required uint64 tag = 1;
+	required bytes byte = 2;
+}
+message Location {
+	required double lat = 1;
+	required double lon = 2;
+	optional float precision = 3;
+	optional int32 srid = 16 [default=4326]; // default WGS84
+	optional string srid_autority = 17 [default="EPSG"];
+}
+
+message KeyValue {
+	required string key = 1;
+	required string value = 2;
+}
+message Address {
+	required VersionedID id = 1;
+	required string street = 2;
+	required string number = 3;
+	optional string zipcode = 4;
+	required string city = 5;
+	required string country = 6;
+	optional string county = 7;
+	repeated KeyValue other_address_fields = 8;
+	optional Location location = 15;
+}
+
+message AddressRoles {
+	enum AddressRole {
+		HOME=0;
+		OFFICE=1;
+		REGISTERED_OFFICE=2;
+		BILLING_ADDRESS=3;
+		OTHER=15;
+
+	}
+	required AddressRole role = 1;
+	optional string other_role_description = 3;
+	required VersionedID address_id = 2;
+}
+
+message PhoneNumberRole{
+	enum PhoneRole{
+		HOME=0;
+		OFFICE=1;
+		MOBILE_HOME=2;
+		MOBILE_OFFICE=3;
+		FAX=4;
+		OTHER=5;
+	};
+	required PhoneRole phone_role = 1;
+	optional string other_role_description = 2;
+}
+
+message legal_entity {
+	required string name =1;
+	repeated AddressRoles addresses = 2;
+	required string VATIN = 3;
+}
+
+
+
+
+message Contact {
+	required string first_name = 1;
+	repeated string middle_names = 2;
+	repeated string titles = 3;
+	repeated AddressRoles adresses = 4;
+	repeated PhoneNumberRole phone_numbers = 5;
+}
+
+message Restaurant {
+	required int64 id = 1;
+	required string name = 2;
+	required VersionedID address_id = 3;
+
+}
+message Fraction {
+	required int64 numerator = 1;
+	required int64 denominator =2;
+}
+message NumberPickerSettings{
+	required uint32 group_size = 1;
+	required bool group_inline_split = 2;
+	repeated Fraction steps = 3;
+	repeated string button_labels = 4;
+	optional string label = 5;
+	optional string label_pluralized = 6;
+	optional string allign = 7;
+	optional string inline_style = 8;
+	optional bool check_box_on_zero = 9;
+	optional Fraction check_box_first_value = 10;
+	optional bool force_accept_zero = 11;
+}
+
+
+message Interval {
+	required uint64 from = 1;
+	required uint64 to = 2;
+}
+
+message Offer {
+	required VersionedID id =1;
+	required uint64 restaurant_id = 2;
+	required Interval offer_interval = 3;
+	required Interval delivery_interval = 4;
+	required Fraction base_price = 5;
+	message Course {
+		required string course_name = 1;
+		required string title = 2;
+		required string short_description = 3;
+		optional VersionedID base_option = 4;
+	}
+	repeated Course courses = 6;
+
+	repeated VersionedID offer_option_ids=7;
+}
+message OfferOption {
+		required VersionedID id = 7;
+		/*
+		 * The option type is different for the 3 types
+		 * Option per order
+		 */
+		enum OptionType {
+		 	/* Base option -  an optional part of the main course (First course or dessert)*/
+			BASE_OPTION=1;
+			/* Option per offer- min and max apply for each ordered offer separately */
+			OPTION_PER_OFFER = 2;
+			/* Option per order - min and max apply cumulative per order. Ordering 2+ offers in one go does not increase the min/max values */
+			OPTION_PER_ORDER = 3;
+		}
+		required string name = 1;
+		optional string pluralized_name = 2;
+		required uint32 min_qty = 3;
+		required uint32 max_qty = 4;
+		required Fraction price_delta =5;
+		optional NumberPickerSettings number_picker_settings = 6;
+}
+
+message UserNotification {
+	/**
+	 * The category is a system descriptor which can be mapped to
+	 * resources.
+	 *
+	 * categories can have subcategory and must have the form
+	 * "category.subcategory....."
+	 *
+	 * One predefined category is "views.<viewname>". The viewnames
+	 * are defined in the View Names document
+	 */
+	repeated string category = 1;
+	required string message = 2;
+	enum NotificationType {
+		DEBUG = 1;
+		INFO = 2;
+		WARNING = 3;
+		ERROR = 4;
+	}
+	required NotificationType type = 3 [default=DEBUG];
+	enum Priority {
+		LOW=0;
+		NORMAL=1;
+		HIGH=2;
+		REALTIME=3;
+	}
+	required Priority priority = 4 [default= NORMAL];
+}
+message OpenViewRequest {
+	required string view = 1;
+}
+message OpenViewResponse{
+	required string view =1;
+	/**
+	 * true if the notification category mapped to this view
+	 * is subscribed;
+	 */
+	required bool notifications_subscribed=3;
+	optional string overlayURL = 2;
+	/**
+	 * Settings pecific to View, What settings to expect is defined in the
+	 * specification
+	 */
+	repeated KeyValue viewSettings = 4;
+}
+
+
+
+
+
