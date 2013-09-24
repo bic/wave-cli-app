@@ -1,4 +1,4 @@
-mondaine-app
+wave-cli-app
 ============
 
 This is the App Repository. The top level directory structure is:
