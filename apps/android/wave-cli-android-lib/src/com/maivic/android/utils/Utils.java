@@ -1,4 +1,4 @@
-package com.maivic.android;
+package com.maivic.android.utils;
 
 import java.math.BigDecimal;
 /**

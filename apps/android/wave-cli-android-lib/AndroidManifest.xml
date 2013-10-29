@@ -8,14 +8,26 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
 
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.maivic.android.widgets.NumberPickerTestActivity"
+            android:name="com.maivic.android.NumberPickerTestActivity"
             android:label="@string/app_name" >
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name="com.maivic.android.JavascriptInterfaceTestActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
