@@ -2,17 +2,17 @@ package net.maivic.comm;
 
 import java.util.Iterator;
 
+import net.maivic.comm.Maivic.MessageContainer;
+
 import org.w3c.dom.ranges.RangeException;
 
-import net.maivic.protobuf.Message.MaivicMessage;
-import net.maivic.protobuf.Message.SequenceItem;
-/**
- * Abstract {@link MaivicMessage} Iterator for easy implementation of the
+ /*
+ * Abstract {@link MessageContainer} Iterator for easy implementation of the
  * streaming Interface;
  * @author paul
  *
  */
-public abstract class AbstractMessageIterator implements Iterator<MaivicMessage> {
+public abstract class AbstractMessageIterator implements Iterator<MessageContainer> {
 	
 	long index=0;
 	long size=0;
@@ -20,8 +20,8 @@ public abstract class AbstractMessageIterator implements Iterator<MaivicMessage>
 	long next_estimation_at_idx;
 	public abstract boolean hasNext();
 
-	public MaivicMessage next() {
-		MaivicMessage.Builder mess = next_without_sequence();
+/*	public MessageContainer next() {
+		MessageContainer.Builder mess = next_without_sequence();
 		SequenceItem.Builder seq = SequenceItem.newBuilder()
 				.setIndex(index);
 		index++;
@@ -53,12 +53,13 @@ public abstract class AbstractMessageIterator implements Iterator<MaivicMessage>
 		
 		return mess.build();
 	}
+*/
 	private long next_estimation_step() {
 		
 		return next_estimation_at_idx +1 ;
 	}
 
-	public abstract MaivicMessage.Builder next_without_sequence();
+	public abstract MessageContainer.Builder next_without_sequence();
 
 	public int estimate_size(){
 		return 0;

@@ -3,8 +3,10 @@ package net.maivic.comm;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Callable;
 
-import net.maivic.protobuf.Message.MaivicMessage;
+import net.maivic.comm.Maivic.MessageContainer;
+
 
 
 public interface TransportManager {
@@ -27,7 +29,7 @@ public interface TransportManager {
 	 * @param URI uri String of the Transport
 	 * @return The transport Handle
 	 */
-	Transport getTransportByUri(String URI);
+	Transport[] getTransportByUri(String URI);
 	
 	
  	/**
@@ -52,20 +54,10 @@ public interface TransportManager {
 	 * @param graceful_wait give this many milliseconds to gracefully shut down the connection. supply 0 for non graceful disconnect
 	 */
 	void disconnectAll(int graceful_wait); 
-	/**
-	 * send a message throuh the appropiate Transport;
-	 * @param message 
-	 */
-	LazyResponse<?> RPC(MaivicMessage message);
-	/**
-	 * Streams the messages as supplied by the {@link AbstractMessageIterator}
-	 * @param messageIter
-	 */
-	LazyResponse<?> streamMessages(Iterator<MaivicMessage> messageIter);
-	/**
-	 * One-way Notification (No Response expected)
-	 * @param mess
-	 */
-	void notify(MaivicMessage mess);
+	
+	public <T> void registerIncomingAllTransports (Callback<T> cb );
+	public <T> SettableLazyResponse<T> sendWithRetry( final T message, final SendStrategy<T> strategy, DefaultLazyResponse<T> lazyResponse);
+	void schedule(long when, Callable<Void> callable);
+	
 	
 }

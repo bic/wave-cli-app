@@ -1,21 +1,26 @@
 package net.maivic.comm;
+
+
+
+import net.maivic.comm.Maivic.MessageContainer;
+
 /**
  * A Transport represents a layer through which messages can be
  * sent or received
  * @author paul
  *
  */
-public interface Transport {
+public  interface Transport<T> {
 	/**
-	 * Name of the transport
+	 * Scheme of the transport
 	 * @return
 	 */
-	String getName();
+	public String getScheme();
 	/**
 	 * Type of the transport
 	 * @return
 	 */
-	String getTransportType();
+	public String [] getTransportTypes();
 	/**
 	 * Disconnect transport. In case of Tcp/Ip connections
 	 * this means disconnecting the open Sockets.
@@ -23,33 +28,43 @@ public interface Transport {
 	 * This method shall be called
 	 * @param millis if >0 then wait this many milliseconds  for stateful operations to finish
 	 */
-	void tearDown(int millis);
+	public void tearDown(int millis);
 	/**
 	 * Connect to the other End
 	 * This function does nothing if {@link Transport.isConnected()} is true
 	 */
-	void pullUp();
+	public void pullUp();
 	/**
 	 * Query if this transport is connected
 	 * @return true if connected, false otherwwhise
 	 */
-	boolean isConnected();
+	public boolean isConnected();
 	/**
 	 * Callback parameter called before interface is disconnected
 	 * @param cb the Call back function
 	 */
-	void cbBeforeDisconnect(Callback<Transport> cb);
+	public void cbBeforeDisconnect(Callback<Transport> cb);
 	
 	/**
 	 * Callback Parameter called after a connect (attempt) has been made.
 	 * @param cb
 	 */
-	void cbAfterConnect(Callback<Transport> cb);
-	
+	public void cbAfterConnect(Callback<Transport> cb);
 	/**
-	 * only Message topics passing this filter will be accepted
-	 * in this topic and through this {@link Transport}
+	 * gets the uri of the transport 
+	 * @return Transport uri
+	 */
+	public String getUri();
+	
+	SettableLazyResponse<T> send(T container);
+	/**
+	 * 
+	 * @param container The message to send
+	 * @param lazyResponse The settable lazyrepronse on which to set the result
+	 * @param sendAfter send the message after the given time;
 	 * @return
 	 */
-	 TopicFilter getAcceptFilter();
+	 void send(T container, SettableLazyResponse<T> lazyResponse,long sendAfter);
+	
+	void registerCallback(Callback<T> cb);
 }
