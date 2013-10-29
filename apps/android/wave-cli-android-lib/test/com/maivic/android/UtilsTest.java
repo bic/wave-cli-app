@@ -1,13 +1,12 @@
 package com.maivic.android;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 
 import org.junit.Test;
 
-import com.maivic.android.Utils;
+import com.maivic.android.utils.Utils;
 
 public class UtilsTest {
 

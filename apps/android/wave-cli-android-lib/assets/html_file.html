@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width; user-scalable=0;" />
+<title>My HTML</title>
+</head>
+<body>
+<h1>MyHTML</h1>
+<p id="mytext">Hello!</p>
+
+<input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
+<input type="button" value="Open Dialog" onClick="openAndroidDialog('Open Dialog!!!')" />
+<input type="button" value="Pick phone contacts" onClick="pickContacts()" />
+<input type="button" value="Pick email contacts" onClick="pickEmails()" />
+<input type="button" value="Send SMS" onClick="sendSMS()" />
+
+<script language="javascript">
+   function showAndroidToast(toast) {
+       AndroidFunction.showToast(toast);
+   }
+
+   function openAndroidDialog(toast) {
+       AndroidFunction.openAndroidDialog(toast);
+   }
+  
+   function callFromActivity(msg){
+ 	  document.getElementById("mytext").innerHTML = msg;
+   }
+   
+   function pickContacts(){
+   		var result = Contacts.getContacts("{\"pick_type\": \"phone\", \"types\":[\"phone\"], \"select\":\"single\"}");
+   		AndroidFunction.openAndroidDialog(result);   
+   }
+   
+   function pickEmails(){
+   		var result = Contacts.getContacts("{\"pick_type\": \"email\", \"types\":[\"phone\"], \"select\":\"single\"}");
+   		AndroidFunction.openAndroidDialog(result);      
+   }
+   
+   function sendSMS(){
+   		var result = SMS.sendTextSMS("{\"phone_number\": \"555353535535\", \"text_message\":\"TestMessage from android\", \"confirmation\":\"1\"}");
+   		AndroidFunction.openAndroidDialog('SMS delivery result:' + result);
+   }
+   
+</script>
+
+</body>
+</html>

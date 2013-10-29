@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0" >
 
-        <com.maivic.android.widgets.NumberPicker
+        <com.maivic.android.widget.NumberPicker
             android:id="@+id/numberPixker1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -163,6 +163,12 @@
                     android:layout_height="wrap_content"
                     android:singleLine="true"
                     android:text="-1;+1" />
+
+                <Button
+                    android:id="@+id/btnPredefinedSteps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="predefined" />
             </LinearLayout>
 
             <LinearLayout
@@ -181,6 +187,61 @@
                     android:layout_height="wrap_content"
                     android:text="1" />
             </LinearLayout>
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Group size:" />
+
+                    <EditText
+                        android:id="@+id/edGroupSize"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:text="2" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GroupInlineSplit:" />
+
+                    <EditText
+                        android:id="@+id/edGroupIndlineSplit"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:text="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ButtonLabel:" />
+
+                    <EditText
+                        android:id="@+id/edButtonLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+                </TableRow>
+            </TableLayout>
 
             <CheckBox
                 android:id="@+id/chZeroValue"
