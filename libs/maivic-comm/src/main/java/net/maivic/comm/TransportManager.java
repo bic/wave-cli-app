@@ -55,8 +55,8 @@ public interface TransportManager {
 	 */
 	void disconnectAll(int graceful_wait); 
 	
-	public <T> void registerIncomingAllTransports (Callback<T> cb );
-	public <T> SettableLazyResponse<T> sendWithRetry( final T message, final SendStrategy<T> strategy, DefaultLazyResponse<T> lazyResponse);
+	public <MESSAGE_T> void registerIncomingAllTransports (Callback<MESSAGE_T> cb );
+	public <MESSAGE_T> SettableLazyResponse<MESSAGE_T> sendWithRetry( final MESSAGE_T message, final SendStrategy<MESSAGE_T> strategy, DefaultLazyResponse<MESSAGE_T> lazyResponse);
 	void schedule(long when, Callable<Void> callable);
 	
 	

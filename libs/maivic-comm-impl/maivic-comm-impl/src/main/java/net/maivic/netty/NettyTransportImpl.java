@@ -28,6 +28,7 @@ import net.maivic.comm.Transport;
 import net.maivic.comm.exception.SendFailed;
 import net.maivic.context.Context;
 import net.maivic.context.Log;
+import net.maivic.netty.MessageContainerInboundAdapter.IncomingCallBack;
 
 public class NettyTransportImpl implements Transport<MessageContainer>{
 	private static Log log = Context.get().log();
@@ -143,7 +144,13 @@ public class NettyTransportImpl implements Transport<MessageContainer>{
 				}
 			}
 		}
-		ChannelFuture ret = this.socketClient.connect(this.host, this.port);
+		ChannelFuture ret = this.socketClient.connect(this.host, this.port, new IncomingCallBack(){
+			public void onIncomingMessage(MessageContainer msg) {
+				for (Callback<MessageContainer>callback: NettyTransportImpl.this.callbacks){
+					callback.call(msg);
+				}
+			}
+		});
 		ret.addListener(new GenericFutureListener<Future<? super Void>>(){
 			public void operationComplete(Future<? super Void> f)
 					throws Exception {

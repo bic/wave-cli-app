@@ -31,7 +31,14 @@ public class MaivicResourceBundle extends ResourceBundle {
 		}catch (ClassNotFoundException e) {	
 			this.constantValues.put(ScheduledExecutorService.class.getName(), Executors.newSingleThreadExecutor());
 		}
-			
+		/**
+		 * see also maivic-bridge/src/python/tornado_server/pb/services.py, _services definition
+		 * The values of ServiceID must correspond!
+		 */
+		this.constantValues.put("ServiceID.List", 1);
+		this.constantValues.put("ServiceID.Echo", 2);
+		this.constantValues.put("ServiceID.Name", 3);
+		this.constantValues.put("ServiceID.RPC",  4);	
 		
 	}
 	private <T> void addConstant(String name, T constant) {

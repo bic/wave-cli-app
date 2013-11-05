@@ -19,8 +19,6 @@ import net.maivic.protocol.Model.ContactsToLegalEntity;
 import net.maivic.protocol.Model.Invoice;
 @Table("contacts")
 public interface ContactRelations {
-  @Relation(name="clients",type=RelationType.MANY_TO_ONE)
-  LazyResponse<List<Client>>getClients(Contact  o);
   @Relation(name="invoices",type=RelationType.MANY_TO_ONE)
   LazyResponse<List<Invoice>>getInvoices(Contact  o);
   @Relation(name="deliveries",type=RelationType.MANY_TO_ONE)
@@ -33,6 +31,8 @@ public interface ContactRelations {
   LazyResponse<List<ContactsToLegalEntity>>getContactsToLegalEntities(Contact  o);
   @Relation(name="invoices_to_contacts",type=RelationType.MANY_TO_ONE)
   LazyResponse<List<InvoicesToContact>>getInvoicesToContacts(Contact  o);
+  @Relation(name="clients",type=RelationType.MANY_TO_ONE)
+  LazyResponse<List<Client>>getClients(Contact  o);
   @Relation(name="restaurants_to_contacts",type=RelationType.MANY_TO_ONE)
   LazyResponse<List<RestaurantsToContact>>getRestaurantsToContacts(Contact  o);
 };

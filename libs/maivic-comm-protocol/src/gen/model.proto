@@ -44,10 +44,11 @@ message Delivery {
     optional int64 arrival =6;
     optional int64 location_id =7;
 };
-message Ingredient {
+message Device {
     required int64 id =1;
-    optional string name =2;
-    optional int64 image_id =3;
+    optional string UUID =2;
+    optional string tel =3;
+    optional bool receivessms =4;
 };
 message Image {
     required int64 id =1;
@@ -60,9 +61,8 @@ message Order {
     required int64 id =1;
     optional int64 client_id =2;
     optional string notes =3;
-    optional int64 offer_id =4;
-    optional int64 delivery_place_id =5;
-    optional string delivery_box_id =6;
+    optional int64 delivery_place_id =4;
+    optional string delivery_box_id =5;
 };
 message Contact {
     required int64 id =1;
@@ -72,6 +72,12 @@ message Contact {
     optional string email =5;
     optional string landline =6;
     optional string VATIN =7;
+};
+message OrderEntry {
+    required int64 id =1;
+    optional int64 order_id =2;
+    optional int64 offer_id =3;
+    optional Decimal qty =4;
 };
 message MeetingsToContact {
     required int64 contact_id =1;
@@ -95,13 +101,9 @@ message Invoice {
 };
 message Offer {
     required int64 id =1;
-    optional string period =2;
-};
-message MenuEntryOption {
-    required int64 id =1;
-    optional int64 menu_entry_id =2;
-    optional string name =3;
-    optional bool default_included =4;
+    optional string valitity =2;
+    optional int64 price =3;
+    optional int64 location_id =4;
 };
 message Building {
     required int64 id =1;
@@ -125,8 +127,7 @@ message Interval {
 message Menu {
     required int64 id =1;
     optional string recurrence =2;
-    optional string logo =3;
-    optional int64 logo_src_image_id =4;
+    optional int64 price =3;
 };
 message PlaceType {
     required int64 id =1;
@@ -136,12 +137,14 @@ message InvoicesToContact {
     required int64 invoice_id =2;
     required string role =3;
 };
-message OrderEntry {
-    required int64 id =1;
-    optional int64 order_id =2;
-    optional int64 offer_id =3;
-    optional int64 offer_entry_id =4;
-    optional Decimal qty =5;
+message GeometryColumn {
+    required string f_table_catalog =1;
+    required string f_table_schema =2;
+    required string f_table_name =3;
+    required string f_geometry_column =4;
+    optional int64 coord_dimension =5;
+    optional int64 srid =6;
+    optional string type =7;
 };
 message Receipt {
     required int64 id =1;
@@ -150,6 +153,13 @@ message Receipt {
     optional Decimal sum =4;
     optional int64 emission_date =5;
 };
+message SpatialRefSy {
+    required int64 srid =1;
+    optional string auth_name =2;
+    optional int64 auth_srid =3;
+    optional string srtext =4;
+    optional string proj4text =5;
+};
 message ContactsToLegalEntity {
     required int64 contact_id =1;
     optional string role =2;
@@ -157,7 +167,10 @@ message ContactsToLegalEntity {
 };
 message OfferOption {
     required int64 id =1;
-    optional int64 offer_id =2;
+    optional bool is_offer_changer =2;
+    optional int64 price =3;
+    optional int64 price_delta_positive =4;
+    optional int64 price_delta_negative =5;
 };
 message Client {
     required int64 id =1;
@@ -165,11 +178,11 @@ message Client {
     optional string user =3;
     optional string passmd5 =4;
 };
-message Device {
+message MenuOption {
     required int64 id =1;
-    optional string UUID =2;
-    optional string tel =3;
-    optional bool receivessms =4;
+    optional int64 menu_id =2;
+    optional string name =3;
+    optional bool is_menu_changer =4;
 };
 message Payment {
     required int64 id =1;
@@ -187,9 +200,8 @@ message MenuEntry {
     required int64 id =1;
     optional int64 menu_id =2;
     optional string name =3;
-    optional int64 main_ingredient_id =4;
-    optional int64 option_for =5;
-    optional int64 option_max_qty =6;
+    optional int64 option_for =4;
+    optional int64 option_max_qty =5;
 };
 message Restaurant {
     required int64 id =1;

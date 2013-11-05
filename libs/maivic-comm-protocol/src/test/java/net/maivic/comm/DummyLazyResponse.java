@@ -1,8 +1,11 @@
 package net.maivic.comm;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
 import net.maivic.comm.exception.HaveCallbackException;
 import net.maivic.comm.exception.WaitingForResult;
-
 
 
 public class DummyLazyResponse<T> implements LazyResponse<T> {
@@ -11,7 +14,6 @@ public class DummyLazyResponse<T> implements LazyResponse<T> {
 	Callback<T> cb;
 	private boolean waiting;
 	private long end;
-	
 	public DummyLazyResponse(T object, int delay) {
 		TestConfig.cb_thread.insertCb(new Callback<T>() {
 			DummyLazyResponse<T> l = DummyLazyResponse.this;
@@ -87,6 +89,72 @@ public class DummyLazyResponse<T> implements LazyResponse<T> {
 				this.notify();
 			}
 		}
+		
+	}
+
+	public boolean cancel(boolean mayInterruptIfRunning) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean isCancelled() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean isDone() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public T get() throws InterruptedException, ExecutionException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public T get(long timeout, TimeUnit unit) throws InterruptedException,
+			ExecutionException, TimeoutException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setStep(int step) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int getStep() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void setMaxProgress(int value) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int getMaxProgress() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void addProgressCallBack(Callback<LazyResponse<T>> cb, int step_size) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void addDoneCallback(Callback<LazyResponse<T>> cb) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void addSuccessCallback(Callback<LazyResponse<T>> cb) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void addFailureCallback(Callback<LazyResponse<T>> cb) {
+		// TODO Auto-generated method stub
 		
 	}
 

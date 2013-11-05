@@ -25,6 +25,7 @@ public class DefaultLazyResponse<T> implements SettableLazyResponse<T> {
 	private List<Callback<LazyResponse<T>>> progressCallBacks=new ArrayList<Callback<LazyResponse<T>>>();
 	private Function<MessageContainer,T> resultTransformer=null;
 	private List<Callback<SettableLazyResponse<T>>> beforeFailureCallBacks = new ArrayList<Callback<SettableLazyResponse<T>>>();
+	private boolean result_set=false;
 	public DefaultLazyResponse () {
 		this.max_progress = Integer.MAX_VALUE;
 		this.step_size = 0;
@@ -33,10 +34,17 @@ public class DefaultLazyResponse<T> implements SettableLazyResponse<T> {
 	public void setSuccess(T result) {
 		
 		synchronized (this) {
+	
 			this.result= result;
+			this.result_set=true;
+			this.consumeCallbacks(ON_SUCCESS);
+			try{
+				this.notify();
+			} catch (Error e){
+				e.printStackTrace();
+				throw e;
+			}
 		}
-		this.consumeCallbacks(ON_SUCCESS);
-		this.notify();
 	}
 	public void setFailure(Throwable t) {
 		try {
@@ -93,7 +101,7 @@ public class DefaultLazyResponse<T> implements SettableLazyResponse<T> {
 		return false;
 	}
 	public boolean isDone() {
-		if (this.result != null) {
+		if (this.result_set) {
 			return true;
 		} else if (this.failedThrowable != null){
 			return true;
@@ -115,7 +123,7 @@ public class DefaultLazyResponse<T> implements SettableLazyResponse<T> {
 		long deadline = System.currentTimeMillis() + timeout;
 		while ((System.currentTimeMillis() < deadline) || (timeout < 0)){
 			try {
-				synchronized (this) {				
+				synchronized (this) {
 					if (timeout > 0 ) {
 						this.wait(deadline = System.currentTimeMillis());
 					}else {
@@ -179,7 +187,7 @@ public class DefaultLazyResponse<T> implements SettableLazyResponse<T> {
 	}
 	private boolean callbackImmediately( Callback<LazyResponse<T>> cb, int on_event){
 		if (this.isDone()) {
-			if((on_event & ON_SUCCESS) >0 &&(this.result != null)) {
+			if((on_event & ON_SUCCESS) >0 &&(this.result_set)) {
 				cb.call(this);
 				return true;
 			} else 	if((on_event & ON_FAILURE) >0 &&(this.failedThrowable != null)) {

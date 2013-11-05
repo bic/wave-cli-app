@@ -36,6 +36,7 @@ public class ThreadManager {
 	
 	public synchronized int newThread() { 
 			thread_seq+=this.threadCreators;
+			this.knownThreads.add(thread_seq);
 			return thread_seq;
 	}
 	public synchronized void registerKnownThread( int id) {

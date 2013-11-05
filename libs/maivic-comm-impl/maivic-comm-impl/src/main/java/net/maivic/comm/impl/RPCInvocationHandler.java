@@ -25,7 +25,7 @@ class RPCInvocationHandler extends  AbstractRPCServiceClient implements Invocati
 
 	Map<LazyResponse<?>, Class<?>> expectedResults = new HashMap<LazyResponse<?>, Class<?>>();
 	public RPCInvocationHandler() {
-		super(1);
+		super((Integer)Context.get().get("ServiceID.RPC"));
 	}
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable{
 			FunctionCall.Builder call = FunctionCall.newBuilder();
@@ -34,7 +34,6 @@ class RPCInvocationHandler extends  AbstractRPCServiceClient implements Invocati
 				Parameter p = method.getParameters()[i];
 				call.addArgs(BaseTypeMapper.toBaseType(args[i], p.getType()));
 			}
-			
 			MessageContainer.Builder container = MessageContainer.newBuilder();
 			call.setFunction(getIndexForFunctionName());
 			//LazyResponse<T> result = this.send(container.build());

@@ -5,6 +5,9 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import junit.framework.TestCase;
 import net.maivic.comm.Maivic.MessageContainer;
+import net.maivic.comm.Transport;
+import net.maivic.comm.TransportManager;
+import net.maivic.context.Context;
 import net.maivic.netty.SocketClient;
 
 import org.junit.Test;
@@ -15,12 +18,23 @@ import com.google.protobuf.ByteString;
 public class NettyClientConnector {
 
 	@Test
-	public void test() {
+	public void testNettyTransport() {
+		TransportManager man= Context.get().getTransportManager();
+		Transport<MessageContainer> nettyTransport = man.addTransport("nettytcp://localhost:12345");
+		nettyTransport.pullUp();
+		
+		
+				
+	}
+	
+	
+	
+	public void testSocketClient() {
 		EventLoopGroup group = new NioEventLoopGroup();
 		
 		try {
 			SocketClient s = new SocketClient(group);
-			ChannelFuture f = s.connect("localhost", 12345);
+			ChannelFuture f = s.connect("localhost", 12345, null);
 			f.await();
 			System.out.print("future returned!");
 			if(f.isDone() && !f.isSuccess()){
@@ -52,5 +66,6 @@ public class NettyClientConnector {
 			.build();
 		return ret;
 	}
+	
 
 }

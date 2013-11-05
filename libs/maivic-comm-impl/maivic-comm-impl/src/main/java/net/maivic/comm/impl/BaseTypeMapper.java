@@ -5,6 +5,7 @@ import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -36,13 +37,17 @@ public class BaseTypeMapper {
 	}
 	private Object _fromBaseType(BaseType t, Class<?> to_type) throws IOException {
 		BaseType.ENCODED_TYPE type=getEncodedType(t);
+		if (t.hasEncodedType() && t.getEncodedType()==ENCODED_TYPE.NONE){
+			return null;
+		}
 		if (to_type == null ) {
 			throw new IOException("Return type may not be null");
 		}else if (type==null) {
-			throw new IOException("No Encoded type founf in BaseType argument!");
+			throw new IOException("No Encoded type found in BaseType argument!");
 		}
 		List<?> ret = null;
-	
+		
+		
 		boolean found=false;
 		for (Entry<String, ENCODED_TYPE> enc: mapping.entrySet()){
 			if(enc.getValue() ==type) {
@@ -53,7 +58,7 @@ public class BaseTypeMapper {
 							found=true;
 							break;
 						} catch (Exception e) {
-							throw new IOException("Could not read ftom Basetype.get" +enc.getKey() + "List()" );
+							throw new IOException("Could not read from Basetype.get" +enc.getKey() + "List()" );
 						}
 						
 					}
@@ -75,9 +80,11 @@ public class BaseTypeMapper {
 			} else {
 				return ret.get(0);
 			}
-		} else {
-			throw new IOException("No Method found for type " + type.toString());
+		} else if (t.getListType() && t.hasComponentType() && t.getComponentType() == ENCODED_TYPE.UNKNOWN){ 
+			//Empty List, so cannot deduce contained type
+			ret= new ArrayList();
 		}
+		return ret;
 				
 		
 	}
@@ -100,11 +107,13 @@ public class BaseTypeMapper {
 		mapping.put("Bool", BaseType.ENCODED_TYPE.BOOL);
 		mapping.put("Double", BaseType.ENCODED_TYPE.DOUBLE);
 		mapping.put("Float", BaseType.ENCODED_TYPE.FLOAT);
+		mapping.put("ContainedObject", BaseType.ENCODED_TYPE.CONTAINED_OBJECT);
 				
 	}
 	private BaseType.ENCODED_TYPE getEncodedType(BaseType t) {
-		initTypeMappings();
 		
+		initTypeMappings();
+		if (t.hasEncodedType()) return t.getEncodedType();
 		Class<?>[] noargs = new Class<?>[]{};
 		for(Entry<String, ENCODED_TYPE> e : mapping.entrySet()){
 			try {

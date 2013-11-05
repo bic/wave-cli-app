@@ -67,20 +67,24 @@ public  abstract  class AbstractRPCServiceClient<T> {
 						response.setMaxProgress((int)retValue.getProgress().getMaxProgress());
 						response.setProgress(retValue.getProgress().getProgress());
 					}
-					openRequests.remove(thread_id);
-					threadManager.closeThread(thread_id);	
-					if(retValue.hasException()) {
-						response.setFailure(this.convertException(retValue.getException(), response));
-					}else{
-						try {
-							response.setSuccess(this.convertResult(retValue.getValue(), response));
-						} catch (IOException e) {
-							response.setFailure(e);
-						}
+				}
+				openRequests.remove(thread_id);
+				threadManager.closeThread(thread_id);	
+				if(retValue.hasException()) {
+					response.setFailure(this.convertException(retValue.getException(), response));
+				}else{
+					try {
+						
+						response.setSuccess((T)this.convertResult(retValue.getValue(), response));
+					} catch (IOException e) {
+						response.setFailure(e);
 					}
 				}
+			
 				
 			} catch (InvalidProtocolBufferException e) {
+				response.setFailure(e);
+			} catch (Throwable e) {
 				response.setFailure(e);
 			}
 			
@@ -91,12 +95,15 @@ public  abstract  class AbstractRPCServiceClient<T> {
 	public int getServiceId() {
 		return serviceId;
 	}
-	public LazyResponse<MessageContainer> send(FunctionCall message) {
+	public LazyResponse<T> send(FunctionCall message) {
 		Builder container = MessageContainer.newBuilder();
 		fillMessageContainer(container, message);
 		TransportManager tm = Context.get().getTransportManager();
-		DefaultLazyResponse<MessageContainer> lazyResponse = new DefaultLazyResponse<MessageContainer>(); 
-		return tm.<MessageContainer>sendWithRetry(container.build(),new FixedRetry(FixedRetry.logRetryDelays(5), "nettytcp"), lazyResponse);
+		
+	
+		DefaultLazyResponse<T> lazyResponse = new DefaultLazyResponse<T>(); 
+		openRequests.put(container.getThreadControl().getThreadId(), lazyResponse);
+		return tm.sendWithRetry((T)container.build(),new FixedRetry<T>(FixedRetry.logRetryDelays(5), "nettytcp"), lazyResponse);
 	}
 	
 	protected void fillMessageContainer(MessageContainer.Builder container, Message content){

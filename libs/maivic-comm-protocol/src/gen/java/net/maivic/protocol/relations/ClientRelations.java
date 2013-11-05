@@ -14,10 +14,10 @@ import net.maivic.protocol.Model.Payment;
 import net.maivic.protocol.Model.Client;
 @Table("clients")
 public interface ClientRelations {
-  @Relation(name="contact",type=RelationType.ONE_TO_MANY)
-  LazyResponse<Contact>getContact(Client object);
   @Relation(name="orders",type=RelationType.MANY_TO_ONE)
   LazyResponse<List<Order>>getOrders(Client  o);
+  @Relation(name="contact",type=RelationType.ONE_TO_MANY)
+  LazyResponse<Contact>getContact(Client object);
   @Relation(name="payments",type=RelationType.MANY_TO_ONE)
   LazyResponse<List<Payment>>getPayments(Client  o);
 };

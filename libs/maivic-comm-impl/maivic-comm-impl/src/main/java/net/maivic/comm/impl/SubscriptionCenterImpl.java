@@ -5,8 +5,8 @@ import java.util.Collections;
 import java.util.List;
 
 import net.maivic.comm.Callback;
-import net.maivic.comm.SubscriptionCenter;
 import net.maivic.comm.RoutingFilter;
+import net.maivic.comm.SubscriptionCenter;
 import net.maivic.context.Context;
 
 public class SubscriptionCenterImpl<T> implements SubscriptionCenter<T> {
@@ -62,7 +62,7 @@ public class SubscriptionCenterImpl<T> implements SubscriptionCenter<T> {
 		synchronized (this) {
 			for(int i=0; i < filters.size(); i++ ){
 				if (filters.get(i).route(message)){
-					callBacks.get(i);
+					callBacks.get(i).call(message);
 					ret=true;
 				}
 			}
