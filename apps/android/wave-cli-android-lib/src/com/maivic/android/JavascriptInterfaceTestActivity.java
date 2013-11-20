@@ -9,8 +9,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,9 +23,16 @@ import com.maivic.android.webviewbridge.jsinterface.JavaScriptContactsInterface.
 import com.maivic.android.webviewbridge.jsinterface.JavaScriptContactsInterface.ActivityResultDelegate;
 import com.maivic.android.webviewbridge.jsinterface.JavaScriptSMSInterface;
 
+/**
+ * 
+ * @author Serghei
+ * 
+ * @deprecated must delete
+ */
 @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
-public class JavascriptInterfaceTestActivity extends Activity implements ActivityResultBinder{
-	
+public class JavascriptInterfaceTestActivity extends Activity implements
+		ActivityResultBinder {
+
 	// WebView mWebView;
 	//
 	// @Override
@@ -92,25 +97,24 @@ public class JavascriptInterfaceTestActivity extends Activity implements Activit
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-//		JSONArray array = new JSONArray();
-//		
-//		array.put(JSONObject.NULL);
-//		try {
-//			array.put((new JSONObject().put("json", new JSONObject())
-//					.put("boolean", true).put("int", 1)
-//					.putOpt("nullValue", null).put("object", new Test(
-//					"testClass"))));
-//		} catch (JSONException e) {
-//			e.printStackTrace();
-//		}
-		
-//		System.err.println("The json array with null "+array.toString());
-//		
-//		
-//		System.err.println("The onCreate threadId: "+Thread.currentThread().getId());
-		
-		
+
+		// JSONArray array = new JSONArray();
+		//
+		// array.put(JSONObject.NULL);
+		// try {
+		// array.put((new JSONObject().put("json", new JSONObject())
+		// .put("boolean", true).put("int", 1)
+		// .putOpt("nullValue", null).put("object", new Test(
+		// "testClass"))));
+		// } catch (JSONException e) {
+		// e.printStackTrace();
+		// }
+
+		// System.err.println("The json array with null "+array.toString());
+		//
+		//
+		// System.err.println("The onCreate threadId: "+Thread.currentThread().getId());
+
 		setContentView(com.maivic.android.widgets.R.layout.activity_javascript_test);
 		// setContentView();
 		myBrowser = (WebView) findViewById(com.maivic.android.widgets.R.id.mybrowser);
@@ -119,24 +123,21 @@ public class JavascriptInterfaceTestActivity extends Activity implements Activit
 				this);
 		myBrowser.addJavascriptInterface(myJavaScriptInterface,
 				"AndroidFunction");
-		
+
 		JavaScriptContactsInterface contactsInterface = new JavaScriptContactsInterface();
 		contactsInterface.setActivityContext(this);
-		myBrowser.addJavascriptInterface(contactsInterface,
-				"Contacts");
-		
+		myBrowser.addJavascriptInterface(contactsInterface, "Contacts");
+
 		JavaScriptSMSInterface smsInterface = new JavaScriptSMSInterface();
 		smsInterface.setActivityContext(this);
-		myBrowser.addJavascriptInterface(smsInterface,
-				"SMS");
-		
+		myBrowser.addJavascriptInterface(smsInterface, "SMS");
 
 		myBrowser.getSettings().setJavaScriptEnabled(true);
-		
-//		String htmlColntent = loadAssest(this, "html_file.html");
-		
-//		myBrowser.loadData(htmlColntent, "html/txt", "UTF-8");
-		
+
+		// String htmlColntent = loadAssest(this, "html_file.html");
+
+		// myBrowser.loadData(htmlColntent, "html/txt", "UTF-8");
+
 		myBrowser.loadUrl("file:///android_asset/html_file.html");
 
 		Msg = (EditText) findViewById(com.maivic.android.widgets.R.id.msg);
@@ -153,13 +154,14 @@ public class JavascriptInterfaceTestActivity extends Activity implements Activit
 			}
 		});
 	}
-	
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		
+
 		if (mResultDelegate != null
-				&& mResultDelegate.onActivityResult(requestCode, resultCode, data)) {
+				&& mResultDelegate.onActivityResult(requestCode, resultCode,
+						data)) {
 			mResultDelegate = null;
 			return;
 		}
@@ -179,9 +181,9 @@ public class JavascriptInterfaceTestActivity extends Activity implements Activit
 
 		@JavascriptInterface
 		public void openAndroidDialog(String toast) {
-			
-			System.err.println("The javascript threadId: "+Thread.currentThread().getId());
-			
+			System.err.println("The javascript threadId: "
+					+ Thread.currentThread().getId());
+
 			AlertDialog.Builder myDialog = new AlertDialog.Builder(
 					JavascriptInterfaceTestActivity.this);
 			myDialog.setTitle("JavasctiptResponse");
@@ -192,26 +194,26 @@ public class JavascriptInterfaceTestActivity extends Activity implements Activit
 
 	}
 
-	public static String streamToString(InputStream in){
-		
+	public static String streamToString(InputStream in) {
+
 		StringBuilder bs = new StringBuilder();
-		
+
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
 		String line = null;
 		try {
-			while((line = reader.readLine()) != null){
+			while ((line = reader.readLine()) != null) {
 				bs.append(line);
 				bs.append("\n");
 			}
 			reader.close();
 		} catch (IOException e) {
 		}
-		
+
 		return bs.toString();
 	}
-	
-	public static String loadAssest(Context context, String assestName){
+
+	public static String loadAssest(Context context, String assestName) {
 		try {
 			InputStream in = context.getAssets().open(assestName);
 			return streamToString(in);
@@ -221,13 +223,11 @@ public class JavascriptInterfaceTestActivity extends Activity implements Activit
 		return null;
 	}
 
-
-
 	@Override
 	public void registerActivityResultDeligate(ActivityResultDelegate delegate) {
 		this.mResultDelegate = delegate;
 	}
-	
+
 	ActivityResultDelegate mResultDelegate;
 }
 // }

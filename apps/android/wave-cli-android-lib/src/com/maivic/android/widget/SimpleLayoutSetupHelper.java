@@ -174,10 +174,18 @@ public class SimpleLayoutSetupHelper extends LayoutSetupHelper {
 			// create content
 			LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, 
 					LinearLayout.LayoutParams.WRAP_CONTENT);
-			lp.weight = 1;
+			lp.weight = 0;
 			lp.gravity = Gravity.CENTER;
 			content.addView(halfInlineButtonsGroup1, lp);
 			content.addView(labelValueContainer, lp);
+			
+			LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
+					LinearLayout.LayoutParams.MATCH_PARENT,
+					LinearLayout.LayoutParams.WRAP_CONTENT);
+			p.weight = 1;
+//			p.leftMargin = p.rightMargin = 20;
+			labelValueContainer.setLayoutParams(p);
+			
 			content.addView(halfInlineButtonsGroup2, lp);
 			
 		} else{
@@ -200,7 +208,11 @@ public class SimpleLayoutSetupHelper extends LayoutSetupHelper {
 					buttonGroup = createButtonsGroup(orientation);
 				}
 				
-				buttonGroup.addView(mActionButtons.get(i));
+				LinearLayout.LayoutParams buttonParam = new android.widget.LinearLayout.LayoutParams(
+						android.widget.LinearLayout.LayoutParams.WRAP_CONTENT,
+						android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+				buttonParam.bottomMargin = buttonParam.leftMargin = buttonParam.rightMargin = buttonParam.topMargin = 10;
+				buttonGroup.addView(mActionButtons.get(i), buttonParam);
 				
 				boolean isLastButton = i == mActionButtons.size() - 1;
 				if(positionInGroup == groupSize -1 || isLastButton){
@@ -213,7 +225,10 @@ public class SimpleLayoutSetupHelper extends LayoutSetupHelper {
 			lp.weight = 1;
 			lp.gravity = Gravity.CENTER;
 			// add label value container
+			lp.rightMargin = 10;
 			content.addView(labelValueContainer, lp);
+			
+			lp.rightMargin = 0;
 			content.addView(groupsContainer, lp);
 		}
 		
@@ -226,11 +241,27 @@ public class SimpleLayoutSetupHelper extends LayoutSetupHelper {
 		buttonsContainer = createButtonsContainer();
 		cbxZeroValueCheckbox = new CheckBox(mContext);
 		
-		content.addView(buttonsContainer);
-		content.addView(cbxZeroValueCheckbox);
+		RelativeLayout.LayoutParams params;
+		if(mNumberPicker.getAlign() == AlignType.HORIZONTAL){
+			params = new RelativeLayout.LayoutParams(
+					LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		} else{
+			params = new RelativeLayout.LayoutParams(
+					LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);			
+		}
+		params.addRule(RelativeLayout.CENTER_HORIZONTAL | RelativeLayout.CENTER_VERTICAL);
+		content.addView(buttonsContainer, params);
+		content.addView(cbxZeroValueCheckbox/*, params*/);
+		
+		onLayoutCreated();
 		
 		return content;
 	}
+	
+	/**
+	 * this method called when layout created
+	 */
+	protected void onLayoutCreated(){}
 
 	@Override
 	public void showActionButtons() {
@@ -287,27 +318,61 @@ public class SimpleLayoutSetupHelper extends LayoutSetupHelper {
 	}
 		
 	protected ViewGroup createLabelValueContainer(){
-		RelativeLayout labelLayout = new RelativeLayout(mContext);			
+//		RelativeLayout labelLayout = new RelativeLayout(mContext);			
+//		txtLabelView = new TextView(mContext);
+//		txtValueView = new TextView(mContext);			
+//		
+//		txtLabelView.setId(ID_TV_LABEL);
+//		txtValueView.setId(ID_TV_VALUE);
+//		
+//		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+//				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+//		lp.leftMargin = 5;
+//		lp.rightMargin = 5;
+//		lp.topMargin = 5;
+//		lp.bottomMargin = 5;
+//		lp.addRule(RelativeLayout.CENTER_VERTICAL);
+//		labelLayout.addView(txtLabelView, lp);
+//		
+//		lp = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
+//				LayoutParams.WRAP_CONTENT);
+//		lp.addRule(RelativeLayout.RIGHT_OF, ID_TV_LABEL);
+//		lp.addRule(RelativeLayout.CENTER_VERTICAL);
+//		
+//		labelLayout.addView(txtValueView, lp);
+//		labelLayout.setId(ID_LABEL_CONTAINER);
+		
+		LinearLayout labelLayout = new LinearLayout(mContext);			
+		labelLayout.setOrientation(LinearLayout.HORIZONTAL);
 		txtLabelView = new TextView(mContext);
 		txtValueView = new TextView(mContext);			
+
+		//
+		txtLabelView.setLines(2);
+//		txtLabelView.setBackgroundColor(Color.GREEN);
+		txtLabelView.setSingleLine(false);
+
 		
 		txtLabelView.setId(ID_TV_LABEL);
 		txtValueView.setId(ID_TV_VALUE);
 		
-		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
 				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-		lp.leftMargin = 5;
-		lp.rightMargin = 5;
-		lp.topMargin = 5;
-		lp.bottomMargin = 5;
-		lp.addRule(RelativeLayout.CENTER_VERTICAL);
+//		lp.leftMargin = 5;
+//		lp.rightMargin = 5;
+//		lp.topMargin = 5;
+//		lp.bottomMargin = 5;
+		
+//		lp.gravity = Gravity.CENTER_HORIZONTAL;
+		lp.weight = 1;
+//		lp.addRule(RelativeLayout.CENTER_VERTICAL);
 		labelLayout.addView(txtLabelView, lp);
+		txtLabelView.setGravity(Gravity.CENTER);
 		
-		lp = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
+		lp = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
 				LayoutParams.WRAP_CONTENT);
-		lp.addRule(RelativeLayout.RIGHT_OF, ID_TV_LABEL);
-		lp.addRule(RelativeLayout.CENTER_VERTICAL);
-		
+		lp.gravity = Gravity.CENTER;
+		lp.weight = 0;
 		labelLayout.addView(txtValueView, lp);
 		labelLayout.setId(ID_LABEL_CONTAINER);
 		return labelLayout;
@@ -402,12 +467,14 @@ public class SimpleLayoutSetupHelper extends LayoutSetupHelper {
 		@Override
 		public boolean onTouch(View v, MotionEvent event) {
 			int action = event.getAction();
+			Log.d(T, "onTouch "+event);
 			switch (action) {
 			
 			case MotionEvent.ACTION_DOWN:
 				onButtonDown(v);
 				break;
 				
+			case MotionEvent.ACTION_CANCEL:				
 			case MotionEvent.ACTION_UP:
 				onButtonUp(v);
 				break;

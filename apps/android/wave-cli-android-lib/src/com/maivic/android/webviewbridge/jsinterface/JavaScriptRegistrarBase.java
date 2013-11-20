@@ -63,7 +63,7 @@ public class JavaScriptRegistrarBase implements JavaScriptCallbackRegistrar{
 		result.put(JSONObject.NULL);
 		JSONObject errorObject = new JSONObject();
 		try {
-			errorObject.put("message", e.getMessage());
+			errorObject.put("message", e.getMessage() == null ? JSONObject.NULL : e.getMessage());
 			errorObject.put("stacktrace", generateStackTrace(e));
 		} catch (JSONException e1) {
 			e1.printStackTrace();

@@ -13,8 +13,17 @@ public class JavaSctiptBinderFactoryImpl implements JavaScriptBinderFactory{
 	private static final Map<String, Class<? extends JavaScriptCallbackRegistrar>> registrarMap = new HashMap<String, Class<? extends JavaScriptCallbackRegistrar>>();
 	
 	static{
+		// general
+		registrarMap.put("hideMe", JavaScriptGeneralInterface.class);
+		registrarMap.put("log", JavaScriptGeneralInterface.class);
+		// contacts
 		registrarMap.put("getContacts", JavaScriptContactsInterface.class);
-		registrarMap.put("hideMe", JavaScriptGUIInterface.class);
+		// location
+		registrarMap.put("getCurrentLocation", JavaScriptLocationInterface.class);
+		// sms  
+		registrarMap.put("sendTextSMS", JavaScriptSMSInterface.class);
+		registrarMap.put("sendDataSMS", JavaScriptSMSInterface.class);
+		registrarMap.put("checkSMSDelivery", JavaScriptSMSInterface.class);
 	}
 	
 	private Activity activity;

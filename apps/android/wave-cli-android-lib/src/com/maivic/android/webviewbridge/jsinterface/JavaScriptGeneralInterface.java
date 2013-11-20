@@ -3,25 +3,27 @@ package com.maivic.android.webviewbridge.jsinterface;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.Activity;
 import android.util.Log;
+import android.view.View;
 import android.webkit.JavascriptInterface;
+import android.webkit.WebView;
 
+public class JavaScriptGeneralInterface extends JavaScriptRegistrarBase{
 
-/**
- * Javascript Back End interface. This class implements list of functions
- * declared in specification.
- * 
- * @author Serghei
- * 
- */
-public class JavaScriptBEInterface extends JavaScriptRegistrarBase{
-	/**
-	 * Default constructor
-	 */
-	public JavaScriptBEInterface(){
+	private WebView mWebView;
+	
+	@Override
+	public void register(WebView webView, String javascriptHandlerName) {
+		super.register(webView, javascriptHandlerName);
 		
+		this.mWebView = webView;
 	}
-
+	
+	public void setActivity(Activity activity){
+		this.mActivity = activity;
+	}
+	
 	@JavascriptInterface
 	public String log(String json){
 		//TODO add level
@@ -45,5 +47,16 @@ public class JavaScriptBEInterface extends JavaScriptRegistrarBase{
 		
 		return generateSuccessResponse(null);
 	}
+	
+	
+	@JavascriptInterface
+	public void hideMe(){
+//		if(context instanceof GuiCallbackInterface){
+//			((GuiCallbackInterface)context).hideWebView();
+//		}
+		
+		if(mWebView != null){
+			mWebView.setVisibility(View.GONE);
+		}
+	}
 }
-

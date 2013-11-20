@@ -15,8 +15,13 @@ import android.content.IntentFilter;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
-import android.widget.Toast;
 
+/**
+ * Javascript interface for transmission sms
+ * 
+ * @author Serghei
+ * 
+ */
 public class JavaScriptSMSInterface extends JavaScriptRegistrarBase{
 	private static final String T = "JavaScriptSMSInterface";
 	
@@ -28,11 +33,12 @@ public class JavaScriptSMSInterface extends JavaScriptRegistrarBase{
 	public static final int RESULT_DELIVERY_IN_PROCESS = 4;
 	// ~SMS error codes
 
-	private static final String ACTION_SMS_SEND = "ACTION_SMS_SEND";
-	private static final String EXTRA_REFERER = "EXTRA_REFERER";
+	private static final String ACTION_SMS_SEND = "action_sms_send";
+	private static final String EXTRA_REFERER = "extra_referer";
+	private static final String EXTRA_MULTIPART_FLAG = "extra_multipart_flag";
 	
 	private ConcurrentHashMap<String, ThreadBlocker> mThreadBlockerMap = new ConcurrentHashMap<String, JavaScriptSMSInterface.ThreadBlocker>();
-	private ConcurrentHashMap<String, Integer> mSMSDeliveryResultCodes = new ConcurrentHashMap<String, Integer>();
+	private ConcurrentHashMap<String, DeliveryResultEntry> mSMSDeliveryResultCodes = new ConcurrentHashMap<String, DeliveryResultEntry>();
 	
 	/**
 	 * Function to send a text SMS to a supplied number from the user's phone.
@@ -48,14 +54,8 @@ public class JavaScriptSMSInterface extends JavaScriptRegistrarBase{
 	 *            delivery confirmation request
 	 * @return ref: Only returned if confirmation=2. The ref vallue can be used
 	 *         with checkSMSDelivery
-	 * @see {@linkplain JavaScriptBEInterface#sendDataSMS(String phoneNumber, int port, String message, int confirmation)}
+	 * @see {@linkplain JavaScriptLocationInterface#sendDataSMS(String phoneNumber, int port, String message, int confirmation)}
 	 */
-	@JavascriptInterface
-	public String sendTextSMS(String phoneNumber, String textMessage, int confirmation){
-		SmsManager smsManager = SmsManager.getDefault();
-		return "[referer]";
-	}
-	
 	@JavascriptInterface
 	public String sendTextSMS(String json){
 		try {
@@ -65,7 +65,7 @@ public class JavaScriptSMSInterface extends JavaScriptRegistrarBase{
 			String phoneNumber = args.getString("phone_number");
 			String textMessage = args.getString("text_message");
 			int confirmation = args.getInt("confirmation");
-
+			
 			return sendSMSInternal(phoneNumber, textMessage, confirmation, false, (short)0);
 		} catch (IllegalArgumentException e) {
 			return generateErrorResponse(e);
@@ -88,7 +88,7 @@ public class JavaScriptSMSInterface extends JavaScriptRegistrarBase{
 	 *            confirmation requested
 	 * @return ref: Only returned if confirmation=2. The ref vallue can be used
 	 *         with checkSMSDelivery
-	 * @see {@link JavaScriptBEInterface#sendTextSMS(String phoneNumber, String textMessage, int confirmation)}
+	 * @see {@link JavaScriptLocationInterface#sendTextSMS(String phoneNumber, String textMessage, int confirmation)}
 	 * 
 	 */
 	public String sendDataSMS(String json/*String phoneNumber, int port, String textMessage, int confirmation*/){
@@ -114,7 +114,6 @@ public class JavaScriptSMSInterface extends JavaScriptRegistrarBase{
 		}
 	}
 	
-	
 	/**
 	 * Call this method to send text sms or data sms
 	 * 
@@ -135,58 +134,93 @@ public class JavaScriptSMSInterface extends JavaScriptRegistrarBase{
 	private String sendSMSInternal(String phoneNumber, String textMessage, int confirmation, boolean dataSMS, short port){
 		
 		Log.i(T, "call sendSMSInternal("+phoneNumber +", "+textMessage+", "+confirmation+", "+dataSMS+", "+port+")");
-		//TODO implement multipart transmission
 		try {
 			SmsManager smsManager = SmsManager.getDefault();
-			
-			ArrayList<String> devidedMessages = smsManager.divideMessage(textMessage);
-			
 			String referer = generateReferer();
+			boolean multipartSMS = false;
+			
+			ArrayList<String> dividedMessages = null;
+			ArrayList<PendingIntent> sentIntents = null;
+			if(!dataSMS){
+				// divide text message if it is big
+				dividedMessages = smsManager.divideMessage(textMessage);	
+				if(dividedMessages.size() > 1){
+					multipartSMS = true;
+					sentIntents = new ArrayList<PendingIntent>();
+					for(int i = 0; i < dividedMessages.size(); i++){
+						Intent broadcastIntent = new Intent(ACTION_SMS_SEND);
+						broadcastIntent.putExtra(EXTRA_MULTIPART_FLAG, true);
+						PendingIntent pending = PendingIntent.getBroadcast(mActivity, 0, broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+						sentIntents.add(pending);
+					}
+				}
+			}
+						
+			// pending intent for single sms
 			Intent broadcastIntent = new Intent(ACTION_SMS_SEND);
 			broadcastIntent.putExtra(EXTRA_REFERER, referer);
-			
+			PendingIntent sentIntent = PendingIntent.getBroadcast(mActivity, 0, broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+//			PendingIntent deliveryPendingIntent = sentPendingIntent;
+
 			// register delivery receiver
 			new SMSDeliveryReceiver();
 			
-			PendingIntent sentPendingIntent = PendingIntent.getBroadcast(mActivity, 0, broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-			PendingIntent deliveryPendingIntent = sentPendingIntent;
+			int partsCount;
+			DeliveryResultEntry resultEntry;
 			switch (confirmation) {
 			case CONFIRMATION_NO:
-//				smsManager.sendMultipartTextMessage(phoneNumber, null, devidedMessages, null, null);
 				if(dataSMS){
 					smsManager.sendDataMessage(phoneNumber, null, port, getDataSMS(textMessage), null, null);
 				} else{
-					smsManager.sendTextMessage(phoneNumber, null, textMessage, null, null);					
+					if(multipartSMS){
+						smsManager.sendMultipartTextMessage(phoneNumber, null, dividedMessages, null, null);
+					} else{
+						smsManager.sendTextMessage(phoneNumber, null, textMessage, null, null);					
+					}
 				}
 				break;
 
 			case CONFIRMATION_DELIVERY_REQUESTED:
-//				smsManager.sendMultipartTextMessage(phoneNumber, null, devidedMessages, sentPendingIntent, null);				
+				partsCount = multipartSMS ? dividedMessages.size() : 1;
+				resultEntry = new DeliveryResultEntry( partsCount, RESULT_DELIVERY_IN_PROCESS);
+				mSMSDeliveryResultCodes.put(referer, resultEntry);
+				
 				if(dataSMS){
-					smsManager.sendDataMessage(phoneNumber, null, port, getDataSMS(textMessage), sentPendingIntent, null);
+					smsManager.sendDataMessage(phoneNumber, null, port, getDataSMS(textMessage), sentIntent, null);
+					
 				} else{
-					smsManager.sendTextMessage(phoneNumber, null, textMessage, sentPendingIntent, null);					
+					if(multipartSMS){
+						smsManager.sendMultipartTextMessage(phoneNumber, null, dividedMessages, sentIntents, null);
+					} else{
+						smsManager.sendTextMessage(phoneNumber, null, textMessage, sentIntent, null);											
+					}
 				}
 				
-				mSMSDeliveryResultCodes.put(referer, RESULT_DELIVERY_IN_PROCESS);
 				return generateSuccessResponse(referer);
 
 			case CONFIRMATION_BLOCKING_WAIT:
+				partsCount = multipartSMS ? dividedMessages.size() : 1;
+				resultEntry = new DeliveryResultEntry( partsCount, RESULT_DELIVERY_IN_PROCESS);
+				mSMSDeliveryResultCodes.put(referer, resultEntry);
+
 				ThreadBlocker threadBlocker = new ThreadBlocker();
 				mThreadBlockerMap.put(referer, threadBlocker);
 				
 				if(dataSMS){
-					smsManager.sendDataMessage(phoneNumber, null, port, getDataSMS(textMessage), sentPendingIntent, null);
+					smsManager.sendDataMessage(phoneNumber, null, port, getDataSMS(textMessage), sentIntent, null);
 				} else {
-					smsManager.sendTextMessage(phoneNumber, null, textMessage, sentPendingIntent, null);
+					if(multipartSMS){
+						smsManager.sendMultipartTextMessage(phoneNumber, null, dividedMessages, sentIntents, null);
+					} else{
+						smsManager.sendTextMessage(phoneNumber, null, textMessage, sentIntent, null);
+					}
 				}
 				
 				// block thread until get response
 				threadBlocker.blockThread();
 				
-				int deliveryCode = mSMSDeliveryResultCodes.get(referer);
-				mSMSDeliveryResultCodes.remove(referer);
-				return generateSuccessResponse(deliveryCode);
+				resultEntry = mSMSDeliveryResultCodes.remove(referer);
+				return generateSuccessResponse(resultEntry.statusCode);
 			}
 			
 		} catch (Exception e) {
@@ -213,8 +247,8 @@ public class JavaScriptSMSInterface extends JavaScriptRegistrarBase{
 	 *         <li>2=RESULT_ERROR_RADIO_OFF</li>
 	 *         <li>3=RESULT_ERROR_NULL_PDU</li>
 	 *         </ul>
-	 * @see {@linkplain JavaScriptBEInterface#sendDataSMS(String, int, String, int)}
-	 *      {@link JavaScriptBEInterface#sendTextSMS(String, String, int)}
+	 * @see {@linkplain JavaScriptLocationInterface#sendDataSMS(String, int, String, int)}
+	 *      {@link JavaScriptLocationInterface#sendTextSMS(String, String, int)}
 	 */
 	public String checkSMSDelivery(String json){
 		
@@ -224,11 +258,10 @@ public class JavaScriptSMSInterface extends JavaScriptRegistrarBase{
 
 			String referrer = args.getString("referrer");
 			if(referrer != null && referrer.length() > 0){
-				Integer resultCode = mSMSDeliveryResultCodes.get(referrer);
-				if(resultCode != null){
+				DeliveryResultEntry resultEntry = mSMSDeliveryResultCodes.remove(referrer);
+				if(resultEntry != null){
 					// remove delivery code, to release resource
-					mSMSDeliveryResultCodes.remove(referrer);					
-					return generateSuccessResponse(resultCode);
+					return generateSuccessResponse(resultEntry.statusCode);
 				} else{
 					return generateErrorResponse(new IllegalStateException("Bad referrer value: "+referrer));
 				}
@@ -261,41 +294,70 @@ public class JavaScriptSMSInterface extends JavaScriptRegistrarBase{
 			Log.d(T, "SMSDeliveryReceiver.onReceive, intent:"+intent);
 			String referrer = intent.getStringExtra(EXTRA_REFERER);
 			
-			String resultData = getResultData();
+			boolean multiPartsSMS = intent.getBooleanExtra(EXTRA_MULTIPART_FLAG, false);
 			
-			int resultCode = getResultCode();
+			int genericResultCode = getResultCode();
+			int resultCode;
 			
-            switch (resultCode){
+            switch (genericResultCode){
             case Activity.RESULT_OK:                      
-            	Toast.makeText(mActivity, "SMS sent",Toast.LENGTH_LONG).show();
-            	mSMSDeliveryResultCodes.put(referrer, RESULT_OK);
+//            	Toast.makeText(mActivity, "SMS sent",Toast.LENGTH_LONG).show();
+            	resultCode = RESULT_OK;
             	break;
             	
             case SmsManager.RESULT_ERROR_GENERIC_FAILURE:  
-            	Toast.makeText(mActivity, "Generic failure",Toast.LENGTH_LONG).show();
-            	mSMSDeliveryResultCodes.put(referrer, RESULT_ERROR_GENERIC_FAILURE);
+//            	Toast.makeText(mActivity, "Generic failure",Toast.LENGTH_LONG).show();
+            	resultCode = RESULT_ERROR_GENERIC_FAILURE;
                 break;
                 
             case SmsManager.RESULT_ERROR_NO_SERVICE:       
-            	Toast.makeText(mActivity, "No service",Toast.LENGTH_LONG).show();
-            	mSMSDeliveryResultCodes.put(referrer, RESULT_ERROR_GENERIC_FAILURE);
+//            	Toast.makeText(mActivity, "No service",Toast.LENGTH_LONG).show();
+            	resultCode = RESULT_ERROR_GENERIC_FAILURE;
             	break;
             	
             case SmsManager.RESULT_ERROR_NULL_PDU:         
-            	Toast.makeText(mActivity, "Null PDU",Toast.LENGTH_LONG).show();
-            	mSMSDeliveryResultCodes.put(referrer, RESULT_ERROR_NULL_PDU);
+//            	Toast.makeText(mActivity, "Null PDU",Toast.LENGTH_LONG).show();
+            	resultCode = RESULT_ERROR_NULL_PDU;
             	break;
             	
             case SmsManager.RESULT_ERROR_RADIO_OFF:        
-            	Toast.makeText(mActivity, "Radio off",Toast.LENGTH_LONG).show();
-            	mSMSDeliveryResultCodes.put(referrer, RESULT_ERROR_RADIO_OFF);            	
+//            	Toast.makeText(mActivity, "Radio off",Toast.LENGTH_LONG).show();
+            	resultCode = RESULT_ERROR_RADIO_OFF;
             	break;
             	
             default: 
             	// unknown error
-            	mSMSDeliveryResultCodes.put(referrer, RESULT_ERROR_GENERIC_FAILURE);
+//            	Toast.makeText(mActivity, "Unknown error status: " + genericResultCode, Toast.LENGTH_LONG).show();
+            	resultCode = RESULT_ERROR_GENERIC_FAILURE;
             }
 			
+            // update status map
+            DeliveryResultEntry entry =  mSMSDeliveryResultCodes.get(referrer);
+            if(entry != null){
+            	synchronized (entry) {
+                    if(multiPartsSMS){
+                    	entry.partsCount--;
+                    	if(entry.partsCount > 0){
+                    		// already send some part of sms
+                    		// remember last error
+                    		if(entry.lastErrorCode == RESULT_OK){
+                    			entry.lastErrorCode = resultCode;
+                    		}
+                    	} else{
+                    		// already send last part of sms
+                    		// return in statusCode last error or resultCode
+                    		if(resultCode != RESULT_OK){
+                    			entry.statusCode = resultCode;
+                    		} else{
+                    			entry.statusCode = entry.lastErrorCode;
+                    		}
+                    	}
+                    } else{
+                		entry.statusCode = resultCode;                    	
+                    }
+				}
+            }
+            
 			ThreadBlocker threadBlocker = mThreadBlockerMap.get(referrer);
 			if(threadBlocker != null){
 				threadBlocker.unblockThread();
@@ -315,9 +377,33 @@ public class JavaScriptSMSInterface extends JavaScriptRegistrarBase{
 		}
 	}
 	
-	
 	interface ResultCallback{
 		public void onResult(Object result);
+	}
+	
+	static class DeliveryResultEntry{
+		int statusCode;
+		
+		int partsCount;
+		
+		int lastErrorCode = RESULT_OK;
+		
+		public DeliveryResultEntry(int partsCount, int statusCode){		
+			this.partsCount = partsCount;
+			this.statusCode = statusCode;
+		}
+		
+		public DeliveryResultEntry(int partsCount){		
+			this(partsCount, 0);
+		}
+		
+		public boolean hasErorr(){
+			return lastErrorCode != RESULT_OK;
+		}
+		
+		public boolean isMultipartsSMS(){
+			return partsCount > 1; 
+		}
 	}
 	
 	class ThreadBlocker{

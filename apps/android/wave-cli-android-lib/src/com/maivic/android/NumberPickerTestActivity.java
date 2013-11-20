@@ -35,6 +35,8 @@ import com.maivic.android.widgets.R;
 
 /**
  * Activity to test NumberPicker widget
+ * 
+ * @deprecated
  */
 @SuppressLint("DefaultLocale")
 public class NumberPickerTestActivity extends Activity {
@@ -72,7 +74,7 @@ public class NumberPickerTestActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_widgets_test);
 		mNumberPicker = (NumberPicker) findViewById(R.id.numberPixker1);
-		mNumberPicker.setLayoutSetupHelper(new CustomisatedLayoutHelper(this));
+//		mNumberPicker.setLayoutSetupHelper(new CustomisatedLayoutHelper(this));
 		getIds();
 		setupDefaultNumberPisker();
 		initilizeControls();
@@ -86,7 +88,7 @@ public class NumberPickerTestActivity extends Activity {
 		mNumberPicker.setLabel("Minute");
 		mNumberPicker.setLabel_plural("Minutes");
 		mNumberPicker.setCheckbox_first_value(new BigDecimal(1));
-		mNumberPicker.setAlign(AlignType.HORIZONTAL);
+//		mNumberPicker.setAlign(AlignType.HORIZONTAL);
 		try {
 			mNumberPicker.setStepsPattern("-1; +1");
 		} catch (StepsParseException e) {

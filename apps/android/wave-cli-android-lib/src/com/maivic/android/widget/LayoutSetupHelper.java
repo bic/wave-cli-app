@@ -16,7 +16,7 @@ import android.widget.Checkable;
  */
 public abstract class LayoutSetupHelper {
 
-	static interface ActionButtonClickCallback {
+	public static interface ActionButtonClickCallback {
 		public void onZerroCheckboxClick(Checkable buttonView,
 				boolean checkedValue);
 
