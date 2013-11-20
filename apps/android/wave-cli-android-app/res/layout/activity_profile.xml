@@ -1,0 +1,149 @@
+<!-- <LinearLayout -->
+<!-- xmlns:android="http://schemas.android.com/apk/res/android" -->
+<!-- xmlns:apps="http://schemas.android.com/apk/res/com.maivic.android.app" -->
+<!-- xmlns:tools="http://schemas.android.com/tools" -->
+<!-- android:layout_width="match_parent" -->
+<!-- android:layout_height="match_parent" -->
+<!-- android:orientation="vertical" -->
+<!-- tools:context=".ProfileActivity" > -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res/com.maivic.android.app"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <!-- Personal information -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Informatii personale"
+                android:textSize="24sp" />
+
+            <com.maivic.android.app.custom.LabeledEditText
+                android:id="@+id/editName"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                apps:label="Nume" />
+
+            <com.maivic.android.app.custom.LabeledEditText
+                android:id="@+id/editTelefone"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                apps:label="Telefon" />
+        </LinearLayout>
+
+        <!-- Location information -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="TODO LOCATION"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <!-- Autentificxation information -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="TODO AUTENTIFICATION"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <!-- Facture information -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="FACTURARE"
+                android:textSize="24sp" />
+
+            <com.maivic.android.app.custom.LabeledEditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                apps:label="Nume firma" />
+
+            <com.maivic.android.app.custom.LabeledEditText
+                android:id="@+id/editTelefone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                apps:label="CUI" />
+
+            <com.maivic.android.app.custom.LabeledEditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                apps:label="Reg. Com." />
+
+            <com.maivic.android.app.custom.LabeledEditText
+                android:id="@+id/editTelefone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                apps:label="Banka" />
+
+            <com.maivic.android.app.custom.LabeledEditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                apps:label="Cont IBAN" />
+
+            <com.maivic.android.app.custom.LabeledEditText
+                android:id="@+id/editTelefone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                apps:label="Adresa" />
+
+            <com.maivic.android.app.custom.LabeledEditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                apps:label="Judet" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView> <!-- </LinearLayout> -->

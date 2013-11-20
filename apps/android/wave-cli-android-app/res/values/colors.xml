@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="orange">#FFF04E23</color>
+    <drawable name="np_button_bckg_pressed">#B23B25</drawable>
+    <drawable name="np_button_bckg_normal">#FFFFFF</drawable>
+</resources>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Used to store -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res/com.maivic.android.app"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <!-- Already payed -->
+
+    <LinearLayout
+        android:id="@+id/alreadyPaidSection"
+        style="@style/CommandBillItemStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back_double_line"
+        android:orientation="horizontal" >
+
+        <com.maivic.android.app.custom.FontedTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="ACHITAT:"
+            android:textSize="24sp"
+            apps:fontName="@string/font_avenir_black" />
+
+        <com.maivic.android.app.custom.FontedTextView
+            android:id="@+id/tvAlreadyPaid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="80,00 lei"
+            android:textColor="#004043"
+            android:textSize="20sp"
+            apps:fontName="@string/font_avenir_light" />
+    </LinearLayout>
+
+    <!-- Have to payed -->
+
+    <LinearLayout
+        android:id="@+id/extraPaidSection"
+        style="@style/CommandBillItemStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back_double_line"
+        android:orientation="vertical" >
+
+        <com.maivic.android.app.custom.FontedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INCA DE ACHITAT"
+            android:textSize="24sp"
+            apps:fontName="@string/font_avenir_black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <com.maivic.android.app.custom.FontedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&amp; TIPS"
+                android:textColor="#8C8D8E"
+                android:textSize="24sp"
+                apps:fontName="@string/font_avenir_light" />
+
+            <com.maivic.android.app.custom.FontedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="5dp"
+                android:text="29,00 lei"
+                android:textColor="@color/orange"
+                android:textSize="20sp"
+                apps:fontName="@string/font_avenir_light" />
+
+            <Button
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/btn_plus" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <com.maivic.android.app.custom.FontedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SUMELE IN EXCES DE"
+                android:textColor="#A2A5A4"
+                android:textSize="12sp"
+                apps:fontName="@string/font_avenir_light" />
+
+            <com.maivic.android.app.custom.FontedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="10,00 lei"
+                android:textSize="12sp"
+                apps:fontName="@string/font_avenir_light" />
+
+            <com.maivic.android.app.custom.FontedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REPREZINTA SERVICII"
+                android:textColor="#A2A5A4"
+                android:textSize="12sp"
+                apps:fontName="@string/font_avenir_light" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/totalPaimentSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back_double_line"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/btn_minus" />
+
+            <com.maivic.android.app.custom.FontedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TOTAL "
+                android:textSize="24sp"
+                apps:fontName="@string/font_avenir_black" />
+
+            <com.maivic.android.app.custom.FontedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&amp; TIPS"
+                android:textColor="#8c8d8e"
+                android:textSize="24sp"
+                apps:fontName="@string/font_avenir_light" />
+
+            <com.maivic.android.app.custom.FontedTextView
+                android:id="@+id/tvPayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="80,00 lei"
+                android:textColor="@color/orange"
+                android:textSize="20sp"
+                apps:fontName="@string/font_avenir_light" />
+
+            <Button
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/btn_plus" />
+        </LinearLayout>
+
+        <com.maivic.android.app.custom.FontedTextView
+            android:id="@+id/tvTotalPaiment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="sumele in exces de 74,00 lei reprezinta servicii"
+            android:textSize="12sp"
+            apps:fontName="@string/font_avenir_light" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/paymentDescSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back_double_line"
+        android:orientation="vertical"
+        android:paddingLeft="15dp" >
+
+        <com.maivic.android.app.custom.FontedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Wu Xing si Wave iti multumesc!"
+            android:textColor="@color/orange"
+            apps:fontName="@string/font_avenir_black" />
+
+        <com.maivic.android.app.custom.FontedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Comanda Ta se pregateste"
+            android:textColor="@color/orange"
+            apps:fontName="@string/font_avenir_black" />
+
+        <com.maivic.android.app.custom.FontedTextView
+            android:id="@+id/tvCommandDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Comanda ta in valoare de 72 RON e confirmata sub nr 8743 si  va fi livrata in locatia
+Romania-Bucuresti-Zona industriala Pipera-
+Cladirea Microsoft 1- etaj 5 receptie
+Confirmarea de plata a fost trimisa la adresa de mail ion.mancamult@intotdeauna.ro
+Livrarea va avea loc intre orele 12:00 si 13:00, si va fi anuntata prin push notification
+            "
+            android:textSize="12sp"
+            apps:fontName="@string/font_avenir_light" />
+    </LinearLayout>
+
+    <!-- payment buttons -->
+
+    <LinearLayout
+        android:id="@+id/paymentButtonsSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <com.maivic.android.app.custom.FontedButton
+            android:id="@+id/btnPayCash"
+            style="@style/AppButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="4"
+            android:gravity="center_horizontal"
+            android:text="Plateste\nCash" />
+
+        <com.maivic.android.app.custom.FontedButton
+            android:id="@+id/btnPayCard"
+            apps:fontName="@string/font_avenir_medium"
+            style="@style/AppButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:gravity="center_horizontal"
+            android:text="Plateste cu\nCard" />
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/wvNotaDePlata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

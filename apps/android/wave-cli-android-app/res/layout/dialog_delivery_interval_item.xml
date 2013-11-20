@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res/com.maivic.android.app"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF" >
+
+    <com.maivic.android.app.custom.FontedTextView
+        android:id="@+id/tvDeliveryIntervalValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/black"
+        android:padding="10dp"
+        android:text="12:00 - 13:00"
+        android:textSize="18sp" />
+
+</RelativeLayout>

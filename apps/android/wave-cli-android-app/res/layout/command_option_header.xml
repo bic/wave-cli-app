@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res/com.maivic.android.app"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/back_options_header" >
+
+    <com.maivic.android.app.custom.FontedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="Optiuni"
+        android:textSize="16sp"
+        apps:fontName="@string/font_avenir_medium" />
+
+    <!-- <TextView -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="70dp" -->
+    <!-- android:layout_gravity="center_vertical" -->
+    <!-- android:paddingLeft="10dp" -->
+    <!-- android:text="Optiuni" -->
+    <!-- android:textSize="16sp" /> -->
+
+</RelativeLayout> <!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" -->
+<!-- xmlns:apps="http://schemas.android.com/apk/res/com.maivic.android.app" -->
+<!-- android:layout_width="match_parent" -->
+<!-- android:layout_height="wrap_content" -->
+<!-- android:orientation="vertical" > -->
+
+
+<!-- <LinearLayout -->
+<!-- android:layout_width="match_parent" -->
+<!-- android:layout_height="wrap_content" -->
+<!-- android:orientation="horizontal" -->
+<!-- android:paddingBottom="10dp" -->
+<!-- android:paddingTop="10dp" > -->
+
+
+<!-- <com.maivic.android.app.customview.numberpicker.MyNumberPicker -->
+<!-- android:id="@+id/npOptionLeft" -->
+<!-- android:layout_width="match_parent" -->
+<!-- android:layout_height="wrap_content" -->
+<!-- android:layout_gravity="center_vertical" -->
+<!-- android:layout_weight="1" -->
+<!-- apps:checkbox_on_zero="true" -->
+<!-- apps:inline_style="true" -->
+<!-- apps:label="Sos dulce" -->
+<!-- apps:value="0" /> -->
+
+
+<!-- <com.maivic.android.app.customview.numberpicker.MyNumberPicker -->
+<!-- android:id="@+id/npOptionRight" -->
+<!-- android:layout_width="match_parent" -->
+<!-- android:layout_height="wrap_content" -->
+<!-- android:layout_gravity="center_vertical" -->
+<!-- android:layout_weight="1" -->
+<!-- apps:checkbox_on_zero="true" -->
+<!-- apps:inline_style="true" -->
+<!-- apps:label="Tacamuri Metalice" -->
+<!-- apps:value="4" /> -->
+<!-- </LinearLayout> -->
+
+
+<!-- </LinearLayout> -->

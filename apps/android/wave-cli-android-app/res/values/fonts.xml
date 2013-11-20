@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="font_avenir_black">fonts/avenir_black.ttf</string>
+    <string name="font_avenir_black_oblique">fonts/avenir_black_oblique.ttf</string>
+    <string name="font_avenir_book">fonts/avenir_book.ttf</string>
+    <string name="font_avenir_book_oblique">fonts/avenir_book_oblique.ttf</string>
+    <string name="font_avenir_heavy">fonts/avenir_heavy.ttf</string>
+    <string name="font_avenir_heavy_oblique">fonts/avenir_heavy_oblique.ttf</string>
+    <string name="font_avenir_light">fonts/avenir_light.ttf</string>
+    <string name="font_avenir_light_oblique">fonts/avenir_light_oblique.ttf</string>
+    <string name="font_avenir_medium">fonts/avenir_medium.ttf</string>
+    <string name="font_avenir_medium_oblique">fonts/avenir_medium_oblique.ttf</string>
+    <string name="font_avenir_oblique">fonts/avenir_oblique.ttf</string>
+    <string name="font_avenir_roman">fonts/avenir_roman.ttf</string>
+</resources>

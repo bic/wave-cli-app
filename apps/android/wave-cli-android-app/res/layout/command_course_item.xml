@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res/com.maivic.android.app"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bck_offer_item"
+    android:orientation="horizontal"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <!-- Main course(big) curse0 -->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.maivic.android.app.custom.FontedTextView
+                android:id="@+id/tvCourse0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tocanita de Porc"
+                android:textSize="22sp"
+                apps:fontName="@string/font_avenir_medium" />
+
+            <TextView
+                android:id="@+id/tvCourseDesc0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CARTOFI PAI MACADAMI INCINS"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Course1/Course2 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="5dp" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/icon_first_course" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/image1"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp" >
+
+                    <com.maivic.android.app.custom.FontedTextView
+                        apps:fontName="@string/font_avenir_medium"
+                        android:id="@+id/tvCourse1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Supa de fasole"
+                        android:textSize="14sp" />
+
+                    <com.maivic.android.app.custom.FontedTextView
+                        apps:fontName="@string/font_avenir_medium"
+                        android:id="@+id/tvCourseDesc1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BATUTA"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Course2 -->
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/icon_seccond_course" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/image2"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp" >
+
+                    <com.maivic.android.app.custom.FontedTextView
+                        apps:fontName="@string/font_avenir_medium"
+                        android:id="@+id/tvCourse2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tramsu"
+                        android:textSize="14sp" />
+
+                    <com.maivic.android.app.custom.FontedTextView
+                        apps:fontName="@string/font_avenir_medium"
+                        android:id="@+id/tvCourseDesc2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LOREM IPSUM"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.maivic.android.acom.maivic.android.app.custom.numberpicker.MyNumberPicker
+        lyout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0"
+        apps:align="vertical"
+        apps:checkbox_on_zero="true"
+        apps:min="2"
+        apps:steps="+1; -1" />
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res/com.maivic.android.app"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
+
+        <com.maivic.android.app.custom.numberpicker.MyNumberPicker
+            android:id="@+id/npOptionLeft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            apps:checkbox_on_zero="true"
+            apps:max="1"
+            apps:min="0"
+            apps:inline_style="true"
+            apps:label="Sos dulce"
+            apps:value="0" />
+
+        <com.maivic.android.app.custom.numberpicker.MyNumberPicker
+            android:id="@+id/npOptionRight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            apps:checkbox_on_zero="true"
+            apps:inline_style="true"
+            apps:label="Tacamuri Metalice"
+            apps:value="4" />
+    </LinearLayout>
+
+</LinearLayout>
