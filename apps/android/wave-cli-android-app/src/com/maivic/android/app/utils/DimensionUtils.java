@@ -12,7 +12,7 @@ public class DimensionUtils {
 	
 	public static float convertPxToDp(float pxSize){
 		DisplayMetrics displayMetrix = Resources.getSystem().getDisplayMetrics();
-		return displayMetrix.density * pxSize;
+		return pxSize / displayMetrix.density;
 	}
 	
 	public static float getDimensionFromResource(int resId){

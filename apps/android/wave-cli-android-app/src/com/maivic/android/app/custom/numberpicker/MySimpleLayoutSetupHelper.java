@@ -1,10 +1,12 @@
 package com.maivic.android.app.custom.numberpicker;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.maivic.android.app.R;
 import com.maivic.android.app.utils.DimensionUtils;
@@ -62,29 +64,34 @@ public class MySimpleLayoutSetupHelper extends SimpleLayoutSetupHelper {
 	protected View createActionButton() {
 		// TODO from xml resource
 		Button button = new Button(mContext);
-
-		if (mNumberPicker.getAlign() == AlignType.HORIZONTAL) {
-			// update button size for horizontal alignment
-			// int size = (int)
-			// DimensionUtils.getDimensionFromResource(R.dimen.np_butotn_size);
-			int size = (int) DimensionUtils.convertDpToPx(30);
-			button.setWidth(size);
-			button.setHeight(size);
-		}
-
 		return button;
 	}
 
 	@Override
 	protected void onLayoutCreated() {
+		
 		if(mNumberPicker.getAlign() == AlignType.VERTICAL){
+			// vertical
 			cbxZeroValueCheckbox.setWidth((int)DimensionUtils.convertDpToPx(50));
 			cbxZeroValueCheckbox.setHeight( (int)DimensionUtils.convertDpToPx(50));
 			cbxZeroValueCheckbox.setButtonDrawable(R.drawable.cbx_big_selector);
 			txtValueView.setTextSize(42);
 			FontUtils.setFontForTextView(mContext, txtValueView, R.string.font_avenir_light);
 			
+			int buttonSize = (int) DimensionUtils.convertDpToPx(50);
+			
+			List<View> actionButtons = getActionButtons();
+			if(actionButtons != null && actionButtons.size() > 0){
+				for(View buttonView: actionButtons){
+					Button button = (Button) buttonView;
+					
+					button.setWidth(buttonSize);
+					button.setHeight(buttonSize);
+				}
+			}
+
 		} else {
+			// horizontal
 			cbxZeroValueCheckbox.setButtonDrawable(R.drawable.cbx_selector);
 			txtValueView.setTextSize(20);
 			txtValueView.setTextColor(mContext.getResources().getColorStateList(R.color.np_value_text_color));
@@ -92,8 +99,21 @@ public class MySimpleLayoutSetupHelper extends SimpleLayoutSetupHelper {
 			
 			FontUtils.setFontForTextView(mContext, txtValueView, R.string.font_avenir_black);
 			FontUtils.setFontForTextView(mContext, txtLabelView, R.string.font_avenir_medium);
-			
 			buttonsContainer.setBackgroundResource(R.drawable.np_horizonral_bckg_color);
+			
+			// setup buttons
+			int  buttonSize = (int) DimensionUtils.convertDpToPx(30);
+			List<View> actionButtons = getActionButtons();
+			if(actionButtons != null && actionButtons.size() > 0){
+				for(View buttonView: actionButtons){
+					Button button = (Button) buttonView;
+					LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(buttonSize, buttonSize);
+					button.setLayoutParams(params);
+				}
+				// add padding fot labelValue container
+				int paddingValue = (int)DimensionUtils.convertDpToPx(5);
+				labelValueContainer.setPadding(paddingValue, paddingValue, paddingValue, paddingValue);
+			}
 		}
 	}
 
