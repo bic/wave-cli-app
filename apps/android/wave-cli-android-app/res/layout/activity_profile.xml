@@ -32,24 +32,74 @@
             android:layout_marginTop="5dp"
             android:orientation="vertical" >
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Informatii personale"
-                android:textSize="24sp" />
+                android:orientation="horizontal"
+                android:paddingBottom="10dp" >
 
-            <com.maivic.android.app.custom.LabeledEditText
-                android:id="@+id/editName"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                apps:label="Nume" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_user" />
 
-            <com.maivic.android.app.custom.LabeledEditText
-                android:id="@+id/editTelefone"
-                android:layout_width="200dp"
+                <com.maivic.android.app.custom.FontedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingLeft="10dp"
+                    android:text="Informatii personale"
+                    android:textSize="18sp"
+                    apps:fontName="@string/font_avenir_medium" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                apps:label="Telefon" />
+                android:orientation="horizontal" >
+
+                <com.maivic.android.app.custom.LabeledEditText
+                    android:id="@+id/editName"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    apps:label="@string/label_name" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:src="@drawable/icon_add_user" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <com.maivic.android.app.custom.LabeledEditText
+                    android:id="@+id/editTelefone"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    apps:label="@string/label_telefon" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:src="@drawable/icon_add_user" />
+            </LinearLayout>
         </LinearLayout>
 
         <!-- Location information -->

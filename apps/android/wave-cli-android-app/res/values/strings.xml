@@ -6,6 +6,40 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_confirmation_activty">ConfirmationActivty</string>
     <string name="title_activity_profile">ProfileActivity</string>
-
     <string name="dialog_delivery_title">Alege un interval</string>
+
+    <!-- profile activity -->
+    
+    <!-- personal information -->
+    <string name="label_personal_information">Informatii personale</string>
+    <string name="label_name">Nume</string>
+    <string name="label_telefon">Telefon</string>
+
+    <!-- location -->
+    <string name="label_location">Locatie</string>
+    <string name="button_other_location_data">Locatii de alta data</string>
+    <string name="label_livration_zona">Zona de livrare</string>
+    <string name="label_self_location">Locatia Ta</string>
+    <string name="label_incomplect">Incomplecta</string>
+
+    <!-- autentification -->
+    <string name="label_autentification">Autentificare</string>
+    <string name="hint_sign_with_wave">Sign in with Wave</string>
+    <string name="hint_sign_with_facebook">Sign in with Facebook</string>
+    <string name="hint_sign_with_google">Sign in with Google</string>
+    <string name="hint_sign_with_google">Sign in with Google</string>
+    <string name="label_password">Password</string>
+
+    <!-- factureare -->
+    <string name="label_facturare">Facturare</string>
+    <string name="label_name_of_firm">Nume firma</string>
+    <string name="label_cui">CUI</string>
+    <string name="label_reg_com">Reg. Com.</string>
+    <string name="label_bank">Banka</string>
+    <string name="label_cont_iban">Cont IBAN</string>
+    <string name="label_addres">Adresa</string>
+    <string name="label_country">Judet</string>
+    
+    <!-- ~profile activity -->
+
 </resources>

@@ -26,7 +26,7 @@ public class HeaderFragment extends Fragment{
 	TextView mActiveComandsCountText;
 	RelativeLayout mActiveCommands;
 	ImageButton mDeliveryInterButton;
-	
+	ImageButton mLocationButton;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -42,6 +42,7 @@ public class HeaderFragment extends Fragment{
 		mActiveComandsCountText = (TextView) view.findViewById(R.id.tvActiveCommandsCount);
 		mCurrentPageText = (TextView) view.findViewById(R.id.tvCurrentPage);
 		mActiveCommands = (RelativeLayout) view.findViewById(R.id.rlActiveCommands);
+		mLocationButton = (ImageButton) view.findViewById(R.id.btnLocation);
 		
 		final Context context = getActivity();
 		FontUtils.setFontFotTextView(context, mDeliveryIntervalText, FontUtils.FONT_AVENIR_MEDIUM);
@@ -56,14 +57,14 @@ public class HeaderFragment extends Fragment{
 	}
 		
 	private void setListeners(){
-		mActiveCommands.setOnClickListener(new OnClickListener() {
+		mLocationButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// just open profile activity
 				
-//				Intent intent = new Intent(getActivity(), ProfileActivity.class);
-//				startActivity(intent);
+				Intent intent = new Intent(getActivity(), ProfileActivity.class);
+				startActivity(intent);
 			}
 		});
 		

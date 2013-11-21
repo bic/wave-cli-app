@@ -122,13 +122,14 @@
         </LinearLayout>
     </LinearLayout>
 
-    <com.maivic.android.acom.maivic.android.app.custom.numberpicker.MyNumberPicker
-        lyout_width="wrap_content"
+    <com.maivic.android.app.custom.numberpicker.MyNumberPicker
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_weight="0"
         apps:align="vertical"
         apps:checkbox_on_zero="true"
+        apps:inline_style="false"
         apps:min="2"
         apps:steps="+1; -1" />
 

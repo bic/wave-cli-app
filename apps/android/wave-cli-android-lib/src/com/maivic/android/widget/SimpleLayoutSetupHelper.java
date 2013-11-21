@@ -184,8 +184,8 @@ public class SimpleLayoutSetupHelper extends LayoutSetupHelper {
 					LinearLayout.LayoutParams.WRAP_CONTENT);
 			p.weight = 1;
 //			p.leftMargin = p.rightMargin = 20;
-			labelValueContainer.setLayoutParams(p);
-			
+			labelValueContainer.setLayoutParams(p);			
+//			labelValueContainer.setPadding(10, 10, 10, 10);
 			content.addView(halfInlineButtonsGroup2, lp);
 			
 		} else{
