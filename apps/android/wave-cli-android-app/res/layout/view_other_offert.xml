@@ -22,7 +22,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:gravity="right"
+        android:visibility="gone"
         android:text="by Wuxing"
         android:textColor="#FFFFFF" />
+
+    <com.maivic.android.app.custom.locationpicker.LocationBitView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.maivic.android.app"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/validationContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0"
+        android:orientation="vertical"
+        android:paddingLeft="5dp" >
+
+        <!-- Location kind -->
+
+        <com.maivic.android.app.custom.FontedTextView
+            android:id="@+id/tvText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Zona de livrare"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:fontName="@string/font_avenir_medium" />
+
+        <com.maivic.android.app.custom.FontedTextView
+            android:id="@+id/incompleteView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/msg_location_incomplete"
+            android:textColor="#F04E23"
+            android:textSize="16sp"
+            app:fontName="@string/font_avenir_black" />
+
+        <!-- complete location -->
+
+        <LinearLayout
+            android:id="@+id/completeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <com.maivic.android.app.custom.FontedTextView
+                android:id="@+id/tvText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/msg_location_complete"
+                android:textColor="#004043"
+                android:textSize="16sp"
+                app:fontName="@string/font_avenir_black" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-15dp"
+                android:src="@drawable/cbx_big_on_normal" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

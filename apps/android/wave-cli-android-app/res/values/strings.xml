@@ -41,5 +41,10 @@
     <string name="label_country">Judet</string>
     
     <!-- ~profile activity -->
-
+    
+    <!-- location picker -->
+    <string name="msg_location_incomplete">Incompleta</string>
+    <string name="msg_location_complete">Ok</string>
+    <string name="location_kind_delivery_zone">Zona de livrare</string>
+    <string name="location_kind_your_location">Locatia ta</string>
 </resources>

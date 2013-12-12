@@ -117,6 +117,21 @@
                 android:layout_gravity="center_horizontal"
                 android:text="TODO LOCATION"
                 android:textSize="24sp" />
+
+            <com.maivic.android.app.custom.locationpicker.LocationPicker
+                android:id="@+id/locationPicker1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                apps:location_kind="@string/location_kind_delivery_zone"
+                apps:picker_level="0" />
+
+            <com.maivic.android.app.custom.locationpicker.LocationPicker
+                android:id="@+id/locationPicker2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                apps:location_kind="@string/location_kind_your_location"
+                apps:picker_level="1" />
         </LinearLayout>
 
         <!-- Autentificxation information -->
