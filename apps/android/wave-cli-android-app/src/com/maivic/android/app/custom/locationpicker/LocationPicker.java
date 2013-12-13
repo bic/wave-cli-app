@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
 
 import com.maivic.android.app.R;
+import com.maivic.android.app.custom.locationpicker.DatasetModel.UpdateEvent;
 import com.maivic.android.app.custom.locationpicker.LocationBitView.OnLocationBitRemoveListener;
 
 @SuppressLint("NewApi")
@@ -318,8 +319,15 @@ public class LocationPicker extends LinearLayout implements Observer{
 	@Override
 	public void update(Observable observable, Object data) {
 		Log.d(T, "call update...");
-		dataset = (Dataset) data;
-		updateDatasetState();			
+		
+		UpdateEvent event = (UpdateEvent) data;
+		dataset = event.dataset;
+		if(pickerLevel >= event.level){
+			updateDatasetState();
+		}
+		
+//		dataset = (Dataset) data;
+//		updateDatasetState();			
 	}
 	
 	// listeners
@@ -356,6 +364,7 @@ public class LocationPicker extends LinearLayout implements Observer{
 			
 			// update dataset model, and inform all child location pickers
 			datasetModel.setDataset(dataset);
+			datasetModel.notifyObservers(new UpdateEvent(dataset, pickerLevel));
 		}
 	};
 	// ~listeners

@@ -19,7 +19,7 @@ public class DatasetModel extends Observable {
 		this.dataset = newDataset;
 		
 		setChanged();
-		notifyObservers(newDataset);
+//		notifyObservers(newDataset);
 	}
 	
 	private Dataset createTestDataset() {
@@ -45,11 +45,24 @@ public class DatasetModel extends Observable {
 		datasetList = new ArrayList<LocationBitDataset>();		
 		datasetList.add(new LocationBitDataset("Chisinew"));
 		datasetList.add(new LocationBitDataset("Hinceht"));
-		datasetList.add(new LocationBitDataset("Leva"));
-		datasetList.add(new LocationBitDataset("Lenin"));
-		datasetList.add(new LocationBitDataset("Putin"));
-//		datasetList.add(new LocationBitDataset("Obama"));
+		datasetList.add(new LocationBitDataset("Botanica"));
+		datasetList.add(new LocationBitDataset("SQL"));
+		datasetList.add(new LocationBitDataset("Etaj 2"));
+		datasetList.add(new LocationBitDataset("Of. 30"));
 		test.location_bits_content_by_picker_level.add(datasetList);		
 		return test;
+	}
+	
+	
+	public static class UpdateEvent{
+		public Dataset dataset;
+		public int level;
+		
+		public UpdateEvent(Dataset dataset, int level) {
+			super();
+			this.dataset = dataset;
+			this.level = level;
+		}
+		
 	}
 }

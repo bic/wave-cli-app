@@ -60,7 +60,7 @@ class LocationBitView extends RelativeLayout {
 			public void onClick(View v) {
 				
 				if(mOnLocationBitRemoveListener != null){
-//					mOnLocationBitRemoveListener.onLocationBitRemove(LocationBitView.this, mLocationBit);
+					mOnLocationBitRemoveListener.onLocationBitRemove(LocationBitView.this, mLocationBit);
 				}
 			}
 		});
