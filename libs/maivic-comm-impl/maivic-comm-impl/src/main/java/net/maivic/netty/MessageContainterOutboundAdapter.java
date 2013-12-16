@@ -1,6 +1,7 @@
 package net.maivic.netty;
 
 import net.maivic.comm.Maivic.MessageContainer;
+import net.maivic.comm.Maivic.MessageContainerOrBuilder;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelOutboundHandlerAdapter;
@@ -11,7 +12,7 @@ public class MessageContainterOutboundAdapter extends
 	@Override
 	public void write(ChannelHandlerContext ctx, Object msg,
 			ChannelPromise promise) throws Exception {
-		MessageContainer container = (MessageContainer) msg;
+		MessageContainerOrBuilder container = (MessageContainerOrBuilder) msg;
 		ChannelFuture f = ctx.writeAndFlush(container);
 	}
 

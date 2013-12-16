@@ -13,18 +13,22 @@ import net.maivic.comm.Relation.RelationType;
 import net.maivic.protocol.Model.Address;
 import net.maivic.protocol.Model.Delivery;
 import net.maivic.protocol.Model.RestaurantsToContact;
+import net.maivic.protocol.Model.Menu;
+import net.maivic.comm.Callback;
 import net.maivic.comm.Relation;
 @Table("restaurants")
 public interface RestaurantRelations {
-  @Relation(name="deliveries",type=RelationType.MANY_TO_ONE)
-  LazyResponse<List<Delivery>>getDeliveries(Restaurant  o);
-  @Relation(name="restaurants_to_contacts",type=RelationType.MANY_TO_ONE)
-  LazyResponse<List<RestaurantsToContact>>getRestaurantsToContacts(Restaurant  o);
-  @Relation(name="address",type=RelationType.ONE_TO_MANY)
-  LazyResponse<Address>getAddress(Restaurant object);
-  @Relation(name="image",type=RelationType.ONE_TO_MANY)
-  LazyResponse<Image>getImage(Restaurant object);
-  @Relation(name="legal_entity",type=RelationType.ONE_TO_MANY)
-  LazyResponse<LegalEntity>getLegalEntity(Restaurant object);
+  @Relation(name="deliveries",type=RelationType.ONE_TO_MANY)
+  LazyResponse<List<Delivery>>getDeliveries(Restaurant  o, Callback<Delivery> cb);
+  @Relation(name="menus",type=RelationType.ONE_TO_MANY)
+  LazyResponse<List<Menu>>getMenus(Restaurant  o, Callback<Menu> cb);
+  @Relation(name="restaurants_to_contacts",type=RelationType.ONE_TO_MANY)
+  LazyResponse<List<RestaurantsToContact>>getRestaurantsToContacts(Restaurant  o, Callback<RestaurantsToContact> cb);
+  @Relation(name="address",type=RelationType.MANY_TO_ONE)
+  LazyResponse<Address>getAddress(Restaurant object , Callback<Address> cb);
+  @Relation(name="image",type=RelationType.MANY_TO_ONE)
+  LazyResponse<Image>getImage(Restaurant object , Callback<Image> cb);
+  @Relation(name="legal_entity",type=RelationType.MANY_TO_ONE)
+  LazyResponse<LegalEntity>getLegalEntity(Restaurant object , Callback<LegalEntity> cb);
 };
 

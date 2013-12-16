@@ -60,8 +60,7 @@ public  abstract  class AbstractRPCServiceClient<T> {
 						response.setProgress(retValue.getProgress().getProgress());
 					}
 				}
-				openRequests.remove(thread_id);
-				threadManager.closeThread(thread_id);	
+					
 				if(retValue.hasException()) {
 					response.setFailure(this.convertException(retValue.getException(), response));
 				}else{
@@ -72,6 +71,7 @@ public  abstract  class AbstractRPCServiceClient<T> {
 						response.setFailure(e);
 					}
 				}
+				
 			
 				
 			} catch (InvalidProtocolBufferException e) {
@@ -94,8 +94,16 @@ public  abstract  class AbstractRPCServiceClient<T> {
 		
 	
 		DefaultLazyResponse<T> lazyResponse = new DefaultLazyResponse<T>(); 
-		openRequests.put(container.getThreadControl().getThreadId(), lazyResponse);
-		return tm.sendWithRetry((T)container.build(),new FixedRetry<T>(FixedRetry.logRetryDelays(5), "nettytcp"), lazyResponse);
+		final int thread_id_ = container.getThreadControl().getThreadId();
+		openRequests.put(thread_id_, lazyResponse);
+		lazyResponse.addSuccessCallback(new Callback<LazyResponse<T>>() {
+			int thread_id= thread_id_;
+			public void call(LazyResponse<T> result) {
+				openRequests.remove(thread_id);
+				threadManager.closeThread(thread_id);
+			}});
+		
+		return tm.sendWithRetry((T)container,new FixedRetry<T>(FixedRetry.logRetryDelays(5), "nettytcp"), lazyResponse);
 	}
 	
 	protected void fillMessageContainer(MessageContainer.Builder container, Message content){

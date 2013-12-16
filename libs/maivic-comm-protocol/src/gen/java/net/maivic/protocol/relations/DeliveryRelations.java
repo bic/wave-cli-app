@@ -9,18 +9,19 @@ import net.maivic.comm.LazyResponse;
 import net.maivic.protocol.Model.Contact;
 import net.maivic.comm.Relation.RelationType;
 import net.maivic.protocol.Model.Delivery;
+import net.maivic.comm.Callback;
 import net.maivic.protocol.Model.Order;
 import net.maivic.comm.Relation;
 import net.maivic.protocol.Model.Location;
 @Table("deliveries")
 public interface DeliveryRelations {
-  @Relation(name="delivering_guy",type=RelationType.ONE_TO_MANY)
-  LazyResponse<Contact>getDeliveringGuy(Delivery object);
-  @Relation(name="location",type=RelationType.ONE_TO_MANY)
-  LazyResponse<Location>getLocation(Delivery object);
-  @Relation(name="order",type=RelationType.ONE_TO_MANY)
-  LazyResponse<Order>getOrder(Delivery object);
-  @Relation(name="restaurant",type=RelationType.ONE_TO_MANY)
-  LazyResponse<Restaurant>getRestaurant(Delivery object);
+  @Relation(name="delivering_guy",type=RelationType.MANY_TO_ONE)
+  LazyResponse<Contact>getDeliveringGuy(Delivery object , Callback<Contact> cb);
+  @Relation(name="location",type=RelationType.MANY_TO_ONE)
+  LazyResponse<Location>getLocation(Delivery object , Callback<Location> cb);
+  @Relation(name="order",type=RelationType.MANY_TO_ONE)
+  LazyResponse<Order>getOrder(Delivery object , Callback<Order> cb);
+  @Relation(name="restaurant",type=RelationType.MANY_TO_ONE)
+  LazyResponse<Restaurant>getRestaurant(Delivery object , Callback<Restaurant> cb);
 };
 

@@ -1,7 +1,8 @@
-package net.maivic.comm;
+package net.maivic.comm.RPC;
 
 import java.util.List;
 
+import net.maivic.comm.LazyResponse;
 import net.maivic.comm.impl.RPCInterface;
 import net.maivic.protocol.Model.Location;
 import net.maivic.protocol.Model.Offer;
@@ -18,16 +19,11 @@ public interface LocationQuery {
 	 */
 	LazyResponse<Location> getLocation( double lon, double lat, double accuracy_in_meters);
 	/**
-	 * Returns the currently active orders for the given Location
+	 * Returns the currently active orders for the given Location. This method can be used to get the current Locationdropbox
 	 * 
 	 * The Method is offered in RPC - Style until relation filters are implemented for the model
 	 * @param location The Location for which to return the offers
 	 * @return
 	 */
 	LazyResponse<List<Offer> > getCurrentActiveOffers(Location location);
-	
-	
-	
-	
-	
 }

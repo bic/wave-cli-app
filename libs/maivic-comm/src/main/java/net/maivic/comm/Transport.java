@@ -56,7 +56,7 @@ public  interface Transport<T> {
 	 */
 	public String getUri();
 	
-	SettableLazyResponse<T> send(T container);
+	SettableLazyResponse<? extends T> send(T container);
 	/**
 	 * 
 	 * @param container The message to send
@@ -64,7 +64,7 @@ public  interface Transport<T> {
 	 * @param sendAfter send the message after the given time;
 	 * @return
 	 */
-	 void send(T container, SettableLazyResponse<T> lazyResponse,long sendAfter);
+	 void send(T container, SettableLazyResponse<? extends T> lazyResponse,long sendAfter);
 	
 	void registerCallback(Callback<T> cb);
 }

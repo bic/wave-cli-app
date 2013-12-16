@@ -3,16 +3,20 @@
 //Outgoing Relations from table 'receipts'
 //////////////////////////////////////////////////
 package net.maivic.protocol.relations;
-import net.maivic.comm.Table;
+import net.maivic.comm.Callback;
 import net.maivic.comm.LazyResponse;
-import net.maivic.protocol.Model.Receipt;
-import net.maivic.comm.Relation.RelationType;
 import java.util.List;
+import net.maivic.comm.Relation.RelationType;
+import net.maivic.comm.Table;
 import net.maivic.comm.Relation;
+import net.maivic.protocol.Model.Receipt;
 import net.maivic.protocol.Model.Payment;
+import net.maivic.protocol.Model.Invoice;
 @Table("receipts")
 public interface ReceiptRelations {
-  @Relation(name="payments",type=RelationType.MANY_TO_ONE)
-  LazyResponse<List<Payment>>getPayments(Receipt  o);
+  @Relation(name="invoices",type=RelationType.ONE_TO_MANY)
+  LazyResponse<List<Invoice>>getInvoices(Receipt  o , Callback<Invoice> cb);
+  @Relation(name="payments",type=RelationType.ONE_TO_MANY)
+  LazyResponse<List<Payment>>getPayments(Receipt  o, Callback<Payment> cb);
 };
 

@@ -7,11 +7,12 @@ import net.maivic.comm.Table;
 import net.maivic.comm.LazyResponse;
 import net.maivic.comm.Relation.RelationType;
 import net.maivic.protocol.Model.Menu;
+import net.maivic.comm.Callback;
 import net.maivic.comm.Relation;
 import net.maivic.protocol.Model.MenuEntry;
 @Table("menu_entries")
 public interface MenuEntryRelations {
-  @Relation(name="menu",type=RelationType.ONE_TO_MANY)
-  LazyResponse<Menu>getMenu(MenuEntry object);
+  @Relation(name="menu",type=RelationType.MANY_TO_ONE)
+  LazyResponse<Menu>getMenu(MenuEntry object , Callback<Menu> cb);
 };
 

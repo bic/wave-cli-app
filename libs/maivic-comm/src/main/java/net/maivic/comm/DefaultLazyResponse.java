@@ -57,7 +57,9 @@ public class DefaultLazyResponse<T> implements SettableLazyResponse<T> {
 			return;
 		}
 		synchronized (this) {
+			t.printStackTrace();
 			this.failedThrowable=new ExecutionException(t);
+			
 			this.notify();
 		}
 		this.consumeCallbacks(ON_FAILURE);

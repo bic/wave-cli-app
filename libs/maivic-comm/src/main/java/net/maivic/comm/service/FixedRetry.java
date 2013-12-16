@@ -2,6 +2,7 @@ package net.maivic.comm.service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 import net.maivic.comm.ExponentialBackoffIterator;
 import net.maivic.comm.SendStrategy;
@@ -48,7 +49,7 @@ public class FixedRetry<T> implements SendStrategy<T> {
 	public boolean hasNext() {
 		if (idx < 0) {
 			return true;
-		} else if(this.retryDelays == null || this.retryDelays.length == idx) {
+		} else if(this.retryDelays == null || this.retryDelays.length-1 == idx) {
 			return false;
 		} else{
 			return true;
@@ -56,7 +57,9 @@ public class FixedRetry<T> implements SendStrategy<T> {
 	}
 
 	public Long next() {
+		if (! this.hasNext()) throw new NoSuchElementException();
 		idx += 1;
+		
 		if (idx == 0) {
 			return System.currentTimeMillis();
 		} else if(this.retryDelays == null || this.retryDelays.length == idx) {
@@ -75,9 +78,9 @@ public class FixedRetry<T> implements SendStrategy<T> {
 		}
 		return null;		
 	}
+	
 	@Override
 	public void remove() {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException("remove");
 	}
 }

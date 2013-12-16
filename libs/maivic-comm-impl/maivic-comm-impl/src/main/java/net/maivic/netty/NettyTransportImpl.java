@@ -18,10 +18,17 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
+import javax.naming.OperationNotSupportedException;
+
+import com.google.protobuf.ByteString;
+
 import net.maivic.comm.Callback;
 import net.maivic.comm.DefaultLazyResponse;
 import net.maivic.comm.Function;
 import net.maivic.comm.LazyResponse;
+import net.maivic.comm.Maivic.Identity;
+import net.maivic.comm.Maivic.MessageContainerOrBuilder;
+import net.maivic.comm.PlatformSupport;
 import net.maivic.comm.Maivic.MessageContainer;
 import net.maivic.comm.SettableLazyResponse;
 import net.maivic.comm.Transport;
@@ -30,7 +37,7 @@ import net.maivic.context.Context;
 import net.maivic.context.Log;
 import net.maivic.netty.MessageContainerInboundAdapter.IncomingCallBack;
 
-public class NettyTransportImpl implements Transport<MessageContainer>{
+public class NettyTransportImpl implements Transport<MessageContainerOrBuilder>{
 	private static Log log = Context.get().log();
 	private String TAG = NettyTransportImpl.class.toString();
 	private SocketClient socketClient= null;
@@ -38,11 +45,13 @@ public class NettyTransportImpl implements Transport<MessageContainer>{
 	private int port;
 	private static final String[] transportTypes=new String[]{"nettytcp"};
 	private String scheme = null;
+	private PlatformSupport platform_support;
 	public NettyTransportImpl() {
 		ResourceBundle bundle = (ResourceBundle) Context.get().get("Config");
 		;
 		this.port = (Integer) bundle.getObject("tcpip-port");
 		this.init(bundle.getString("tcpip-uri"));
+	
 	}
 	public NettyTransportImpl(String uri_string){
 		this.init(uri_string);
@@ -58,6 +67,7 @@ public class NettyTransportImpl implements Transport<MessageContainer>{
 				break;
 			}
 		}
+		
 		this.TAG="TransportImpl("+uri_string+")";
 		if(!accepted) {
 			throw new IllegalArgumentException("Scheme " + scheme + " not accepted!");
@@ -67,6 +77,10 @@ public class NettyTransportImpl implements Transport<MessageContainer>{
 		this.port=uri.getPort();		
 		socketClient = SocketClient.get();
 		
+		this.platform_support = (PlatformSupport)Context.get().get("PlatformSupport");
+		if(this.platform_support == null){
+			throw new UnsupportedOperationException( "No Platform support provided!!!");
+		}
 	}
 	public String getScheme() {
 		return this.scheme;
@@ -89,15 +103,16 @@ public class NettyTransportImpl implements Transport<MessageContainer>{
 	private Callback<Transport> afterConnectCallback=null; 
 	private Callback<Transport> beforeDisconnectCallback=null;
 	private ChannelFuture addListener;
-	private List<Callback<MessageContainer>> callbacks = new ArrayList<Callback<MessageContainer>>();
+	private List<Callback<MessageContainerOrBuilder>> callbacks = new ArrayList<Callback<MessageContainerOrBuilder>>();
+	private boolean firstMessageAfterConnect=true;
 	private class  SendListener implements GenericFutureListener<ChannelFuture> {
 		private Set<Channel> chans= new HashSet<Channel>();
-		private MessageContainer content;
+		private MessageContainerOrBuilder content;
 		DefaultChannelPromise promise =null;
 		SendFailed failedException=null; 
 		private int retry=0;
 		private final int MAX_RETRY=3;
-		public SendListener( MessageContainer content, DefaultChannelPromise promise) {
+		public SendListener( MessageContainerOrBuilder content, DefaultChannelPromise promise) {
 			this.content=content;
 			this.promise=promise;
 		}
@@ -146,7 +161,7 @@ public class NettyTransportImpl implements Transport<MessageContainer>{
 		}
 		ChannelFuture ret = this.socketClient.connect(this.host, this.port, new IncomingCallBack(){
 			public void onIncomingMessage(MessageContainer msg) {
-				for (Callback<MessageContainer>callback: NettyTransportImpl.this.callbacks){
+				for (Callback<MessageContainerOrBuilder>callback: NettyTransportImpl.this.callbacks){
 					callback.call(msg);
 				}
 			}
@@ -182,13 +197,15 @@ public class NettyTransportImpl implements Transport<MessageContainer>{
 	}
 
 	public void cbAfterConnect(Callback<Transport> cb) {
+		this.firstMessageAfterConnect=true;
 		this.afterConnectCallback =cb;
+		
 	}
 	
 	public String getUri() {
 		return "tcp://" + host + ":" + Integer.toString(this.port);
 	}
-	private Channel  channelSelect( MessageContainer container,Set<Channel> exclude) {
+	private Channel  channelSelect( MessageContainerOrBuilder container,Set<Channel> exclude) {
 		for (Channel c : channels){
 			if (exclude == null || !exclude.contains(c)){
 				return c;
@@ -199,8 +216,8 @@ public class NettyTransportImpl implements Transport<MessageContainer>{
 	
 	
 	private class ResponseListener <T> implements GenericFutureListener<Future<? super Void>> {
-		private SettableLazyResponse<T> response;
-		public ResponseListener(SettableLazyResponse<T> response) {
+		private SettableLazyResponse<? extends T> response;
+		public ResponseListener(SettableLazyResponse<? extends T> response) {
 			this.response = response;
 		}
 		public void operationComplete(Future<? super Void> future)
@@ -213,7 +230,7 @@ public class NettyTransportImpl implements Transport<MessageContainer>{
 			
 		}
 	}	 
-	public SettableLazyResponse<MessageContainer> send(MessageContainer container) {
+	public SettableLazyResponse<MessageContainer> send(MessageContainerOrBuilder container) {
 		DefaultLazyResponse<MessageContainer> retval = new DefaultLazyResponse<MessageContainer>();
 		this.send(container, retval,0);
 		return retval;
@@ -222,15 +239,20 @@ public class NettyTransportImpl implements Transport<MessageContainer>{
 	
 
 	
-	public void registerCallback(Callback<MessageContainer> cb) {
+	public void registerCallback(Callback<MessageContainerOrBuilder> cb) {
 		this.callbacks .add(cb);
 
 	}
-	public  void send(final MessageContainer container,
-			SettableLazyResponse<MessageContainer> lazyResponse, long sendAfter) {
-		
-		
-		
+	public void send(
+			final MessageContainerOrBuilder container,
+			SettableLazyResponse<? extends MessageContainerOrBuilder> lazyResponse,
+			long sendAfter) {
+		if (this.firstMessageAfterConnect && !container.hasIdentityToken()){
+			if (!container.getIdentityToken().hasUuid()) {
+				
+				((MessageContainer.Builder) container).setIdentityToken(Identity.newBuilder().setUuid(ByteString.copyFrom(this.platform_support.getUUID())));
+			}
+		}
 		long delay = sendAfter - System.currentTimeMillis();
 		if(delay > 0) {
 			EventLoopGroup g = (EventLoopGroup) Context.get().get(EventLoopGroup.class.getName());
@@ -248,9 +270,9 @@ public class NettyTransportImpl implements Transport<MessageContainer>{
 			DefaultChannelPromise promise = new DefaultChannelPromise(c);
 			SendListener s = new SendListener(container, promise);
 			ChannelFuture ret = c.writeAndFlush(container).addListener(s);
-			ret.addListener( new ResponseListener<MessageContainer>(lazyResponse));
+			ret.addListener( new ResponseListener<MessageContainerOrBuilder>( lazyResponse));
 		}
 	}
-	
+
 
 }
