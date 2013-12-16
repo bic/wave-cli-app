@@ -1,12 +1,7 @@
 package net.maivic.comm.service;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.function.Consumer;
-
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
 
 import net.maivic.comm.ExponentialBackoffIterator;
 import net.maivic.comm.SendStrategy;
@@ -79,5 +74,10 @@ public class FixedRetry<T> implements SendStrategy<T> {
 			}
 		}
 		return null;		
+	}
+	@Override
+	public void remove() {
+		// TODO Auto-generated method stub
+		
 	}
 }
