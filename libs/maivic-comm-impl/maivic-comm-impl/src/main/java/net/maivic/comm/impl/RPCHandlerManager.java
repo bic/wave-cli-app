@@ -6,6 +6,7 @@ import java.lang.reflect.Proxy;
 import net.maivic.comm.LazyResponse;
 import net.maivic.comm.Maivic.FunctionCallOrBuilder;
 import net.maivic.comm.Maivic.MessageContainerOrBuilder;
+import net.maivic.comm.Table;
 import net.maivic.netty.MessageContainerInboundAdapter.IncomingCallBack;
 
 
@@ -17,11 +18,13 @@ public class RPCHandlerManager {
 	public static <T> T getHandler(Class<T> clz) {
 		if (!clz.isInterface()) {
 			throw new IllegalArgumentException("Argument must be an interface"); 
-		} else if(!clz.isAnnotationPresent(RPCInterface.class)) {
+		} else if(!clz.isAnnotationPresent(RPCInterface.class) && ! clz.isAnnotationPresent(Table.class)) {
 			throw new IllegalArgumentException( "RPC Interface is not annotated");
 		}
 		@SuppressWarnings("unchecked")
 		T proxy = (T) Proxy.newProxyInstance(clz.getClassLoader(), new Class[]{clz}, RPCHandlerManager.invocationHandler);
 		return proxy;
 	}
+	
+	
 }

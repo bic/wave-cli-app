@@ -24,6 +24,7 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
 
 public class SocketClient {
 	public static final Log log = new Log();
@@ -62,6 +63,7 @@ public class SocketClient {
 				MessageContainerInboundAdapter message_container_inbound_adapter = new MessageContainerInboundAdapter();
 				message_container_inbound_adapter.setCb(SocketClient.this.incomingCallBack);
 				ch.pipeline().addLast(new MessageContainerDecoder(), message_container_inbound_adapter);
+				ch.pipeline().addFirst(new ProtobufVarint32FrameDecoder());
 				ch.pipeline().addLast( new MessageContainerEncoder(), new MessageContainterOutboundAdapter());
 			}
 		});

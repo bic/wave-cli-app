@@ -11,6 +11,7 @@ import net.maivic.comm.Callback;
 import net.maivic.comm.SubscriptionCenter;
 import net.maivic.comm.ThreadManager;
 import net.maivic.comm.TransportManager;
+import net.maivic.comm.service.NameService;
 /**
  * Context Singleton managing the factories of maivic comm 
  * @author paul@maivic.com
@@ -195,5 +196,10 @@ public final class Context {
 
 	public ThreadManager getThreadManager() {
 		return (ThreadManager) get("net.maivic.comm.ThreadManager");
+	}
+
+
+	public NameService getNameService() {
+		return (NameService) get("NameService");
 	}
 }

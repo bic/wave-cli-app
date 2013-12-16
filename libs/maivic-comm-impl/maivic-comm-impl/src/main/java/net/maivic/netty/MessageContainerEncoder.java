@@ -7,15 +7,23 @@ import io.netty.buffer.ByteBufOutputStream;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
 import net.maivic.comm.Maivic.MessageContainer;
+import net.maivic.comm.Maivic.MessageContainerOrBuilder;
 
 public class MessageContainerEncoder extends
-		MessageToByteEncoder<MessageContainer> {
+		MessageToByteEncoder<MessageContainerOrBuilder> {
 
 	@Override
-	protected void encode(ChannelHandlerContext ctx, MessageContainer msg,
+	protected void encode(ChannelHandlerContext ctx, MessageContainerOrBuilder msg,
 			ByteBuf buf) throws Exception {
 		OutputStream out = new ByteBufOutputStream(buf);
-		msg.writeDelimitedTo(out);
+		MessageContainer send_cont;
+	 	if (msg instanceof MessageContainer.Builder) {
+			send_cont = ((MessageContainer.Builder) msg).build();
+		} else {
+			send_cont=(MessageContainer) msg;
+		}
+	
+		send_cont.writeDelimitedTo(out);
 	}
 
 }

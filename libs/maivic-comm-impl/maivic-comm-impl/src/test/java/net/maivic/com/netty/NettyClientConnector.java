@@ -1,3 +1,4 @@
+package net.maivic.com.netty;
 	import java.io.IOException;
 
 import io.netty.channel.ChannelFuture;
@@ -5,9 +6,12 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import junit.framework.TestCase;
 import net.maivic.comm.Maivic.MessageContainer;
+import net.maivic.comm.PlatformSupport;
 import net.maivic.comm.Transport;
 import net.maivic.comm.TransportManager;
 import net.maivic.context.Context;
+import net.maivic.context.UnsupportedType;
+import net.maivic.context.WrongType;
 import net.maivic.netty.SocketClient;
 
 import org.junit.Test;
@@ -15,10 +19,10 @@ import org.junit.Test;
 import com.google.protobuf.ByteString;
 
 
-public class NettyClientConnector {
-
+public class NettyClientConnector{
 	@Test
 	public void testNettyTransport() {
+		
 		TransportManager man= Context.get().getTransportManager();
 		Transport<MessageContainer> nettyTransport = man.addTransport("nettytcp://localhost:12345");
 		nettyTransport.pullUp();

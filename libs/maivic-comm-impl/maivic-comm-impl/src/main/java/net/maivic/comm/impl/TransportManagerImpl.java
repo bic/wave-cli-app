@@ -126,9 +126,9 @@ public class TransportManagerImpl implements TransportManager {
 		}
 		Callback<SettableLazyResponse<T>> cb = new Callback<SettableLazyResponse<T>> () {
 			public void call(final SettableLazyResponse<T> result) {
-				System.out.print("result");
 				while (strategy.hasNext()) {
 					long when=strategy.next();
+
 					Transport<T> transport = strategy.getTransport();
 					if (transport==null) {
 						Callable<Void> callable = new Callable<Void>() {

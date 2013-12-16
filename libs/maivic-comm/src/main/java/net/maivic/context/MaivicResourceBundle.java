@@ -9,6 +9,8 @@ import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
+import net.maivic.comm.service.NameService;
+
 public class MaivicResourceBundle extends ResourceBundle {
 	Hashtable<String,String> defaultConstructibleImplementations = new Hashtable<String,String>();
 	Hashtable<String,String> classRefernces = new Hashtable<String,String>();
@@ -16,9 +18,9 @@ public class MaivicResourceBundle extends ResourceBundle {
 	public MaivicResourceBundle() {
 		String impl="net.maivic.comm.impl.";
 		defaultConstructibleImplementations.put("TransportManager", impl+"TransportManagerImpl");
+		defaultConstructibleImplementations.put("NameService", "net.maivic.comm.NameService.NameServiceImpl");
 		addDefaultConstrucibleClassByName(impl+"BaseTypeMapper");
 		addDefaultConstrucibleClassByName("net.maivic.comm.ThreadManager");
-		
 		addComplexConstructibleClass("net.maivic.netty.SocketClient");
 		classRefernces.put("Transport(nettytcp)", "net.maivic.netty.NettyTransportImpl");
 		defaultConstructibleImplementations.put("net.maivic.comm.SubscriptionCenter",
@@ -37,8 +39,9 @@ public class MaivicResourceBundle extends ResourceBundle {
 		 */
 		this.constantValues.put("ServiceID.List", 1);
 		this.constantValues.put("ServiceID.Echo", 2);
-		this.constantValues.put("ServiceID.Name", 3);
+		this.constantValues.put("ServiceID.NameService", 3);
 		this.constantValues.put("ServiceID.RPC",  4);	
+		this.constantValues.put("RelationsRPC.prefix", "DBRelation");
 		
 	}
 	private <T> void addConstant(String name, T constant) {
