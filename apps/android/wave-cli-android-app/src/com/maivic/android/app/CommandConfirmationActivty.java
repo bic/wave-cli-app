@@ -25,8 +25,11 @@ public class CommandConfirmationActivty extends BaseActivity {
 		mCommandsListView = (ListView) findViewById(R.id.listView1);
 //		mCommandsListView.setAdapter(new CommandCourseAdapter(this));
 		
-		LayoutInflater inflater = LayoutInflater.from(this);
-		View billView = inflater.inflate(R.layout.command_bill_item, null);
+		View billView = mInflater.inflate(R.layout.command_bill_item, null);
+		
+		View headerView = mInflater.inflate(R.layout.view_other_offert, null);
+		
+		mCommandsListView.addHeaderView(headerView);
 		mCommandsListView.addFooterView(billView);
 		
 		mBillLayout = new BillLayout(billView);

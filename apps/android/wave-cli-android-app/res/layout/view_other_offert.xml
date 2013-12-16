@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res/com.maivic.android.app"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000"
+    android:orientation="horizontal"
+    android:padding="10dp" >
+
+    <com.maivic.android.app.custom.FontedButton
+        android:id="@+id/btnOtherOffer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_default_transparent"
+        android:text="Arata alte propuneri"
+        android:textColor="@android:color/white"
+        apps:fontName="@string/font_avenir_light" />
+
+    <TextView
+        android:id="@+id/tvRestaurant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="right"
+        android:visibility="gone"
+        android:text="by Wuxing"
+        android:textColor="#FFFFFF" />
+
+    <com.maivic.android.app.custom.locationpicker.LocationBitView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

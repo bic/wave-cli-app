@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <attr name = "fontName" format="string" />
     
     <declare-styleable name="FontedTextView">
@@ -12,7 +11,11 @@
     </declare-styleable>
 
     <declare-styleable name="LabeledEditText">
-        <attr name = "label"/>
+        <attr name="label"/>
     </declare-styleable>
     
+    <declare-styleable name="LocationPicker">
+        <attr name="location_kind" format="string"/>
+        <attr name="picker_level" format="integer" />
+    </declare-styleable>
 </resources>
