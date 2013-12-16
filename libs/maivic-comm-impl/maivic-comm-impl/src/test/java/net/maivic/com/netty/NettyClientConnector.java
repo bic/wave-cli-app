@@ -1,46 +1,41 @@
-	import java.io.IOException;
-
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
-import junit.framework.TestCase;
+
+import java.io.IOException;
+
+import main.java.net.maivic.netty.SocketClient;
 import net.maivic.comm.Maivic.MessageContainer;
 import net.maivic.comm.Transport;
 import net.maivic.comm.TransportManager;
 import net.maivic.context.Context;
-import net.maivic.netty.SocketClient;
-
-import org.junit.Test;
 
 import com.google.protobuf.ByteString;
-
 
 public class NettyClientConnector {
 
 	@Test
 	public void testNettyTransport() {
-		TransportManager man= Context.get().getTransportManager();
-		Transport<MessageContainer> nettyTransport = man.addTransport("nettytcp://localhost:12345");
+		TransportManager man = Context.get().getTransportManager();
+		Transport<MessageContainer> nettyTransport = man
+				.addTransport("nettytcp://localhost:12345");
 		nettyTransport.pullUp();
-		
-		
-				
+
 	}
-	
-	
-	
+
 	public void testSocketClient() {
 		EventLoopGroup group = new NioEventLoopGroup();
-		
+
 		try {
 			SocketClient s = new SocketClient(group);
 			ChannelFuture f = s.connect("localhost", 12345, null);
 			f.await();
 			System.out.print("future returned!");
-			if(f.isDone() && !f.isSuccess()){
-				TestCase.assertTrue( "Connection aborted: " + f.cause().getMessage() ,false);
+			if (f.isDone() && !f.isSuccess()) {
+				TestCase.assertTrue("Connection aborted: "
+						+ f.cause().getMessage(), false);
 			}
-			
+
 			MessageContainer send = generateContainer();
 			try {
 				send.writeTo(System.out);
@@ -50,22 +45,20 @@ public class NettyClientConnector {
 			}
 			f.channel().writeAndFlush(send);
 			ChannelFuture x = f.channel().closeFuture().sync();
-			
-		} catch(InterruptedException e ) {
+
+		} catch (InterruptedException e) {
 			System.out.print("Connection aborted: " + e.getMessage());
 			assert false;
-		}
-		finally {
+		} finally {
 			group.shutdownGracefully();
 		}
 	}
-	MessageContainer generateContainer(){
-		MessageContainer ret = MessageContainer.newBuilder()
-			.setServiceId(1)
-			.setContent(ByteString.copyFrom("blacontent".getBytes()))
-			.build();
+
+	MessageContainer generateContainer() {
+		MessageContainer ret = MessageContainer.newBuilder().setServiceId(1)
+				.setContent(ByteString.copyFrom("blacontent".getBytes()))
+				.build();
 		return ret;
 	}
-	
 
 }
