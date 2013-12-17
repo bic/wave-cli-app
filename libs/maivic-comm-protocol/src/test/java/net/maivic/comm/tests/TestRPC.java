@@ -1,14 +1,13 @@
 package net.maivic.comm.tests;
 
-import static org.junit.Assert.*;
-
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import net.maivic.comm.CallBackDispatcherThread;
 import net.maivic.comm.Callback;
 import net.maivic.comm.LazyResponse;
 import net.maivic.comm.PlatformSupport;
@@ -20,11 +19,11 @@ import net.maivic.comm.impl.RPCHandlerManager;
 import net.maivic.context.Context;
 import net.maivic.context.UnsupportedType;
 import net.maivic.context.WrongType;
+import net.maivic.protocol.Model.Decimal;
 import net.maivic.protocol.Model.Location;
 import net.maivic.protocol.Model.Offer;
 import net.maivic.protocol.Model.OfferOption;
 import net.maivic.protocol.Model.Restaurant;
-import net.maivic.protocol.relations.LocationRelations;
 import net.maivic.protocol.relations.OfferRelations;
 
 import org.junit.Test;
@@ -67,12 +66,25 @@ public class TestRPC {
 			for (Offer offer: offers){
 				System.out.print("OFFER :");
 				System.out.println(offer);
-				List<OfferOption> offerOptions= offerRelations.getOfferOptions(offer,null).get();
-				for(OfferOption offerOption: offerOptions ){
-					System.out.print("OFFER_OPTIONS(OFFER.id=" + offer.getId() + ")");
-					System.out.println(offerOption);
-				}
-				offerOptions.get(1);
+				LazyResponse<List<OfferOption>> offerOptions= offerRelations.getOfferOptions(offer,null);
+				offerOptions.addSuccessCallback(new Callback<LazyResponse<List<OfferOption>>>() {
+					
+					public void call(LazyResponse<List<OfferOption>> result) {
+//						List<OfferOption> options =  result.get();
+//						Decimal price = options.get(0).getPrice();
+//						double priceFinal = price.getValue() * Math.pow(10, price.getScale());
+						
+//						BigDecimal ddd = new BigDecimal(new BigInteger(String.valueOf(price.getValue()), price.getScale());
+					}
+				});
+				
+				
+//				for(OfferOption offerOption: offerOptions ){
+//					System.out.print("OFFER_OPTIONS(OFFER.id=" + offer.getId() + ")");
+//					System.out.println(offerOption);
+//				}
+//				
+//				offerOptions.get(1);
 				
 			}
 			

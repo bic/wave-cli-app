@@ -1,5 +1,8 @@
 package com.maivic.android.app;
 
+import java.util.Enumeration;
+import java.util.Properties;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,6 +36,8 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		Properties propers = System.getProperties();
 		
 		findViewById(R.id.btnButton1).setOnClickListener(new OnClickListener() {
 			
