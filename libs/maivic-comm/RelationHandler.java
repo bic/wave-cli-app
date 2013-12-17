@@ -16,7 +16,7 @@ public class RelationHandler {
 				myHandler = new RelationInvocationHandler();
 			}
 		}
-		T ret= (T) impl_cache.getOrDefault(interface_def, null);
+		T ret= (T) impl_cache.get(interface_def);
 		if(ret != null) {
 			return ret;
 		}

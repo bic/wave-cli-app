@@ -122,7 +122,7 @@ public class NameServiceImpl implements NameService {
 		
 		this.datasourcelock.writeLock().lock();
 		try{
-			NameSpaceUpdate request = this.keyRequests.getOrDefault(result.getThreadControl().getThreadId(), null);
+			NameSpaceUpdate request = this.keyRequests.get(result.getThreadControl().getThreadId());
 			Iterator<ByteString> val_iter= update.getValuesList().iterator();
 			Iterator<Long> skip_iter=update.getSkippedIdsList().iterator();
 			//String domain = stringLookup.reverse(request.getDomain());
@@ -208,7 +208,7 @@ public class NameServiceImpl implements NameService {
 		datasourcelock.readLock().lock();
 		try{
 			Map<Long, String> domain_o = this.datasource.get(domain_l);
-			if(domain_o != null) return domain_o.getOrDefault(key_l, null);
+			if(domain_o != null) return domain_o.get(key_l);
 			return null;
 		} finally{
 			datasourcelock.readLock().unlock();
