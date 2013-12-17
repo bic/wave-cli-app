@@ -2,7 +2,6 @@ package net.maivic.comm.impl;
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import java.lang.reflect.Parameter;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -29,10 +28,9 @@ class RPCInvocationHandler extends  AbstractRPCServiceClient implements Invocati
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable{
 		try{
 			FunctionCall.Builder call = FunctionCall.newBuilder();
-			
-			for (int i = 0; i<method.getParameters().length; i++) {
-				Parameter p = method.getParameters()[i];
-				call.addArgs(BaseTypeMapper.toBaseType(args[i], p.getType()));
+			for (int i = 0; i<method.getParameterTypes().length; i++) {
+				Class<?> p = method.getParameterTypes()[i];
+				call.addArgs(BaseTypeMapper.toBaseType(args[i], p));
 			}
 			
 			
