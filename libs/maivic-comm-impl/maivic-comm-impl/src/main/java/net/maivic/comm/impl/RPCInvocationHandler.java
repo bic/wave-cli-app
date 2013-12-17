@@ -30,7 +30,7 @@ class RPCInvocationHandler extends  AbstractRPCServiceClient implements Invocati
 		try{
 			FunctionCall.Builder call = FunctionCall.newBuilder();
 			
-			for (int i = 0; i<method.getParameterCount(); i++) {
+			for (int i = 0; i<method.getParameters().length; i++) {
 				Parameter p = method.getParameters()[i];
 				call.addArgs(BaseTypeMapper.toBaseType(args[i], p.getType()));
 			}
