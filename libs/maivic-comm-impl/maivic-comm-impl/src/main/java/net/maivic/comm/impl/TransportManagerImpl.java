@@ -1,4 +1,5 @@
 package net.maivic.comm.impl;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -51,13 +52,23 @@ public class TransportManagerImpl implements TransportManager {
 		Transport ret=null;
 		try {
 			ret = transportClass.getConstructor(String.class).newInstance(URI_str);
-		} catch (ReflectiveOperationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
 		} catch (IllegalArgumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
