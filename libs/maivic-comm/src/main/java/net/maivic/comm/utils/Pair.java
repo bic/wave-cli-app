@@ -1,6 +1,5 @@
 package net.maivic.comm.utils;
 
-import java.util.Objects;
 
 /**
  * Container to ease passing around a tuple of two objects. This object provides a sensible
@@ -37,7 +36,11 @@ public class Pair<F, S> {
             return false;
         }
         Pair<?, ?> p = (Pair<?, ?>) o;
-        return Objects.equals(p.first, first) && Objects.equals(p.second, second);
+        if(p.first == this.first){
+        	return p.second.equals(this.second);
+        }else{
+        	return false;
+        }
     }
 
     /**
