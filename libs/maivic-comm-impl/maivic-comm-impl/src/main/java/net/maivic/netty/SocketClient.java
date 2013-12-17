@@ -99,8 +99,8 @@ public class SocketClient {
 				EventLoopGroup group = c.get(ScheduledExecutorService.class.getName());
 				Class<? extends SocketClient> clz= (Class<? extends SocketClient>)instance;
 				for (Constructor<?> constructor: clz.getConstructors()) {
-					if (constructor.getParameters().length ==1 && 
-						constructor.getParameters()[0].getType().isAssignableFrom(group.getClass())){
+					if (constructor.getParameterTypes().length ==1 && 
+						constructor.getParameterTypes()[0].isAssignableFrom(group.getClass())){
 						try {
 							instance = constructor.newInstance(group);
 						} catch (InstantiationException e) {
