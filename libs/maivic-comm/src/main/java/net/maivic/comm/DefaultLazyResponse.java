@@ -6,7 +6,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import net.maivic.comm.utils.Math;
-
 import net.maivic.comm.Maivic.MessageContainer;
 
 public class DefaultLazyResponse<T> implements SettableLazyResponse<T> {
