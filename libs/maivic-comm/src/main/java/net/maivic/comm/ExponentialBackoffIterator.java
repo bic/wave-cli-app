@@ -16,4 +16,8 @@ public class ExponentialBackoffIterator implements Iterator<Long> {
 		i++;
 		return  Math.round((1.0/2.0)*(Math.pow(2, i-1)-1));
 	}
+	@Override
+	public void remove() {
+		throw new UnsupportedOperationException("Remove makes no sense here!!");
+	}
 }
