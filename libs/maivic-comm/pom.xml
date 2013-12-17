@@ -18,7 +18,7 @@
 	            <configuration>
 	                <sources>
 	                    <source>src/main/java</source>
-	                	<source>src/gen/java</source>
+	                    <source>src/gen/java</source>
 	                </sources>
 	            </configuration>
 	        </execution>
