@@ -1,15 +1,10 @@
 package net.maivic.context;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.Hashtable;
-import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-
-import net.maivic.comm.service.NameService;
 
 public class MaivicResourceBundle extends ResourceBundle {
 	Hashtable<String,String> defaultConstructibleImplementations = new Hashtable<String,String>();

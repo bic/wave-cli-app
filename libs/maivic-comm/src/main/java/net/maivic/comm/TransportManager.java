@@ -1,11 +1,8 @@
 package net.maivic.comm;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
-
-import net.maivic.comm.Maivic.MessageContainer;
 
 
 

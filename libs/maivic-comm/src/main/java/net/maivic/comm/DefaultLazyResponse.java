@@ -114,7 +114,7 @@ public class DefaultLazyResponse<T> implements SettableLazyResponse<T> {
 		try {
 			return this.get(-1,null);
 		} catch(TimeoutException e ) {
-			throw new InternalError("timeout occured in operation without timeout!",e);
+			throw new IllegalStateException("timeout occured in operation without timeout!",e);
 		}
 	}
 	public T get(long timeout, TimeUnit unit) throws InterruptedException,

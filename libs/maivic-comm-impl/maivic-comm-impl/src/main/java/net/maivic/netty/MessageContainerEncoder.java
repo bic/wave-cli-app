@@ -1,11 +1,12 @@
 package net.maivic.netty;
 
-import java.io.OutputStream;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufOutputStream;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
+
+import java.io.OutputStream;
+
 import net.maivic.comm.Maivic.MessageContainer;
 import net.maivic.comm.Maivic.MessageContainerOrBuilder;
 

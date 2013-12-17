@@ -3,11 +3,9 @@ package net.maivic.netty;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.DefaultChannelPromise;
-import io.netty.channel.EventLoop;
 import io.netty.channel.EventLoopGroup;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
-
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -15,27 +13,22 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Set;
-import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
-
-import javax.naming.OperationNotSupportedException;
-
-import com.google.protobuf.ByteString;
 
 import net.maivic.comm.Callback;
 import net.maivic.comm.DefaultLazyResponse;
-import net.maivic.comm.Function;
-import net.maivic.comm.LazyResponse;
 import net.maivic.comm.Maivic.Identity;
+import net.maivic.comm.Maivic.MessageContainer;
 import net.maivic.comm.Maivic.MessageContainerOrBuilder;
 import net.maivic.comm.PlatformSupport;
-import net.maivic.comm.Maivic.MessageContainer;
 import net.maivic.comm.SettableLazyResponse;
 import net.maivic.comm.Transport;
 import net.maivic.comm.exception.SendFailed;
 import net.maivic.context.Context;
 import net.maivic.context.Log;
 import net.maivic.netty.MessageContainerInboundAdapter.IncomingCallBack;
+
+import com.google.protobuf.ByteString;
 
 public class NettyTransportImpl implements Transport<MessageContainerOrBuilder>{
 	private static Log log = Context.get().log();

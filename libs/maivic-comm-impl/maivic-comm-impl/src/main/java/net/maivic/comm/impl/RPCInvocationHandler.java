@@ -10,19 +10,15 @@ import java.util.Map;
 
 import net.maivic.comm.DefaultLazyResponse;
 import net.maivic.comm.LazyResponse;
-import net.maivic.comm.Maivic.FunctionReturn;
-import net.maivic.comm.Relation;
-import net.maivic.comm.Table;
-import net.maivic.comm.Transport;
 import net.maivic.comm.Maivic.BaseType;
-import net.maivic.comm.Maivic.BaseTypeOrBuilder;
 import net.maivic.comm.Maivic.ExceptionType;
 import net.maivic.comm.Maivic.FunctionCall;
 import net.maivic.comm.Maivic.MessageContainer;
+import net.maivic.comm.Relation;
+import net.maivic.comm.Table;
+import net.maivic.comm.Transport;
 import net.maivic.comm.service.AbstractRPCServiceClient;
 import net.maivic.context.Context;
-
-import com.google.protobuf.ByteString;
 
 
 class RPCInvocationHandler extends  AbstractRPCServiceClient implements InvocationHandler  {

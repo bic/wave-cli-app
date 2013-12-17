@@ -1,10 +1,8 @@
 package net.maivic.comm.impl;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,18 +12,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import javax.print.attribute.Size2DSyntax;
-
-
-import com.google.protobuf.ByteString;
-import com.google.protobuf.Descriptors.FileDescriptor;
-import com.google.protobuf.Message;
-
-import net.maivic.comm.Maivic;
 import net.maivic.comm.Maivic.BaseType;
 import net.maivic.comm.Maivic.BaseType.ENCODED_TYPE;
 import net.maivic.comm.Maivic.SelfDescribingMessage;
 import net.maivic.context.Context;
+
+import com.google.protobuf.ByteString;
+import com.google.protobuf.Message;
 
 public class BaseTypeMapper {
 	private static BaseTypeMapper inst = new BaseTypeMapper();

@@ -2,7 +2,6 @@ package net.maivic.comm;
 
 
 
-import net.maivic.comm.Maivic.MessageContainer;
 
 /**
  * A Transport represents a layer through which messages can be

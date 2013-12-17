@@ -1,13 +1,18 @@
 package net.maivic.netty;
 
 
+import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelOption;
+import io.netty.channel.EventLoopGroup;
+import io.netty.channel.socket.SocketChannel;
+import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.ScheduledExecutorService;
-
-import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
-
-import com.google.protobuf.InvalidProtocolBufferException;
 
 import net.maivic.comm.Maivic.MaivicServices;
 import net.maivic.comm.Maivic.MessageContainer;
@@ -17,14 +22,8 @@ import net.maivic.context.Log;
 import net.maivic.context.UnsupportedType;
 import net.maivic.context.WrongType;
 import net.maivic.netty.MessageContainerInboundAdapter.IncomingCallBack;
-import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.EventLoopGroup;
-import io.netty.channel.socket.SocketChannel;
-import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
+
+import com.google.protobuf.InvalidProtocolBufferException;
 
 public class SocketClient {
 	public static final Log log = new Log();

@@ -4,8 +4,6 @@ import java.util.Iterator;
 
 import net.maivic.comm.Maivic.MessageContainer;
 
-import org.w3c.dom.ranges.RangeException;
-
  /*
  * Abstract {@link MessageContainer} Iterator for easy implementation of the
  * streaming Interface;

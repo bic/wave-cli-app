@@ -1,11 +1,10 @@
 package net.maivic.netty;
 
-import net.maivic.comm.Maivic.MessageContainer;
-import net.maivic.comm.Maivic.MessageContainerOrBuilder;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelOutboundHandlerAdapter;
 import io.netty.channel.ChannelPromise;
+import net.maivic.comm.Maivic.MessageContainerOrBuilder;
 
 public class MessageContainterOutboundAdapter extends
 		ChannelOutboundHandlerAdapter {

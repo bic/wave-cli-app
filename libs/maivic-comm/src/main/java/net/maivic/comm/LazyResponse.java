@@ -1,12 +1,7 @@
 package net.maivic.comm;
 
-import java.io.ObjectInputStream.GetField;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-
-import net.maivic.comm.exception.ConcurrecyException;
-import net.maivic.comm.exception.HaveCallbackException;
-import net.maivic.comm.exception.WaitingForResult;
 /**
  * Interface for Lazy response. This implements the {@link Future} interface, but adds callback functionality
  * Callbacks can be added for :

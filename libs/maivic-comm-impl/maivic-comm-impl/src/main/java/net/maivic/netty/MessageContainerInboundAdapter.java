@@ -1,9 +1,8 @@
 package net.maivic.netty;
 
-import net.maivic.comm.Maivic.MessageContainer;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandler;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+import net.maivic.comm.Maivic.MessageContainer;
 
 public class MessageContainerInboundAdapter extends ChannelInboundHandlerAdapter {
 	public interface IncomingCallBack {

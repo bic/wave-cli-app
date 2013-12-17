@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 
-import net.maivic.comm.Callback;
 import net.maivic.comm.SubscriptionCenter;
 import net.maivic.comm.ThreadManager;
 import net.maivic.comm.TransportManager;

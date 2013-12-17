@@ -11,9 +11,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 import net.maivic.comm.Callback;
-import net.maivic.comm.Maivic.MessageContainer;
 import net.maivic.comm.DefaultLazyResponse;
-import net.maivic.comm.LazyResponse;
+import net.maivic.comm.Maivic.MessageContainer;
 import net.maivic.comm.RetryOnFailure;
 import net.maivic.comm.SendStrategy;
 import net.maivic.comm.SettableLazyResponse;
