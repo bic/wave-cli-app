@@ -10,7 +10,6 @@ public interface TestConfig {
 	static class TTT{
 		void stest(){
 			Model.Offer offere = Offer.getDefaultInstance();
-			offere.g
 		}		
 	}
 	
