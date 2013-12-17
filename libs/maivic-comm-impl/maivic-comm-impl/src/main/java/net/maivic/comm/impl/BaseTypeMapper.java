@@ -200,7 +200,7 @@ public class BaseTypeMapper {
 					return e.getValue();
 				}
 			} catch (Exception e1) {
-				throw new  InternalError("Could not access expected BaseType method!!",e1);
+				throw new  IllegalStateException("Could not access expected BaseType method!!",e1);
 			}
 		}
 		return null;
