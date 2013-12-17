@@ -113,11 +113,8 @@ public class NettyTransportImpl implements Transport<MessageContainerOrBuilder>{
 			if (!f.isSuccess() && retry<= MAX_RETRY){
 				log.w(TAG,"Could not connect on " + Integer.toString(retry+1) + "attempt. Cause:" , f.cause());
 				retry ++;
-				if (failedException==null){
-					failedException = new SendFailed(f.cause());
-				} else {
-					failedException.addSuppressed(f.cause());
-				}
+				
+				failedException = new SendFailed(f.cause());
 				if (retry == MAX_RETRY){
 					chans.add(f.channel());
 					retry = -1;
