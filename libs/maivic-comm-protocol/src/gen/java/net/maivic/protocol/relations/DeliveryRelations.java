@@ -3,6 +3,7 @@
 //Outgoing Relations from table 'deliveries'
 //////////////////////////////////////////////////
 package net.maivic.protocol.relations;
+import net.maivic.comm.SubscriptionCallback;
 import net.maivic.protocol.Model.Restaurant;
 import net.maivic.comm.Table;
 import net.maivic.comm.LazyResponse;
@@ -16,12 +17,12 @@ import net.maivic.protocol.Model.Location;
 @Table("deliveries")
 public interface DeliveryRelations {
   @Relation(name="delivering_guy",type=RelationType.MANY_TO_ONE)
-  LazyResponse<Contact>getDeliveringGuy(Delivery object , Callback<Contact> cb);
+  LazyResponse<Contact>getDeliveringGuy(Delivery object , @SubscriptionCallback Callback<Contact> cb);
   @Relation(name="location",type=RelationType.MANY_TO_ONE)
-  LazyResponse<Location>getLocation(Delivery object , Callback<Location> cb);
+  LazyResponse<Location>getLocation(Delivery object , @SubscriptionCallback Callback<Location> cb);
   @Relation(name="order",type=RelationType.MANY_TO_ONE)
-  LazyResponse<Order>getOrder(Delivery object , Callback<Order> cb);
+  LazyResponse<Order>getOrder(Delivery object , @SubscriptionCallback Callback<Order> cb);
   @Relation(name="restaurant",type=RelationType.MANY_TO_ONE)
-  LazyResponse<Restaurant>getRestaurant(Delivery object , Callback<Restaurant> cb);
+  LazyResponse<Restaurant>getRestaurant(Delivery object , @SubscriptionCallback Callback<Restaurant> cb);
 };
 

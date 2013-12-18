@@ -15,6 +15,7 @@ import net.maivic.comm.Maivic.MessageContainer;
 import net.maivic.comm.Maivic.MessageContainer.Builder;
 import net.maivic.comm.Maivic.ThreadControl;
 import net.maivic.comm.Maivic.ThreadControl.Operation;
+import net.maivic.comm.FixedRetry;
 import net.maivic.comm.RoutingFilter;
 import net.maivic.comm.ThreadManager;
 import net.maivic.comm.Transport;

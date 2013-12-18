@@ -3,6 +3,7 @@
 //Outgoing Relations from table 'contacts_to_legal_entities'
 //////////////////////////////////////////////////
 package net.maivic.protocol.relations;
+import net.maivic.comm.SubscriptionCallback;
 import net.maivic.comm.Table;
 import net.maivic.protocol.Model.LegalEntity;
 import net.maivic.comm.LazyResponse;
@@ -14,8 +15,8 @@ import net.maivic.comm.Relation;
 @Table("contacts_to_legal_entities")
 public interface ContactsToLegalEntityRelations {
   @Relation(name="contact",type=RelationType.MANY_TO_ONE)
-  LazyResponse<Contact>getContact(ContactsToLegalEntity object , Callback<Contact> cb);
+  LazyResponse<Contact>getContact(ContactsToLegalEntity object , @SubscriptionCallback Callback<Contact> cb);
   @Relation(name="legal_entity",type=RelationType.MANY_TO_ONE)
-  LazyResponse<LegalEntity>getLegalEntity(ContactsToLegalEntity object , Callback<LegalEntity> cb);
+  LazyResponse<LegalEntity>getLegalEntity(ContactsToLegalEntity object , @SubscriptionCallback Callback<LegalEntity> cb);
 };
 

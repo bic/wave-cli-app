@@ -3,6 +3,7 @@
 //Outgoing Relations from table 'clients'
 //////////////////////////////////////////////////
 package net.maivic.protocol.relations;
+import net.maivic.comm.SubscriptionCallback;
 import net.maivic.protocol.Model.Client;
 import net.maivic.comm.Table;
 import net.maivic.comm.LazyResponse;
@@ -18,14 +19,14 @@ import net.maivic.comm.Callback;
 @Table("clients")
 public interface ClientRelations {
   @Relation(name="orders",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<Order>>getOrders(Client  o, Callback<Order> cb);
+  LazyResponse<List<Order>>getOrders(Client  o,@SubscriptionCallback Callback<List<Order>> cb);
   @Relation(name="delivery_places",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<DeliveryPlace>>getDeliveryPlaces(Client object , Callback<DeliveryPlace> cb);
+  LazyResponse<List<DeliveryPlace>>getDeliveryPlaces(Client object , @SubscriptionCallback Callback<List<DeliveryPlace>> cb);
   @Relation(name="devices",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<Device>>getDevices(Client object , Callback<Device> cb);
+  LazyResponse<List<Device>>getDevices(Client object , @SubscriptionCallback Callback<List<Device>> cb);
   @Relation(name="contact",type=RelationType.MANY_TO_ONE)
-  LazyResponse<Contact>getContact(Client object , Callback<Contact> cb);
+  LazyResponse<Contact>getContact(Client object , @SubscriptionCallback Callback<Contact> cb);
   @Relation(name="payments",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<Payment>>getPayments(Client  o, Callback<Payment> cb);
+  LazyResponse<List<Payment>>getPayments(Client  o,@SubscriptionCallback Callback<List<Payment>> cb);
 };
 

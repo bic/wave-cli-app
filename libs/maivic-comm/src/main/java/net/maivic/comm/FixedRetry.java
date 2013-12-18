@@ -1,12 +1,9 @@
-package net.maivic.comm.service;
+package net.maivic.comm;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
-import net.maivic.comm.ExponentialBackoffIterator;
-import net.maivic.comm.SendStrategy;
-import net.maivic.comm.Transport;
 import net.maivic.context.Context;
 
 public class FixedRetry<T> implements SendStrategy<T> {

@@ -3,6 +3,7 @@
 //Outgoing Relations from table 'contacts'
 //////////////////////////////////////////////////
 package net.maivic.protocol.relations;
+import net.maivic.comm.SubscriptionCallback;
 import net.maivic.comm.Table;
 import net.maivic.comm.LazyResponse;
 import java.util.List;
@@ -21,20 +22,20 @@ import net.maivic.protocol.Model.Invoice;
 @Table("contacts")
 public interface ContactRelations {
   @Relation(name="invoices",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<Invoice>>getInvoices(Contact  o, Callback<Invoice> cb);
+  LazyResponse<List<Invoice>>getInvoices(Contact  o,@SubscriptionCallback Callback<List<Invoice>> cb);
   @Relation(name="deliveries",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<Delivery>>getDeliveries(Contact  o, Callback<Delivery> cb);
+  LazyResponse<List<Delivery>>getDeliveries(Contact  o,@SubscriptionCallback Callback<List<Delivery>> cb);
   @Relation(name="address",type=RelationType.MANY_TO_ONE)
-  LazyResponse<Address>getAddress(Contact object , Callback<Address> cb);
-  @Relation(name="invoices_to_contacts",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<InvoicesToContact>>getInvoicesToContacts(Contact  o, Callback<InvoicesToContact> cb);
+  LazyResponse<Address>getAddress(Contact object , @SubscriptionCallback Callback<Address> cb);
   @Relation(name="contacts_to_legal_entities",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<ContactsToLegalEntity>>getContactsToLegalEntities(Contact  o, Callback<ContactsToLegalEntity> cb);
+  LazyResponse<List<ContactsToLegalEntity>>getContactsToLegalEntities(Contact  o,@SubscriptionCallback Callback<List<ContactsToLegalEntity>> cb);
+  @Relation(name="invoices_to_contacts",type=RelationType.ONE_TO_MANY)
+  LazyResponse<List<InvoicesToContact>>getInvoicesToContacts(Contact  o,@SubscriptionCallback Callback<List<InvoicesToContact>> cb);
   @Relation(name="clients",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<Client>>getClients(Contact  o, Callback<Client> cb);
+  LazyResponse<List<Client>>getClients(Contact  o,@SubscriptionCallback Callback<List<Client>> cb);
   @Relation(name="restaurants_to_contacts",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<RestaurantsToContact>>getRestaurantsToContacts(Contact  o, Callback<RestaurantsToContact> cb);
+  LazyResponse<List<RestaurantsToContact>>getRestaurantsToContacts(Contact  o,@SubscriptionCallback Callback<List<RestaurantsToContact>> cb);
   @Relation(name="meetings",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<MeetingsToContact>>getMeetings(Contact  o, Callback<MeetingsToContact> cb);
+  LazyResponse<List<MeetingsToContact>>getMeetings(Contact  o,@SubscriptionCallback Callback<List<MeetingsToContact>> cb);
 };
 
