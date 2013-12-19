@@ -3,8 +3,8 @@
 //Outgoing Relations from table 'orders'
 //////////////////////////////////////////////////
 package net.maivic.protocol.relations;
+import net.maivic.comm.RPCUpdateSubscriptionService;
 import net.maivic.comm.SubscriptionCallback;
-import net.maivic.protocol.Model.OrderStatus;
 import net.maivic.comm.Table;
 import net.maivic.protocol.Model.PaymentsToOrder;
 import net.maivic.comm.LazyResponse;
@@ -16,9 +16,10 @@ import net.maivic.comm.Callback;
 import net.maivic.protocol.Model.OrderEntry;
 import net.maivic.protocol.Model.Order;
 import net.maivic.comm.Relation;
+import net.maivic.protocol.Model.OrderStatus;
 import net.maivic.protocol.Model.Client;
 @Table("orders")
-public interface OrderRelations {
+public interface OrderRelations extends RPCUpdateSubscriptionService {
   @Relation(name="deliveries",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<Delivery>>getDeliveries(Order  o,@SubscriptionCallback Callback<List<Delivery>> cb);
   @Relation(name="client",type=RelationType.MANY_TO_ONE)

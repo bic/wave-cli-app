@@ -4411,6 +4411,21 @@ public final class Model {
      */
     com.google.protobuf.ByteString
         getNameLongBytes();
+
+    // optional string name_short = 3;
+    /**
+     * <code>optional string name_short = 3;</code>
+     */
+    boolean hasNameShort();
+    /**
+     * <code>optional string name_short = 3;</code>
+     */
+    java.lang.String getNameShort();
+    /**
+     * <code>optional string name_short = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameShortBytes();
   }
   /**
    * Protobuf type {@code Location}
@@ -4471,6 +4486,11 @@ public final class Model {
             case 18: {
               bitField0_ |= 0x00000002;
               nameLong_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              nameShort_ = input.readBytes();
               break;
             }
           }
@@ -4572,9 +4592,53 @@ public final class Model {
       }
     }
 
+    // optional string name_short = 3;
+    public static final int NAME_SHORT_FIELD_NUMBER = 3;
+    private java.lang.Object nameShort_;
+    /**
+     * <code>optional string name_short = 3;</code>
+     */
+    public boolean hasNameShort() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string name_short = 3;</code>
+     */
+    public java.lang.String getNameShort() {
+      java.lang.Object ref = nameShort_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          nameShort_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string name_short = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameShortBytes() {
+      java.lang.Object ref = nameShort_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nameShort_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       id_ = 0L;
       nameLong_ = "";
+      nameShort_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -4598,6 +4662,9 @@ public final class Model {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, getNameLongBytes());
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getNameShortBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4614,6 +4681,10 @@ public final class Model {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, getNameLongBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getNameShortBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -4735,6 +4806,8 @@ public final class Model {
         bitField0_ = (bitField0_ & ~0x00000001);
         nameLong_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
+        nameShort_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -4771,6 +4844,10 @@ public final class Model {
           to_bitField0_ |= 0x00000002;
         }
         result.nameLong_ = nameLong_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.nameShort_ = nameShort_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4793,6 +4870,11 @@ public final class Model {
         if (other.hasNameLong()) {
           bitField0_ |= 0x00000002;
           nameLong_ = other.nameLong_;
+          onChanged();
+        }
+        if (other.hasNameShort()) {
+          bitField0_ |= 0x00000004;
+          nameShort_ = other.nameShort_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -4929,6 +5011,80 @@ public final class Model {
   }
   bitField0_ |= 0x00000002;
         nameLong_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional string name_short = 3;
+      private java.lang.Object nameShort_ = "";
+      /**
+       * <code>optional string name_short = 3;</code>
+       */
+      public boolean hasNameShort() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string name_short = 3;</code>
+       */
+      public java.lang.String getNameShort() {
+        java.lang.Object ref = nameShort_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          nameShort_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string name_short = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameShortBytes() {
+        java.lang.Object ref = nameShort_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nameShort_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string name_short = 3;</code>
+       */
+      public Builder setNameShort(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        nameShort_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name_short = 3;</code>
+       */
+      public Builder clearNameShort() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        nameShort_ = getDefaultInstance().getNameShort();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name_short = 3;</code>
+       */
+      public Builder setNameShortBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        nameShort_ = value;
         onChanged();
         return this;
       }
@@ -31263,89 +31419,90 @@ public final class Model {
       "f_no\030\005 \001(\t\"n\n\007Meeting\022\n\n\002id\030\001 \002(\003\022\014\n\004dat" +
       "e\030\002 \001(\003\022\033\n\010duration\030\003 \001(\0132\t.Interval\022\r\n\005" +
       "topic\030\004 \001(\t\022\016\n\006result\030\005 \001(\t\022\r\n\005place\030\006 \001" +
-      "(\003\")\n\010Location\022\n\n\002id\030\001 \002(\003\022\021\n\tname_long\030" +
-      "\002 \001(\t\"\224\001\n\010Delivery\022\n\n\002id\030\001 \002(\003\022\025\n\rrestau" +
-      "rant_id\030\002 \001(\003\022\031\n\021delivering_guy_id\030\003 \001(\003" +
-      "\022\020\n\010order_id\030\004 \001(\003\022\022\n\neta_arival\030\005 \001(\003\022\017" +
-      "\n\007arrival\030\006 \001(\003\022\023\n\013location_id\030\007 \001(\003\"D\n\006" +
-      "Device\022\n\n\002id\030\001 \002(\003\022\014\n\004UUID\030\002 \001(\t\022\013\n\003tel\030" +
-      "\003 \001(\t\022\023\n\013receivessms\030\004 \001(\010\"S\n\005Image\022\n\n\002i",
-      "d\030\001 \002(\003\022\014\n\004name\030\002 \001(\t\022\014\n\004data\030\003 \001(\t\022\021\n\ta" +
-      "rtist_id\030\004 \001(\003\022\017\n\007comment\030\005 \001(\t\"\210\001\n\005Orde" +
-      "r\022\n\n\002id\030\001 \002(\003\022\021\n\tclient_id\030\002 \001(\003\022\031\n\021deli" +
-      "very_place_id\030\003 \001(\003\022\027\n\017delivery_box_id\030\004" +
-      " \001(\t\022\024\n\014client_notes\030\005 \001(\t\022\026\n\004tips\030\006 \001(\013" +
-      "2\010.Decimal\"w\n\007Contact\022\n\n\002id\030\001 \002(\003\022\014\n\004nam" +
-      "e\030\002 \001(\t\022\022\n\naddress_id\030\003 \001(\003\022\016\n\006mobile\030\004 " +
-      "\001(\t\022\r\n\005email\030\005 \001(\t\022\020\n\010landline\030\006 \001(\t\022\r\n\005" +
-      "VATIN\030\007 \001(\t\"\247\001\n\016GeometryColumn\022\027\n\017f_tabl" +
-      "e_catalog\030\001 \002(\t\022\026\n\016f_table_schema\030\002 \002(\t\022",
-      "\024\n\014f_table_name\030\003 \002(\t\022\031\n\021f_geometry_colu" +
-      "mn\030\004 \002(\t\022\027\n\017coord_dimension\030\005 \001(\003\022\014\n\004sri" +
-      "d\030\006 \001(\003\022\014\n\004type\030\007 \001(\t\"I\n\021MeetingsToConta" +
-      "ct\022\022\n\ncontact_id\030\001 \002(\003\022\014\n\004role\030\002 \002(\t\022\022\n\n" +
-      "meeting_id\030\003 \002(\003\"\\\n\020OrderEntryOption\022\n\n\002" +
-      "id\030\001 \002(\003\022\026\n\016order_entry_id\030\002 \001(\003\022\027\n\017offe" +
-      "r_option_id\030\003 \001(\003\022\013\n\003qty\030\004 \001(\003\"R\n\004Menu\022\n" +
-      "\n\002id\030\001 \002(\003\022\022\n\nrecurrence\030\002 \001(\t\022\025\n\rrestau" +
-      "rant_id\030\003 \001(\003\022\023\n\013location_id\030\004 \001(\003\"n\n\rDe" +
-      "liveryPlace\022\n\n\002id\030\001 \002(\003\022\023\n\013location_id\030\002",
-      " \001(\003\022\023\n\013building_id\030\003 \001(\003\022\022\n\nshort_name\030" +
-      "\004 \001(\t\022\023\n\013place_types\030\005 \001(\003\"\230\001\n\032DeliveryP" +
-      "laceSpecification\022\n\n\002id\030\001 \002(\003\022\023\n\013locatio" +
-      "n_id\030\002 \001(\003\022\023\n\013building_id\030\003 \001(\003\022\031\n\021deliv" +
-      "ery_place_id\030\004 \001(\003\022\025\n\rplace_type_id\030\005 \001(" +
-      "\003\022\022\n\ntext_value\030\006 \001(\t\"\223\001\n\005Offer\022\n\n\002id\030\001 " +
-      "\002(\003\022\027\n\005price\030\002 \001(\0132\010.Decimal\022\025\n\rname_sin" +
-      "gular\030\003 \001(\t\022\023\n\013name_plural\030\004 \001(\t\022\025\n\rmax_" +
-      "per_order\030\005 \001(\003\022\025\n\rmin_per_order\030\006 \001(\003\022\013" +
-      "\n\003seq\030\007 \001(\003\"+\n\010Building\022\n\n\002id\030\001 \002(\003\022\023\n\013l",
-      "ocation_id\030\002 \001(\003\"[\n\017PaymentsToOrder\022\022\n\np" +
-      "ayment_id\030\001 \002(\003\022\020\n\010order_id\030\002 \002(\003\022\025\n\003sum" +
-      "\030\003 \001(\0132\010.Decimal\022\013\n\003seq\030\004 \002(\003\"*\n\007Decimal" +
-      "\022\r\n\005value\030\001 \002(\003\022\020\n\005scale\030\002 \001(\005:\0010\"&\n\010Int" +
-      "erval\022\r\n\005start\030\001 \001(\004\022\013\n\003end\030\002 \001(\004\":\n\rNam" +
-      "eSpacePair\022\n\n\002id\030\001 \002(\003\022\016\n\006domain\030\002 \002(\003\022\r" +
-      "\n\005value\030\003 \001(\t\"R\n\025ContactsToLegalEntity\022\022" +
-      "\n\ncontact_id\030\001 \002(\003\022\014\n\004role\030\002 \001(\t\022\027\n\017lega" +
-      "l_entity_id\030\003 \002(\003\"X\n\013OrderStatus\022\n\n\002id\030\001" +
-      " \002(\003\022\020\n\010order_id\030\002 \001(\003\022\026\n\016status_code_id",
-      "\030\003 \001(\003\022\023\n\013status_note\030\004 \001(\t\"b\n\tMenuEntry" +
-      "\022\n\n\002id\030\001 \002(\003\022\017\n\007menu_id\030\002 \001(\003\022\014\n\004name\030\003 " +
-      "\001(\t\022\022\n\noption_for\030\004 \001(\003\022\026\n\016option_max_qt" +
-      "y\030\005 \001(\003\"I\n\021InvoicesToContact\022\022\n\ncontact_" +
-      "id\030\001 \002(\003\022\022\n\ninvoice_id\030\002 \002(\003\022\014\n\004role\030\003 \002" +
-      "(\t\"S\n\nOrderEntry\022\n\n\002id\030\001 \002(\003\022\020\n\010order_id" +
-      "\030\002 \001(\003\022\020\n\010offer_id\030\003 \001(\003\022\025\n\003qty\030\004 \001(\0132\010." +
-      "Decimal\"e\n\007Receipt\022\n\n\002id\030\001 \002(\003\022\022\n\nemitte" +
-      "r_id\030\002 \001(\003\022\014\n\004date\030\003 \001(\003\022\025\n\003sum\030\004 \001(\0132\010." +
-      "Decimal\022\025\n\remission_date\030\005 \001(\003\"e\n\014Spatia",
-      "lRefSy\022\014\n\004srid\030\001 \002(\003\022\021\n\tauth_name\030\002 \001(\t\022" +
-      "\021\n\tauth_srid\030\003 \001(\003\022\016\n\006srtext\030\004 \001(\t\022\021\n\tpr" +
-      "oj4text\030\005 \001(\t\"\307\002\n\013OfferOption\022\n\n\002id\030\001 \002(" +
-      "\003\022\030\n\020is_offer_changer\030\002 \001(\010\022\027\n\005price\030\003 \001" +
-      "(\0132\010.Decimal\022&\n\024price_delta_positive\030\004 \001" +
-      "(\0132\010.Decimal\022&\n\024price_delta_negative\030\005 \001" +
-      "(\0132\010.Decimal\022\025\n\rname_singular\030\006 \001(\t\022\023\n\013n" +
-      "ame_plural\030\007 \001(\t\022\025\n\rmax_per_offer\030\010 \001(\003\022" +
-      "\025\n\rmax_per_order\030\t \001(\003\022\013\n\003seq\030\n \001(\003\022\025\n\rm" +
-      "in_per_offer\030\013 \001(\003\022\025\n\rmin_per_order\030\014 \001(",
-      "\003\022\024\n\014included_qty\030\r \001(\003\"G\n\006Client\022\n\n\002id\030" +
-      "\001 \002(\003\022\022\n\ncontact_id\030\002 \001(\003\022\014\n\004user\030\003 \001(\t\022" +
-      "\017\n\007passmd5\030\004 \001(\t\"P\n\nMenuOption\022\n\n\002id\030\001 \002" +
-      "(\003\022\017\n\007menu_id\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\022\027\n\017is_" +
-      "menu_changer\030\004 \001(\010\"S\n\007Payment\022\n\n\002id\030\001 \002(" +
-      "\003\022\021\n\tclient_id\030\002 \001(\003\022\025\n\003sum\030\003 \001(\0132\010.Deci" +
-      "mal\022\022\n\nreceipt_id\030\004 \001(\003\"h\n\024RestaurantsTo" +
-      "Contact\022\025\n\rrestaurant_id\030\001 \002(\003\022\022\n\ncontac" +
-      "t_id\030\002 \002(\003\022\020\n\010position\030\003 \002(\t\022\023\n\013can_deli" +
-      "ver\030\004 \001(\010\"\027\n\tPlaceType\022\n\n\002id\030\001 \002(\003\"\325\001\n\nR",
-      "estaurant\022\n\n\002id\030\001 \002(\003\022\022\n\naddress_id\030\002 \001(" +
-      "\003\022\027\n\017legal_entity_id\030\003 \001(\003\022!\n\031customer_t" +
-      "elephone_number\030\004 \001(\t\022\033\n\023customer_contac" +
-      "t_id\030\005 \001(\003\022\014\n\004logo\030\006 \001(\t\022\031\n\021logo_src_ima" +
-      "ge_id\030\007 \001(\003\022\022\n\nname_short\030\010 \001(\t\022\021\n\tname_" +
-      "long\030\t \001(\tB\025\n\023net.maivic.protocol"
+      "(\003\"=\n\010Location\022\n\n\002id\030\001 \002(\003\022\021\n\tname_long\030" +
+      "\002 \001(\t\022\022\n\nname_short\030\003 \001(\t\"\224\001\n\010Delivery\022\n" +
+      "\n\002id\030\001 \002(\003\022\025\n\rrestaurant_id\030\002 \001(\003\022\031\n\021del" +
+      "ivering_guy_id\030\003 \001(\003\022\020\n\010order_id\030\004 \001(\003\022\022" +
+      "\n\neta_arival\030\005 \001(\003\022\017\n\007arrival\030\006 \001(\003\022\023\n\013l" +
+      "ocation_id\030\007 \001(\003\"D\n\006Device\022\n\n\002id\030\001 \002(\003\022\014" +
+      "\n\004UUID\030\002 \001(\t\022\013\n\003tel\030\003 \001(\t\022\023\n\013receivessms",
+      "\030\004 \001(\010\"S\n\005Image\022\n\n\002id\030\001 \002(\003\022\014\n\004name\030\002 \001(" +
+      "\t\022\014\n\004data\030\003 \001(\t\022\021\n\tartist_id\030\004 \001(\003\022\017\n\007co" +
+      "mment\030\005 \001(\t\"\210\001\n\005Order\022\n\n\002id\030\001 \002(\003\022\021\n\tcli" +
+      "ent_id\030\002 \001(\003\022\031\n\021delivery_place_id\030\003 \001(\003\022" +
+      "\027\n\017delivery_box_id\030\004 \001(\t\022\024\n\014client_notes" +
+      "\030\005 \001(\t\022\026\n\004tips\030\006 \001(\0132\010.Decimal\"w\n\007Contac" +
+      "t\022\n\n\002id\030\001 \002(\003\022\014\n\004name\030\002 \001(\t\022\022\n\naddress_i" +
+      "d\030\003 \001(\003\022\016\n\006mobile\030\004 \001(\t\022\r\n\005email\030\005 \001(\t\022\020" +
+      "\n\010landline\030\006 \001(\t\022\r\n\005VATIN\030\007 \001(\t\"\247\001\n\016Geom" +
+      "etryColumn\022\027\n\017f_table_catalog\030\001 \002(\t\022\026\n\016f",
+      "_table_schema\030\002 \002(\t\022\024\n\014f_table_name\030\003 \002(" +
+      "\t\022\031\n\021f_geometry_column\030\004 \002(\t\022\027\n\017coord_di" +
+      "mension\030\005 \001(\003\022\014\n\004srid\030\006 \001(\003\022\014\n\004type\030\007 \001(" +
+      "\t\"I\n\021MeetingsToContact\022\022\n\ncontact_id\030\001 \002" +
+      "(\003\022\014\n\004role\030\002 \002(\t\022\022\n\nmeeting_id\030\003 \002(\003\"\\\n\020" +
+      "OrderEntryOption\022\n\n\002id\030\001 \002(\003\022\026\n\016order_en" +
+      "try_id\030\002 \001(\003\022\027\n\017offer_option_id\030\003 \001(\003\022\013\n" +
+      "\003qty\030\004 \001(\003\"R\n\004Menu\022\n\n\002id\030\001 \002(\003\022\022\n\nrecurr" +
+      "ence\030\002 \001(\t\022\025\n\rrestaurant_id\030\003 \001(\003\022\023\n\013loc" +
+      "ation_id\030\004 \001(\003\"n\n\rDeliveryPlace\022\n\n\002id\030\001 ",
+      "\002(\003\022\023\n\013location_id\030\002 \001(\003\022\023\n\013building_id\030" +
+      "\003 \001(\003\022\022\n\nshort_name\030\004 \001(\t\022\023\n\013place_types" +
+      "\030\005 \001(\003\"\230\001\n\032DeliveryPlaceSpecification\022\n\n" +
+      "\002id\030\001 \002(\003\022\023\n\013location_id\030\002 \001(\003\022\023\n\013buildi" +
+      "ng_id\030\003 \001(\003\022\031\n\021delivery_place_id\030\004 \001(\003\022\025" +
+      "\n\rplace_type_id\030\005 \001(\003\022\022\n\ntext_value\030\006 \001(" +
+      "\t\"\223\001\n\005Offer\022\n\n\002id\030\001 \002(\003\022\027\n\005price\030\002 \001(\0132\010" +
+      ".Decimal\022\025\n\rname_singular\030\003 \001(\t\022\023\n\013name_" +
+      "plural\030\004 \001(\t\022\025\n\rmax_per_order\030\005 \001(\003\022\025\n\rm" +
+      "in_per_order\030\006 \001(\003\022\013\n\003seq\030\007 \001(\003\"+\n\010Build",
+      "ing\022\n\n\002id\030\001 \002(\003\022\023\n\013location_id\030\002 \001(\003\"[\n\017" +
+      "PaymentsToOrder\022\022\n\npayment_id\030\001 \002(\003\022\020\n\010o" +
+      "rder_id\030\002 \002(\003\022\025\n\003sum\030\003 \001(\0132\010.Decimal\022\013\n\003" +
+      "seq\030\004 \002(\003\"*\n\007Decimal\022\r\n\005value\030\001 \002(\003\022\020\n\005s" +
+      "cale\030\002 \001(\005:\0010\"&\n\010Interval\022\r\n\005start\030\001 \001(\004" +
+      "\022\013\n\003end\030\002 \001(\004\":\n\rNameSpacePair\022\n\n\002id\030\001 \002" +
+      "(\003\022\016\n\006domain\030\002 \002(\003\022\r\n\005value\030\003 \001(\t\"R\n\025Con" +
+      "tactsToLegalEntity\022\022\n\ncontact_id\030\001 \002(\003\022\014" +
+      "\n\004role\030\002 \001(\t\022\027\n\017legal_entity_id\030\003 \002(\003\"X\n" +
+      "\013OrderStatus\022\n\n\002id\030\001 \002(\003\022\020\n\010order_id\030\002 \001",
+      "(\003\022\026\n\016status_code_id\030\003 \001(\003\022\023\n\013status_not" +
+      "e\030\004 \001(\t\"b\n\tMenuEntry\022\n\n\002id\030\001 \002(\003\022\017\n\007menu" +
+      "_id\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\022\022\n\noption_for\030\004 " +
+      "\001(\003\022\026\n\016option_max_qty\030\005 \001(\003\"I\n\021InvoicesT" +
+      "oContact\022\022\n\ncontact_id\030\001 \002(\003\022\022\n\ninvoice_" +
+      "id\030\002 \002(\003\022\014\n\004role\030\003 \002(\t\"S\n\nOrderEntry\022\n\n\002" +
+      "id\030\001 \002(\003\022\020\n\010order_id\030\002 \001(\003\022\020\n\010offer_id\030\003" +
+      " \001(\003\022\025\n\003qty\030\004 \001(\0132\010.Decimal\"e\n\007Receipt\022\n" +
+      "\n\002id\030\001 \002(\003\022\022\n\nemitter_id\030\002 \001(\003\022\014\n\004date\030\003" +
+      " \001(\003\022\025\n\003sum\030\004 \001(\0132\010.Decimal\022\025\n\remission_",
+      "date\030\005 \001(\003\"e\n\014SpatialRefSy\022\014\n\004srid\030\001 \002(\003" +
+      "\022\021\n\tauth_name\030\002 \001(\t\022\021\n\tauth_srid\030\003 \001(\003\022\016" +
+      "\n\006srtext\030\004 \001(\t\022\021\n\tproj4text\030\005 \001(\t\"\307\002\n\013Of" +
+      "ferOption\022\n\n\002id\030\001 \002(\003\022\030\n\020is_offer_change" +
+      "r\030\002 \001(\010\022\027\n\005price\030\003 \001(\0132\010.Decimal\022&\n\024pric" +
+      "e_delta_positive\030\004 \001(\0132\010.Decimal\022&\n\024pric" +
+      "e_delta_negative\030\005 \001(\0132\010.Decimal\022\025\n\rname" +
+      "_singular\030\006 \001(\t\022\023\n\013name_plural\030\007 \001(\t\022\025\n\r" +
+      "max_per_offer\030\010 \001(\003\022\025\n\rmax_per_order\030\t \001" +
+      "(\003\022\013\n\003seq\030\n \001(\003\022\025\n\rmin_per_offer\030\013 \001(\003\022\025",
+      "\n\rmin_per_order\030\014 \001(\003\022\024\n\014included_qty\030\r " +
+      "\001(\003\"G\n\006Client\022\n\n\002id\030\001 \002(\003\022\022\n\ncontact_id\030" +
+      "\002 \001(\003\022\014\n\004user\030\003 \001(\t\022\017\n\007passmd5\030\004 \001(\t\"P\n\n" +
+      "MenuOption\022\n\n\002id\030\001 \002(\003\022\017\n\007menu_id\030\002 \001(\003\022" +
+      "\014\n\004name\030\003 \001(\t\022\027\n\017is_menu_changer\030\004 \001(\010\"S" +
+      "\n\007Payment\022\n\n\002id\030\001 \002(\003\022\021\n\tclient_id\030\002 \001(\003" +
+      "\022\025\n\003sum\030\003 \001(\0132\010.Decimal\022\022\n\nreceipt_id\030\004 " +
+      "\001(\003\"h\n\024RestaurantsToContact\022\025\n\rrestauran" +
+      "t_id\030\001 \002(\003\022\022\n\ncontact_id\030\002 \002(\003\022\020\n\010positi" +
+      "on\030\003 \002(\t\022\023\n\013can_deliver\030\004 \001(\010\"\027\n\tPlaceTy",
+      "pe\022\n\n\002id\030\001 \002(\003\"\325\001\n\nRestaurant\022\n\n\002id\030\001 \002(" +
+      "\003\022\022\n\naddress_id\030\002 \001(\003\022\027\n\017legal_entity_id" +
+      "\030\003 \001(\003\022!\n\031customer_telephone_number\030\004 \001(" +
+      "\t\022\033\n\023customer_contact_id\030\005 \001(\003\022\014\n\004logo\030\006" +
+      " \001(\t\022\031\n\021logo_src_image_id\030\007 \001(\003\022\022\n\nname_" +
+      "short\030\010 \001(\t\022\021\n\tname_long\030\t \001(\tB\025\n\023net.ma" +
+      "ivic.protocol"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -31381,7 +31538,7 @@ public final class Model {
           internal_static_Location_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Location_descriptor,
-              new java.lang.String[] { "Id", "NameLong", });
+              new java.lang.String[] { "Id", "NameLong", "NameShort", });
           internal_static_Delivery_descriptor =
             getDescriptor().getMessageTypes().get(5);
           internal_static_Delivery_fieldAccessorTable = new

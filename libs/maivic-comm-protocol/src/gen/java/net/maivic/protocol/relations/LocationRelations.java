@@ -3,6 +3,7 @@
 //Outgoing Relations from table 'locations'
 //////////////////////////////////////////////////
 package net.maivic.protocol.relations;
+import net.maivic.comm.RPCUpdateSubscriptionService;
 import net.maivic.comm.SubscriptionCallback;
 import net.maivic.comm.Table;
 import net.maivic.comm.LazyResponse;
@@ -16,7 +17,7 @@ import net.maivic.comm.Relation;
 import net.maivic.protocol.Model.Location;
 import net.maivic.protocol.Model.Building;
 @Table("locations")
-public interface LocationRelations {
+public interface LocationRelations extends RPCUpdateSubscriptionService {
   @Relation(name="deliveries",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<Delivery>>getDeliveries(Location  o,@SubscriptionCallback Callback<List<Delivery>> cb);
   @Relation(name="delivery_places",type=RelationType.ONE_TO_MANY)

@@ -3,6 +3,7 @@
 //Outgoing Relations from table 'menus'
 //////////////////////////////////////////////////
 package net.maivic.protocol.relations;
+import net.maivic.comm.RPCUpdateSubscriptionService;
 import net.maivic.comm.SubscriptionCallback;
 import net.maivic.protocol.Model.Restaurant;
 import net.maivic.comm.Table;
@@ -16,7 +17,7 @@ import net.maivic.comm.Callback;
 import net.maivic.comm.Relation;
 import net.maivic.protocol.Model.MenuEntry;
 @Table("menus")
-public interface MenuRelations {
+public interface MenuRelations extends RPCUpdateSubscriptionService {
   @Relation(name="menu_options",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<MenuOption>>getMenuOptions(Menu  o,@SubscriptionCallback Callback<List<MenuOption>> cb);
   @Relation(name="menu_entries",type=RelationType.ONE_TO_MANY)

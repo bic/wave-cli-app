@@ -3,6 +3,7 @@
 //Outgoing Relations from table 'contacts'
 //////////////////////////////////////////////////
 package net.maivic.protocol.relations;
+import net.maivic.comm.RPCUpdateSubscriptionService;
 import net.maivic.comm.SubscriptionCallback;
 import net.maivic.comm.Table;
 import net.maivic.comm.LazyResponse;
@@ -20,7 +21,7 @@ import net.maivic.protocol.Model.Client;
 import net.maivic.protocol.Model.ContactsToLegalEntity;
 import net.maivic.protocol.Model.Invoice;
 @Table("contacts")
-public interface ContactRelations {
+public interface ContactRelations extends RPCUpdateSubscriptionService {
   @Relation(name="invoices",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<Invoice>>getInvoices(Contact  o,@SubscriptionCallback Callback<List<Invoice>> cb);
   @Relation(name="deliveries",type=RelationType.ONE_TO_MANY)

@@ -4,6 +4,7 @@
 //////////////////////////////////////////////////
 package net.maivic.protocol.relations;
 import net.maivic.comm.SubscriptionCallback;
+import net.maivic.comm.RPCUpdateSubscriptionService;
 import net.maivic.comm.Callback;
 import net.maivic.comm.LazyResponse;
 import java.util.List;
@@ -16,7 +17,7 @@ import net.maivic.comm.Relation;
 import net.maivic.protocol.Model.Location;
 import net.maivic.protocol.Model.Building;
 @Table("buildings")
-public interface BuildingRelations {
+public interface BuildingRelations extends RPCUpdateSubscriptionService {
   @Relation(name="addresses",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<Address>>getAddresses(Building  o , @SubscriptionCallback Callback<List<Address>> cb);
   @Relation(name="delivery_places",type=RelationType.ONE_TO_MANY)

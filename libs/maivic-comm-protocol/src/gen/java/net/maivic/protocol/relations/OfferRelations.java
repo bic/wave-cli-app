@@ -3,6 +3,7 @@
 //Outgoing Relations from table 'offers'
 //////////////////////////////////////////////////
 package net.maivic.protocol.relations;
+import net.maivic.comm.RPCUpdateSubscriptionService;
 import net.maivic.comm.SubscriptionCallback;
 import net.maivic.comm.Table;
 import net.maivic.comm.LazyResponse;
@@ -15,7 +16,7 @@ import net.maivic.protocol.Model.OrderEntry;
 import net.maivic.comm.Relation;
 import net.maivic.comm.Callback;
 @Table("offers")
-public interface OfferRelations {
+public interface OfferRelations extends RPCUpdateSubscriptionService {
   @Relation(name="order_entries",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<OrderEntry>>getOrderEntries(Offer  o,@SubscriptionCallback Callback<List<OrderEntry>> cb);
   @Relation(name="offer_options",type=RelationType.ONE_TO_MANY)

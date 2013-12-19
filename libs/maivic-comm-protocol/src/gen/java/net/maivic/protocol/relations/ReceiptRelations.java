@@ -4,6 +4,7 @@
 //////////////////////////////////////////////////
 package net.maivic.protocol.relations;
 import net.maivic.comm.SubscriptionCallback;
+import net.maivic.comm.RPCUpdateSubscriptionService;
 import net.maivic.comm.Callback;
 import net.maivic.comm.LazyResponse;
 import java.util.List;
@@ -14,7 +15,7 @@ import net.maivic.protocol.Model.Receipt;
 import net.maivic.protocol.Model.Payment;
 import net.maivic.protocol.Model.Invoice;
 @Table("receipts")
-public interface ReceiptRelations {
+public interface ReceiptRelations extends RPCUpdateSubscriptionService {
   @Relation(name="invoices",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<Invoice>>getInvoices(Receipt  o , @SubscriptionCallback Callback<List<Invoice>> cb);
   @Relation(name="payments",type=RelationType.ONE_TO_MANY)

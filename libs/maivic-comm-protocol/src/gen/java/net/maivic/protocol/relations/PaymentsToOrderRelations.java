@@ -3,6 +3,7 @@
 //Outgoing Relations from table 'payments_to_orders'
 //////////////////////////////////////////////////
 package net.maivic.protocol.relations;
+import net.maivic.comm.RPCUpdateSubscriptionService;
 import net.maivic.comm.SubscriptionCallback;
 import net.maivic.comm.Table;
 import net.maivic.protocol.Model.PaymentsToOrder;
@@ -13,7 +14,7 @@ import net.maivic.protocol.Model.Order;
 import net.maivic.comm.Relation;
 import net.maivic.protocol.Model.Payment;
 @Table("payments_to_orders")
-public interface PaymentsToOrderRelations {
+public interface PaymentsToOrderRelations extends RPCUpdateSubscriptionService {
   @Relation(name="order",type=RelationType.MANY_TO_ONE)
   LazyResponse<Order>getOrder(PaymentsToOrder object , @SubscriptionCallback Callback<Order> cb);
   @Relation(name="payment",type=RelationType.MANY_TO_ONE)
