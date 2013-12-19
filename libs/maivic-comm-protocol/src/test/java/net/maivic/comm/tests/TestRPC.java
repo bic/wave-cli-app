@@ -96,13 +96,12 @@ public class TestRPC extends TestCase {
 		try {
 			location = locationQuery.getLocation(1.0, 2.0, 150).get();
 			System.out.println(location);
-			LazyResponse<List<Offer>> offers = locRels
-					.getOffers(location, null);
+			LazyResponse<List<Offer>> offers = null; // = locRels
+					//.getOffers(location, null);
 			List<List<OfferOption>> res = new ArrayList<List<OfferOption>>();
 			final List<LazyResponse<Restaurant>> restaurants = new ArrayList<LazyResponse<Restaurant>>();
 			List<LazyResponse<List<OfferOption>>> responses = new ArrayList<LazyResponse<List<OfferOption>>>();
 			for (Offer o : offers.get()) {
-				System.out.print("Restaurant: ");
 				System.out.println(offerRels.getMenus(o, null).get());
 				/**
 				.addDoneCallback(
@@ -233,7 +232,7 @@ public class TestRPC extends TestCase {
 		System.out.println("Location id: " + location.getId());
 
 		System.out.print(prefix);
-		System.out.println("Location short_name: " + location.getNameShort());
+		System.out.println("Location short_name: " + location.getNameLong());
 
 		System.out.print(prefix);
 		System.out.println("Location long_name: " + location.getNameLong());

@@ -1,19 +1,26 @@
 package net.maivic.comm.impl;
 import java.io.IOException;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import net.maivic.comm.Callback;
 import net.maivic.comm.DefaultLazyResponse;
 import net.maivic.comm.LazyResponse;
 import net.maivic.comm.Maivic.BaseType;
 import net.maivic.comm.Maivic.ExceptionType;
 import net.maivic.comm.Maivic.FunctionCall;
 import net.maivic.comm.Maivic.MessageContainer;
+import net.maivic.comm.RPCUpdateSubscriptionService;
 import net.maivic.comm.Relation;
+import net.maivic.comm.SubscriptionCallback;
 import net.maivic.comm.Table;
 import net.maivic.comm.Transport;
 import net.maivic.comm.service.AbstractRPCServiceClient;
@@ -26,19 +33,53 @@ class RPCInvocationHandler extends  AbstractRPCServiceClient implements Invocati
 		super((Integer)Context.get().get("ServiceID.RPC"));
 	}
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable{
+		if (method.equals(RPCUpdateSubscriptionService.class.getMethod("unsubscribe"))) {
+			this.unsubscribeRPC();
+			return null;
+		}
 		try{
-			FunctionCall.Builder call = FunctionCall.newBuilder();
-			for (int i = 0; i<method.getParameterTypes().length; i++) {
-				Class<?> p = method.getParameterTypes()[i];
-				call.addArgs(BaseTypeMapper.toBaseType(args[i], p));
+			
+			
+			
+			
+			List<Integer> callbackparams = new ArrayList<Integer>();
+			{
+				int i = 0;
+				for( Annotation[] annotations : method.getParameterAnnotations()){
+					for(Annotation annotation : annotations){
+						if (annotation.annotationType().isInstance(SubscriptionCallback.class)){
+							callbackparams.add(i);
+							break;
+						}
+					}
+					i++;
+				}
+			}
+			Class<?> parentInterface=proxy.getClass().getInterfaces()[0];
+			Table tbl_annotation = parentInterface.getAnnotation(Table.class);
+			Callback<?>[] callbacks = new Callback<?>[callbackparams.size()];
+			Class<?>[] otherArgTypes = new Class<?>[args.length-callbackparams.size()];
+			Object[] otherArgs = new Object[args.length-callbackparams.size()];	
+			for(int i=0, j =0, k=0; i < args.length; i++) {
+				if(callbackparams.contains(i)){
+					callbacks[j] = (Callback)args[i];
+					j++;
+				} else {
+					otherArgs[k] = args[i];
+					otherArgTypes[k]=method.getParameterTypes()[i];
+					k++;
+				}
 			}
 			
-			
+			FunctionCall.Builder call = FunctionCall.newBuilder();
+			for (int i = 0; i<otherArgTypes.length; i++) {
+				call.addArgs(BaseTypeMapper.toBaseType(otherArgs[i], otherArgTypes[i]));
+			}
 			MessageContainer.Builder container = MessageContainer.newBuilder();
-			call.setFunction(proxy.getClass().getInterfaces()[0].getCanonicalName() + "." + method.getName());
-			Table tbl_annotation = proxy.getClass().getInterfaces()[0].getAnnotation(Table.class);
-			
+		
+			call.setFunction(parentInterface.getCanonicalName() + "." + method.getName());
 			String funcName=null;
+			
 			if (tbl_annotation == null) {
 				funcName =proxy.getClass().getInterfaces()[0].getCanonicalName() + "." + method.getName();
 			}else {
@@ -51,11 +92,17 @@ class RPCInvocationHandler extends  AbstractRPCServiceClient implements Invocati
 					funcName += "." + method_annotation.name();
 				}
 			}
+			if (callbacks.length >0) {
+				call.setIsSubscription(true);
+			}
 			call.setFunction(funcName);
 			//LazyResponse<T> result = this.send(container.build());
 			LazyResponse<?> lazy_response = null;
 			synchronized (this.expectedResults) {
-				lazy_response= this.send(call.build());
+				if (call.hasIsSubscription() && call.getIsSubscription()){
+					
+				}
+				lazy_response= this.send(call.build(), callbacks);
 				expectedResults.put(lazy_response,method.getGenericReturnType());
 			}
 			if (method.getReturnType().isAssignableFrom(LazyResponse.class)){
@@ -68,6 +115,10 @@ class RPCInvocationHandler extends  AbstractRPCServiceClient implements Invocati
 			t.printStackTrace();
 			throw t;
 		}
+	}
+	private void unsubscribeRPC() {
+		// TODO Auto-generated method stub
+		
 	}
 	private int getIndexForFunctionName() {		
 		return 0;

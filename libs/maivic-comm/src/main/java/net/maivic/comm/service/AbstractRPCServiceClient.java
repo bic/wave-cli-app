@@ -12,6 +12,7 @@ import net.maivic.comm.Maivic.ExceptionType;
 import net.maivic.comm.Maivic.FunctionCall;
 import net.maivic.comm.Maivic.FunctionReturn;
 import net.maivic.comm.Maivic.MessageContainer;
+import net.maivic.comm.Maivic.BaseType.ENCODED_TYPE;
 import net.maivic.comm.Maivic.MessageContainer.Builder;
 import net.maivic.comm.Maivic.ThreadControl;
 import net.maivic.comm.Maivic.ThreadControl.Operation;
@@ -88,22 +89,25 @@ public  abstract  class AbstractRPCServiceClient<T> {
 	public int getServiceId() {
 		return serviceId;
 	}
-	public LazyResponse<T> send(FunctionCall message) {
+	public LazyResponse<T> send(FunctionCall message, Callback<?>[] SubscriptionCallbacks) {
 		Builder container = MessageContainer.newBuilder();
 		fillMessageContainer(container, message);
 		TransportManager tm = Context.get().getTransportManager();
 		
-	
+		
 		DefaultLazyResponse<T> lazyResponse = new DefaultLazyResponse<T>(); 
 		final int thread_id_ = container.getThreadControl().getThreadId();
 		openRequests.put(thread_id_, lazyResponse);
+		if (message.getArgsCount() >=1 && message.getArgs(0).getEncodedType() == ENCODED_TYPE.NONE) {
+			System.out.print( "Calling fungtion " + message.getFunction() + "with arguments:");
+			System.out.println(message.getArgsList());
+		}
 		lazyResponse.addSuccessCallback(new Callback<LazyResponse<T>>() {
 			int thread_id= thread_id_;
 			public void call(LazyResponse<T> result) {
 				openRequests.remove(thread_id);
 				threadManager.closeThread(thread_id);
 			}});
-		
 		return tm.sendWithRetry((T)container,new FixedRetry<T>(FixedRetry.logRetryDelays(5), "nettytcp"), lazyResponse);
 	}
 	

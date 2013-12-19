@@ -7163,6 +7163,16 @@ public final class Maivic {
      * <code>optional bool isMethod = 3;</code>
      */
     boolean getIsMethod();
+
+    // optional bool isSubscription = 4;
+    /**
+     * <code>optional bool isSubscription = 4;</code>
+     */
+    boolean hasIsSubscription();
+    /**
+     * <code>optional bool isSubscription = 4;</code>
+     */
+    boolean getIsSubscription();
   }
   /**
    * Protobuf type {@code net.maivic.comm.FunctionCall}
@@ -7231,6 +7241,11 @@ public final class Maivic {
             case 24: {
               bitField0_ |= 0x00000002;
               isMethod_ = input.readBool();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000004;
+              isSubscription_ = input.readBool();
               break;
             }
           }
@@ -7371,10 +7386,27 @@ public final class Maivic {
       return isMethod_;
     }
 
+    // optional bool isSubscription = 4;
+    public static final int ISSUBSCRIPTION_FIELD_NUMBER = 4;
+    private boolean isSubscription_;
+    /**
+     * <code>optional bool isSubscription = 4;</code>
+     */
+    public boolean hasIsSubscription() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional bool isSubscription = 4;</code>
+     */
+    public boolean getIsSubscription() {
+      return isSubscription_;
+    }
+
     private void initFields() {
       function_ = "";
       args_ = java.util.Collections.emptyList();
       isMethod_ = false;
+      isSubscription_ = false;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -7407,6 +7439,9 @@ public final class Maivic {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBool(3, isMethod_);
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBool(4, isSubscription_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7427,6 +7462,10 @@ public final class Maivic {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, isMethod_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, isSubscription_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -7555,6 +7594,8 @@ public final class Maivic {
         }
         isMethod_ = false;
         bitField0_ = (bitField0_ & ~0x00000004);
+        isSubscription_ = false;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -7600,6 +7641,10 @@ public final class Maivic {
           to_bitField0_ |= 0x00000002;
         }
         result.isMethod_ = isMethod_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.isSubscription_ = isSubscription_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -7649,6 +7694,9 @@ public final class Maivic {
         }
         if (other.hasIsMethod()) {
           setIsMethod(other.getIsMethod());
+        }
+        if (other.hasIsSubscription()) {
+          setIsSubscription(other.getIsSubscription());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -8030,6 +8078,39 @@ public final class Maivic {
       public Builder clearIsMethod() {
         bitField0_ = (bitField0_ & ~0x00000004);
         isMethod_ = false;
+        onChanged();
+        return this;
+      }
+
+      // optional bool isSubscription = 4;
+      private boolean isSubscription_ ;
+      /**
+       * <code>optional bool isSubscription = 4;</code>
+       */
+      public boolean hasIsSubscription() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional bool isSubscription = 4;</code>
+       */
+      public boolean getIsSubscription() {
+        return isSubscription_;
+      }
+      /**
+       * <code>optional bool isSubscription = 4;</code>
+       */
+      public Builder setIsSubscription(boolean value) {
+        bitField0_ |= 0x00000008;
+        isSubscription_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool isSubscription = 4;</code>
+       */
+      public Builder clearIsSubscription() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        isSubscription_ = false;
         onChanged();
         return this;
       }
@@ -15078,36 +15159,37 @@ public final class Maivic {
       "D64\020\n\022\014\n\010SFIXED32\020\013\022\014\n\010SFIXED64\020\014\022\010\n\004BOO" +
       "L\020\r\022\n\n\006DOUBLE\020\016\022\t\n\005FLOAT\020\017\022\r\n\tLIST_TYPE\020" +
       "\020\022\013\n\007UNKNOWN\020\021\022\013\n\007MESSAGE\020\022\022\027\n\023COMPONENT" +
-      "_BASE_TYPE\020\023\022\010\n\004NONE\020\024\"[\n\014FunctionCall\022\020" +
+      "_BASE_TYPE\020\023\022\010\n\004NONE\020\024\"s\n\014FunctionCall\022\020" +
       "\n\010function\030\001 \002(\t\022\'\n\004args\030\002 \003(\0132\031.net.mai" +
-      "vic.comm.BaseType\022\020\n\010isMethod\030\003 \001(\010\"\242\001\n\016" +
-      "FunctionReturn\022(\n\005value\030\001 \001(\0132\031.net.maiv" +
-      "ic.comm.BaseType\0221\n\texception\030\002 \001(\0132\036.ne",
-      "t.maivic.comm.ExceptionType\0223\n\010progress\030" +
-      "\003 \001(\0132!.net.maivic.comm.FunctionProgress" +
-      "\":\n\020FunctionProgress\022\020\n\010progress\030\001 \002(\005\022\024" +
-      "\n\014max_progress\030\002 \001(\003\"\215\001\n\rExceptionType\022\017" +
-      "\n\007type_id\030\001 \002(\005\022\017\n\007message\030\002 \001(\t\022+\n\006stra" +
-      "ce\030\003 \001(\0132\033.net.maivic.comm.StackTrace\022-\n" +
-      "\005cause\030\004 \001(\0132\036.net.maivic.comm.Exception" +
-      "Type\"\033\n\nStackTrace\022\r\n\005frame\030\001 \003(\t\"R\n\tEnt" +
-      "ityReq\022\026\n\016entity_type_id\030\001 \002(\005\022\023\n\013entiti" +
-      "es_pk\030\002 \003(\014\022\030\n\020entity_type_name\030\003 \001(\t\"P\n",
-      "\017RelationRequest\022\023\n\013relation_id\030\001 \002(\005\022\021\n" +
-      "\tentity_pk\030\002 \002(\014\022\025\n\rrelation_name\030\003 \001(\t\"" +
-      "_\n\016EntityResponse\022\026\n\016entity_type_id\030\001 \002(" +
-      "\005\022\030\n\020entity_type_name\030\004 \001(\005\022\033\n\023serialize" +
-      "d_entities\030\005 \003(\014\"\030\n\010Identity\022\014\n\004uuid\030\001 \002" +
-      "(\014\"0\n\025AuthenticationRequest\022\027\n\017auth_serv" +
-      "ice_id\030\001 \002(\005\"\226\002\n\017NameSpaceUpdate\0226\n\002op\030\001" +
-      " \002(\0162*.net.maivic.comm.NameSpaceUpdate.O" +
-      "peration\022\017\n\003ids\030\002 \003(\003B\002\020\001\022\016\n\006values\030\003 \003(" +
-      "\014\022\023\n\013skipped_ids\030\004 \003(\003\022\034\n\024domain_hash_af",
-      "ter_op\030\005 \001(\014\022\033\n\023table_hash_after_op\030\006 \001(" +
-      "\014\022\021\n\006domain\030\007 \001(\003:\0010\"G\n\tOperation\022\010\n\004REA" +
-      "D\020\001\022\t\n\005WRITE\020\002\022\023\n\017READ_ALL_EXCEPT\020\005\022\020\n\014R" +
-      "ESET_DOMAIN\020\006*=\n\tNamespace\022\013\n\007MESSAGE\020\001\022" +
-      "\n\n\006ENTITY\020\002\022\013\n\007SERVICE\020\003\022\n\n\006THREAD\020\004"
+      "vic.comm.BaseType\022\020\n\010isMethod\030\003 \001(\010\022\026\n\016i" +
+      "sSubscription\030\004 \001(\010\"\242\001\n\016FunctionReturn\022(" +
+      "\n\005value\030\001 \001(\0132\031.net.maivic.comm.BaseType",
+      "\0221\n\texception\030\002 \001(\0132\036.net.maivic.comm.Ex" +
+      "ceptionType\0223\n\010progress\030\003 \001(\0132!.net.maiv" +
+      "ic.comm.FunctionProgress\":\n\020FunctionProg" +
+      "ress\022\020\n\010progress\030\001 \002(\005\022\024\n\014max_progress\030\002" +
+      " \001(\003\"\215\001\n\rExceptionType\022\017\n\007type_id\030\001 \002(\005\022" +
+      "\017\n\007message\030\002 \001(\t\022+\n\006strace\030\003 \001(\0132\033.net.m" +
+      "aivic.comm.StackTrace\022-\n\005cause\030\004 \001(\0132\036.n" +
+      "et.maivic.comm.ExceptionType\"\033\n\nStackTra" +
+      "ce\022\r\n\005frame\030\001 \003(\t\"R\n\tEntityReq\022\026\n\016entity" +
+      "_type_id\030\001 \002(\005\022\023\n\013entities_pk\030\002 \003(\014\022\030\n\020e",
+      "ntity_type_name\030\003 \001(\t\"P\n\017RelationRequest" +
+      "\022\023\n\013relation_id\030\001 \002(\005\022\021\n\tentity_pk\030\002 \002(\014" +
+      "\022\025\n\rrelation_name\030\003 \001(\t\"_\n\016EntityRespons" +
+      "e\022\026\n\016entity_type_id\030\001 \002(\005\022\030\n\020entity_type" +
+      "_name\030\004 \001(\005\022\033\n\023serialized_entities\030\005 \003(\014" +
+      "\"\030\n\010Identity\022\014\n\004uuid\030\001 \002(\014\"0\n\025Authentica" +
+      "tionRequest\022\027\n\017auth_service_id\030\001 \002(\005\"\226\002\n" +
+      "\017NameSpaceUpdate\0226\n\002op\030\001 \002(\0162*.net.maivi" +
+      "c.comm.NameSpaceUpdate.Operation\022\017\n\003ids\030" +
+      "\002 \003(\003B\002\020\001\022\016\n\006values\030\003 \003(\014\022\023\n\013skipped_ids",
+      "\030\004 \003(\003\022\034\n\024domain_hash_after_op\030\005 \001(\014\022\033\n\023" +
+      "table_hash_after_op\030\006 \001(\014\022\021\n\006domain\030\007 \001(" +
+      "\003:\0010\"G\n\tOperation\022\010\n\004READ\020\001\022\t\n\005WRITE\020\002\022\023" +
+      "\n\017READ_ALL_EXCEPT\020\005\022\020\n\014RESET_DOMAIN\020\006*=\n" +
+      "\tNamespace\022\013\n\007MESSAGE\020\001\022\n\n\006ENTITY\020\002\022\013\n\007S" +
+      "ERVICE\020\003\022\n\n\006THREAD\020\004"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -15149,7 +15231,7 @@ public final class Maivic {
           internal_static_net_maivic_comm_FunctionCall_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_net_maivic_comm_FunctionCall_descriptor,
-              new java.lang.String[] { "Function", "Args", "IsMethod", });
+              new java.lang.String[] { "Function", "Args", "IsMethod", "IsSubscription", });
           internal_static_net_maivic_comm_FunctionReturn_descriptor =
             getDescriptor().getMessageTypes().get(6);
           internal_static_net_maivic_comm_FunctionReturn_fieldAccessorTable = new

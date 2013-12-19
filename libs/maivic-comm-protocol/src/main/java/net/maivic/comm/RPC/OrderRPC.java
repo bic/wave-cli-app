@@ -19,7 +19,7 @@ public interface OrderRPC {
 			OrderStatus previousOrderStatus,
 			@SubscriptionCallback Callback<OrderStatus> cb);
 	LazyResponse<OrderStatus> confirmOrder(
-			OrderStatus ord, 
-			Decimal totalPrice , 
+			OrderStatus ord,
+			Decimal totalPrice ,
 			@SubscriptionCallback Callback<OrderStatus> cb);
 }
