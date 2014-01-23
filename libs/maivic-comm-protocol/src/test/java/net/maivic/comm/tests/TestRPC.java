@@ -101,38 +101,10 @@ public class TestRPC extends TestCase {
 			List<List<OfferOption>> res = new ArrayList<List<OfferOption>>();
 			final List<LazyResponse<Restaurant>> restaurants = new ArrayList<LazyResponse<Restaurant>>();
 			List<LazyResponse<List<OfferOption>>> responses = new ArrayList<LazyResponse<List<OfferOption>>>();
+			
 			for (Offer o : offers.get()) {
 				System.out.println(offerRels.getMenus(o, null).get());
-				/**
-				.addDoneCallback(
-						new Callback<LazyResponse<List<Menu>>>() {
-							@Override
-							public void call(LazyResponse<List<Menu>> result) {
-								List<Menu> ret;
-								
-								try {
-									ret = result.get();
-									System.out.print("Restaurant");
-									System.out.println(ret);
-									if (ret == null || ret.size() < 1) {
-										// error
-									} else {
-										restaurants.add(menuRels.getRestaurant(
-												ret.get(0), null));
-										
-									}
-									
-								} catch (InterruptedException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								} catch (ExecutionException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-								
-							}
-						});
-				*/
+							
 				responses.add(offerRels.getOfferOptions(o, null));
 				System.out.println(o);
 			}
@@ -254,6 +226,9 @@ public class TestRPC extends TestCase {
 		try {
 			location = locationQuery.getLocation(1.0, 2.0, 150).get();
 			List<Offer> offers = locationQuery.getCurrentActiveOffers(location).get() ;
+			OfferQuery offer_q = RPCHandlerManager.getHandler(OfferQuery.class);
+			offer_q.getOfferOptions(offers.get(0));
+			
 					/**, new Callback<List<Offer>> () {
 
 				@Override
@@ -265,7 +240,6 @@ public class TestRPC extends TestCase {
 			})
 					.get();
 					*/
-			OfferQuery offer_q = RPCHandlerManager.getHandler(OfferQuery.class);
 			List<LazyResponse<Restaurant>> restaurants = new ArrayList<LazyResponse<Restaurant>>();
 			for (Offer offer : offers) {
 				// Launch the Queries

@@ -8,6 +8,7 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.channel.socket.oio.OioSocketChannel;
 import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
 
 import java.lang.reflect.Constructor;
@@ -35,9 +36,9 @@ public class SocketClient {
 	private IncomingCallBack incomingCallBack;
 	private void init( EventLoopGroup group  ){
 		b = new Bootstrap();
-		b.group( group);
-		b.channel(NioSocketChannel.class);
-		b.option(ChannelOption.SO_KEEPALIVE, true);
+		b.group( group)
+		.channel(OioSocketChannel.class)
+		.option(ChannelOption.SO_KEEPALIVE, true);
 		this.incomingCallBack=new IncomingCallBack() {
 			public void onIncomingMessage(MessageContainer msg) {
 				log.i(TAG, "Received Messagecontainer with service_id: " +
@@ -69,7 +70,7 @@ public class SocketClient {
 	}
 	/**
 	 *  connect opens a connection to a listening host.
-	 *  Once connected the send operations are schedueld on the {@link EventLoopGroup} supplied with the {@link #SocketClient(EventLoopGroup)} constructor.
+	 *  Once connected the send operations are scheduled on the {@link EventLoopGroup} supplied with the {@link #SocketClient(EventLoopGroup)} constructor.
 	 *  Incoming {@link MessageContainer} objects are forwarded to the MessageCont
 	 * @param host The host to connect to
 	 * @param port adapter of the connection

@@ -23,8 +23,13 @@ public class MaivicResourceBundle extends ResourceBundle {
 		addConstant("default.nettytcp.port", 12345);
 		Class<?> clz =null;
 		try {
-			clz= Class.forName("io.netty.channel.nio.NioEventLoopGroup");
-			this.defaultConstructibleImplementations.put(ScheduledExecutorService.class.getName(), "io.netty.channel.nio.NioEventLoopGroup"  );
+			
+			//clz= Class.forName("io.netty.channel.nio.NioEventLoopGroup");
+			//this.defaultConstructibleImplementations.put(ScheduledExecutorService.class.getName(), "io.netty.channel.nio.NioEventLoopGroup"  );
+			clz= Class.forName("io.netty.channel.oio.OioEventLoopGroup");
+			this.defaultConstructibleImplementations.put(ScheduledExecutorService.class.getName(), "io.netty.channel.oio.OioEventLoopGroup"  );
+			
+		
 		}catch (ClassNotFoundException e) {	
 			this.constantValues.put(ScheduledExecutorService.class.getName(), Executors.newSingleThreadExecutor());
 		}
