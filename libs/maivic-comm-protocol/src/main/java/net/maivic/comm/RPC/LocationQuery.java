@@ -27,5 +27,5 @@ public interface LocationQuery {
 	 * @param location The Location for which to return the offers
 	 * @return
 	 */
-	LazyResponse<List<Offer> > getCurrentActiveOffers(Location location, @SubscriptionCallback Callback<List<Offer>> cb);
+	LazyResponse<List<Offer> > getCurrentActiveOffers(Location location);
 }

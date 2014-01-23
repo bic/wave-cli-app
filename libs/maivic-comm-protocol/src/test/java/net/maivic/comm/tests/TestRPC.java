@@ -170,7 +170,7 @@ public class TestRPC extends TestCase {
 				.getHandler(OfferRelations.class);
 		try {
 			location = locationQuery.getLocation(1.0, 2.0, 150).get();
-			List<Offer> offers = locationQuery.getCurrentActiveOffers(location,null)
+			List<Offer> offers = locationQuery.getCurrentActiveOffers(location)
 					.get();
 
 			for (Offer offer : offers) {
@@ -253,7 +253,8 @@ public class TestRPC extends TestCase {
 		Location location;
 		try {
 			location = locationQuery.getLocation(1.0, 2.0, 150).get();
-			List<Offer> offers = locationQuery.getCurrentActiveOffers(location, new Callback<List<Offer>> () {
+			List<Offer> offers = locationQuery.getCurrentActiveOffers(location).get() ;
+					/**, new Callback<List<Offer>> () {
 
 				@Override
 				public void call(List<Offer> result) {
@@ -263,6 +264,7 @@ public class TestRPC extends TestCase {
 				
 			})
 					.get();
+					*/
 			OfferQuery offer_q = RPCHandlerManager.getHandler(OfferQuery.class);
 			List<LazyResponse<Restaurant>> restaurants = new ArrayList<LazyResponse<Restaurant>>();
 			for (Offer offer : offers) {
@@ -308,7 +310,7 @@ public class TestRPC extends TestCase {
 		Location location;
 		try {
 			location = locationQuery.getLocation(1.0, 2.0, 150).get();
-			List<Offer> offers = locationQuery.getCurrentActiveOffers(location, null)
+			List<Offer> offers = locationQuery.getCurrentActiveOffers(location)
 					.get();
 			Offer offer = offers.get(0); // pick first for example
 			OfferQuery offer_q = RPCHandlerManager.getHandler(OfferQuery.class);
