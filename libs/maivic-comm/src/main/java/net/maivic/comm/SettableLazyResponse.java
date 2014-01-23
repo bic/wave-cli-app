@@ -9,4 +9,6 @@ public interface SettableLazyResponse <T> extends LazyResponse<T> {
 	void setFailure(Throwable failure);
 	void setProgress(int progress);
 	void setMaxProgress(int maxProgress);
+	public T get_no_throw();
+		
 }

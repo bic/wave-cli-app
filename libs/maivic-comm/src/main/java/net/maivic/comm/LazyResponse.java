@@ -30,7 +30,7 @@ import java.util.concurrent.Future;
  */
 public interface LazyResponse<T> extends Future<T>{
 	
-	T get_no_throw();
+	public T get_no_throw();
 	
 	/**
 	 * For Rpc-s with progress Implementation
