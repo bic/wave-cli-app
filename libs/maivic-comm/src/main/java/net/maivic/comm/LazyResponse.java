@@ -29,6 +29,9 @@ import java.util.concurrent.Future;
  * @param <T> The Result type got {@link #get()} and {@link #get(long, java.util.concurrent.TimeUnit)}
  */
 public interface LazyResponse<T> extends Future<T>{
+	
+	T get_no_throw();
+	
 	/**
 	 * For Rpc-s with progress Implementation
 	 * 

@@ -264,5 +264,16 @@ public class DefaultLazyResponse<T> implements SettableLazyResponse<T> {
 	public int getMaxProgress() {
 		return this.max_progress;
 	}
+
+	public T get_no_throw() {
+		try {
+			return this.get();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 }
