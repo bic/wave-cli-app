@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"  >
+
+         <TextView
+            android:id="@+id/Zona"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            
+            android:scaleType="fitCenter"
+           android:padding="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/menu_composition_search"
+            android:text="Zona:"
+            android:textSize="32sp" />
+          <!--  android:layout_centerVertical="true"-->
+         
+        <Spinner
+            android:id="@+id/location_spinner"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/Zona"
+            android:layout_below="@+id/livrare_la_ora"
+            
+            android:layout_toRightOf="@id/Zona" />
+
+        <EditText
+            android:id="@+id/menu_composition_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/livrare_la_ora"
+            android:layout_alignBottom="@+id/livrare_la_ora"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/livrare_la_ora"
+            android:ems="10"
+            android:paddingLeft="10dp" 
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/nr_portii"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/Zona"
+            android:layout_toRightOf="@+id/location_spinner"
+            android:text="Nr. Portii:" 
+            android:padding="5dp"
+            
+            android:textSize="32sp"/>
+
+        <TextView
+            android:id="@+id/set_delivery_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/livrare_la_ora"
+            android:layout_alignBottom="@+id/livrare_la_ora"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="70dp"
+            android:paddingRight="10dp"
+            android:scaleType="fitCenter"
+            android:text="NU MERGE"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/livrare_la_ora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/set_delivery_hour"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:text="Livrare la orele:"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/set_portion_nr"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/nr_portii"
+            android:layout_alignBottom="@+id/nr_portii"
+            android:layout_toRightOf="@+id/nr_portii"
+            android:text="20"
+            android:ems="10"
+            
+            android:textSize="32sp" />
+
+        
+        
+         <TextView
+            android:id="@+id/pret_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_toRightOf="@+id/set_portion_nr"
+            android:layout_alignBottom="@+id/nr_portii"
+            android:scaleType="fitCenter"
+            android:text="Pret Total:"
+            android:textSize="32sp" />
+
+         <TextView
+             android:id="@+id/textView1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignBaseline="@+id/pret_total"
+             android:layout_alignBottom="@+id/pret_total"
+             android:layout_toRightOf="@+id/pret_total"
+             android:text="28"
+             android:textSize="32sp" />
+
+         <ImageButton
+             android:id="@+id/imageButton1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignBottom="@+id/textView1"
+             android:layout_below="@+id/livrare_la_ora"
+             android:layout_toRightOf="@+id/textView1"
+             android:src="@android:drawable/ic_input_add" />
+
+         <ImageButton
+             android:id="@+id/imageButton2"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignBottom="@+id/textView1"
+             android:layout_below="@+id/livrare_la_ora"
+             android:layout_toRightOf="@+id/imageButton1"
+             android:src="@android:drawable/button_onoff_indicator_on" />
+
+</RelativeLayout>
