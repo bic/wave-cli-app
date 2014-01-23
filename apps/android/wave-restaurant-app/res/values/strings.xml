@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RestaurantApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="next_day_offer">Propuneri pentru:</string>
+	<string name="next_day_is">Maine, Marti 17 Dec 2013</string>
+	<string name="action_next_day_offer_description">Go to next day</string>
+	<string name="Prop_1">Prop. 1</string>
+	<string name="Prop_2">Prop. 2</string>
+	<string name="offer_options_submenu"></string>
+	<string name="tab1_fragment_string"></string>
+	<string name="description_delete_btn"></string>
+	<string name="first_course_title">Felul 1</string>
+	<string name="second_course_title">Felul Principal</string>
+	<string name="third_course_title">Felul 3</string>
+	<string name="first_configuration_section">Configurarea propunerii</string>
+	<string name="second_configuration_section">Configurarea optiunilor per portie</string>
+	<string name="third_configuration_section">Configurarea optiunilor per comanda</string>
+	<string name="maximum">Maxim</string>
+	<string name="included">Inclus</string>
+	<string name="rebate_on_waiving">Reducere la renunțare</string>
+	<string name="maximum_per_course">Maxim/Porție</string>
+	<string name="included_per_course">Inclus/Porție</string>
+	<string name="included_price_modifier_per_course">P.U. peste inclus</string>
+	<string name="maximum_per_order">Maxim/Comanda</string>
+	<string name="included_per_order">Incluse/Comanda</string>
+	<string name="included_price_modifier_per_order">P.U. peste inclus</string>
+	
+</resources>
