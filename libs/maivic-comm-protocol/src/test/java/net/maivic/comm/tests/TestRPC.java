@@ -170,7 +170,7 @@ public class TestRPC extends TestCase {
 				.getHandler(OfferRelations.class);
 		try {
 			location = locationQuery.getLocation(1.0, 2.0, 150).get();
-			List<Offer> offers = locationQuery.getCurrentActiveOffers(location)
+			List<Offer> offers = locationQuery.getCurrentActiveOffers(location,null)
 					.get();
 
 			for (Offer offer : offers) {
@@ -308,7 +308,7 @@ public class TestRPC extends TestCase {
 		Location location;
 		try {
 			location = locationQuery.getLocation(1.0, 2.0, 150).get();
-			List<Offer> offers = locationQuery.getCurrentActiveOffers(location)
+			List<Offer> offers = locationQuery.getCurrentActiveOffers(location, null)
 					.get();
 			Offer offer = offers.get(0); // pick first for example
 			OfferQuery offer_q = RPCHandlerManager.getHandler(OfferQuery.class);
