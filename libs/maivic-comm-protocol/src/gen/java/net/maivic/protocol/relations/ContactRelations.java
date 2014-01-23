@@ -22,16 +22,16 @@ import net.maivic.protocol.Model.ContactsToLegalEntity;
 import net.maivic.protocol.Model.Invoice;
 @Table("contacts")
 public interface ContactRelations extends RPCUpdateSubscriptionService {
-  @Relation(name="invoices",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<Invoice>>getInvoices(Contact  o,@SubscriptionCallback Callback<List<Invoice>> cb);
   @Relation(name="deliveries",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<Delivery>>getDeliveries(Contact  o,@SubscriptionCallback Callback<List<Delivery>> cb);
   @Relation(name="address",type=RelationType.MANY_TO_ONE)
   LazyResponse<Address>getAddress(Contact object , @SubscriptionCallback Callback<Address> cb);
-  @Relation(name="contacts_to_legal_entities",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<ContactsToLegalEntity>>getContactsToLegalEntities(Contact  o,@SubscriptionCallback Callback<List<ContactsToLegalEntity>> cb);
+  @Relation(name="invoices",type=RelationType.ONE_TO_MANY)
+  LazyResponse<List<Invoice>>getInvoices(Contact  o,@SubscriptionCallback Callback<List<Invoice>> cb);
   @Relation(name="invoices_to_contacts",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<InvoicesToContact>>getInvoicesToContacts(Contact  o,@SubscriptionCallback Callback<List<InvoicesToContact>> cb);
+  @Relation(name="contacts_to_legal_entities",type=RelationType.ONE_TO_MANY)
+  LazyResponse<List<ContactsToLegalEntity>>getContactsToLegalEntities(Contact  o,@SubscriptionCallback Callback<List<ContactsToLegalEntity>> cb);
   @Relation(name="clients",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<Client>>getClients(Contact  o,@SubscriptionCallback Callback<List<Client>> cb);
   @Relation(name="restaurants_to_contacts",type=RelationType.ONE_TO_MANY)

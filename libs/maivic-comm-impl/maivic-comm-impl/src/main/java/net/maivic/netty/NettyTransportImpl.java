@@ -84,11 +84,13 @@ public class NettyTransportImpl implements Transport<MessageContainerOrBuilder>{
 	}
 
 	public void tearDown(int millis) {
-		synchronized (this.beforeDisconnectCallback) {
-			if(this.beforeDisconnectCallback!=null){
-				this.beforeDisconnectCallback.call(this);
+		if(this.beforeDisconnectCallback!=null){
+			synchronized (this.beforeDisconnectCallback) {
+				if(this.beforeDisconnectCallback!=null){
+					this.beforeDisconnectCallback.call(this);
+				}
+				
 			}
-			
 		}
 	
 	}

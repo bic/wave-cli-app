@@ -19,6 +19,8 @@ import net.maivic.protocol.Model.Location;
 import net.maivic.protocol.Model.Building;
 @Table("delivery_places")
 public interface DeliveryPlaceRelations extends RPCUpdateSubscriptionService {
+  @Relation(name="delivery_place_specifications",type=RelationType.ONE_TO_MANY)
+  LazyResponse<List<DeliveryPlaceSpecification>>getDeliveryPlaceSpecifications(DeliveryPlace  o,@SubscriptionCallback Callback<List<DeliveryPlaceSpecification>> cb);
   @Relation(name="orders",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<Order>>getOrders(DeliveryPlace  o,@SubscriptionCallback Callback<List<Order>> cb);
   @Relation(name="clients",type=RelationType.ONE_TO_MANY)
@@ -27,7 +29,5 @@ public interface DeliveryPlaceRelations extends RPCUpdateSubscriptionService {
   LazyResponse<Building>getBuilding(DeliveryPlace object , @SubscriptionCallback Callback<Building> cb);
   @Relation(name="location",type=RelationType.MANY_TO_ONE)
   LazyResponse<Location>getLocation(DeliveryPlace object , @SubscriptionCallback Callback<Location> cb);
-  @Relation(name="delivery_place_specifications",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<DeliveryPlaceSpecification>>getDeliveryPlaceSpecifications(DeliveryPlace  o,@SubscriptionCallback Callback<List<DeliveryPlaceSpecification>> cb);
 };
 

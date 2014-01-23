@@ -55,6 +55,7 @@ class RPCInvocationHandler extends  AbstractRPCServiceClient implements Invocati
 					i++;
 				}
 			}
+			
 			Class<?> parentInterface=proxy.getClass().getInterfaces()[0];
 			Table tbl_annotation = parentInterface.getAnnotation(Table.class);
 			Callback<?>[] callbacks = new Callback<?>[callbackparams.size()];
@@ -72,6 +73,11 @@ class RPCInvocationHandler extends  AbstractRPCServiceClient implements Invocati
 			}
 			
 			FunctionCall.Builder call = FunctionCall.newBuilder();
+			//TODO: only apply if callback argument is supplied
+			
+			
+			call.setIsSubscription(true);
+			
 			for (int i = 0; i<otherArgTypes.length; i++) {
 				call.addArgs(BaseTypeMapper.toBaseType(otherArgs[i], otherArgTypes[i]));
 			}

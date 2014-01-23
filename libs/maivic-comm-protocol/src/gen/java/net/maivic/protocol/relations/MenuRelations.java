@@ -16,14 +16,17 @@ import net.maivic.protocol.Model.Offer;
 import net.maivic.comm.Callback;
 import net.maivic.comm.Relation;
 import net.maivic.protocol.Model.MenuEntry;
+import net.maivic.protocol.Model.Location;
 @Table("menus")
 public interface MenuRelations extends RPCUpdateSubscriptionService {
   @Relation(name="menu_options",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<MenuOption>>getMenuOptions(Menu  o,@SubscriptionCallback Callback<List<MenuOption>> cb);
-  @Relation(name="menu_entries",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<MenuEntry>>getMenuEntries(Menu  o,@SubscriptionCallback Callback<List<MenuEntry>> cb);
+  @Relation(name="location",type=RelationType.MANY_TO_ONE)
+  LazyResponse<Location>getLocation(Menu object , @SubscriptionCallback Callback<Location> cb);
   @Relation(name="restaurant",type=RelationType.MANY_TO_ONE)
   LazyResponse<Restaurant>getRestaurant(Menu object , @SubscriptionCallback Callback<Restaurant> cb);
+  @Relation(name="menu_entries",type=RelationType.ONE_TO_MANY)
+  LazyResponse<List<MenuEntry>>getMenuEntries(Menu  o,@SubscriptionCallback Callback<List<MenuEntry>> cb);
   @Relation(name="offers",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<Offer>>getOffers(Menu object , @SubscriptionCallback Callback<List<Offer>> cb);
 };

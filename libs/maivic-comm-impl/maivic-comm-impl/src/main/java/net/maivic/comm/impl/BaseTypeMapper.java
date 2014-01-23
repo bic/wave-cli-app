@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import net.maivic.comm.Maivic;
 import net.maivic.comm.Maivic.BaseType;
 import net.maivic.comm.Maivic.BaseType.ENCODED_TYPE;
 import net.maivic.comm.Maivic.SelfDescribingMessage;
@@ -38,6 +39,7 @@ public class BaseTypeMapper {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private Object _fromBaseType(BaseType t, Type to_type) throws IOException {
 		BaseType.ENCODED_TYPE type=getEncodedType(t);
+
 		if (t.hasEncodedType() && t.getEncodedType()==ENCODED_TYPE.NONE){
 			return null;
 		}
@@ -164,6 +166,7 @@ public class BaseTypeMapper {
 		method_to_encoded_type.put("Double", BaseType.ENCODED_TYPE.DOUBLE);
 		method_to_encoded_type.put("Float", BaseType.ENCODED_TYPE.FLOAT);
 		method_to_encoded_type.put("Message", BaseType.ENCODED_TYPE.MESSAGE);
+		encoded_type_to_method = new HashMap<Maivic.BaseType.ENCODED_TYPE, String>();
 		for ( Entry<String, ENCODED_TYPE> e: method_to_encoded_type.entrySet()){
 			encoded_type_to_method.put(e.getValue(), e.getKey());
 		}

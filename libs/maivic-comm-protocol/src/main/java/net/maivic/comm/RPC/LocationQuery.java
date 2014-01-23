@@ -2,7 +2,9 @@ package net.maivic.comm.RPC;
 
 import java.util.List;
 
+import net.maivic.comm.Callback;
 import net.maivic.comm.LazyResponse;
+import net.maivic.comm.SubscriptionCallback;
 import net.maivic.comm.impl.RPCInterface;
 import net.maivic.protocol.Model.Location;
 import net.maivic.protocol.Model.Offer;
@@ -25,5 +27,5 @@ public interface LocationQuery {
 	 * @param location The Location for which to return the offers
 	 * @return
 	 */
-	LazyResponse<List<Offer> > getCurrentActiveOffers(Location location);
+	LazyResponse<List<Offer> > getCurrentActiveOffers(Location location, @SubscriptionCallback Callback<List<Offer>> cb);
 }

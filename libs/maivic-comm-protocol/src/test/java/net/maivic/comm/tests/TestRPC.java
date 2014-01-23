@@ -39,8 +39,8 @@ import org.junit.Test;
 public class TestRPC extends TestCase {
 	public static class TestPlatformSupport implements PlatformSupport {
 
-		private static byte[] uuid = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0 };
+		private static byte[] uuid = new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+				10, 11, 12 };
 
 		public byte[] getUUID() {
 			return uuid;
@@ -253,7 +253,15 @@ public class TestRPC extends TestCase {
 		Location location;
 		try {
 			location = locationQuery.getLocation(1.0, 2.0, 150).get();
-			List<Offer> offers = locationQuery.getCurrentActiveOffers(location)
+			List<Offer> offers = locationQuery.getCurrentActiveOffers(location, new Callback<List<Offer>> () {
+
+				@Override
+				public void call(List<Offer> result) {
+					System.out.println("UPDATE for getCurrentActiveOffers received:");
+					System.out.println(result);
+				}
+				
+			})
 					.get();
 			OfferQuery offer_q = RPCHandlerManager.getHandler(OfferQuery.class);
 			List<LazyResponse<Restaurant>> restaurants = new ArrayList<LazyResponse<Restaurant>>();

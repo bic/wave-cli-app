@@ -12,19 +12,22 @@ import net.maivic.comm.Relation.RelationType;
 import net.maivic.protocol.Model.Delivery;
 import net.maivic.protocol.Model.DeliveryPlaceSpecification;
 import net.maivic.protocol.Model.DeliveryPlace;
+import net.maivic.protocol.Model.Menu;
 import net.maivic.comm.Callback;
 import net.maivic.comm.Relation;
 import net.maivic.protocol.Model.Location;
 import net.maivic.protocol.Model.Building;
 @Table("locations")
 public interface LocationRelations extends RPCUpdateSubscriptionService {
+  @Relation(name="delivery_place_specifications",type=RelationType.ONE_TO_MANY)
+  LazyResponse<List<DeliveryPlaceSpecification>>getDeliveryPlaceSpecifications(Location  o,@SubscriptionCallback Callback<List<DeliveryPlaceSpecification>> cb);
   @Relation(name="deliveries",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<Delivery>>getDeliveries(Location  o,@SubscriptionCallback Callback<List<Delivery>> cb);
   @Relation(name="delivery_places",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<DeliveryPlace>>getDeliveryPlaces(Location  o,@SubscriptionCallback Callback<List<DeliveryPlace>> cb);
-  @Relation(name="delivery_place_specifications",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<DeliveryPlaceSpecification>>getDeliveryPlaceSpecifications(Location  o,@SubscriptionCallback Callback<List<DeliveryPlaceSpecification>> cb);
   @Relation(name="buildings",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<Building>>getBuildings(Location  o,@SubscriptionCallback Callback<List<Building>> cb);
+  @Relation(name="menus",type=RelationType.ONE_TO_MANY)
+  LazyResponse<List<Menu>>getMenus(Location  o,@SubscriptionCallback Callback<List<Menu>> cb);
 };
 
