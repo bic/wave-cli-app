@@ -41,6 +41,7 @@ public class SocketClient {
 		.option(ChannelOption.SO_KEEPALIVE, true);
 		this.incomingCallBack=new IncomingCallBack() {
 			public void onIncomingMessage(MessageContainer msg) {
+				log.e(TAG, "imcoming Message:" + msg.toString());
 				log.i(TAG, "Received Messagecontainer with service_id: " +
 						Integer.toString(msg.getServiceId()) + 
 						" with a content length of  " + Integer.toString(msg.getContent().size()) );
