@@ -125,12 +125,15 @@ public class DefaultLazyResponse<T> implements SettableLazyResponse<T> {
 		long deadline = System.currentTimeMillis() + timeout;
 		while ((System.currentTimeMillis() < deadline) || (timeout < 0)){
 			try {
-				synchronized (this) {
-					if (timeout > 0 ) {
-						this.wait(deadline = System.currentTimeMillis());
-					}else {
-						
-						this.wait();
+				if(!this.isDone()){
+					
+					synchronized (this) {
+						if (timeout > 0 ) {
+							this.wait(deadline = System.currentTimeMillis());
+						}else {
+							
+							this.wait();
+						}
 					}
 				}
 			} finally{
