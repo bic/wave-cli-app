@@ -11,6 +11,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.hamcrest.core.IsInstanceOf;
+
 import net.maivic.comm.Callback;
 import net.maivic.comm.DefaultLazyResponse;
 import net.maivic.comm.LazyResponse;
@@ -39,7 +41,13 @@ class RPCInvocationHandler extends  AbstractRPCServiceClient implements Invocati
 		}
 		try{
 			
-			
+			if(Class.forName("net.maivic.protocol.relations.OfferRelations").isAssignableFrom(proxy.getClass())){
+				int i =5;
+				int j = i+1;
+				j++;
+						
+			}
+
 			
 			
 			List<Integer> callbackparams = new ArrayList<Integer>();
@@ -47,7 +55,7 @@ class RPCInvocationHandler extends  AbstractRPCServiceClient implements Invocati
 				int i = 0;
 				for( Annotation[] annotations : method.getParameterAnnotations()){
 					for(Annotation annotation : annotations){
-						if (annotation.annotationType().isInstance(SubscriptionCallback.class)){
+						if (SubscriptionCallback.class.isInstance(annotation)){
 							callbackparams.add(i);
 							break;
 						}

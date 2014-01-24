@@ -96,7 +96,7 @@ public class TestRPC extends TestCase {
 		try {
 			location = locationQuery.getLocation(1.0, 2.0, 150).get();
 			System.out.println(location);
-			LazyResponse<List<Offer>> offers = null; // = locRels
+			LazyResponse<List<Offer>> offers = locationQuery.getCurrentActiveOffers(location);
 					//.getOffers(location, null);
 			List<List<OfferOption>> res = new ArrayList<List<OfferOption>>();
 			final List<LazyResponse<Restaurant>> restaurants = new ArrayList<LazyResponse<Restaurant>>();
@@ -155,7 +155,11 @@ public class TestRPC extends TestCase {
 
 							public void call(
 									LazyResponse<List<OfferOption>> result) {
-								// List<OfferOption> options = result.get();
+								List<OfferOption> options = result.get_no_throw();
+								for (OfferOption o: options){
+									System.out.println(o);
+								}
+								
 								// Decimal price = options.get(0).getPrice();
 								// double priceFinal = price.getValue() *
 								// Math.pow(10, price.getScale());
