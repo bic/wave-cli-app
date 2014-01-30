@@ -1,13 +1,11 @@
 package net.maivic.comm.testdata;
 
 
-import java.util.List;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 import net.maivic.protocol.Model.Address;
-import net.maivic.protocol.Model.Location;
+
 
 public class LocalTestDataGenerator {
 	List<Address> addresses_by_version_id = new ArrayList< Address>();

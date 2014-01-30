@@ -1,7 +1,5 @@
 package net.maivic.comm.tests;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -9,11 +7,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 import junit.framework.TestCase;
-
 import net.maivic.comm.Callback;
 import net.maivic.comm.LazyResponse;
 import net.maivic.comm.PlatformSupport;
-import net.maivic.comm.TestConfig;
 import net.maivic.comm.Transport;
 import net.maivic.comm.TransportManager;
 import net.maivic.comm.RPC.LocationQuery;
@@ -22,13 +18,12 @@ import net.maivic.comm.impl.RPCHandlerManager;
 import net.maivic.context.Context;
 import net.maivic.context.UnsupportedType;
 import net.maivic.context.WrongType;
-import net.maivic.protocol.Model.Decimal;
 import net.maivic.protocol.Model.LocationBit;
 import net.maivic.protocol.Model.Offer;
 import net.maivic.protocol.Model.OfferOption;
 import net.maivic.protocol.Model.Restaurant;
-import net.maivic.protocol.relations.LocationRelations;
-import net.maivic.protocol.relations.MenuRelations;
+import net.maivic.protocol.relations.LocationBitRelations;
+import net.maivic.protocol.relations.OfferCatalogRelations;
 import net.maivic.protocol.relations.OfferRelations;
 
 import org.junit.After;
@@ -86,12 +81,12 @@ public class TestRPC extends TestCase {
 		LocationQuery locationQuery = RPCHandlerManager
 				.getHandler(LocationQuery.class);
 		LocationBit location;
-		LocationRelations locRels = RPCHandlerManager
-				.getHandler(LocationRelations.class);
+		LocationBitRelations locRels = RPCHandlerManager
+				.getHandler(LocationBitRelations.class);
 		OfferRelations offerRels = RPCHandlerManager
 				.getHandler(OfferRelations.class);
-		final MenuRelations menuRels = RPCHandlerManager
-				.getHandler(MenuRelations.class);
+		final OfferCatalogRelations menuRels = RPCHandlerManager
+				.getHandler(OfferCatalogRelations.class);
 		try {
 			location = locationQuery.getLocation(1.0, 2.0, 150).get();
 			System.out.println(location);
