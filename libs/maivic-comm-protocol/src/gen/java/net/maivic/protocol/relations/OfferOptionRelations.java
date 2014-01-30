@@ -13,14 +13,11 @@ import net.maivic.comm.Relation.RelationType;
 import net.maivic.protocol.Model.Offer;
 import net.maivic.protocol.Model.OfferOption;
 import net.maivic.comm.Relation;
-import net.maivic.protocol.Model.MenuOption;
 import net.maivic.comm.Callback;
 @Table("offer_options")
 public interface OfferOptionRelations extends RPCUpdateSubscriptionService {
   @Relation(name="order_entry_options",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<OrderEntryOption>>getOrderEntryOptions(OfferOption  o,@SubscriptionCallback Callback<List<OrderEntryOption>> cb);
-  @Relation(name="menu_options",type=RelationType.ONE_TO_MANY)
-  LazyResponse<List<MenuOption>>getMenuOptions(OfferOption  o , @SubscriptionCallback Callback<List<MenuOption>> cb);
   @Relation(name="offers",type=RelationType.ONE_TO_MANY)
   LazyResponse<List<Offer>>getOffers(OfferOption object , @SubscriptionCallback Callback<List<Offer>> cb);
 };

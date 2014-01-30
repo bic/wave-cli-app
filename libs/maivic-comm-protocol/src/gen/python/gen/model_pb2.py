@@ -13,9 +13,44 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='gen/model.proto',
   package='',
-  serialized_pb='\n\x0fgen/model.proto\"\x84\x01\n\x07\x41\x64\x64ress\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0e\n\x06street\x18\x02 \x01(\t\x12\x0c\n\x04zone\x18\x03 \x01(\t\x12\x10\n\x08\x64istrict\x18\x04 \x01(\t\x12\x0e\n\x06number\x18\x05 \x01(\t\x12\x0c\n\x04\x63ity\x18\x06 \x01(\t\x12\x0e\n\x06\x63ounty\x18\x07 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x08 \x01(\t\"\x8b\x01\n\x07Invoice\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x12\n\nemmiter_id\x18\x02 \x01(\x03\x12\x14\n\x0crecipient_id\x18\x03 \x01(\x03\x12\x15\n\x03sum\x18\x04 \x01(\x0b\x32\x08.Decimal\x12\x17\n\x0flegal_entity_id\x18\x05 \x01(\x03\x12\x1a\n\x12receiver_person_id\x18\x06 \x01(\x03\"r\n\x0bLegalEntity\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x1a\n\x12\x62illing_address_id\x18\x02 \x01(\x03\x12\r\n\x05VATIN\x18\x03 \x01(\t\x12\x1c\n\x14registered_office_id\x18\x04 \x01(\x03\x12\x0e\n\x06ref_no\x18\x05 \x01(\t\"n\n\x07Meeting\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0c\n\x04\x64\x61te\x18\x02 \x01(\x03\x12\x1b\n\x08\x64uration\x18\x03 \x01(\x0b\x32\t.Interval\x12\r\n\x05topic\x18\x04 \x01(\t\x12\x0e\n\x06result\x18\x05 \x01(\t\x12\r\n\x05place\x18\x06 \x01(\x03\"=\n\x08Location\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x11\n\tname_long\x18\x02 \x01(\t\x12\x12\n\nname_short\x18\x03 \x01(\t\"\x94\x01\n\x08\x44\x65livery\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x15\n\rrestaurant_id\x18\x02 \x01(\x03\x12\x19\n\x11\x64\x65livering_guy_id\x18\x03 \x01(\x03\x12\x10\n\x08order_id\x18\x04 \x01(\x03\x12\x12\n\neta_arival\x18\x05 \x01(\x03\x12\x0f\n\x07\x61rrival\x18\x06 \x01(\x03\x12\x13\n\x0blocation_id\x18\x07 \x01(\x03\"\x8c\x01\n\x06Server\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0b\n\x03pid\x18\x02 \x01(\x03\x12$\n\x1crpc_subscription_listen_port\x18\x03 \x01(\x03\x12\"\n\x1arpc_subscription_listen_ip\x18\x04 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\x05 \x01(\x08\x12\x0f\n\x07task_id\x18\x06 \x01(\x03\"9\n\x06\x44\x65vice\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0c\n\x04uuid\x18\x02 \x01(\t\x12\x15\n\rrpc_namespace\x18\x03 \x01(\t\"e\n\x10\x44\x65viceConnection\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12\x11\n\tdevice_id\x18\x03 \x01(\x03\x12\x0f\n\x07\x66rom_ip\x18\x04 \x01(\t\x12\x11\n\tserver_id\x18\x05 \x01(\x03\"S\n\x05Image\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\t\x12\x11\n\tartist_id\x18\x04 \x01(\x03\x12\x0f\n\x07\x63omment\x18\x05 \x01(\t\"\x88\x01\n\x05Order\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x11\n\tclient_id\x18\x02 \x01(\x03\x12\x19\n\x11\x64\x65livery_place_id\x18\x03 \x01(\x03\x12\x17\n\x0f\x64\x65livery_box_id\x18\x04 \x01(\t\x12\x14\n\x0c\x63lient_notes\x18\x05 \x01(\t\x12\x16\n\x04tips\x18\x06 \x01(\x0b\x32\x08.Decimal\"w\n\x07\x43ontact\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\naddress_id\x18\x03 \x01(\x03\x12\x0e\n\x06mobile\x18\x04 \x01(\t\x12\r\n\x05\x65mail\x18\x05 \x01(\t\x12\x10\n\x08landline\x18\x06 \x01(\t\x12\r\n\x05VATIN\x18\x07 \x01(\t\"E\n\x08\x45ventLog\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tparent_id\x18\x03 \x01(\x03\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\t\"\xa7\x01\n\x0eGeometryColumn\x12\x17\n\x0f\x66_table_catalog\x18\x01 \x02(\t\x12\x16\n\x0e\x66_table_schema\x18\x02 \x02(\t\x12\x14\n\x0c\x66_table_name\x18\x03 \x02(\t\x12\x19\n\x11\x66_geometry_column\x18\x04 \x02(\t\x12\x17\n\x0f\x63oord_dimension\x18\x05 \x01(\x03\x12\x0c\n\x04srid\x18\x06 \x01(\x03\x12\x0c\n\x04type\x18\x07 \x01(\t\"I\n\x11MeetingsToContact\x12\x12\n\ncontact_id\x18\x01 \x02(\x03\x12\x0c\n\x04role\x18\x02 \x02(\t\x12\x12\n\nmeeting_id\x18\x03 \x02(\x03\"\\\n\x10OrderEntryOption\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x16\n\x0eorder_entry_id\x18\x02 \x01(\x03\x12\x17\n\x0foffer_option_id\x18\x03 \x01(\x03\x12\x0b\n\x03qty\x18\x04 \x01(\x03\"R\n\x04Menu\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x12\n\nrecurrence\x18\x02 \x01(\t\x12\x15\n\rrestaurant_id\x18\x03 \x01(\x03\x12\x13\n\x0blocation_id\x18\x04 \x01(\x03\"n\n\rDeliveryPlace\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x13\n\x0blocation_id\x18\x02 \x01(\x03\x12\x13\n\x0b\x62uilding_id\x18\x03 \x01(\x03\x12\x12\n\nshort_name\x18\x04 \x01(\t\x12\x13\n\x0bplace_types\x18\x05 \x01(\x03\"\x98\x01\n\x1a\x44\x65liveryPlaceSpecification\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x13\n\x0blocation_id\x18\x02 \x01(\x03\x12\x13\n\x0b\x62uilding_id\x18\x03 \x01(\x03\x12\x19\n\x11\x64\x65livery_place_id\x18\x04 \x01(\x03\x12\x15\n\rplace_type_id\x18\x05 \x01(\x03\x12\x12\n\ntext_value\x18\x06 \x01(\t\"\x93\x01\n\x05Offer\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x17\n\x05price\x18\x02 \x01(\x0b\x32\x08.Decimal\x12\x15\n\rname_singular\x18\x03 \x01(\t\x12\x13\n\x0bname_plural\x18\x04 \x01(\t\x12\x15\n\rmax_per_order\x18\x05 \x01(\x03\x12\x15\n\rmin_per_order\x18\x06 \x01(\x03\x12\x0b\n\x03seq\x18\x07 \x01(\x03\"e\n\x07Receipt\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x12\n\nemitter_id\x18\x02 \x01(\x03\x12\x0c\n\x04\x64\x61te\x18\x03 \x01(\x03\x12\x15\n\x03sum\x18\x04 \x01(\x0b\x32\x08.Decimal\x12\x15\n\remission_date\x18\x05 \x01(\x03\"+\n\x08\x42uilding\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x13\n\x0blocation_id\x18\x02 \x01(\x03\"[\n\x0fPaymentsToOrder\x12\x12\n\npayment_id\x18\x01 \x02(\x03\x12\x10\n\x08order_id\x18\x02 \x02(\x03\x12\x15\n\x03sum\x18\x03 \x01(\x0b\x32\x08.Decimal\x12\x0b\n\x03seq\x18\x04 \x02(\x03\"*\n\x07\x44\x65\x63imal\x12\r\n\x05value\x18\x01 \x02(\x03\x12\x10\n\x05scale\x18\x02 \x01(\x05:\x01\x30\"&\n\x08Interval\x12\r\n\x05start\x18\x01 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x02 \x01(\x04\":\n\rNameSpacePair\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0e\n\x06\x64omain\x18\x02 \x02(\x03\x12\r\n\x05value\x18\x03 \x01(\t\"(\n\x0cNotification\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\"X\n\x0bOrderStatus\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x10\n\x08order_id\x18\x02 \x01(\x03\x12\x16\n\x0estatus_code_id\x18\x03 \x01(\x03\x12\x13\n\x0bstatus_note\x18\x04 \x01(\t\"b\n\tMenuEntry\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0f\n\x07menu_id\x18\x02 \x01(\x03\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x12\n\noption_for\x18\x04 \x01(\x03\x12\x16\n\x0eoption_max_qty\x18\x05 \x01(\x03\"I\n\x11InvoicesToContact\x12\x12\n\ncontact_id\x18\x01 \x02(\x03\x12\x12\n\ninvoice_id\x18\x02 \x02(\x03\x12\x0c\n\x04role\x18\x03 \x02(\t\"S\n\nOrderEntry\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x10\n\x08order_id\x18\x02 \x01(\x03\x12\x10\n\x08offer_id\x18\x03 \x01(\x03\x12\x15\n\x03qty\x18\x04 \x01(\x0b\x32\x08.Decimal\"\xb4\x01\n\x0fRpcSubscription\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12\x11\n\tid_client\x18\x03 \x01(\x03\x12\x12\n\nrpc_method\x18\x04 \x01(\t\x12\x10\n\x08rpc_args\x18\x05 \x01(\t\x12\x17\n\x0frpc_last_result\x18\x06 \x01(\t\x12\x11\n\tdevice_id\x18\x07 \x01(\x03\x12 \n\x18rpc_unsent_result_update\x18\x08 \x01(\t\"e\n\x0cSpatialRefSy\x12\x0c\n\x04srid\x18\x01 \x02(\x03\x12\x11\n\tauth_name\x18\x02 \x01(\t\x12\x11\n\tauth_srid\x18\x03 \x01(\x03\x12\x0e\n\x06srtext\x18\x04 \x01(\t\x12\x11\n\tproj4text\x18\x05 \x01(\t\"R\n\x15\x43ontactsToLegalEntity\x12\x12\n\ncontact_id\x18\x01 \x02(\x03\x12\x0c\n\x04role\x18\x02 \x01(\t\x12\x17\n\x0flegal_entity_id\x18\x03 \x02(\x03\"\xc7\x02\n\x0bOfferOption\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x18\n\x10is_offer_changer\x18\x02 \x01(\x08\x12\x17\n\x05price\x18\x03 \x01(\x0b\x32\x08.Decimal\x12&\n\x14price_delta_positive\x18\x04 \x01(\x0b\x32\x08.Decimal\x12&\n\x14price_delta_negative\x18\x05 \x01(\x0b\x32\x08.Decimal\x12\x15\n\rname_singular\x18\x06 \x01(\t\x12\x13\n\x0bname_plural\x18\x07 \x01(\t\x12\x15\n\rmax_per_offer\x18\x08 \x01(\x03\x12\x15\n\rmax_per_order\x18\t \x01(\x03\x12\x0b\n\x03seq\x18\n \x01(\x03\x12\x15\n\rmin_per_offer\x18\x0b \x01(\x03\x12\x15\n\rmin_per_order\x18\x0c \x01(\x03\x12\x14\n\x0cincluded_qty\x18\r \x01(\x03\"G\n\x06\x43lient\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x12\n\ncontact_id\x18\x02 \x01(\x03\x12\x0c\n\x04user\x18\x03 \x01(\t\x12\x0f\n\x07passmd5\x18\x04 \x01(\t\"P\n\nMenuOption\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0f\n\x07menu_id\x18\x02 \x01(\x03\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x17\n\x0fis_menu_changer\x18\x04 \x01(\x08\"S\n\x07Payment\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x11\n\tclient_id\x18\x02 \x01(\x03\x12\x15\n\x03sum\x18\x03 \x01(\x0b\x32\x08.Decimal\x12\x12\n\nreceipt_id\x18\x04 \x01(\x03\"h\n\x14RestaurantsToContact\x12\x15\n\rrestaurant_id\x18\x01 \x02(\x03\x12\x12\n\ncontact_id\x18\x02 \x02(\x03\x12\x10\n\x08position\x18\x03 \x02(\t\x12\x13\n\x0b\x63\x61n_deliver\x18\x04 \x01(\x08\"\x17\n\tPlaceType\x12\n\n\x02id\x18\x01 \x02(\x03\"\xd5\x01\n\nRestaurant\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x12\n\naddress_id\x18\x02 \x01(\x03\x12\x17\n\x0flegal_entity_id\x18\x03 \x01(\x03\x12!\n\x19\x63ustomer_telephone_number\x18\x04 \x01(\t\x12\x1b\n\x13\x63ustomer_contact_id\x18\x05 \x01(\x03\x12\x0c\n\x04logo\x18\x06 \x01(\t\x12\x19\n\x11logo_src_image_id\x18\x07 \x01(\x03\x12\x12\n\nname_short\x18\x08 \x01(\t\x12\x11\n\tname_long\x18\t \x01(\tB\x15\n\x13net.maivic.protocol')
+  serialized_pb='\n\x0fgen/model.proto\"(\n\x0c\x44\x61tasetLevel\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x84\x01\n\x07\x41\x64\x64ress\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0e\n\x06street\x18\x02 \x01(\t\x12\x0c\n\x04zone\x18\x03 \x01(\t\x12\x10\n\x08\x64istrict\x18\x04 \x01(\t\x12\x0e\n\x06number\x18\x05 \x01(\t\x12\x0c\n\x04\x63ity\x18\x06 \x01(\t\x12\x0e\n\x06\x63ounty\x18\x07 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x08 \x01(\t\"\x8b\x01\n\x07Invoice\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x12\n\nemmiter_id\x18\x02 \x01(\x03\x12\x14\n\x0crecipient_id\x18\x03 \x01(\x03\x12\x15\n\x03sum\x18\x04 \x01(\x0b\x32\x08.Decimal\x12\x17\n\x0flegal_entity_id\x18\x05 \x01(\x03\x12\x1a\n\x12receiver_person_id\x18\x06 \x01(\x03\"r\n\x0bLegalEntity\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x1a\n\x12\x62illing_address_id\x18\x02 \x01(\x03\x12\r\n\x05VATIN\x18\x03 \x01(\t\x12\x1c\n\x14registered_office_id\x18\x04 \x01(\x03\x12\x0e\n\x06ref_no\x18\x05 \x01(\t\"\x7f\n\x08\x44\x65livery\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x15\n\rrestaurant_id\x18\x02 \x01(\x03\x12\x19\n\x11\x64\x65livering_guy_id\x18\x03 \x01(\x03\x12\x10\n\x08order_id\x18\x04 \x01(\x03\x12\x12\n\neta_arival\x18\x05 \x01(\x03\x12\x0f\n\x07\x61rrival\x18\x06 \x01(\x03\"\x8c\x01\n\x06Server\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0b\n\x03pid\x18\x02 \x01(\x03\x12$\n\x1crpc_subscription_listen_port\x18\x03 \x01(\x03\x12\"\n\x1arpc_subscription_listen_ip\x18\x04 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\x05 \x01(\x08\x12\x0f\n\x07task_id\x18\x06 \x01(\x03\"[\n\x0fPaymentsToOrder\x12\x12\n\npayment_id\x18\x01 \x02(\x03\x12\x10\n\x08order_id\x18\x02 \x02(\x03\x12\x15\n\x03sum\x18\x03 \x01(\x0b\x32\x08.Decimal\x12\x0b\n\x03seq\x18\x04 \x02(\x03\"e\n\x10\x44\x65viceConnection\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12\x11\n\tdevice_id\x18\x03 \x01(\x03\x12\x0f\n\x07\x66rom_ip\x18\x04 \x01(\t\x12\x11\n\tserver_id\x18\x05 \x01(\x03\"m\n\x05Order\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x11\n\tclient_id\x18\x02 \x01(\x03\x12\x14\n\x0c\x63lient_notes\x18\x03 \x01(\t\x12\x17\n\x0f\x64\x65livery_box_id\x18\x04 \x01(\t\x12\x16\n\x04tips\x18\x05 \x01(\x0b\x32\x08.Decimal\"w\n\x07\x43ontact\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\naddress_id\x18\x03 \x01(\x03\x12\x0e\n\x06mobile\x18\x04 \x01(\t\x12\r\n\x05\x65mail\x18\x05 \x01(\t\x12\x10\n\x08landline\x18\x06 \x01(\t\x12\r\n\x05VATIN\x18\x07 \x01(\t\"E\n\x08\x45ventLog\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tparent_id\x18\x03 \x01(\x03\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\t\"S\n\nOrderEntry\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x10\n\x08order_id\x18\x02 \x01(\x03\x12\x10\n\x08offer_id\x18\x03 \x01(\x03\x12\x15\n\x03qty\x18\x04 \x01(\x0b\x32\x08.Decimal\"=\n\x0cOfferCatalog\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0bsupplier_id\x18\x03 \x01(\x03\"\\\n\x10OrderEntryOption\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x16\n\x0eorder_entry_id\x18\x02 \x01(\x03\x12\x17\n\x0foffer_option_id\x18\x03 \x01(\x03\x12\x0b\n\x03qty\x18\x04 \x01(\x03\"I\n\x11InvoicesToContact\x12\x12\n\ncontact_id\x18\x01 \x02(\x03\x12\x12\n\ninvoice_id\x18\x02 \x02(\x03\x12\x0c\n\x04role\x18\x03 \x02(\t\"\x93\x01\n\x05Offer\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x17\n\x05price\x18\x02 \x01(\x0b\x32\x08.Decimal\x12\x15\n\rname_singular\x18\x03 \x01(\t\x12\x13\n\x0bname_plural\x18\x04 \x01(\t\x12\x15\n\rmax_per_order\x18\x05 \x01(\x03\x12\x15\n\rmin_per_order\x18\x06 \x01(\x03\x12\x0b\n\x03seq\x18\x07 \x01(\x03\"e\n\x07Receipt\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x12\n\nemitter_id\x18\x02 \x01(\x03\x12\x0c\n\x04\x64\x61te\x18\x03 \x01(\x03\x12\x15\n\x03sum\x18\x04 \x01(\x0b\x32\x08.Decimal\x12\x15\n\remission_date\x18\x05 \x01(\x03\"e\n\x0cSpatialRefSy\x12\x0c\n\x04srid\x18\x01 \x02(\x03\x12\x11\n\tauth_name\x18\x02 \x01(\t\x12\x11\n\tauth_srid\x18\x03 \x01(\x03\x12\x0e\n\x06srtext\x18\x04 \x01(\t\x12\x11\n\tproj4text\x18\x05 \x01(\t\"*\n\x07\x44\x65\x63imal\x12\r\n\x05value\x18\x01 \x02(\x03\x12\x10\n\x05scale\x18\x02 \x01(\x05:\x01\x30\"&\n\x08Interval\x12\r\n\x05start\x18\x01 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x02 \x01(\x04\":\n\rNameSpacePair\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0e\n\x06\x64omain\x18\x02 \x02(\x03\x12\r\n\x05value\x18\x03 \x01(\t\"(\n\x0cNotification\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\"X\n\x0bOrderStatus\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x10\n\x08order_id\x18\x02 \x01(\x03\x12\x16\n\x0estatus_code_id\x18\x03 \x01(\x03\x12\x13\n\x0bstatus_note\x18\x04 \x01(\t\"\xa7\x01\n\x0eGeometryColumn\x12\x17\n\x0f\x66_table_catalog\x18\x01 \x02(\t\x12\x16\n\x0e\x66_table_schema\x18\x02 \x02(\t\x12\x14\n\x0c\x66_table_name\x18\x03 \x02(\t\x12\x19\n\x11\x66_geometry_column\x18\x04 \x02(\t\x12\x17\n\x0f\x63oord_dimension\x18\x05 \x01(\x03\x12\x0c\n\x04srid\x18\x06 \x01(\x03\x12\x0c\n\x04type\x18\x07 \x01(\t\"\xa7\x01\n\x0fRpcSubscription\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12\x11\n\tid_client\x18\x03 \x01(\x03\x12\x13\n\x0b\x63lient_uuid\x18\x04 \x01(\t\x12\x12\n\nrpc_method\x18\x05 \x01(\t\x12\x10\n\x08rpc_args\x18\x06 \x01(\t\x12\x17\n\x0frpc_last_result\x18\x07 \x01(\t\x12\x11\n\tdevice_id\x18\x08 \x01(\x03\"R\n\x15\x43ontactsToLegalEntity\x12\x12\n\ncontact_id\x18\x01 \x02(\x03\x12\x0c\n\x04role\x18\x02 \x01(\t\x12\x17\n\x0flegal_entity_id\x18\x03 \x02(\x03\"\xc7\x02\n\x0bOfferOption\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x18\n\x10is_offer_changer\x18\x02 \x01(\x08\x12\x17\n\x05price\x18\x03 \x01(\x0b\x32\x08.Decimal\x12&\n\x14price_delta_positive\x18\x04 \x01(\x0b\x32\x08.Decimal\x12&\n\x14price_delta_negative\x18\x05 \x01(\x0b\x32\x08.Decimal\x12\x15\n\rname_singular\x18\x06 \x01(\t\x12\x13\n\x0bname_plural\x18\x07 \x01(\t\x12\x15\n\rmax_per_offer\x18\x08 \x01(\x03\x12\x15\n\rmax_per_order\x18\t \x01(\x03\x12\x0b\n\x03seq\x18\n \x01(\x03\x12\x15\n\rmin_per_offer\x18\x0b \x01(\x03\x12\x15\n\rmin_per_order\x18\x0c \x01(\x03\x12\x14\n\x0cincluded_qty\x18\r \x01(\x03\"G\n\x06\x43lient\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x12\n\ncontact_id\x18\x02 \x01(\x03\x12\x0c\n\x04user\x18\x03 \x01(\t\x12\x0f\n\x07passmd5\x18\x04 \x01(\t\"9\n\x06\x44\x65vice\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x0c\n\x04uuid\x18\x02 \x01(\t\x12\x15\n\rrpc_namespace\x18\x03 \x01(\t\"S\n\x07Payment\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x11\n\tclient_id\x18\x02 \x01(\x03\x12\x15\n\x03sum\x18\x03 \x01(\x0b\x32\x08.Decimal\x12\x12\n\nreceipt_id\x18\x04 \x01(\x03\"h\n\x14RestaurantsToContact\x12\x15\n\rrestaurant_id\x18\x01 \x02(\x03\x12\x12\n\ncontact_id\x18\x02 \x02(\x03\x12\x10\n\x08position\x18\x03 \x02(\t\x12\x13\n\x0b\x63\x61n_deliver\x18\x04 \x01(\x08\"h\n\x0bLocationBit\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x11\n\tparent_id\x18\x02 \x01(\x03\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x12\n\naddress_id\x18\x04 \x01(\x03\x12\x18\n\x10\x64\x61taset_level_id\x18\x05 \x01(\x03\"\xd5\x01\n\nRestaurant\x12\n\n\x02id\x18\x01 \x02(\x03\x12\x12\n\nname_short\x18\x02 \x01(\t\x12\x11\n\tname_long\x18\x03 \x01(\t\x12\x12\n\naddress_id\x18\x04 \x01(\x03\x12\x17\n\x0flegal_entity_id\x18\x05 \x01(\x03\x12!\n\x19\x63ustomer_telephone_number\x18\x06 \x01(\t\x12\x1b\n\x13\x63ustomer_contact_id\x18\x07 \x01(\x03\x12\x0c\n\x04logo\x18\x08 \x01(\t\x12\x19\n\x11logo_src_image_id\x18\t \x01(\x03\x42\x15\n\x13net.maivic.protocol')
 
 
+
+
+_DATASETLEVEL = _descriptor.Descriptor(
+  name='DatasetLevel',
+  full_name='DatasetLevel',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='DatasetLevel.id', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='DatasetLevel.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=19,
+  serialized_end=59,
+)
 
 
 _ADDRESS = _descriptor.Descriptor(
@@ -90,8 +125,8 @@ _ADDRESS = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=20,
-  serialized_end=152,
+  serialized_start=62,
+  serialized_end=194,
 )
 
 
@@ -153,8 +188,8 @@ _INVOICE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=155,
-  serialized_end=294,
+  serialized_start=197,
+  serialized_end=336,
 )
 
 
@@ -209,113 +244,8 @@ _LEGALENTITY = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=296,
-  serialized_end=410,
-)
-
-
-_MEETING = _descriptor.Descriptor(
-  name='Meeting',
-  full_name='Meeting',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='Meeting.id', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='date', full_name='Meeting.date', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='duration', full_name='Meeting.duration', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='topic', full_name='Meeting.topic', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='result', full_name='Meeting.result', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='place', full_name='Meeting.place', index=5,
-      number=6, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=412,
-  serialized_end=522,
-)
-
-
-_LOCATION = _descriptor.Descriptor(
-  name='Location',
-  full_name='Location',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='Location.id', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='name_long', full_name='Location.name_long', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='name_short', full_name='Location.name_short', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=524,
-  serialized_end=585,
+  serialized_start=338,
+  serialized_end=452,
 )
 
 
@@ -368,13 +298,6 @@ _DELIVERY = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
-    _descriptor.FieldDescriptor(
-      name='location_id', full_name='Delivery.location_id', index=6,
-      number=7, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
   ],
   extensions=[
   ],
@@ -384,8 +307,8 @@ _DELIVERY = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=588,
-  serialized_end=736,
+  serialized_start=454,
+  serialized_end=581,
 )
 
 
@@ -447,36 +370,43 @@ _SERVER = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=739,
-  serialized_end=879,
+  serialized_start=584,
+  serialized_end=724,
 )
 
 
-_DEVICE = _descriptor.Descriptor(
-  name='Device',
-  full_name='Device',
+_PAYMENTSTOORDER = _descriptor.Descriptor(
+  name='PaymentsToOrder',
+  full_name='PaymentsToOrder',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='Device.id', index=0,
+      name='payment_id', full_name='PaymentsToOrder.payment_id', index=0,
       number=1, type=3, cpp_type=2, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='uuid', full_name='Device.uuid', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      name='order_id', full_name='PaymentsToOrder.order_id', index=1,
+      number=2, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='rpc_namespace', full_name='Device.rpc_namespace', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      name='sum', full_name='PaymentsToOrder.sum', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='seq', full_name='PaymentsToOrder.seq', index=3,
+      number=4, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -489,8 +419,8 @@ _DEVICE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=881,
-  serialized_end=938,
+  serialized_start=726,
+  serialized_end=817,
 )
 
 
@@ -545,64 +475,8 @@ _DEVICECONNECTION = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=940,
-  serialized_end=1041,
-)
-
-
-_IMAGE = _descriptor.Descriptor(
-  name='Image',
-  full_name='Image',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='Image.id', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='Image.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='data', full_name='Image.data', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='artist_id', full_name='Image.artist_id', index=3,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='comment', full_name='Image.comment', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=1043,
-  serialized_end=1126,
+  serialized_start=819,
+  serialized_end=920,
 )
 
 
@@ -628,9 +502,9 @@ _ORDER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='delivery_place_id', full_name='Order.delivery_place_id', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      name='client_notes', full_name='Order.client_notes', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -642,15 +516,8 @@ _ORDER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='client_notes', full_name='Order.client_notes', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='tips', full_name='Order.tips', index=5,
-      number=6, type=11, cpp_type=10, label=1,
+      name='tips', full_name='Order.tips', index=4,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -664,8 +531,8 @@ _ORDER = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1129,
-  serialized_end=1265,
+  serialized_start=922,
+  serialized_end=1031,
 )
 
 
@@ -734,8 +601,8 @@ _CONTACT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1267,
-  serialized_end=1386,
+  serialized_start=1033,
+  serialized_end=1152,
 )
 
 
@@ -783,105 +650,84 @@ _EVENTLOG = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1388,
-  serialized_end=1457,
+  serialized_start=1154,
+  serialized_end=1223,
 )
 
 
-_GEOMETRYCOLUMN = _descriptor.Descriptor(
-  name='GeometryColumn',
-  full_name='GeometryColumn',
+_ORDERENTRY = _descriptor.Descriptor(
+  name='OrderEntry',
+  full_name='OrderEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='f_table_catalog', full_name='GeometryColumn.f_table_catalog', index=0,
-      number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='f_table_schema', full_name='GeometryColumn.f_table_schema', index=1,
-      number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='f_table_name', full_name='GeometryColumn.f_table_name', index=2,
-      number=3, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='f_geometry_column', full_name='GeometryColumn.f_geometry_column', index=3,
-      number=4, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='coord_dimension', full_name='GeometryColumn.coord_dimension', index=4,
-      number=5, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='srid', full_name='GeometryColumn.srid', index=5,
-      number=6, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='GeometryColumn.type', index=6,
-      number=7, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=1460,
-  serialized_end=1627,
-)
-
-
-_MEETINGSTOCONTACT = _descriptor.Descriptor(
-  name='MeetingsToContact',
-  full_name='MeetingsToContact',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='contact_id', full_name='MeetingsToContact.contact_id', index=0,
+      name='id', full_name='OrderEntry.id', index=0,
       number=1, type=3, cpp_type=2, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='role', full_name='MeetingsToContact.role', index=1,
-      number=2, type=9, cpp_type=9, label=2,
+      name='order_id', full_name='OrderEntry.order_id', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='offer_id', full_name='OrderEntry.offer_id', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='qty', full_name='OrderEntry.qty', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=1225,
+  serialized_end=1308,
+)
+
+
+_OFFERCATALOG = _descriptor.Descriptor(
+  name='OfferCatalog',
+  full_name='OfferCatalog',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='OfferCatalog.id', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='OfferCatalog.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='meeting_id', full_name='MeetingsToContact.meeting_id', index=2,
-      number=3, type=3, cpp_type=2, label=2,
+      name='supplier_id', full_name='OfferCatalog.supplier_id', index=2,
+      number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -895,8 +741,8 @@ _MEETINGSTOCONTACT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1629,
-  serialized_end=1702,
+  serialized_start=1310,
+  serialized_end=1371,
 )
 
 
@@ -944,161 +790,35 @@ _ORDERENTRYOPTION = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1704,
-  serialized_end=1796,
+  serialized_start=1373,
+  serialized_end=1465,
 )
 
 
-_MENU = _descriptor.Descriptor(
-  name='Menu',
-  full_name='Menu',
+_INVOICESTOCONTACT = _descriptor.Descriptor(
+  name='InvoicesToContact',
+  full_name='InvoicesToContact',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='Menu.id', index=0,
+      name='contact_id', full_name='InvoicesToContact.contact_id', index=0,
       number=1, type=3, cpp_type=2, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='recurrence', full_name='Menu.recurrence', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='restaurant_id', full_name='Menu.restaurant_id', index=2,
-      number=3, type=3, cpp_type=2, label=1,
+      name='invoice_id', full_name='InvoicesToContact.invoice_id', index=1,
+      number=2, type=3, cpp_type=2, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='location_id', full_name='Menu.location_id', index=3,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=1798,
-  serialized_end=1880,
-)
-
-
-_DELIVERYPLACE = _descriptor.Descriptor(
-  name='DeliveryPlace',
-  full_name='DeliveryPlace',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='DeliveryPlace.id', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='location_id', full_name='DeliveryPlace.location_id', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='building_id', full_name='DeliveryPlace.building_id', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='short_name', full_name='DeliveryPlace.short_name', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='place_types', full_name='DeliveryPlace.place_types', index=4,
-      number=5, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=1882,
-  serialized_end=1992,
-)
-
-
-_DELIVERYPLACESPECIFICATION = _descriptor.Descriptor(
-  name='DeliveryPlaceSpecification',
-  full_name='DeliveryPlaceSpecification',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='DeliveryPlaceSpecification.id', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='location_id', full_name='DeliveryPlaceSpecification.location_id', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='building_id', full_name='DeliveryPlaceSpecification.building_id', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='delivery_place_id', full_name='DeliveryPlaceSpecification.delivery_place_id', index=3,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='place_type_id', full_name='DeliveryPlaceSpecification.place_type_id', index=4,
-      number=5, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='text_value', full_name='DeliveryPlaceSpecification.text_value', index=5,
-      number=6, type=9, cpp_type=9, label=1,
+      name='role', full_name='InvoicesToContact.role', index=2,
+      number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1112,8 +832,8 @@ _DELIVERYPLACESPECIFICATION = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1995,
-  serialized_end=2147,
+  serialized_start=1467,
+  serialized_end=1540,
 )
 
 
@@ -1182,8 +902,8 @@ _OFFER = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2150,
-  serialized_end=2297,
+  serialized_start=1543,
+  serialized_end=1690,
 )
 
 
@@ -1238,512 +958,8 @@ _RECEIPT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2299,
-  serialized_end=2400,
-)
-
-
-_BUILDING = _descriptor.Descriptor(
-  name='Building',
-  full_name='Building',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='Building.id', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='location_id', full_name='Building.location_id', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=2402,
-  serialized_end=2445,
-)
-
-
-_PAYMENTSTOORDER = _descriptor.Descriptor(
-  name='PaymentsToOrder',
-  full_name='PaymentsToOrder',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='payment_id', full_name='PaymentsToOrder.payment_id', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='order_id', full_name='PaymentsToOrder.order_id', index=1,
-      number=2, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='sum', full_name='PaymentsToOrder.sum', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='seq', full_name='PaymentsToOrder.seq', index=3,
-      number=4, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=2447,
-  serialized_end=2538,
-)
-
-
-_DECIMAL = _descriptor.Descriptor(
-  name='Decimal',
-  full_name='Decimal',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='value', full_name='Decimal.value', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='scale', full_name='Decimal.scale', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=True, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=2540,
-  serialized_end=2582,
-)
-
-
-_INTERVAL = _descriptor.Descriptor(
-  name='Interval',
-  full_name='Interval',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='start', full_name='Interval.start', index=0,
-      number=1, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='end', full_name='Interval.end', index=1,
-      number=2, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=2584,
-  serialized_end=2622,
-)
-
-
-_NAMESPACEPAIR = _descriptor.Descriptor(
-  name='NameSpacePair',
-  full_name='NameSpacePair',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='NameSpacePair.id', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='domain', full_name='NameSpacePair.domain', index=1,
-      number=2, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='NameSpacePair.value', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=2624,
-  serialized_end=2682,
-)
-
-
-_NOTIFICATION = _descriptor.Descriptor(
-  name='Notification',
-  full_name='Notification',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='Notification.id', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='Notification.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=2684,
-  serialized_end=2724,
-)
-
-
-_ORDERSTATUS = _descriptor.Descriptor(
-  name='OrderStatus',
-  full_name='OrderStatus',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='OrderStatus.id', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='order_id', full_name='OrderStatus.order_id', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='status_code_id', full_name='OrderStatus.status_code_id', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='status_note', full_name='OrderStatus.status_note', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=2726,
-  serialized_end=2814,
-)
-
-
-_MENUENTRY = _descriptor.Descriptor(
-  name='MenuEntry',
-  full_name='MenuEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='MenuEntry.id', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='menu_id', full_name='MenuEntry.menu_id', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='MenuEntry.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='option_for', full_name='MenuEntry.option_for', index=3,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='option_max_qty', full_name='MenuEntry.option_max_qty', index=4,
-      number=5, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=2816,
-  serialized_end=2914,
-)
-
-
-_INVOICESTOCONTACT = _descriptor.Descriptor(
-  name='InvoicesToContact',
-  full_name='InvoicesToContact',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='contact_id', full_name='InvoicesToContact.contact_id', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='invoice_id', full_name='InvoicesToContact.invoice_id', index=1,
-      number=2, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='role', full_name='InvoicesToContact.role', index=2,
-      number=3, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=2916,
-  serialized_end=2989,
-)
-
-
-_ORDERENTRY = _descriptor.Descriptor(
-  name='OrderEntry',
-  full_name='OrderEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='OrderEntry.id', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='order_id', full_name='OrderEntry.order_id', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='offer_id', full_name='OrderEntry.offer_id', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='qty', full_name='OrderEntry.qty', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=2991,
-  serialized_end=3074,
-)
-
-
-_RPCSUBSCRIPTION = _descriptor.Descriptor(
-  name='RpcSubscription',
-  full_name='RpcSubscription',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='RpcSubscription.id', index=0,
-      number=1, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='active', full_name='RpcSubscription.active', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='id_client', full_name='RpcSubscription.id_client', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='rpc_method', full_name='RpcSubscription.rpc_method', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='rpc_args', full_name='RpcSubscription.rpc_args', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='rpc_last_result', full_name='RpcSubscription.rpc_last_result', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='device_id', full_name='RpcSubscription.device_id', index=6,
-      number=7, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='rpc_unsent_result_update', full_name='RpcSubscription.rpc_unsent_result_update', index=7,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=3077,
-  serialized_end=3257,
+  serialized_start=1692,
+  serialized_end=1793,
 )
 
 
@@ -1798,8 +1014,351 @@ _SPATIALREFSY = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3259,
-  serialized_end=3360,
+  serialized_start=1795,
+  serialized_end=1896,
+)
+
+
+_DECIMAL = _descriptor.Descriptor(
+  name='Decimal',
+  full_name='Decimal',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Decimal.value', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='scale', full_name='Decimal.scale', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=True, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=1898,
+  serialized_end=1940,
+)
+
+
+_INTERVAL = _descriptor.Descriptor(
+  name='Interval',
+  full_name='Interval',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='start', full_name='Interval.start', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='end', full_name='Interval.end', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=1942,
+  serialized_end=1980,
+)
+
+
+_NAMESPACEPAIR = _descriptor.Descriptor(
+  name='NameSpacePair',
+  full_name='NameSpacePair',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='NameSpacePair.id', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='domain', full_name='NameSpacePair.domain', index=1,
+      number=2, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='NameSpacePair.value', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=1982,
+  serialized_end=2040,
+)
+
+
+_NOTIFICATION = _descriptor.Descriptor(
+  name='Notification',
+  full_name='Notification',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='Notification.id', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='Notification.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=2042,
+  serialized_end=2082,
+)
+
+
+_ORDERSTATUS = _descriptor.Descriptor(
+  name='OrderStatus',
+  full_name='OrderStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='OrderStatus.id', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='order_id', full_name='OrderStatus.order_id', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='status_code_id', full_name='OrderStatus.status_code_id', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='status_note', full_name='OrderStatus.status_note', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=2084,
+  serialized_end=2172,
+)
+
+
+_GEOMETRYCOLUMN = _descriptor.Descriptor(
+  name='GeometryColumn',
+  full_name='GeometryColumn',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='f_table_catalog', full_name='GeometryColumn.f_table_catalog', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='f_table_schema', full_name='GeometryColumn.f_table_schema', index=1,
+      number=2, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='f_table_name', full_name='GeometryColumn.f_table_name', index=2,
+      number=3, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='f_geometry_column', full_name='GeometryColumn.f_geometry_column', index=3,
+      number=4, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='coord_dimension', full_name='GeometryColumn.coord_dimension', index=4,
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='srid', full_name='GeometryColumn.srid', index=5,
+      number=6, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='GeometryColumn.type', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=2175,
+  serialized_end=2342,
+)
+
+
+_RPCSUBSCRIPTION = _descriptor.Descriptor(
+  name='RpcSubscription',
+  full_name='RpcSubscription',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='RpcSubscription.id', index=0,
+      number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='active', full_name='RpcSubscription.active', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='id_client', full_name='RpcSubscription.id_client', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='client_uuid', full_name='RpcSubscription.client_uuid', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='rpc_method', full_name='RpcSubscription.rpc_method', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='rpc_args', full_name='RpcSubscription.rpc_args', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='rpc_last_result', full_name='RpcSubscription.rpc_last_result', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='device_id', full_name='RpcSubscription.device_id', index=7,
+      number=8, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=2345,
+  serialized_end=2512,
 )
 
 
@@ -1840,8 +1399,8 @@ _CONTACTSTOLEGALENTITY = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3362,
-  serialized_end=3444,
+  serialized_start=2514,
+  serialized_end=2596,
 )
 
 
@@ -1952,8 +1511,8 @@ _OFFEROPTION = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3447,
-  serialized_end=3774,
+  serialized_start=2599,
+  serialized_end=2926,
 )
 
 
@@ -2001,43 +1560,36 @@ _CLIENT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3776,
-  serialized_end=3847,
+  serialized_start=2928,
+  serialized_end=2999,
 )
 
 
-_MENUOPTION = _descriptor.Descriptor(
-  name='MenuOption',
-  full_name='MenuOption',
+_DEVICE = _descriptor.Descriptor(
+  name='Device',
+  full_name='Device',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='MenuOption.id', index=0,
+      name='id', full_name='Device.id', index=0,
       number=1, type=3, cpp_type=2, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='menu_id', full_name='MenuOption.menu_id', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='MenuOption.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
+      name='uuid', full_name='Device.uuid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='is_menu_changer', full_name='MenuOption.is_menu_changer', index=3,
-      number=4, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='rpc_namespace', full_name='Device.rpc_namespace', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -2050,8 +1602,8 @@ _MENUOPTION = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3849,
-  serialized_end=3929,
+  serialized_start=3001,
+  serialized_end=3058,
 )
 
 
@@ -2099,8 +1651,8 @@ _PAYMENT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3931,
-  serialized_end=4014,
+  serialized_start=3060,
+  serialized_end=3143,
 )
 
 
@@ -2148,21 +1700,49 @@ _RESTAURANTSTOCONTACT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4016,
-  serialized_end=4120,
+  serialized_start=3145,
+  serialized_end=3249,
 )
 
 
-_PLACETYPE = _descriptor.Descriptor(
-  name='PlaceType',
-  full_name='PlaceType',
+_LOCATIONBIT = _descriptor.Descriptor(
+  name='LocationBit',
+  full_name='LocationBit',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='PlaceType.id', index=0,
+      name='id', full_name='LocationBit.id', index=0,
       number=1, type=3, cpp_type=2, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='parent_id', full_name='LocationBit.parent_id', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='LocationBit.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='address_id', full_name='LocationBit.address_id', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='dataset_level_id', full_name='LocationBit.dataset_level_id', index=4,
+      number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -2176,8 +1756,8 @@ _PLACETYPE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4122,
-  serialized_end=4145,
+  serialized_start=3251,
+  serialized_end=3355,
 )
 
 
@@ -2196,58 +1776,58 @@ _RESTAURANT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='address_id', full_name='Restaurant.address_id', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='legal_entity_id', full_name='Restaurant.legal_entity_id', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='customer_telephone_number', full_name='Restaurant.customer_telephone_number', index=3,
-      number=4, type=9, cpp_type=9, label=1,
+      name='name_short', full_name='Restaurant.name_short', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='customer_contact_id', full_name='Restaurant.customer_contact_id', index=4,
+      name='name_long', full_name='Restaurant.name_long', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='address_id', full_name='Restaurant.address_id', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='legal_entity_id', full_name='Restaurant.legal_entity_id', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='logo', full_name='Restaurant.logo', index=5,
+      name='customer_telephone_number', full_name='Restaurant.customer_telephone_number', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='logo_src_image_id', full_name='Restaurant.logo_src_image_id', index=6,
+      name='customer_contact_id', full_name='Restaurant.customer_contact_id', index=6,
       number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='name_short', full_name='Restaurant.name_short', index=7,
+      name='logo', full_name='Restaurant.logo', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='name_long', full_name='Restaurant.name_long', index=8,
-      number=9, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      name='logo_src_image_id', full_name='Restaurant.logo_src_image_id', index=8,
+      number=9, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -2260,62 +1840,59 @@ _RESTAURANT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4148,
-  serialized_end=4361,
+  serialized_start=3358,
+  serialized_end=3571,
 )
 
 _INVOICE.fields_by_name['sum'].message_type = _DECIMAL
-_MEETING.fields_by_name['duration'].message_type = _INTERVAL
+_PAYMENTSTOORDER.fields_by_name['sum'].message_type = _DECIMAL
 _ORDER.fields_by_name['tips'].message_type = _DECIMAL
+_ORDERENTRY.fields_by_name['qty'].message_type = _DECIMAL
 _OFFER.fields_by_name['price'].message_type = _DECIMAL
 _RECEIPT.fields_by_name['sum'].message_type = _DECIMAL
-_PAYMENTSTOORDER.fields_by_name['sum'].message_type = _DECIMAL
-_ORDERENTRY.fields_by_name['qty'].message_type = _DECIMAL
 _OFFEROPTION.fields_by_name['price'].message_type = _DECIMAL
 _OFFEROPTION.fields_by_name['price_delta_positive'].message_type = _DECIMAL
 _OFFEROPTION.fields_by_name['price_delta_negative'].message_type = _DECIMAL
 _PAYMENT.fields_by_name['sum'].message_type = _DECIMAL
+DESCRIPTOR.message_types_by_name['DatasetLevel'] = _DATASETLEVEL
 DESCRIPTOR.message_types_by_name['Address'] = _ADDRESS
 DESCRIPTOR.message_types_by_name['Invoice'] = _INVOICE
 DESCRIPTOR.message_types_by_name['LegalEntity'] = _LEGALENTITY
-DESCRIPTOR.message_types_by_name['Meeting'] = _MEETING
-DESCRIPTOR.message_types_by_name['Location'] = _LOCATION
 DESCRIPTOR.message_types_by_name['Delivery'] = _DELIVERY
 DESCRIPTOR.message_types_by_name['Server'] = _SERVER
-DESCRIPTOR.message_types_by_name['Device'] = _DEVICE
+DESCRIPTOR.message_types_by_name['PaymentsToOrder'] = _PAYMENTSTOORDER
 DESCRIPTOR.message_types_by_name['DeviceConnection'] = _DEVICECONNECTION
-DESCRIPTOR.message_types_by_name['Image'] = _IMAGE
 DESCRIPTOR.message_types_by_name['Order'] = _ORDER
 DESCRIPTOR.message_types_by_name['Contact'] = _CONTACT
 DESCRIPTOR.message_types_by_name['EventLog'] = _EVENTLOG
-DESCRIPTOR.message_types_by_name['GeometryColumn'] = _GEOMETRYCOLUMN
-DESCRIPTOR.message_types_by_name['MeetingsToContact'] = _MEETINGSTOCONTACT
+DESCRIPTOR.message_types_by_name['OrderEntry'] = _ORDERENTRY
+DESCRIPTOR.message_types_by_name['OfferCatalog'] = _OFFERCATALOG
 DESCRIPTOR.message_types_by_name['OrderEntryOption'] = _ORDERENTRYOPTION
-DESCRIPTOR.message_types_by_name['Menu'] = _MENU
-DESCRIPTOR.message_types_by_name['DeliveryPlace'] = _DELIVERYPLACE
-DESCRIPTOR.message_types_by_name['DeliveryPlaceSpecification'] = _DELIVERYPLACESPECIFICATION
+DESCRIPTOR.message_types_by_name['InvoicesToContact'] = _INVOICESTOCONTACT
 DESCRIPTOR.message_types_by_name['Offer'] = _OFFER
 DESCRIPTOR.message_types_by_name['Receipt'] = _RECEIPT
-DESCRIPTOR.message_types_by_name['Building'] = _BUILDING
-DESCRIPTOR.message_types_by_name['PaymentsToOrder'] = _PAYMENTSTOORDER
+DESCRIPTOR.message_types_by_name['SpatialRefSy'] = _SPATIALREFSY
 DESCRIPTOR.message_types_by_name['Decimal'] = _DECIMAL
 DESCRIPTOR.message_types_by_name['Interval'] = _INTERVAL
 DESCRIPTOR.message_types_by_name['NameSpacePair'] = _NAMESPACEPAIR
 DESCRIPTOR.message_types_by_name['Notification'] = _NOTIFICATION
 DESCRIPTOR.message_types_by_name['OrderStatus'] = _ORDERSTATUS
-DESCRIPTOR.message_types_by_name['MenuEntry'] = _MENUENTRY
-DESCRIPTOR.message_types_by_name['InvoicesToContact'] = _INVOICESTOCONTACT
-DESCRIPTOR.message_types_by_name['OrderEntry'] = _ORDERENTRY
+DESCRIPTOR.message_types_by_name['GeometryColumn'] = _GEOMETRYCOLUMN
 DESCRIPTOR.message_types_by_name['RpcSubscription'] = _RPCSUBSCRIPTION
-DESCRIPTOR.message_types_by_name['SpatialRefSy'] = _SPATIALREFSY
 DESCRIPTOR.message_types_by_name['ContactsToLegalEntity'] = _CONTACTSTOLEGALENTITY
 DESCRIPTOR.message_types_by_name['OfferOption'] = _OFFEROPTION
 DESCRIPTOR.message_types_by_name['Client'] = _CLIENT
-DESCRIPTOR.message_types_by_name['MenuOption'] = _MENUOPTION
+DESCRIPTOR.message_types_by_name['Device'] = _DEVICE
 DESCRIPTOR.message_types_by_name['Payment'] = _PAYMENT
 DESCRIPTOR.message_types_by_name['RestaurantsToContact'] = _RESTAURANTSTOCONTACT
-DESCRIPTOR.message_types_by_name['PlaceType'] = _PLACETYPE
+DESCRIPTOR.message_types_by_name['LocationBit'] = _LOCATIONBIT
 DESCRIPTOR.message_types_by_name['Restaurant'] = _RESTAURANT
+
+class DatasetLevel(_message.Message):
+  __metaclass__ = _reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _DATASETLEVEL
+
+  # @@protoc_insertion_point(class_scope:DatasetLevel)
 
 class Address(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2335,18 +1912,6 @@ class LegalEntity(_message.Message):
 
   # @@protoc_insertion_point(class_scope:LegalEntity)
 
-class Meeting(_message.Message):
-  __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _MEETING
-
-  # @@protoc_insertion_point(class_scope:Meeting)
-
-class Location(_message.Message):
-  __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _LOCATION
-
-  # @@protoc_insertion_point(class_scope:Location)
-
 class Delivery(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _DELIVERY
@@ -2359,23 +1924,17 @@ class Server(_message.Message):
 
   # @@protoc_insertion_point(class_scope:Server)
 
-class Device(_message.Message):
+class PaymentsToOrder(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _DEVICE
+  DESCRIPTOR = _PAYMENTSTOORDER
 
-  # @@protoc_insertion_point(class_scope:Device)
+  # @@protoc_insertion_point(class_scope:PaymentsToOrder)
 
 class DeviceConnection(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _DEVICECONNECTION
 
   # @@protoc_insertion_point(class_scope:DeviceConnection)
-
-class Image(_message.Message):
-  __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _IMAGE
-
-  # @@protoc_insertion_point(class_scope:Image)
 
 class Order(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2395,17 +1954,17 @@ class EventLog(_message.Message):
 
   # @@protoc_insertion_point(class_scope:EventLog)
 
-class GeometryColumn(_message.Message):
+class OrderEntry(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _GEOMETRYCOLUMN
+  DESCRIPTOR = _ORDERENTRY
 
-  # @@protoc_insertion_point(class_scope:GeometryColumn)
+  # @@protoc_insertion_point(class_scope:OrderEntry)
 
-class MeetingsToContact(_message.Message):
+class OfferCatalog(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _MEETINGSTOCONTACT
+  DESCRIPTOR = _OFFERCATALOG
 
-  # @@protoc_insertion_point(class_scope:MeetingsToContact)
+  # @@protoc_insertion_point(class_scope:OfferCatalog)
 
 class OrderEntryOption(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2413,23 +1972,11 @@ class OrderEntryOption(_message.Message):
 
   # @@protoc_insertion_point(class_scope:OrderEntryOption)
 
-class Menu(_message.Message):
+class InvoicesToContact(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _MENU
+  DESCRIPTOR = _INVOICESTOCONTACT
 
-  # @@protoc_insertion_point(class_scope:Menu)
-
-class DeliveryPlace(_message.Message):
-  __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _DELIVERYPLACE
-
-  # @@protoc_insertion_point(class_scope:DeliveryPlace)
-
-class DeliveryPlaceSpecification(_message.Message):
-  __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _DELIVERYPLACESPECIFICATION
-
-  # @@protoc_insertion_point(class_scope:DeliveryPlaceSpecification)
+  # @@protoc_insertion_point(class_scope:InvoicesToContact)
 
 class Offer(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2443,17 +1990,11 @@ class Receipt(_message.Message):
 
   # @@protoc_insertion_point(class_scope:Receipt)
 
-class Building(_message.Message):
+class SpatialRefSy(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _BUILDING
+  DESCRIPTOR = _SPATIALREFSY
 
-  # @@protoc_insertion_point(class_scope:Building)
-
-class PaymentsToOrder(_message.Message):
-  __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _PAYMENTSTOORDER
-
-  # @@protoc_insertion_point(class_scope:PaymentsToOrder)
+  # @@protoc_insertion_point(class_scope:SpatialRefSy)
 
 class Decimal(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2485,35 +2026,17 @@ class OrderStatus(_message.Message):
 
   # @@protoc_insertion_point(class_scope:OrderStatus)
 
-class MenuEntry(_message.Message):
+class GeometryColumn(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _MENUENTRY
+  DESCRIPTOR = _GEOMETRYCOLUMN
 
-  # @@protoc_insertion_point(class_scope:MenuEntry)
-
-class InvoicesToContact(_message.Message):
-  __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _INVOICESTOCONTACT
-
-  # @@protoc_insertion_point(class_scope:InvoicesToContact)
-
-class OrderEntry(_message.Message):
-  __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _ORDERENTRY
-
-  # @@protoc_insertion_point(class_scope:OrderEntry)
+  # @@protoc_insertion_point(class_scope:GeometryColumn)
 
 class RpcSubscription(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _RPCSUBSCRIPTION
 
   # @@protoc_insertion_point(class_scope:RpcSubscription)
-
-class SpatialRefSy(_message.Message):
-  __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _SPATIALREFSY
-
-  # @@protoc_insertion_point(class_scope:SpatialRefSy)
 
 class ContactsToLegalEntity(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2533,11 +2056,11 @@ class Client(_message.Message):
 
   # @@protoc_insertion_point(class_scope:Client)
 
-class MenuOption(_message.Message):
+class Device(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _MENUOPTION
+  DESCRIPTOR = _DEVICE
 
-  # @@protoc_insertion_point(class_scope:MenuOption)
+  # @@protoc_insertion_point(class_scope:Device)
 
 class Payment(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2551,11 +2074,11 @@ class RestaurantsToContact(_message.Message):
 
   # @@protoc_insertion_point(class_scope:RestaurantsToContact)
 
-class PlaceType(_message.Message):
+class LocationBit(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _PLACETYPE
+  DESCRIPTOR = _LOCATIONBIT
 
-  # @@protoc_insertion_point(class_scope:PlaceType)
+  # @@protoc_insertion_point(class_scope:LocationBit)
 
 class Restaurant(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType

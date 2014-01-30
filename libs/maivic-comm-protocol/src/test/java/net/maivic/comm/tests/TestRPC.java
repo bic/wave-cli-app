@@ -23,8 +23,7 @@ import net.maivic.context.Context;
 import net.maivic.context.UnsupportedType;
 import net.maivic.context.WrongType;
 import net.maivic.protocol.Model.Decimal;
-import net.maivic.protocol.Model.Location;
-import net.maivic.protocol.Model.Menu;
+import net.maivic.protocol.Model.LocationBit;
 import net.maivic.protocol.Model.Offer;
 import net.maivic.protocol.Model.OfferOption;
 import net.maivic.protocol.Model.Restaurant;
@@ -50,8 +49,8 @@ public class TestRPC extends TestCase {
 	}
 
 	private String url = 
-			//"nettytcp://81.181.146.250";
-			"nettytcp://localhost";
+			//"nettytcp://api.wavetheapp.com";
+			"nettytcp://api.wavetheapp.com";
 	private Transport transport;
 	@Before
 	public void setUp() {
@@ -86,7 +85,7 @@ public class TestRPC extends TestCase {
 	public void testGetRestaurants() {
 		LocationQuery locationQuery = RPCHandlerManager
 				.getHandler(LocationQuery.class);
-		Location location;
+		LocationBit location;
 		LocationRelations locRels = RPCHandlerManager
 				.getHandler(LocationRelations.class);
 		OfferRelations offerRels = RPCHandlerManager
@@ -103,7 +102,7 @@ public class TestRPC extends TestCase {
 			List<LazyResponse<List<OfferOption>>> responses = new ArrayList<LazyResponse<List<OfferOption>>>();
 			
 			for (Offer o : offers.get()) {
-				System.out.println(offerRels.getMenus(o, null).get());
+				System.out.println(offerRels.getOfferCatalogs(o, null).get());
 							
 				responses.add(offerRels.getOfferOptions(o, null));
 				System.out.println(o);
@@ -137,7 +136,7 @@ public class TestRPC extends TestCase {
 		LocationQuery locationQuery = RPCHandlerManager
 				.getHandler(LocationQuery.class);
 
-		Location location;
+		LocationBit location;
 		OfferRelations offerRelations = RPCHandlerManager
 				.getHandler(OfferRelations.class);
 		try {
@@ -180,7 +179,7 @@ public class TestRPC extends TestCase {
 
 			}
 
-			this.printLocation(location);
+			System.out.println(location.toString());
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -191,11 +190,11 @@ public class TestRPC extends TestCase {
 
 	}
 
-	private void printLocation(Location location) {
+	private void printLocation(LocationBit location) {
 		this.printLocation(location, "TEST:");
 	}
 
-	private void printLocation(Location location, String prefix) {
+	private void printLocation(LocationBit location, String prefix) {
 		if (location == null) {
 			System.out.print(prefix);
 			System.out.println("Location is null!!");
@@ -208,10 +207,9 @@ public class TestRPC extends TestCase {
 		System.out.println("Location id: " + location.getId());
 
 		System.out.print(prefix);
-		System.out.println("Location short_name: " + location.getNameLong());
+		System.out.println("Location short_name: " + location.getName());
 
 		System.out.print(prefix);
-		System.out.println("Location long_name: " + location.getNameLong());
 
 	}
 
@@ -226,7 +224,7 @@ public class TestRPC extends TestCase {
 		LocationQuery locationQuery = RPCHandlerManager
 				.getHandler(LocationQuery.class);
 
-		Location location;
+		LocationBit location;
 		try {
 			location = locationQuery.getLocation(1.0, 2.0, 150).get();
 			List<Offer> offers = locationQuery.getCurrentActiveOffers(location).get() ;
@@ -285,7 +283,7 @@ public class TestRPC extends TestCase {
 		LocationQuery locationQuery = RPCHandlerManager
 				.getHandler(LocationQuery.class);
 
-		Location location;
+		LocationBit location;
 		try {
 			location = locationQuery.getLocation(1.0, 2.0, 150).get();
 			List<Offer> offers = locationQuery.getCurrentActiveOffers(location)
