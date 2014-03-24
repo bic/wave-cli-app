@@ -1,11 +1,10 @@
-<LinearLayout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/LinearLayout1"
     android:layout_width="fill_parent"
     android:layout_height="1000dp"
     android:orientation="vertical"
     android:background="@android:color/background_dark"
-    tools:context=".MainActivity" >
+     >
 
     <RelativeLayout
         android:id="@+id/next_day_offer_relative_layout"
@@ -34,19 +33,24 @@
             android:textSize="15sp" />
 
         <ImageButton
-            android:id="@id/next_day_offer_button"
+            android:id="@+id/go_to_control_panel"
             android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:contentDescription="@string/action_next_day_offer_description"
-            android:src="@drawable/ic_action_forward" />
+            android:src="@drawable/ic_action_forward"
+            android:onClick="controlPanel" />
+
+      
+
     </RelativeLayout>
 
     <fragment
         android:id="@+id/menu_composition_fragment"
-        android:name="com.example.restaurantapp.MenuCompositionFragment"
+        android:name="com.maivic.restaurant.MenuCompositionFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    
      <TextView
         
             android:layout_width="fill_parent"

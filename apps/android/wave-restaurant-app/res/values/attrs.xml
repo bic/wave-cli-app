@@ -12,6 +12,7 @@
             <enum name="course_option" value="2" />
             <enum name="command_option" value="3" />
         </attr>
+        <attr name="options_configuration_type" format="string"/>
         <attr name="configuration_section_title" format="string"/>
         <attr name="first_number_picker_title" format="string"/>
         <attr name="second_number_picker_title" format="string"/>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:apps="http://schemas.android.com/apk/lib/com.maivic.android.widgets"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal" >
@@ -43,7 +44,7 @@
 
             <TextView
                 android:id="@+id/courseName"
-                android:layout_width="179dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="@android:string/unknownName"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -58,101 +59,68 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:inputType="textMultiLine"
-                 android:ems="10"
+                 android:ems="7"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
             
             
         </RelativeLayout>
 
     </LinearLayout>
-
+	
+	<LinearLayout 
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:weightSum="1">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:layout_weight="0.33" >
 
         <TextView
             android:id="@+id/first_number_picker_title"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:gravity="center"
+            
+            android:layout_gravity="center_horizontal"
             android:text="@android:string/unknownName"
             android:textAppearance="?android:attr/textAppearanceMedium"
             custom:first_row_only="true" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <ImageButton
-                android:id="@+id/imageButton1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                 android:layout_marginLeft="5dp"
-                android:src="@android:drawable/ic_input_add" />
-
-            <TextView
-                android:id="@+id/maximum_courses_to_include"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5" 
-                 android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@android:drawable/button_onoff_indicator_on" />
-
-        </LinearLayout>
-        
+       <com.maivic.android.widget.NumberPicker
+           android:id="@+id/npOptionLeft"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           apps:checkbox_on_zero="true"
+            />
 
     </LinearLayout>
     
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="0.33"
         android:orientation="vertical" >
 
         <TextView
             android:id="@+id/second_number_picker_title"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:gravity="center"
+            
+            android:layout_gravity="center_horizontal"
             android:text="@android:string/unknownName"
             android:textAppearance="?android:attr/textAppearanceMedium"
             custom:first_row_only="true" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <ImageButton
-                android:id="@+id/imageButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                 android:layout_marginLeft="5dp"
-                android:src="@android:drawable/ic_input_add" />
-
-            <TextView
-                android:id="@+id/min_included_courses"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1" 
-                 android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@android:drawable/button_onoff_indicator_on" />
-
-        </LinearLayout>
-        
+      <com.maivic.android.widget.NumberPicker
+          android:id="@+id/npOptionMiddle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+           />
 
     </LinearLayout>
     
@@ -160,52 +128,32 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:layout_weight="0.33" >
 
         <TextView
             android:id="@+id/third_number_picker_title"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
+            android:layout_gravity="center_horizontal"
             android:text="@android:string/unknownName"
             android:textAppearance="?android:attr/textAppearanceMedium"
             custom:first_row_only="true" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            
-            android:orientation="horizontal" >
+ 	 <com.maivic.android.widget.NumberPicker
+ 	     android:id="@+id/npOptionRight"
+ 	     android:layout_width="wrap_content"
+ 	     android:layout_height="wrap_content"
+ 	     android:layout_gravity="center_vertical"
+ 	      />
 
-            <ImageButton
-                android:id="@+id/imageButton5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:src="@android:drawable/ic_input_add" />
-
-            <TextView
-                android:id="@+id/discounting_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="8" 
-                 android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <ImageButton
-                android:id="@+id/imageButton6"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@android:drawable/button_onoff_indicator_on" />
-
-        </LinearLayout>
-        
-
+    </LinearLayout>
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        >
 
         <ImageButton
             android:id="@+id/imageButton7"

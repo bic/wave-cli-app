@@ -27,7 +27,7 @@
 	                 android:layout_height="wrap_content"
 	                 android:ems="10"
 	                 android:visibility="visible"
-	                 
+	                 android:clickable="false"
 	                 android:text="@android:string/unknownName"
 	                 android:textSize="30sp" />
 	             
@@ -36,10 +36,14 @@
 	                 android:layout_width="wrap_content"
 	                 android:layout_height="wrap_content"
 	                 android:ems="10"
-	                
-	                 android:visibility="gone"
-	                 android:inputType="text"
-	                 
+	               	 android:inputType="textNoSuggestions"
+	                 android:visibility="invisible"
+	                 android:singleLine="false"
+	                 android:lines="2"
+	                 android:focusable="true"
+	                 android:focusableInTouchMode="true"
+	                 android:clickable="true"
+	                 android:ellipsize="end"
 	                 android:textSize="30sp" />
 	             </RelativeLayout>
 	             
@@ -62,23 +66,5 @@
 	                 android:layout_alignParentRight="true"
 	                 android:paddingBottom="3dp"
 	                 android:src="@android:drawable/ic_delete" />
-
-	             <ImageButton
-	                 android:id="@+id/edit_course_name"
-	                 android:layout_width="wrap_content"
-	                 android:layout_height="wrap_content"
-	                 android:layout_alignParentRight="true"
-	                 android:layout_alignParentTop="true"
-	                 android:src="@android:drawable/ic_menu_edit"
-	                 android:visibility="visible" />
-	               
-	               <ImageButton
-	                 android:id="@+id/save_course_name"
-	                 android:layout_width="wrap_content"
-	                 android:layout_height="wrap_content"
-	                 android:layout_alignParentRight="true"
-	                 android:layout_alignParentTop="true"
-	                 android:src="@android:drawable/ic_menu_save"
-	                 android:visibility="invisible"/>
 
 </RelativeLayout>

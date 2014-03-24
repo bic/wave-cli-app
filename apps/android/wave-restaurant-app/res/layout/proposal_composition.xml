@@ -44,7 +44,7 @@
 	        
 	 
 	        
-	          <fragment android:name="com.example.restaurantapp.CourseFragment"
+	          <fragment android:name="com.maivic.restaurant.CourseFragment"
             	android:id="@+id/first_course_fragment"
             	custom:title="@string/first_course_title"
             	custom:configurable="true"
@@ -62,7 +62,7 @@
 	         />
 	        
 	        
-	       <fragment android:name="com.example.restaurantapp.CourseFragment"
+	       <fragment android:name="com.maivic.restaurant.CourseFragment"
             	android:id="@+id/main_course_fragment"
             	custom:title="@string/second_course_title"
             	custom:configurable="false"
@@ -80,7 +80,7 @@
 	         /> 
 	         
 	     
-	         <fragment android:name="com.example.restaurantapp.CourseFragment"
+	         <fragment android:name="com.maivic.restaurant.CourseFragment"
             	android:id="@+id/third_course_fragment"
             	custom:title="@string/third_course_title"
             	custom:configurable="false"
