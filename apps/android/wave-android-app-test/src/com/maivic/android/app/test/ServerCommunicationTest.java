@@ -28,6 +28,7 @@ import junit.framework.TestCase;
 public class ServerCommunicationTest extends TestCase {
 	
 	public void setUp() {
+		System.out.println("register platform support");
 		try {
 			Context.get().register("PlatformSupport", new AndroidPlatformSupport());
 		} catch (WrongType e) {
@@ -54,9 +55,14 @@ public class ServerCommunicationTest extends TestCase {
 		OfferRelations offerRels = RPCHandlerManager.getHandler(OfferRelations.class);
 		final MenuRelations menuRels=RPCHandlerManager.getHandler(MenuRelations.class);
 		try {
+			System.out.println("Get location...");
+			
 			location = locationQuery.getLocation(1.0, 2.0, 150).get();
-			System.out.println(location);
-			LazyResponse<List<Offer>> offers = locRels.getOffers(location, null);
+			System.out.println("Location is: " + location);
+//			LazyResponse<List<Offer>> offers = locRels.getOffers(location, null);
+			LazyResponse<List<Offer>> offers = locationQuery.getCurrentActiveOffers(location);
+		
+			
 			List<List<OfferOption>> res= new ArrayList<List<OfferOption>>();
 			final List<LazyResponse<Restaurant>> restaurants = new ArrayList<LazyResponse<Restaurant>>();
 			List<LazyResponse<List<OfferOption>>> responses = new ArrayList<LazyResponse<List<OfferOption>>>();
@@ -65,7 +71,16 @@ public class ServerCommunicationTest extends TestCase {
 					
 					@Override
 					public void call(LazyResponse<List<Menu>> result) {
-						List<Menu> ret= result.get();
+						List<Menu> ret = null;
+						try {
+							ret = result.get();
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (ExecutionException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						if(ret == null || ret.size() <1){
 							//error
 						} else {
