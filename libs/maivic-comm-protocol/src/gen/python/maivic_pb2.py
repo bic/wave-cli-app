@@ -14,7 +14,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='maivic.proto',
   package='net.maivic.comm',
-  serialized_pb='\n\x0cmaivic.proto\x12\x0fnet.maivic.comm\"\xed\x01\n\rThreadControl\x12\x11\n\tthread_id\x18\x01 \x02(\x05\x12\x44\n\toperation\x18\x02 \x02(\x0e\x32(.net.maivic.comm.ThreadControl.Operation:\x07\x44\x45\x46\x41ULT\x12\x18\n\rin_thread_seq\x18\x03 \x01(\x05:\x01\x30\"i\n\tOperation\x12\r\n\tCLOSE_REQ\x10\x01\x12\r\n\tCLOSE_ACK\x10\x02\x12\x0f\n\x0b\x46ORCE_CLOSE\x10\x03\x12\t\n\x05PAUSE\x10\x04\x12\n\n\x06RESUME\x10\x05\x12\x08\n\x04OPEN\x10\x06\x12\x0c\n\x07\x44\x45\x46\x41ULT\x10\xff\x01\"\xbd\x01\n\x10MessageContainer\x12\x12\n\nservice_id\x18\x01 \x02(\x05\x12\x0f\n\x07\x63ontent\x18\x02 \x02(\x0c\x12\x31\n\x0eidentity_token\x18\x03 \x01(\x0b\x32\x19.net.maivic.comm.Identity\x12\x12\n\nauth_token\x18\x04 \x01(\x03\x12\x36\n\x0ethread_control\x18\x05 \x01(\x0b\x32\x1e.net.maivic.comm.ThreadControl*\x05\x08\x06\x10\x80\x02\"C\n\x0eMaivicServices\x12\x13\n\x0bservice_ids\x18\x01 \x03(\x05\x12\x15\n\rservice_names\x18\x02 \x03(\t*\x05\x08\x03\x10\x80\x02\";\n\x15SelfDescribingMessage\x12\x11\n\ttype_name\x18\x01 \x02(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x02(\x0c\"\xba\x06\n\x08\x42\x61seType\x12\r\n\x05\x62ytes\x18\x01 \x03(\x0c\x12\x0e\n\x06string\x18\x02 \x03(\t\x12\x0f\n\x03i32\x18\x03 \x03(\x05\x42\x02\x10\x01\x12\x0f\n\x03i64\x18\x04 \x03(\x03\x42\x02\x10\x01\x12\x12\n\x06uint32\x18\x05 \x03(\rB\x02\x10\x01\x12\x12\n\x06uint64\x18\x06 \x03(\x04\x42\x02\x10\x01\x12\x12\n\x06sint32\x18\x07 \x03(\x11\x42\x02\x10\x01\x12\x12\n\x06sint64\x18\x08 \x03(\x12\x42\x02\x10\x01\x12\x13\n\x07\x66ixed32\x18\t \x03(\x07\x42\x02\x10\x01\x12\x13\n\x07\x66ixed64\x18\n \x03(\x06\x42\x02\x10\x01\x12\x14\n\x08sfixed32\x18\x0b \x03(\x0f\x42\x02\x10\x01\x12\x14\n\x08sfixed64\x18\x0c \x03(\x10\x42\x02\x10\x01\x12\x10\n\x04\x62ool\x18\r \x03(\x08\x42\x02\x10\x01\x12\x12\n\x06\x64ouble\x18\x0e \x03(\x01\x42\x02\x10\x01\x12\x11\n\x05\x66loat\x18\x0f \x03(\x02\x42\x02\x10\x01\x12\x18\n\tlist_type\x18\x10 \x01(\x08:\x05\x66\x61lse\x12\x37\n\x07message\x18\x11 \x03(\x0b\x32&.net.maivic.comm.SelfDescribingMessage\x12,\n\tbase_type\x18\x12 \x03(\x0b\x32\x19.net.maivic.comm.BaseType\x12<\n\x0c\x65ncoded_type\x18\x13 \x01(\x0e\x32&.net.maivic.comm.BaseType.ENCODED_TYPE\x12>\n\x0e\x63omponent_type\x18\x14 \x01(\x0e\x32&.net.maivic.comm.BaseType.ENCODED_TYPE\"\x8e\x02\n\x0c\x45NCODED_TYPE\x12\t\n\x05\x42YTES\x10\x01\x12\n\n\x06STRING\x10\x02\x12\t\n\x05INT32\x10\x03\x12\t\n\x05INT64\x10\x04\x12\n\n\x06UINT32\x10\x05\x12\n\n\x06UINT64\x10\x06\x12\n\n\x06SINT32\x10\x07\x12\n\n\x06SINT64\x10\x08\x12\x0b\n\x07\x46IXED32\x10\t\x12\x0b\n\x07\x46IXED64\x10\n\x12\x0c\n\x08SFIXED32\x10\x0b\x12\x0c\n\x08SFIXED64\x10\x0c\x12\x08\n\x04\x42OOL\x10\r\x12\n\n\x06\x44OUBLE\x10\x0e\x12\t\n\x05\x46LOAT\x10\x0f\x12\r\n\tLIST_TYPE\x10\x10\x12\x0b\n\x07UNKNOWN\x10\x11\x12\x0b\n\x07MESSAGE\x10\x12\x12\x17\n\x13\x43OMPONENT_BASE_TYPE\x10\x13\x12\x08\n\x04NONE\x10\x14\"s\n\x0c\x46unctionCall\x12\x10\n\x08\x66unction\x18\x01 \x02(\t\x12\'\n\x04\x61rgs\x18\x02 \x03(\x0b\x32\x19.net.maivic.comm.BaseType\x12\x10\n\x08isMethod\x18\x03 \x01(\x08\x12\x16\n\x0eisSubscription\x18\x04 \x01(\x08\"\xa2\x01\n\x0e\x46unctionReturn\x12(\n\x05value\x18\x01 \x01(\x0b\x32\x19.net.maivic.comm.BaseType\x12\x31\n\texception\x18\x02 \x01(\x0b\x32\x1e.net.maivic.comm.ExceptionType\x12\x33\n\x08progress\x18\x03 \x01(\x0b\x32!.net.maivic.comm.FunctionProgress\":\n\x10\x46unctionProgress\x12\x10\n\x08progress\x18\x01 \x02(\x05\x12\x14\n\x0cmax_progress\x18\x02 \x01(\x03\"\x8d\x01\n\rExceptionType\x12\x0f\n\x07type_id\x18\x01 \x02(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12+\n\x06strace\x18\x03 \x01(\x0b\x32\x1b.net.maivic.comm.StackTrace\x12-\n\x05\x63\x61use\x18\x04 \x01(\x0b\x32\x1e.net.maivic.comm.ExceptionType\"\x1b\n\nStackTrace\x12\r\n\x05\x66rame\x18\x01 \x03(\t\"R\n\tEntityReq\x12\x16\n\x0e\x65ntity_type_id\x18\x01 \x02(\x05\x12\x13\n\x0b\x65ntities_pk\x18\x02 \x03(\x0c\x12\x18\n\x10\x65ntity_type_name\x18\x03 \x01(\t\"P\n\x0fRelationRequest\x12\x13\n\x0brelation_id\x18\x01 \x02(\x05\x12\x11\n\tentity_pk\x18\x02 \x02(\x0c\x12\x15\n\rrelation_name\x18\x03 \x01(\t\"_\n\x0e\x45ntityResponse\x12\x16\n\x0e\x65ntity_type_id\x18\x01 \x02(\x05\x12\x18\n\x10\x65ntity_type_name\x18\x04 \x01(\x05\x12\x1b\n\x13serialized_entities\x18\x05 \x03(\x0c\"\x18\n\x08Identity\x12\x0c\n\x04uuid\x18\x01 \x02(\x0c\"0\n\x15\x41uthenticationRequest\x12\x17\n\x0f\x61uth_service_id\x18\x01 \x02(\x05\"\x96\x02\n\x0fNameSpaceUpdate\x12\x36\n\x02op\x18\x01 \x02(\x0e\x32*.net.maivic.comm.NameSpaceUpdate.Operation\x12\x0f\n\x03ids\x18\x02 \x03(\x03\x42\x02\x10\x01\x12\x0e\n\x06values\x18\x03 \x03(\x0c\x12\x13\n\x0bskipped_ids\x18\x04 \x03(\x03\x12\x1c\n\x14\x64omain_hash_after_op\x18\x05 \x01(\x0c\x12\x1b\n\x13table_hash_after_op\x18\x06 \x01(\x0c\x12\x11\n\x06\x64omain\x18\x07 \x01(\x03:\x01\x30\"G\n\tOperation\x12\x08\n\x04READ\x10\x01\x12\t\n\x05WRITE\x10\x02\x12\x13\n\x0fREAD_ALL_EXCEPT\x10\x05\x12\x10\n\x0cRESET_DOMAIN\x10\x06*=\n\tNamespace\x12\x0b\n\x07MESSAGE\x10\x01\x12\n\n\x06\x45NTITY\x10\x02\x12\x0b\n\x07SERVICE\x10\x03\x12\n\n\x06THREAD\x10\x04')
+  serialized_pb='\n\x0cmaivic.proto\x12\x0fnet.maivic.comm\"\xed\x01\n\rThreadControl\x12\x11\n\tthread_id\x18\x01 \x02(\x05\x12\x44\n\toperation\x18\x02 \x02(\x0e\x32(.net.maivic.comm.ThreadControl.Operation:\x07\x44\x45\x46\x41ULT\x12\x18\n\rin_thread_seq\x18\x03 \x01(\x05:\x01\x30\"i\n\tOperation\x12\r\n\tCLOSE_REQ\x10\x01\x12\r\n\tCLOSE_ACK\x10\x02\x12\x0f\n\x0b\x46ORCE_CLOSE\x10\x03\x12\t\n\x05PAUSE\x10\x04\x12\n\n\x06RESUME\x10\x05\x12\x08\n\x04OPEN\x10\x06\x12\x0c\n\x07\x44\x45\x46\x41ULT\x10\xff\x01\"\xbd\x01\n\x10MessageContainer\x12\x12\n\nservice_id\x18\x01 \x02(\x05\x12\x0f\n\x07\x63ontent\x18\x02 \x02(\x0c\x12\x31\n\x0eidentity_token\x18\x03 \x01(\x0b\x32\x19.net.maivic.comm.Identity\x12\x12\n\nauth_token\x18\x04 \x01(\x03\x12\x36\n\x0ethread_control\x18\x05 \x01(\x0b\x32\x1e.net.maivic.comm.ThreadControl*\x05\x08\x06\x10\x80\x02\"C\n\x0eMaivicServices\x12\x13\n\x0bservice_ids\x18\x01 \x03(\x05\x12\x15\n\rservice_names\x18\x02 \x03(\t*\x05\x08\x03\x10\x80\x02\";\n\x15SelfDescribingMessage\x12\x11\n\ttype_name\x18\x01 \x02(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x02(\x0c\"\xba\x06\n\x08\x42\x61seType\x12\r\n\x05\x62ytes\x18\x01 \x03(\x0c\x12\x0e\n\x06string\x18\x02 \x03(\t\x12\x0f\n\x03i32\x18\x03 \x03(\x05\x42\x02\x10\x01\x12\x0f\n\x03i64\x18\x04 \x03(\x03\x42\x02\x10\x01\x12\x12\n\x06uint32\x18\x05 \x03(\rB\x02\x10\x01\x12\x12\n\x06uint64\x18\x06 \x03(\x04\x42\x02\x10\x01\x12\x12\n\x06sint32\x18\x07 \x03(\x11\x42\x02\x10\x01\x12\x12\n\x06sint64\x18\x08 \x03(\x12\x42\x02\x10\x01\x12\x13\n\x07\x66ixed32\x18\t \x03(\x07\x42\x02\x10\x01\x12\x13\n\x07\x66ixed64\x18\n \x03(\x06\x42\x02\x10\x01\x12\x14\n\x08sfixed32\x18\x0b \x03(\x0f\x42\x02\x10\x01\x12\x14\n\x08sfixed64\x18\x0c \x03(\x10\x42\x02\x10\x01\x12\x10\n\x04\x62ool\x18\r \x03(\x08\x42\x02\x10\x01\x12\x12\n\x06\x64ouble\x18\x0e \x03(\x01\x42\x02\x10\x01\x12\x11\n\x05\x66loat\x18\x0f \x03(\x02\x42\x02\x10\x01\x12\x18\n\tlist_type\x18\x10 \x01(\x08:\x05\x66\x61lse\x12\x37\n\x07message\x18\x11 \x03(\x0b\x32&.net.maivic.comm.SelfDescribingMessage\x12,\n\tbase_type\x18\x12 \x03(\x0b\x32\x19.net.maivic.comm.BaseType\x12<\n\x0c\x65ncoded_type\x18\x13 \x01(\x0e\x32&.net.maivic.comm.BaseType.ENCODED_TYPE\x12>\n\x0e\x63omponent_type\x18\x14 \x01(\x0e\x32&.net.maivic.comm.BaseType.ENCODED_TYPE\"\x8e\x02\n\x0c\x45NCODED_TYPE\x12\t\n\x05\x42YTES\x10\x01\x12\n\n\x06STRING\x10\x02\x12\t\n\x05INT32\x10\x03\x12\t\n\x05INT64\x10\x04\x12\n\n\x06UINT32\x10\x05\x12\n\n\x06UINT64\x10\x06\x12\n\n\x06SINT32\x10\x07\x12\n\n\x06SINT64\x10\x08\x12\x0b\n\x07\x46IXED32\x10\t\x12\x0b\n\x07\x46IXED64\x10\n\x12\x0c\n\x08SFIXED32\x10\x0b\x12\x0c\n\x08SFIXED64\x10\x0c\x12\x08\n\x04\x42OOL\x10\r\x12\n\n\x06\x44OUBLE\x10\x0e\x12\t\n\x05\x46LOAT\x10\x0f\x12\r\n\tLIST_TYPE\x10\x10\x12\x0b\n\x07UNKNOWN\x10\x11\x12\x0b\n\x07MESSAGE\x10\x12\x12\x17\n\x13\x43OMPONENT_BASE_TYPE\x10\x13\x12\x08\n\x04NONE\x10\x14\"t\n\x0c\x46unctionCall\x12\x10\n\x08\x66unction\x18\x01 \x02(\t\x12\'\n\x04\x61rgs\x18\x02 \x03(\x0b\x32\x19.net.maivic.comm.BaseType\x12\x10\n\x08isMethod\x18\x03 \x01(\x08\x12\x17\n\x0fis_subscription\x18\x04 \x01(\x08\"\xa2\x01\n\x0e\x46unctionReturn\x12(\n\x05value\x18\x01 \x01(\x0b\x32\x19.net.maivic.comm.BaseType\x12\x31\n\texception\x18\x02 \x01(\x0b\x32\x1e.net.maivic.comm.ExceptionType\x12\x33\n\x08progress\x18\x03 \x01(\x0b\x32!.net.maivic.comm.FunctionProgress\":\n\x10\x46unctionProgress\x12\x10\n\x08progress\x18\x01 \x02(\x05\x12\x14\n\x0cmax_progress\x18\x02 \x01(\x03\"f\n\x13SubscriptionMessage\x12\x17\n\x0fsubscription_id\x18\x01 \x02(\x05\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\x0c\x12\x14\n\x0c\x63ontent_diff\x18\x02 \x01(\x0c\x12\x0f\n\x07version\x18\x04 \x01(\x05\"\x8d\x01\n\rExceptionType\x12\x0f\n\x07type_id\x18\x01 \x02(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12+\n\x06strace\x18\x03 \x01(\x0b\x32\x1b.net.maivic.comm.StackTrace\x12-\n\x05\x63\x61use\x18\x04 \x01(\x0b\x32\x1e.net.maivic.comm.ExceptionType\"\x1b\n\nStackTrace\x12\r\n\x05\x66rame\x18\x01 \x03(\t\"R\n\tEntityReq\x12\x16\n\x0e\x65ntity_type_id\x18\x01 \x02(\x05\x12\x13\n\x0b\x65ntities_pk\x18\x02 \x03(\x0c\x12\x18\n\x10\x65ntity_type_name\x18\x03 \x01(\t\"P\n\x0fRelationRequest\x12\x13\n\x0brelation_id\x18\x01 \x02(\x05\x12\x11\n\tentity_pk\x18\x02 \x02(\x0c\x12\x15\n\rrelation_name\x18\x03 \x01(\t\"_\n\x0e\x45ntityResponse\x12\x16\n\x0e\x65ntity_type_id\x18\x01 \x02(\x05\x12\x18\n\x10\x65ntity_type_name\x18\x04 \x01(\x05\x12\x1b\n\x13serialized_entities\x18\x05 \x03(\x0c\"\x18\n\x08Identity\x12\x0c\n\x04uuid\x18\x01 \x02(\x0c\"0\n\x15\x41uthenticationRequest\x12\x17\n\x0f\x61uth_service_id\x18\x01 \x02(\x05\"\x96\x02\n\x0fNameSpaceUpdate\x12\x36\n\x02op\x18\x01 \x02(\x0e\x32*.net.maivic.comm.NameSpaceUpdate.Operation\x12\x0f\n\x03ids\x18\x02 \x03(\x03\x42\x02\x10\x01\x12\x0e\n\x06values\x18\x03 \x03(\x0c\x12\x13\n\x0bskipped_ids\x18\x04 \x03(\x03\x12\x1c\n\x14\x64omain_hash_after_op\x18\x05 \x01(\x0c\x12\x1b\n\x13table_hash_after_op\x18\x06 \x01(\x0c\x12\x11\n\x06\x64omain\x18\x07 \x01(\x03:\x01\x30\"G\n\tOperation\x12\x08\n\x04READ\x10\x01\x12\t\n\x05WRITE\x10\x02\x12\x13\n\x0fREAD_ALL_EXCEPT\x10\x05\x12\x10\n\x0cRESET_DOMAIN\x10\x06*=\n\tNamespace\x12\x0b\n\x07MESSAGE\x10\x01\x12\n\n\x06\x45NTITY\x10\x02\x12\x0b\n\x07SERVICE\x10\x03\x12\n\n\x06THREAD\x10\x04')
 
 _NAMESPACE = _descriptor.EnumDescriptor(
   name='Namespace',
@@ -41,8 +41,8 @@ _NAMESPACE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2559,
-  serialized_end=2620,
+  serialized_start=2664,
+  serialized_end=2725,
 )
 
 Namespace = enum_type_wrapper.EnumTypeWrapper(_NAMESPACE)
@@ -211,8 +211,8 @@ _NAMESPACEUPDATE_OPERATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2486,
-  serialized_end=2557,
+  serialized_start=2591,
+  serialized_end=2662,
 )
 
 
@@ -576,7 +576,7 @@ _FUNCTIONCALL = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='isSubscription', full_name='net.maivic.comm.FunctionCall.isSubscription', index=3,
+      name='is_subscription', full_name='net.maivic.comm.FunctionCall.is_subscription', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -592,7 +592,7 @@ _FUNCTIONCALL = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=1424,
-  serialized_end=1539,
+  serialized_end=1540,
 )
 
 
@@ -633,8 +633,8 @@ _FUNCTIONRETURN = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1542,
-  serialized_end=1704,
+  serialized_start=1543,
+  serialized_end=1705,
 )
 
 
@@ -668,8 +668,57 @@ _FUNCTIONPROGRESS = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1706,
-  serialized_end=1764,
+  serialized_start=1707,
+  serialized_end=1765,
+)
+
+
+_SUBSCRIPTIONMESSAGE = _descriptor.Descriptor(
+  name='SubscriptionMessage',
+  full_name='net.maivic.comm.SubscriptionMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='subscription_id', full_name='net.maivic.comm.SubscriptionMessage.subscription_id', index=0,
+      number=1, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='content', full_name='net.maivic.comm.SubscriptionMessage.content', index=1,
+      number=3, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value="",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='content_diff', full_name='net.maivic.comm.SubscriptionMessage.content_diff', index=2,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value="",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='version', full_name='net.maivic.comm.SubscriptionMessage.version', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=1767,
+  serialized_end=1869,
 )
 
 
@@ -717,8 +766,8 @@ _EXCEPTIONTYPE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1767,
-  serialized_end=1908,
+  serialized_start=1872,
+  serialized_end=2013,
 )
 
 
@@ -745,8 +794,8 @@ _STACKTRACE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1910,
-  serialized_end=1937,
+  serialized_start=2015,
+  serialized_end=2042,
 )
 
 
@@ -787,8 +836,8 @@ _ENTITYREQ = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1939,
-  serialized_end=2021,
+  serialized_start=2044,
+  serialized_end=2126,
 )
 
 
@@ -829,8 +878,8 @@ _RELATIONREQUEST = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2023,
-  serialized_end=2103,
+  serialized_start=2128,
+  serialized_end=2208,
 )
 
 
@@ -871,8 +920,8 @@ _ENTITYRESPONSE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2105,
-  serialized_end=2200,
+  serialized_start=2210,
+  serialized_end=2305,
 )
 
 
@@ -899,8 +948,8 @@ _IDENTITY = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2202,
-  serialized_end=2226,
+  serialized_start=2307,
+  serialized_end=2331,
 )
 
 
@@ -927,8 +976,8 @@ _AUTHENTICATIONREQUEST = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2228,
-  serialized_end=2276,
+  serialized_start=2333,
+  serialized_end=2381,
 )
 
 
@@ -998,8 +1047,8 @@ _NAMESPACEUPDATE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2279,
-  serialized_end=2557,
+  serialized_start=2384,
+  serialized_end=2662,
 )
 
 _THREADCONTROL.fields_by_name['operation'].enum_type = _THREADCONTROL_OPERATION
@@ -1027,6 +1076,7 @@ DESCRIPTOR.message_types_by_name['BaseType'] = _BASETYPE
 DESCRIPTOR.message_types_by_name['FunctionCall'] = _FUNCTIONCALL
 DESCRIPTOR.message_types_by_name['FunctionReturn'] = _FUNCTIONRETURN
 DESCRIPTOR.message_types_by_name['FunctionProgress'] = _FUNCTIONPROGRESS
+DESCRIPTOR.message_types_by_name['SubscriptionMessage'] = _SUBSCRIPTIONMESSAGE
 DESCRIPTOR.message_types_by_name['ExceptionType'] = _EXCEPTIONTYPE
 DESCRIPTOR.message_types_by_name['StackTrace'] = _STACKTRACE
 DESCRIPTOR.message_types_by_name['EntityReq'] = _ENTITYREQ
@@ -1083,6 +1133,12 @@ class FunctionProgress(_message.Message):
   DESCRIPTOR = _FUNCTIONPROGRESS
 
   # @@protoc_insertion_point(class_scope:net.maivic.comm.FunctionProgress)
+
+class SubscriptionMessage(_message.Message):
+  __metaclass__ = _reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _SUBSCRIPTIONMESSAGE
+
+  # @@protoc_insertion_point(class_scope:net.maivic.comm.SubscriptionMessage)
 
 class ExceptionType(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType

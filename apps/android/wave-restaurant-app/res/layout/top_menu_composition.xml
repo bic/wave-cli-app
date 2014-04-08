@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/overlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/livrare_la_ora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toLeftOf="@+id/set_delivery_hour"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    android:text="Livrare la orele:"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/set_delivery_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/livrare_la_ora"
+                    android:layout_alignBottom="@+id/livrare_la_ora"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="89dp"
+                    android:paddingRight="10dp"
+                    android:scaleType="fitCenter"
+                    android:text="NU MERGE"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/menu_composition_search_tV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/livrare_la_ora"
+                    android:layout_alignBottom="@+id/livrare_la_ora"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="63dp"
+                    android:layout_toLeftOf="@+id/livrare_la_ora"
+                    android:ems="10"
+                    android:text="REALLY BIG SEARCH FIELD"
+                    android:textSize="20sp" />
+
+
+            </RelativeLayout>
+            <RelativeLayout 
+                android:id="@+id/notification_listview_layer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                
+                <fragment
+                    android:id="@+id/notifications_list_view"
+                    android:name="com.maivic.restaurant.NotificationsFragmentGenerator"
+                    android:layout_width="799dp"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/Zona"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:text="Zona:"
+            android:textSize="25sp" />
+
+        <Spinner
+            android:id="@+id/location_spinner"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content" >
+        </Spinner>
+
+        <TextView
+            android:id="@+id/nr_portii"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Nr. Portii:"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/set_portion_nr"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="20"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/pret_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:padding="5dp"
+            android:text="Pret Total:"
+            android:textSize="25sp" />
+
+        <com.maivic.restaurant.numberpicker.MyNumberPicker
+            android:id="@+id/npOfferTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </com.maivic.restaurant.numberpicker.MyNumberPicker>
+    </LinearLayout>
+
+</LinearLayout>

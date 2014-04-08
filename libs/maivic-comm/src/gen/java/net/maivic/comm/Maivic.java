@@ -7164,13 +7164,13 @@ public final class Maivic {
      */
     boolean getIsMethod();
 
-    // optional bool isSubscription = 4;
+    // optional bool is_subscription = 4;
     /**
-     * <code>optional bool isSubscription = 4;</code>
+     * <code>optional bool is_subscription = 4;</code>
      */
     boolean hasIsSubscription();
     /**
-     * <code>optional bool isSubscription = 4;</code>
+     * <code>optional bool is_subscription = 4;</code>
      */
     boolean getIsSubscription();
   }
@@ -7386,17 +7386,17 @@ public final class Maivic {
       return isMethod_;
     }
 
-    // optional bool isSubscription = 4;
-    public static final int ISSUBSCRIPTION_FIELD_NUMBER = 4;
+    // optional bool is_subscription = 4;
+    public static final int IS_SUBSCRIPTION_FIELD_NUMBER = 4;
     private boolean isSubscription_;
     /**
-     * <code>optional bool isSubscription = 4;</code>
+     * <code>optional bool is_subscription = 4;</code>
      */
     public boolean hasIsSubscription() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional bool isSubscription = 4;</code>
+     * <code>optional bool is_subscription = 4;</code>
      */
     public boolean getIsSubscription() {
       return isSubscription_;
@@ -8082,22 +8082,22 @@ public final class Maivic {
         return this;
       }
 
-      // optional bool isSubscription = 4;
+      // optional bool is_subscription = 4;
       private boolean isSubscription_ ;
       /**
-       * <code>optional bool isSubscription = 4;</code>
+       * <code>optional bool is_subscription = 4;</code>
        */
       public boolean hasIsSubscription() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional bool isSubscription = 4;</code>
+       * <code>optional bool is_subscription = 4;</code>
        */
       public boolean getIsSubscription() {
         return isSubscription_;
       }
       /**
-       * <code>optional bool isSubscription = 4;</code>
+       * <code>optional bool is_subscription = 4;</code>
        */
       public Builder setIsSubscription(boolean value) {
         bitField0_ |= 0x00000008;
@@ -8106,7 +8106,7 @@ public final class Maivic {
         return this;
       }
       /**
-       * <code>optional bool isSubscription = 4;</code>
+       * <code>optional bool is_subscription = 4;</code>
        */
       public Builder clearIsSubscription() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -9536,6 +9536,659 @@ public final class Maivic {
     }
 
     // @@protoc_insertion_point(class_scope:net.maivic.comm.FunctionProgress)
+  }
+
+  public interface SubscriptionMessageOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int32 subscription_id = 1;
+    /**
+     * <code>required int32 subscription_id = 1;</code>
+     */
+    boolean hasSubscriptionId();
+    /**
+     * <code>required int32 subscription_id = 1;</code>
+     */
+    int getSubscriptionId();
+
+    // optional bytes content = 3;
+    /**
+     * <code>optional bytes content = 3;</code>
+     */
+    boolean hasContent();
+    /**
+     * <code>optional bytes content = 3;</code>
+     */
+    com.google.protobuf.ByteString getContent();
+
+    // optional bytes content_diff = 2;
+    /**
+     * <code>optional bytes content_diff = 2;</code>
+     */
+    boolean hasContentDiff();
+    /**
+     * <code>optional bytes content_diff = 2;</code>
+     */
+    com.google.protobuf.ByteString getContentDiff();
+
+    // optional int32 version = 4;
+    /**
+     * <code>optional int32 version = 4;</code>
+     */
+    boolean hasVersion();
+    /**
+     * <code>optional int32 version = 4;</code>
+     */
+    int getVersion();
+  }
+  /**
+   * Protobuf type {@code net.maivic.comm.SubscriptionMessage}
+   */
+  public static final class SubscriptionMessage extends
+      com.google.protobuf.GeneratedMessage
+      implements SubscriptionMessageOrBuilder {
+    // Use SubscriptionMessage.newBuilder() to construct.
+    private SubscriptionMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private SubscriptionMessage(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final SubscriptionMessage defaultInstance;
+    public static SubscriptionMessage getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public SubscriptionMessage getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SubscriptionMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              subscriptionId_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000004;
+              contentDiff_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000002;
+              content_ = input.readBytes();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              version_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.maivic.comm.Maivic.internal_static_net_maivic_comm_SubscriptionMessage_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.maivic.comm.Maivic.internal_static_net_maivic_comm_SubscriptionMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.maivic.comm.Maivic.SubscriptionMessage.class, net.maivic.comm.Maivic.SubscriptionMessage.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<SubscriptionMessage> PARSER =
+        new com.google.protobuf.AbstractParser<SubscriptionMessage>() {
+      public SubscriptionMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SubscriptionMessage(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SubscriptionMessage> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int32 subscription_id = 1;
+    public static final int SUBSCRIPTION_ID_FIELD_NUMBER = 1;
+    private int subscriptionId_;
+    /**
+     * <code>required int32 subscription_id = 1;</code>
+     */
+    public boolean hasSubscriptionId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int32 subscription_id = 1;</code>
+     */
+    public int getSubscriptionId() {
+      return subscriptionId_;
+    }
+
+    // optional bytes content = 3;
+    public static final int CONTENT_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString content_;
+    /**
+     * <code>optional bytes content = 3;</code>
+     */
+    public boolean hasContent() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional bytes content = 3;</code>
+     */
+    public com.google.protobuf.ByteString getContent() {
+      return content_;
+    }
+
+    // optional bytes content_diff = 2;
+    public static final int CONTENT_DIFF_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString contentDiff_;
+    /**
+     * <code>optional bytes content_diff = 2;</code>
+     */
+    public boolean hasContentDiff() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional bytes content_diff = 2;</code>
+     */
+    public com.google.protobuf.ByteString getContentDiff() {
+      return contentDiff_;
+    }
+
+    // optional int32 version = 4;
+    public static final int VERSION_FIELD_NUMBER = 4;
+    private int version_;
+    /**
+     * <code>optional int32 version = 4;</code>
+     */
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int32 version = 4;</code>
+     */
+    public int getVersion() {
+      return version_;
+    }
+
+    private void initFields() {
+      subscriptionId_ = 0;
+      content_ = com.google.protobuf.ByteString.EMPTY;
+      contentDiff_ = com.google.protobuf.ByteString.EMPTY;
+      version_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasSubscriptionId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, subscriptionId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(2, contentDiff_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(3, content_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(4, version_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, subscriptionId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, contentDiff_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, content_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, version_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static net.maivic.comm.Maivic.SubscriptionMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.comm.Maivic.SubscriptionMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.comm.Maivic.SubscriptionMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.comm.Maivic.SubscriptionMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.comm.Maivic.SubscriptionMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.comm.Maivic.SubscriptionMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static net.maivic.comm.Maivic.SubscriptionMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static net.maivic.comm.Maivic.SubscriptionMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static net.maivic.comm.Maivic.SubscriptionMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.comm.Maivic.SubscriptionMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(net.maivic.comm.Maivic.SubscriptionMessage prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code net.maivic.comm.SubscriptionMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements net.maivic.comm.Maivic.SubscriptionMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.maivic.comm.Maivic.internal_static_net_maivic_comm_SubscriptionMessage_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.maivic.comm.Maivic.internal_static_net_maivic_comm_SubscriptionMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.maivic.comm.Maivic.SubscriptionMessage.class, net.maivic.comm.Maivic.SubscriptionMessage.Builder.class);
+      }
+
+      // Construct using net.maivic.comm.Maivic.SubscriptionMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        subscriptionId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        content_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        contentDiff_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        version_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.maivic.comm.Maivic.internal_static_net_maivic_comm_SubscriptionMessage_descriptor;
+      }
+
+      public net.maivic.comm.Maivic.SubscriptionMessage getDefaultInstanceForType() {
+        return net.maivic.comm.Maivic.SubscriptionMessage.getDefaultInstance();
+      }
+
+      public net.maivic.comm.Maivic.SubscriptionMessage build() {
+        net.maivic.comm.Maivic.SubscriptionMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.maivic.comm.Maivic.SubscriptionMessage buildPartial() {
+        net.maivic.comm.Maivic.SubscriptionMessage result = new net.maivic.comm.Maivic.SubscriptionMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.subscriptionId_ = subscriptionId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.content_ = content_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.contentDiff_ = contentDiff_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.version_ = version_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.maivic.comm.Maivic.SubscriptionMessage) {
+          return mergeFrom((net.maivic.comm.Maivic.SubscriptionMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.maivic.comm.Maivic.SubscriptionMessage other) {
+        if (other == net.maivic.comm.Maivic.SubscriptionMessage.getDefaultInstance()) return this;
+        if (other.hasSubscriptionId()) {
+          setSubscriptionId(other.getSubscriptionId());
+        }
+        if (other.hasContent()) {
+          setContent(other.getContent());
+        }
+        if (other.hasContentDiff()) {
+          setContentDiff(other.getContentDiff());
+        }
+        if (other.hasVersion()) {
+          setVersion(other.getVersion());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasSubscriptionId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.maivic.comm.Maivic.SubscriptionMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.maivic.comm.Maivic.SubscriptionMessage) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int32 subscription_id = 1;
+      private int subscriptionId_ ;
+      /**
+       * <code>required int32 subscription_id = 1;</code>
+       */
+      public boolean hasSubscriptionId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int32 subscription_id = 1;</code>
+       */
+      public int getSubscriptionId() {
+        return subscriptionId_;
+      }
+      /**
+       * <code>required int32 subscription_id = 1;</code>
+       */
+      public Builder setSubscriptionId(int value) {
+        bitField0_ |= 0x00000001;
+        subscriptionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 subscription_id = 1;</code>
+       */
+      public Builder clearSubscriptionId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        subscriptionId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // optional bytes content = 3;
+      private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes content = 3;</code>
+       */
+      public boolean hasContent() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional bytes content = 3;</code>
+       */
+      public com.google.protobuf.ByteString getContent() {
+        return content_;
+      }
+      /**
+       * <code>optional bytes content = 3;</code>
+       */
+      public Builder setContent(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes content = 3;</code>
+       */
+      public Builder clearContent() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+
+      // optional bytes content_diff = 2;
+      private com.google.protobuf.ByteString contentDiff_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes content_diff = 2;</code>
+       */
+      public boolean hasContentDiff() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional bytes content_diff = 2;</code>
+       */
+      public com.google.protobuf.ByteString getContentDiff() {
+        return contentDiff_;
+      }
+      /**
+       * <code>optional bytes content_diff = 2;</code>
+       */
+      public Builder setContentDiff(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        contentDiff_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes content_diff = 2;</code>
+       */
+      public Builder clearContentDiff() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        contentDiff_ = getDefaultInstance().getContentDiff();
+        onChanged();
+        return this;
+      }
+
+      // optional int32 version = 4;
+      private int version_ ;
+      /**
+       * <code>optional int32 version = 4;</code>
+       */
+      public boolean hasVersion() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int32 version = 4;</code>
+       */
+      public int getVersion() {
+        return version_;
+      }
+      /**
+       * <code>optional int32 version = 4;</code>
+       */
+      public Builder setVersion(int value) {
+        bitField0_ |= 0x00000008;
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 version = 4;</code>
+       */
+      public Builder clearVersion() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        version_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:net.maivic.comm.SubscriptionMessage)
+    }
+
+    static {
+      defaultInstance = new SubscriptionMessage(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:net.maivic.comm.SubscriptionMessage)
   }
 
   public interface ExceptionTypeOrBuilder
@@ -15076,6 +15729,11 @@ public final class Maivic {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_net_maivic_comm_FunctionProgress_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_net_maivic_comm_SubscriptionMessage_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_net_maivic_comm_SubscriptionMessage_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_net_maivic_comm_ExceptionType_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -15159,37 +15817,40 @@ public final class Maivic {
       "D64\020\n\022\014\n\010SFIXED32\020\013\022\014\n\010SFIXED64\020\014\022\010\n\004BOO" +
       "L\020\r\022\n\n\006DOUBLE\020\016\022\t\n\005FLOAT\020\017\022\r\n\tLIST_TYPE\020" +
       "\020\022\013\n\007UNKNOWN\020\021\022\013\n\007MESSAGE\020\022\022\027\n\023COMPONENT" +
-      "_BASE_TYPE\020\023\022\010\n\004NONE\020\024\"s\n\014FunctionCall\022\020" +
+      "_BASE_TYPE\020\023\022\010\n\004NONE\020\024\"t\n\014FunctionCall\022\020" +
       "\n\010function\030\001 \002(\t\022\'\n\004args\030\002 \003(\0132\031.net.mai" +
-      "vic.comm.BaseType\022\020\n\010isMethod\030\003 \001(\010\022\026\n\016i" +
-      "sSubscription\030\004 \001(\010\"\242\001\n\016FunctionReturn\022(" +
-      "\n\005value\030\001 \001(\0132\031.net.maivic.comm.BaseType",
-      "\0221\n\texception\030\002 \001(\0132\036.net.maivic.comm.Ex" +
-      "ceptionType\0223\n\010progress\030\003 \001(\0132!.net.maiv" +
-      "ic.comm.FunctionProgress\":\n\020FunctionProg" +
-      "ress\022\020\n\010progress\030\001 \002(\005\022\024\n\014max_progress\030\002" +
-      " \001(\003\"\215\001\n\rExceptionType\022\017\n\007type_id\030\001 \002(\005\022" +
-      "\017\n\007message\030\002 \001(\t\022+\n\006strace\030\003 \001(\0132\033.net.m" +
-      "aivic.comm.StackTrace\022-\n\005cause\030\004 \001(\0132\036.n" +
-      "et.maivic.comm.ExceptionType\"\033\n\nStackTra" +
-      "ce\022\r\n\005frame\030\001 \003(\t\"R\n\tEntityReq\022\026\n\016entity" +
-      "_type_id\030\001 \002(\005\022\023\n\013entities_pk\030\002 \003(\014\022\030\n\020e",
-      "ntity_type_name\030\003 \001(\t\"P\n\017RelationRequest" +
-      "\022\023\n\013relation_id\030\001 \002(\005\022\021\n\tentity_pk\030\002 \002(\014" +
-      "\022\025\n\rrelation_name\030\003 \001(\t\"_\n\016EntityRespons" +
-      "e\022\026\n\016entity_type_id\030\001 \002(\005\022\030\n\020entity_type" +
-      "_name\030\004 \001(\005\022\033\n\023serialized_entities\030\005 \003(\014" +
-      "\"\030\n\010Identity\022\014\n\004uuid\030\001 \002(\014\"0\n\025Authentica" +
-      "tionRequest\022\027\n\017auth_service_id\030\001 \002(\005\"\226\002\n" +
-      "\017NameSpaceUpdate\0226\n\002op\030\001 \002(\0162*.net.maivi" +
-      "c.comm.NameSpaceUpdate.Operation\022\017\n\003ids\030" +
-      "\002 \003(\003B\002\020\001\022\016\n\006values\030\003 \003(\014\022\023\n\013skipped_ids",
-      "\030\004 \003(\003\022\034\n\024domain_hash_after_op\030\005 \001(\014\022\033\n\023" +
-      "table_hash_after_op\030\006 \001(\014\022\021\n\006domain\030\007 \001(" +
-      "\003:\0010\"G\n\tOperation\022\010\n\004READ\020\001\022\t\n\005WRITE\020\002\022\023" +
-      "\n\017READ_ALL_EXCEPT\020\005\022\020\n\014RESET_DOMAIN\020\006*=\n" +
-      "\tNamespace\022\013\n\007MESSAGE\020\001\022\n\n\006ENTITY\020\002\022\013\n\007S" +
-      "ERVICE\020\003\022\n\n\006THREAD\020\004"
+      "vic.comm.BaseType\022\020\n\010isMethod\030\003 \001(\010\022\027\n\017i" +
+      "s_subscription\030\004 \001(\010\"\242\001\n\016FunctionReturn\022" +
+      "(\n\005value\030\001 \001(\0132\031.net.maivic.comm.BaseTyp",
+      "e\0221\n\texception\030\002 \001(\0132\036.net.maivic.comm.E" +
+      "xceptionType\0223\n\010progress\030\003 \001(\0132!.net.mai" +
+      "vic.comm.FunctionProgress\":\n\020FunctionPro" +
+      "gress\022\020\n\010progress\030\001 \002(\005\022\024\n\014max_progress\030" +
+      "\002 \001(\003\"f\n\023SubscriptionMessage\022\027\n\017subscrip" +
+      "tion_id\030\001 \002(\005\022\017\n\007content\030\003 \001(\014\022\024\n\014conten" +
+      "t_diff\030\002 \001(\014\022\017\n\007version\030\004 \001(\005\"\215\001\n\rExcept" +
+      "ionType\022\017\n\007type_id\030\001 \002(\005\022\017\n\007message\030\002 \001(" +
+      "\t\022+\n\006strace\030\003 \001(\0132\033.net.maivic.comm.Stac" +
+      "kTrace\022-\n\005cause\030\004 \001(\0132\036.net.maivic.comm.",
+      "ExceptionType\"\033\n\nStackTrace\022\r\n\005frame\030\001 \003" +
+      "(\t\"R\n\tEntityReq\022\026\n\016entity_type_id\030\001 \002(\005\022" +
+      "\023\n\013entities_pk\030\002 \003(\014\022\030\n\020entity_type_name" +
+      "\030\003 \001(\t\"P\n\017RelationRequest\022\023\n\013relation_id" +
+      "\030\001 \002(\005\022\021\n\tentity_pk\030\002 \002(\014\022\025\n\rrelation_na" +
+      "me\030\003 \001(\t\"_\n\016EntityResponse\022\026\n\016entity_typ" +
+      "e_id\030\001 \002(\005\022\030\n\020entity_type_name\030\004 \001(\005\022\033\n\023" +
+      "serialized_entities\030\005 \003(\014\"\030\n\010Identity\022\014\n" +
+      "\004uuid\030\001 \002(\014\"0\n\025AuthenticationRequest\022\027\n\017" +
+      "auth_service_id\030\001 \002(\005\"\226\002\n\017NameSpaceUpdat",
+      "e\0226\n\002op\030\001 \002(\0162*.net.maivic.comm.NameSpac" +
+      "eUpdate.Operation\022\017\n\003ids\030\002 \003(\003B\002\020\001\022\016\n\006va" +
+      "lues\030\003 \003(\014\022\023\n\013skipped_ids\030\004 \003(\003\022\034\n\024domai" +
+      "n_hash_after_op\030\005 \001(\014\022\033\n\023table_hash_afte" +
+      "r_op\030\006 \001(\014\022\021\n\006domain\030\007 \001(\003:\0010\"G\n\tOperati" +
+      "on\022\010\n\004READ\020\001\022\t\n\005WRITE\020\002\022\023\n\017READ_ALL_EXCE" +
+      "PT\020\005\022\020\n\014RESET_DOMAIN\020\006*=\n\tNamespace\022\013\n\007M" +
+      "ESSAGE\020\001\022\n\n\006ENTITY\020\002\022\013\n\007SERVICE\020\003\022\n\n\006THR" +
+      "EAD\020\004"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -15244,50 +15905,56 @@ public final class Maivic {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_net_maivic_comm_FunctionProgress_descriptor,
               new java.lang.String[] { "Progress", "MaxProgress", });
-          internal_static_net_maivic_comm_ExceptionType_descriptor =
+          internal_static_net_maivic_comm_SubscriptionMessage_descriptor =
             getDescriptor().getMessageTypes().get(8);
+          internal_static_net_maivic_comm_SubscriptionMessage_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_net_maivic_comm_SubscriptionMessage_descriptor,
+              new java.lang.String[] { "SubscriptionId", "Content", "ContentDiff", "Version", });
+          internal_static_net_maivic_comm_ExceptionType_descriptor =
+            getDescriptor().getMessageTypes().get(9);
           internal_static_net_maivic_comm_ExceptionType_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_net_maivic_comm_ExceptionType_descriptor,
               new java.lang.String[] { "TypeId", "Message", "Strace", "Cause", });
           internal_static_net_maivic_comm_StackTrace_descriptor =
-            getDescriptor().getMessageTypes().get(9);
+            getDescriptor().getMessageTypes().get(10);
           internal_static_net_maivic_comm_StackTrace_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_net_maivic_comm_StackTrace_descriptor,
               new java.lang.String[] { "Frame", });
           internal_static_net_maivic_comm_EntityReq_descriptor =
-            getDescriptor().getMessageTypes().get(10);
+            getDescriptor().getMessageTypes().get(11);
           internal_static_net_maivic_comm_EntityReq_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_net_maivic_comm_EntityReq_descriptor,
               new java.lang.String[] { "EntityTypeId", "EntitiesPk", "EntityTypeName", });
           internal_static_net_maivic_comm_RelationRequest_descriptor =
-            getDescriptor().getMessageTypes().get(11);
+            getDescriptor().getMessageTypes().get(12);
           internal_static_net_maivic_comm_RelationRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_net_maivic_comm_RelationRequest_descriptor,
               new java.lang.String[] { "RelationId", "EntityPk", "RelationName", });
           internal_static_net_maivic_comm_EntityResponse_descriptor =
-            getDescriptor().getMessageTypes().get(12);
+            getDescriptor().getMessageTypes().get(13);
           internal_static_net_maivic_comm_EntityResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_net_maivic_comm_EntityResponse_descriptor,
               new java.lang.String[] { "EntityTypeId", "EntityTypeName", "SerializedEntities", });
           internal_static_net_maivic_comm_Identity_descriptor =
-            getDescriptor().getMessageTypes().get(13);
+            getDescriptor().getMessageTypes().get(14);
           internal_static_net_maivic_comm_Identity_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_net_maivic_comm_Identity_descriptor,
               new java.lang.String[] { "Uuid", });
           internal_static_net_maivic_comm_AuthenticationRequest_descriptor =
-            getDescriptor().getMessageTypes().get(14);
+            getDescriptor().getMessageTypes().get(15);
           internal_static_net_maivic_comm_AuthenticationRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_net_maivic_comm_AuthenticationRequest_descriptor,
               new java.lang.String[] { "AuthServiceId", });
           internal_static_net_maivic_comm_NameSpaceUpdate_descriptor =
-            getDescriptor().getMessageTypes().get(15);
+            getDescriptor().getMessageTypes().get(16);
           internal_static_net_maivic_comm_NameSpaceUpdate_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_net_maivic_comm_NameSpaceUpdate_descriptor,

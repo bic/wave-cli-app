@@ -79,6 +79,7 @@ public  abstract  class AbstractRPCServiceClient<T> {
 			} catch (InvalidProtocolBufferException e) {
 				response.setFailure(e);
 			} catch (Throwable e) {
+				e.printStackTrace();
 				response.setFailure(e);
 			}
 			

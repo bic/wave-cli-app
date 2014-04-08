@@ -125,12 +125,15 @@ public class DefaultLazyResponse<T> implements SettableLazyResponse<T> {
 		long deadline = System.currentTimeMillis() + timeout;
 		while ((System.currentTimeMillis() < deadline) || (timeout < 0)){
 			try {
-				synchronized (this) {
-					if (timeout > 0 ) {
-						this.wait(deadline = System.currentTimeMillis());
-					}else {
-						
-						this.wait();
+				if(!this.isDone()){
+					
+					synchronized (this) {
+						if (timeout > 0 ) {
+							this.wait(deadline = System.currentTimeMillis());
+						}else {
+							
+							this.wait();
+						}
 					}
 				}
 			} finally{
@@ -263,6 +266,21 @@ public class DefaultLazyResponse<T> implements SettableLazyResponse<T> {
 
 	public int getMaxProgress() {
 		return this.max_progress;
+	}
+	
+	
+
+	public T get_no_throw() {
+		try {
+			return this.get();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+			throw new IllegalArgumentException(e);
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+			throw new IllegalArgumentException(e);
+		}
+		//return null;
 	}
 	
 }

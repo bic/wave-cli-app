@@ -2,9 +2,11 @@ package net.maivic.comm.RPC;
 
 import java.util.List;
 
+import net.maivic.comm.Callback;
 import net.maivic.comm.LazyResponse;
+import net.maivic.comm.SubscriptionCallback;
 import net.maivic.comm.impl.RPCInterface;
-import net.maivic.protocol.Model.Location;
+import net.maivic.protocol.Model.LocationBit;
 import net.maivic.protocol.Model.Offer;
 import net.maivic.protocol.Model.Restaurant;
 
@@ -17,7 +19,7 @@ public interface LocationQuery {
 	 * @param accuracy_in_meters
 	 * @return the Location object, or null in case the position is not at a currently offered location.
 	 */
-	LazyResponse<Location> getLocation( double lon, double lat, double accuracy_in_meters);
+	LazyResponse<LocationBit> getLocation( double lon, double lat, double accuracy_in_meters);
 	/**
 	 * Returns the currently active orders for the given Location. This method can be used to get the current Locationdropbox
 	 * 
@@ -25,5 +27,5 @@ public interface LocationQuery {
 	 * @param location The Location for which to return the offers
 	 * @return
 	 */
-	LazyResponse<List<Offer> > getCurrentActiveOffers(Location location);
+	LazyResponse<List<Offer> > getCurrentActiveOffers(LocationBit location);
 }

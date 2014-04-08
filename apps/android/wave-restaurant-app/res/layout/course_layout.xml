@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    		 <TextView
+	            android:id="@+id/course_type"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="0.33"
+	            android:text="Felul 1"
+	            android:textSize="20sp" />
+	             
+    		 <RelativeLayout
+    		     android:id = "@+id/course_text_and_edit_views"
+    		     android:layout_width="wrap_content"
+    		     android:layout_height="wrap_content"
+    		     android:layout_below="@id/course_type"
+    		     android:layout_marginBottom="5dp"
+    		      android:layout_marginTop="5dp" >
+	             <TextView
+	                 android:id="@+id/course_name_edit"
+	                 android:layout_width="wrap_content"
+	                 android:layout_height="wrap_content"
+	                 android:ems="10"
+	                 android:visibility="visible"
+	                 android:clickable="false"
+	                 android:text="@android:string/unknownName"
+	                 android:textSize="30sp" />
+	             
+	                <EditText
+	                 android:id="@+id/course_name_edit2"
+	                 android:layout_width="wrap_content"
+	                 android:layout_height="wrap_content"
+	                 android:ems="10"
+	               	 android:inputType="textNoSuggestions"
+	                 android:visibility="invisible"
+	                 android:singleLine="false"
+	                 android:lines="2"
+	                 android:focusable="true"
+	                 android:focusableInTouchMode="true"
+	                 android:clickable="true"
+	                 android:ellipsize="end"
+	                 android:textSize="30sp" />
+	             </RelativeLayout>
+	             
+	             <CheckBox android:id="@+id/configure"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        
+			        android:checked="false"
+			        android:text="Configurabil"
+			        android:textSize="20sp"
+			        android:layout_below="@id/course_text_and_edit_views"
+			        >
+    				</CheckBox>
+
+	             <ImageButton
+	                 android:id="@+id/delete_course"
+	                 android:layout_width="wrap_content"
+	                 android:layout_height="wrap_content"
+	                 android:layout_alignBottom="@+id/configure"
+	                 android:layout_alignParentRight="true"
+	                 android:paddingBottom="3dp"
+	                 android:src="@android:drawable/ic_delete" />
+
+</RelativeLayout>

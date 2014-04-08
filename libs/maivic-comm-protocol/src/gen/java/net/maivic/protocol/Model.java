@@ -8,6 +8,566 @@ public final class Model {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
+  public interface DatasetLevelOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int64 id = 1;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    long getId();
+
+    // optional string name = 2;
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    boolean hasName();
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+  }
+  /**
+   * Protobuf type {@code DatasetLevel}
+   */
+  public static final class DatasetLevel extends
+      com.google.protobuf.GeneratedMessage
+      implements DatasetLevelOrBuilder {
+    // Use DatasetLevel.newBuilder() to construct.
+    private DatasetLevel(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private DatasetLevel(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final DatasetLevel defaultInstance;
+    public static DatasetLevel getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public DatasetLevel getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DatasetLevel(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              name_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.maivic.protocol.Model.internal_static_DatasetLevel_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.maivic.protocol.Model.internal_static_DatasetLevel_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.maivic.protocol.Model.DatasetLevel.class, net.maivic.protocol.Model.DatasetLevel.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<DatasetLevel> PARSER =
+        new com.google.protobuf.AbstractParser<DatasetLevel>() {
+      public DatasetLevel parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DatasetLevel(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DatasetLevel> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int64 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public long getId() {
+      return id_;
+    }
+
+    // optional string name = 2;
+    public static final int NAME_FIELD_NUMBER = 2;
+    private java.lang.Object name_;
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      id_ = 0L;
+      name_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getNameBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getNameBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static net.maivic.protocol.Model.DatasetLevel parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.DatasetLevel parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.DatasetLevel parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.DatasetLevel parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.DatasetLevel parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.DatasetLevel parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.DatasetLevel parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static net.maivic.protocol.Model.DatasetLevel parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.DatasetLevel parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.DatasetLevel parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(net.maivic.protocol.Model.DatasetLevel prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code DatasetLevel}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements net.maivic.protocol.Model.DatasetLevelOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.maivic.protocol.Model.internal_static_DatasetLevel_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.maivic.protocol.Model.internal_static_DatasetLevel_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.maivic.protocol.Model.DatasetLevel.class, net.maivic.protocol.Model.DatasetLevel.Builder.class);
+      }
+
+      // Construct using net.maivic.protocol.Model.DatasetLevel.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.maivic.protocol.Model.internal_static_DatasetLevel_descriptor;
+      }
+
+      public net.maivic.protocol.Model.DatasetLevel getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.DatasetLevel.getDefaultInstance();
+      }
+
+      public net.maivic.protocol.Model.DatasetLevel build() {
+        net.maivic.protocol.Model.DatasetLevel result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.maivic.protocol.Model.DatasetLevel buildPartial() {
+        net.maivic.protocol.Model.DatasetLevel result = new net.maivic.protocol.Model.DatasetLevel(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.name_ = name_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.maivic.protocol.Model.DatasetLevel) {
+          return mergeFrom((net.maivic.protocol.Model.DatasetLevel)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.maivic.protocol.Model.DatasetLevel other) {
+        if (other == net.maivic.protocol.Model.DatasetLevel.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasName()) {
+          bitField0_ |= 0x00000002;
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.maivic.protocol.Model.DatasetLevel parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.maivic.protocol.Model.DatasetLevel) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int64 id = 1;
+      private long id_ ;
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder setId(long value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional string name = 2;
+      private java.lang.Object name_ = "";
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:DatasetLevel)
+    }
+
+    static {
+      defaultInstance = new DatasetLevel(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:DatasetLevel)
+  }
+
   public interface AddressOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
@@ -3314,1792 +3874,6 @@ public final class Model {
     // @@protoc_insertion_point(class_scope:LegalEntity)
   }
 
-  public interface MeetingOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 id = 1;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    long getId();
-
-    // optional int64 date = 2;
-    /**
-     * <code>optional int64 date = 2;</code>
-     */
-    boolean hasDate();
-    /**
-     * <code>optional int64 date = 2;</code>
-     */
-    long getDate();
-
-    // optional .Interval duration = 3;
-    /**
-     * <code>optional .Interval duration = 3;</code>
-     */
-    boolean hasDuration();
-    /**
-     * <code>optional .Interval duration = 3;</code>
-     */
-    net.maivic.protocol.Model.Interval getDuration();
-    /**
-     * <code>optional .Interval duration = 3;</code>
-     */
-    net.maivic.protocol.Model.IntervalOrBuilder getDurationOrBuilder();
-
-    // optional string topic = 4;
-    /**
-     * <code>optional string topic = 4;</code>
-     */
-    boolean hasTopic();
-    /**
-     * <code>optional string topic = 4;</code>
-     */
-    java.lang.String getTopic();
-    /**
-     * <code>optional string topic = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getTopicBytes();
-
-    // optional string result = 5;
-    /**
-     * <code>optional string result = 5;</code>
-     */
-    boolean hasResult();
-    /**
-     * <code>optional string result = 5;</code>
-     */
-    java.lang.String getResult();
-    /**
-     * <code>optional string result = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getResultBytes();
-
-    // optional int64 place = 6;
-    /**
-     * <code>optional int64 place = 6;</code>
-     */
-    boolean hasPlace();
-    /**
-     * <code>optional int64 place = 6;</code>
-     */
-    long getPlace();
-  }
-  /**
-   * Protobuf type {@code Meeting}
-   */
-  public static final class Meeting extends
-      com.google.protobuf.GeneratedMessage
-      implements MeetingOrBuilder {
-    // Use Meeting.newBuilder() to construct.
-    private Meeting(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private Meeting(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final Meeting defaultInstance;
-    public static Meeting getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public Meeting getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Meeting(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readInt64();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              date_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              net.maivic.protocol.Model.Interval.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                subBuilder = duration_.toBuilder();
-              }
-              duration_ = input.readMessage(net.maivic.protocol.Model.Interval.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(duration_);
-                duration_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-            case 34: {
-              bitField0_ |= 0x00000008;
-              topic_ = input.readBytes();
-              break;
-            }
-            case 42: {
-              bitField0_ |= 0x00000010;
-              result_ = input.readBytes();
-              break;
-            }
-            case 48: {
-              bitField0_ |= 0x00000020;
-              place_ = input.readInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_Meeting_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_Meeting_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.Meeting.class, net.maivic.protocol.Model.Meeting.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<Meeting> PARSER =
-        new com.google.protobuf.AbstractParser<Meeting>() {
-      public Meeting parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Meeting(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Meeting> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int64 id = 1;
-    public static final int ID_FIELD_NUMBER = 1;
-    private long id_;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public long getId() {
-      return id_;
-    }
-
-    // optional int64 date = 2;
-    public static final int DATE_FIELD_NUMBER = 2;
-    private long date_;
-    /**
-     * <code>optional int64 date = 2;</code>
-     */
-    public boolean hasDate() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional int64 date = 2;</code>
-     */
-    public long getDate() {
-      return date_;
-    }
-
-    // optional .Interval duration = 3;
-    public static final int DURATION_FIELD_NUMBER = 3;
-    private net.maivic.protocol.Model.Interval duration_;
-    /**
-     * <code>optional .Interval duration = 3;</code>
-     */
-    public boolean hasDuration() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional .Interval duration = 3;</code>
-     */
-    public net.maivic.protocol.Model.Interval getDuration() {
-      return duration_;
-    }
-    /**
-     * <code>optional .Interval duration = 3;</code>
-     */
-    public net.maivic.protocol.Model.IntervalOrBuilder getDurationOrBuilder() {
-      return duration_;
-    }
-
-    // optional string topic = 4;
-    public static final int TOPIC_FIELD_NUMBER = 4;
-    private java.lang.Object topic_;
-    /**
-     * <code>optional string topic = 4;</code>
-     */
-    public boolean hasTopic() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional string topic = 4;</code>
-     */
-    public java.lang.String getTopic() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          topic_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string topic = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTopicBytes() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        topic_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // optional string result = 5;
-    public static final int RESULT_FIELD_NUMBER = 5;
-    private java.lang.Object result_;
-    /**
-     * <code>optional string result = 5;</code>
-     */
-    public boolean hasResult() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional string result = 5;</code>
-     */
-    public java.lang.String getResult() {
-      java.lang.Object ref = result_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          result_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string result = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getResultBytes() {
-      java.lang.Object ref = result_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        result_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // optional int64 place = 6;
-    public static final int PLACE_FIELD_NUMBER = 6;
-    private long place_;
-    /**
-     * <code>optional int64 place = 6;</code>
-     */
-    public boolean hasPlace() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>optional int64 place = 6;</code>
-     */
-    public long getPlace() {
-      return place_;
-    }
-
-    private void initFields() {
-      id_ = 0L;
-      date_ = 0L;
-      duration_ = net.maivic.protocol.Model.Interval.getDefaultInstance();
-      topic_ = "";
-      result_ = "";
-      place_ = 0L;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, date_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeMessage(3, duration_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getTopicBytes());
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(5, getResultBytes());
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeInt64(6, place_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, date_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, duration_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getTopicBytes());
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getResultBytes());
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, place_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.Meeting parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.Meeting parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Meeting parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.Meeting parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Meeting parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.Meeting parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Meeting parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.Meeting parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Meeting parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.Meeting parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.Meeting prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code Meeting}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.MeetingOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_Meeting_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_Meeting_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.Meeting.class, net.maivic.protocol.Model.Meeting.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.Meeting.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getDurationFieldBuilder();
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        id_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        date_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (durationBuilder_ == null) {
-          duration_ = net.maivic.protocol.Model.Interval.getDefaultInstance();
-        } else {
-          durationBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000004);
-        topic_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
-        result_ = "";
-        bitField0_ = (bitField0_ & ~0x00000010);
-        place_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000020);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_Meeting_descriptor;
-      }
-
-      public net.maivic.protocol.Model.Meeting getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.Meeting.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.Meeting build() {
-        net.maivic.protocol.Model.Meeting result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.Meeting buildPartial() {
-        net.maivic.protocol.Model.Meeting result = new net.maivic.protocol.Model.Meeting(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.date_ = date_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        if (durationBuilder_ == null) {
-          result.duration_ = duration_;
-        } else {
-          result.duration_ = durationBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.topic_ = topic_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.result_ = result_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.place_ = place_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.Meeting) {
-          return mergeFrom((net.maivic.protocol.Model.Meeting)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.Meeting other) {
-        if (other == net.maivic.protocol.Model.Meeting.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasDate()) {
-          setDate(other.getDate());
-        }
-        if (other.hasDuration()) {
-          mergeDuration(other.getDuration());
-        }
-        if (other.hasTopic()) {
-          bitField0_ |= 0x00000008;
-          topic_ = other.topic_;
-          onChanged();
-        }
-        if (other.hasResult()) {
-          bitField0_ |= 0x00000010;
-          result_ = other.result_;
-          onChanged();
-        }
-        if (other.hasPlace()) {
-          setPlace(other.getPlace());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasId()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.Meeting parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.Meeting) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required int64 id = 1;
-      private long id_ ;
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder setId(long value) {
-        bitField0_ |= 0x00000001;
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 date = 2;
-      private long date_ ;
-      /**
-       * <code>optional int64 date = 2;</code>
-       */
-      public boolean hasDate() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional int64 date = 2;</code>
-       */
-      public long getDate() {
-        return date_;
-      }
-      /**
-       * <code>optional int64 date = 2;</code>
-       */
-      public Builder setDate(long value) {
-        bitField0_ |= 0x00000002;
-        date_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 date = 2;</code>
-       */
-      public Builder clearDate() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        date_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional .Interval duration = 3;
-      private net.maivic.protocol.Model.Interval duration_ = net.maivic.protocol.Model.Interval.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          net.maivic.protocol.Model.Interval, net.maivic.protocol.Model.Interval.Builder, net.maivic.protocol.Model.IntervalOrBuilder> durationBuilder_;
-      /**
-       * <code>optional .Interval duration = 3;</code>
-       */
-      public boolean hasDuration() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional .Interval duration = 3;</code>
-       */
-      public net.maivic.protocol.Model.Interval getDuration() {
-        if (durationBuilder_ == null) {
-          return duration_;
-        } else {
-          return durationBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .Interval duration = 3;</code>
-       */
-      public Builder setDuration(net.maivic.protocol.Model.Interval value) {
-        if (durationBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          duration_ = value;
-          onChanged();
-        } else {
-          durationBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      /**
-       * <code>optional .Interval duration = 3;</code>
-       */
-      public Builder setDuration(
-          net.maivic.protocol.Model.Interval.Builder builderForValue) {
-        if (durationBuilder_ == null) {
-          duration_ = builderForValue.build();
-          onChanged();
-        } else {
-          durationBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      /**
-       * <code>optional .Interval duration = 3;</code>
-       */
-      public Builder mergeDuration(net.maivic.protocol.Model.Interval value) {
-        if (durationBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004) &&
-              duration_ != net.maivic.protocol.Model.Interval.getDefaultInstance()) {
-            duration_ =
-              net.maivic.protocol.Model.Interval.newBuilder(duration_).mergeFrom(value).buildPartial();
-          } else {
-            duration_ = value;
-          }
-          onChanged();
-        } else {
-          durationBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      /**
-       * <code>optional .Interval duration = 3;</code>
-       */
-      public Builder clearDuration() {
-        if (durationBuilder_ == null) {
-          duration_ = net.maivic.protocol.Model.Interval.getDefaultInstance();
-          onChanged();
-        } else {
-          durationBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-      /**
-       * <code>optional .Interval duration = 3;</code>
-       */
-      public net.maivic.protocol.Model.Interval.Builder getDurationBuilder() {
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return getDurationFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .Interval duration = 3;</code>
-       */
-      public net.maivic.protocol.Model.IntervalOrBuilder getDurationOrBuilder() {
-        if (durationBuilder_ != null) {
-          return durationBuilder_.getMessageOrBuilder();
-        } else {
-          return duration_;
-        }
-      }
-      /**
-       * <code>optional .Interval duration = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          net.maivic.protocol.Model.Interval, net.maivic.protocol.Model.Interval.Builder, net.maivic.protocol.Model.IntervalOrBuilder> 
-          getDurationFieldBuilder() {
-        if (durationBuilder_ == null) {
-          durationBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.maivic.protocol.Model.Interval, net.maivic.protocol.Model.Interval.Builder, net.maivic.protocol.Model.IntervalOrBuilder>(
-                  duration_,
-                  getParentForChildren(),
-                  isClean());
-          duration_ = null;
-        }
-        return durationBuilder_;
-      }
-
-      // optional string topic = 4;
-      private java.lang.Object topic_ = "";
-      /**
-       * <code>optional string topic = 4;</code>
-       */
-      public boolean hasTopic() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional string topic = 4;</code>
-       */
-      public java.lang.String getTopic() {
-        java.lang.Object ref = topic_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          topic_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string topic = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTopicBytes() {
-        java.lang.Object ref = topic_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          topic_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string topic = 4;</code>
-       */
-      public Builder setTopic(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        topic_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string topic = 4;</code>
-       */
-      public Builder clearTopic() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        topic_ = getDefaultInstance().getTopic();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string topic = 4;</code>
-       */
-      public Builder setTopicBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        topic_ = value;
-        onChanged();
-        return this;
-      }
-
-      // optional string result = 5;
-      private java.lang.Object result_ = "";
-      /**
-       * <code>optional string result = 5;</code>
-       */
-      public boolean hasResult() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional string result = 5;</code>
-       */
-      public java.lang.String getResult() {
-        java.lang.Object ref = result_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          result_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string result = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getResultBytes() {
-        java.lang.Object ref = result_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          result_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string result = 5;</code>
-       */
-      public Builder setResult(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        result_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string result = 5;</code>
-       */
-      public Builder clearResult() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        result_ = getDefaultInstance().getResult();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string result = 5;</code>
-       */
-      public Builder setResultBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        result_ = value;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 place = 6;
-      private long place_ ;
-      /**
-       * <code>optional int64 place = 6;</code>
-       */
-      public boolean hasPlace() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <code>optional int64 place = 6;</code>
-       */
-      public long getPlace() {
-        return place_;
-      }
-      /**
-       * <code>optional int64 place = 6;</code>
-       */
-      public Builder setPlace(long value) {
-        bitField0_ |= 0x00000020;
-        place_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 place = 6;</code>
-       */
-      public Builder clearPlace() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        place_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:Meeting)
-    }
-
-    static {
-      defaultInstance = new Meeting(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:Meeting)
-  }
-
-  public interface LocationOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 id = 1;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    long getId();
-
-    // optional string name_long = 2;
-    /**
-     * <code>optional string name_long = 2;</code>
-     */
-    boolean hasNameLong();
-    /**
-     * <code>optional string name_long = 2;</code>
-     */
-    java.lang.String getNameLong();
-    /**
-     * <code>optional string name_long = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getNameLongBytes();
-
-    // optional string name_short = 3;
-    /**
-     * <code>optional string name_short = 3;</code>
-     */
-    boolean hasNameShort();
-    /**
-     * <code>optional string name_short = 3;</code>
-     */
-    java.lang.String getNameShort();
-    /**
-     * <code>optional string name_short = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getNameShortBytes();
-  }
-  /**
-   * Protobuf type {@code Location}
-   */
-  public static final class Location extends
-      com.google.protobuf.GeneratedMessage
-      implements LocationOrBuilder {
-    // Use Location.newBuilder() to construct.
-    private Location(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private Location(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final Location defaultInstance;
-    public static Location getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public Location getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Location(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readInt64();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              nameLong_ = input.readBytes();
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
-              nameShort_ = input.readBytes();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_Location_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_Location_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.Location.class, net.maivic.protocol.Model.Location.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<Location> PARSER =
-        new com.google.protobuf.AbstractParser<Location>() {
-      public Location parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Location(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Location> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int64 id = 1;
-    public static final int ID_FIELD_NUMBER = 1;
-    private long id_;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public long getId() {
-      return id_;
-    }
-
-    // optional string name_long = 2;
-    public static final int NAME_LONG_FIELD_NUMBER = 2;
-    private java.lang.Object nameLong_;
-    /**
-     * <code>optional string name_long = 2;</code>
-     */
-    public boolean hasNameLong() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional string name_long = 2;</code>
-     */
-    public java.lang.String getNameLong() {
-      java.lang.Object ref = nameLong_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          nameLong_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string name_long = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameLongBytes() {
-      java.lang.Object ref = nameLong_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nameLong_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // optional string name_short = 3;
-    public static final int NAME_SHORT_FIELD_NUMBER = 3;
-    private java.lang.Object nameShort_;
-    /**
-     * <code>optional string name_short = 3;</code>
-     */
-    public boolean hasNameShort() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional string name_short = 3;</code>
-     */
-    public java.lang.String getNameShort() {
-      java.lang.Object ref = nameShort_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          nameShort_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string name_short = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameShortBytes() {
-      java.lang.Object ref = nameShort_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nameShort_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private void initFields() {
-      id_ = 0L;
-      nameLong_ = "";
-      nameShort_ = "";
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getNameLongBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getNameShortBytes());
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getNameLongBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getNameShortBytes());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.Location parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.Location parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Location parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.Location parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Location parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.Location parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Location parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.Location parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Location parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.Location parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.Location prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code Location}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.LocationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_Location_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_Location_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.Location.class, net.maivic.protocol.Model.Location.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.Location.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        id_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        nameLong_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        nameShort_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_Location_descriptor;
-      }
-
-      public net.maivic.protocol.Model.Location getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.Location.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.Location build() {
-        net.maivic.protocol.Model.Location result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.Location buildPartial() {
-        net.maivic.protocol.Model.Location result = new net.maivic.protocol.Model.Location(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.nameLong_ = nameLong_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.nameShort_ = nameShort_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.Location) {
-          return mergeFrom((net.maivic.protocol.Model.Location)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.Location other) {
-        if (other == net.maivic.protocol.Model.Location.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasNameLong()) {
-          bitField0_ |= 0x00000002;
-          nameLong_ = other.nameLong_;
-          onChanged();
-        }
-        if (other.hasNameShort()) {
-          bitField0_ |= 0x00000004;
-          nameShort_ = other.nameShort_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasId()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.Location parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.Location) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required int64 id = 1;
-      private long id_ ;
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder setId(long value) {
-        bitField0_ |= 0x00000001;
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string name_long = 2;
-      private java.lang.Object nameLong_ = "";
-      /**
-       * <code>optional string name_long = 2;</code>
-       */
-      public boolean hasNameLong() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional string name_long = 2;</code>
-       */
-      public java.lang.String getNameLong() {
-        java.lang.Object ref = nameLong_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          nameLong_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string name_long = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameLongBytes() {
-        java.lang.Object ref = nameLong_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          nameLong_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string name_long = 2;</code>
-       */
-      public Builder setNameLong(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        nameLong_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string name_long = 2;</code>
-       */
-      public Builder clearNameLong() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        nameLong_ = getDefaultInstance().getNameLong();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string name_long = 2;</code>
-       */
-      public Builder setNameLongBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        nameLong_ = value;
-        onChanged();
-        return this;
-      }
-
-      // optional string name_short = 3;
-      private java.lang.Object nameShort_ = "";
-      /**
-       * <code>optional string name_short = 3;</code>
-       */
-      public boolean hasNameShort() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional string name_short = 3;</code>
-       */
-      public java.lang.String getNameShort() {
-        java.lang.Object ref = nameShort_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          nameShort_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string name_short = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameShortBytes() {
-        java.lang.Object ref = nameShort_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          nameShort_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string name_short = 3;</code>
-       */
-      public Builder setNameShort(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        nameShort_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string name_short = 3;</code>
-       */
-      public Builder clearNameShort() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        nameShort_ = getDefaultInstance().getNameShort();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string name_short = 3;</code>
-       */
-      public Builder setNameShortBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        nameShort_ = value;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:Location)
-    }
-
-    static {
-      defaultInstance = new Location(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:Location)
-  }
-
   public interface DeliveryOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
@@ -5162,16 +3936,6 @@ public final class Model {
      * <code>optional int64 arrival = 6;</code>
      */
     long getArrival();
-
-    // optional int64 location_id = 7;
-    /**
-     * <code>optional int64 location_id = 7;</code>
-     */
-    boolean hasLocationId();
-    /**
-     * <code>optional int64 location_id = 7;</code>
-     */
-    long getLocationId();
   }
   /**
    * Protobuf type {@code Delivery}
@@ -5252,11 +4016,6 @@ public final class Model {
             case 48: {
               bitField0_ |= 0x00000020;
               arrival_ = input.readInt64();
-              break;
-            }
-            case 56: {
-              bitField0_ |= 0x00000040;
-              locationId_ = input.readInt64();
               break;
             }
           }
@@ -5395,22 +4154,6 @@ public final class Model {
       return arrival_;
     }
 
-    // optional int64 location_id = 7;
-    public static final int LOCATION_ID_FIELD_NUMBER = 7;
-    private long locationId_;
-    /**
-     * <code>optional int64 location_id = 7;</code>
-     */
-    public boolean hasLocationId() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    /**
-     * <code>optional int64 location_id = 7;</code>
-     */
-    public long getLocationId() {
-      return locationId_;
-    }
-
     private void initFields() {
       id_ = 0L;
       restaurantId_ = 0L;
@@ -5418,7 +4161,6 @@ public final class Model {
       orderId_ = 0L;
       etaArival_ = 0L;
       arrival_ = 0L;
-      locationId_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -5454,9 +4196,6 @@ public final class Model {
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeInt64(6, arrival_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeInt64(7, locationId_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -5489,10 +4228,6 @@ public final class Model {
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(6, arrival_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, locationId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -5622,8 +4357,6 @@ public final class Model {
         bitField0_ = (bitField0_ & ~0x00000010);
         arrival_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000020);
-        locationId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -5676,10 +4409,6 @@ public final class Model {
           to_bitField0_ |= 0x00000020;
         }
         result.arrival_ = arrival_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-          to_bitField0_ |= 0x00000040;
-        }
-        result.locationId_ = locationId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -5713,9 +4442,6 @@ public final class Model {
         }
         if (other.hasArrival()) {
           setArrival(other.getArrival());
-        }
-        if (other.hasLocationId()) {
-          setLocationId(other.getLocationId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -5946,39 +4672,6 @@ public final class Model {
         return this;
       }
 
-      // optional int64 location_id = 7;
-      private long locationId_ ;
-      /**
-       * <code>optional int64 location_id = 7;</code>
-       */
-      public boolean hasLocationId() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
-      }
-      /**
-       * <code>optional int64 location_id = 7;</code>
-       */
-      public long getLocationId() {
-        return locationId_;
-      }
-      /**
-       * <code>optional int64 location_id = 7;</code>
-       */
-      public Builder setLocationId(long value) {
-        bitField0_ |= 0x00000040;
-        locationId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 location_id = 7;</code>
-       */
-      public Builder clearLocationId() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        locationId_ = 0L;
-        onChanged();
-        return this;
-      }
-
       // @@protoc_insertion_point(builder_scope:Delivery)
     }
 
@@ -5990,7 +4683,7 @@ public final class Model {
     // @@protoc_insertion_point(class_scope:Delivery)
   }
 
-  public interface DeviceOrBuilder
+  public interface ServerOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
     // required int64 id = 1;
@@ -6003,65 +4696,80 @@ public final class Model {
      */
     long getId();
 
-    // optional string UUID = 2;
+    // optional int64 pid = 2;
     /**
-     * <code>optional string UUID = 2;</code>
+     * <code>optional int64 pid = 2;</code>
      */
-    boolean hasUUID();
+    boolean hasPid();
     /**
-     * <code>optional string UUID = 2;</code>
+     * <code>optional int64 pid = 2;</code>
      */
-    java.lang.String getUUID();
+    long getPid();
+
+    // optional int64 rpc_subscription_listen_port = 3;
     /**
-     * <code>optional string UUID = 2;</code>
+     * <code>optional int64 rpc_subscription_listen_port = 3;</code>
+     */
+    boolean hasRpcSubscriptionListenPort();
+    /**
+     * <code>optional int64 rpc_subscription_listen_port = 3;</code>
+     */
+    long getRpcSubscriptionListenPort();
+
+    // optional string rpc_subscription_listen_ip = 4;
+    /**
+     * <code>optional string rpc_subscription_listen_ip = 4;</code>
+     */
+    boolean hasRpcSubscriptionListenIp();
+    /**
+     * <code>optional string rpc_subscription_listen_ip = 4;</code>
+     */
+    java.lang.String getRpcSubscriptionListenIp();
+    /**
+     * <code>optional string rpc_subscription_listen_ip = 4;</code>
      */
     com.google.protobuf.ByteString
-        getUUIDBytes();
+        getRpcSubscriptionListenIpBytes();
 
-    // optional string tel = 3;
+    // optional bool active = 5;
     /**
-     * <code>optional string tel = 3;</code>
+     * <code>optional bool active = 5;</code>
      */
-    boolean hasTel();
+    boolean hasActive();
     /**
-     * <code>optional string tel = 3;</code>
+     * <code>optional bool active = 5;</code>
      */
-    java.lang.String getTel();
-    /**
-     * <code>optional string tel = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getTelBytes();
+    boolean getActive();
 
-    // optional bool receivessms = 4;
+    // optional int64 task_id = 6;
     /**
-     * <code>optional bool receivessms = 4;</code>
+     * <code>optional int64 task_id = 6;</code>
      */
-    boolean hasReceivessms();
+    boolean hasTaskId();
     /**
-     * <code>optional bool receivessms = 4;</code>
+     * <code>optional int64 task_id = 6;</code>
      */
-    boolean getReceivessms();
+    long getTaskId();
   }
   /**
-   * Protobuf type {@code Device}
+   * Protobuf type {@code Server}
    */
-  public static final class Device extends
+  public static final class Server extends
       com.google.protobuf.GeneratedMessage
-      implements DeviceOrBuilder {
-    // Use Device.newBuilder() to construct.
-    private Device(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      implements ServerOrBuilder {
+    // Use Server.newBuilder() to construct.
+    private Server(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private Device(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private Server(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final Device defaultInstance;
-    public static Device getDefaultInstance() {
+    private static final Server defaultInstance;
+    public static Server getDefaultInstance() {
       return defaultInstance;
     }
 
-    public Device getDefaultInstanceForType() {
+    public Server getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -6071,7 +4779,7 @@ public final class Model {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private Device(
+    private Server(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6099,836 +4807,29 @@ public final class Model {
               id_ = input.readInt64();
               break;
             }
-            case 18: {
+            case 16: {
               bitField0_ |= 0x00000002;
-              uUID_ = input.readBytes();
+              pid_ = input.readInt64();
               break;
             }
-            case 26: {
+            case 24: {
               bitField0_ |= 0x00000004;
-              tel_ = input.readBytes();
+              rpcSubscriptionListenPort_ = input.readInt64();
               break;
             }
-            case 32: {
+            case 34: {
               bitField0_ |= 0x00000008;
-              receivessms_ = input.readBool();
+              rpcSubscriptionListenIp_ = input.readBytes();
               break;
             }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_Device_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_Device_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.Device.class, net.maivic.protocol.Model.Device.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<Device> PARSER =
-        new com.google.protobuf.AbstractParser<Device>() {
-      public Device parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Device(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Device> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int64 id = 1;
-    public static final int ID_FIELD_NUMBER = 1;
-    private long id_;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public long getId() {
-      return id_;
-    }
-
-    // optional string UUID = 2;
-    public static final int UUID_FIELD_NUMBER = 2;
-    private java.lang.Object uUID_;
-    /**
-     * <code>optional string UUID = 2;</code>
-     */
-    public boolean hasUUID() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional string UUID = 2;</code>
-     */
-    public java.lang.String getUUID() {
-      java.lang.Object ref = uUID_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          uUID_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string UUID = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getUUIDBytes() {
-      java.lang.Object ref = uUID_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        uUID_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // optional string tel = 3;
-    public static final int TEL_FIELD_NUMBER = 3;
-    private java.lang.Object tel_;
-    /**
-     * <code>optional string tel = 3;</code>
-     */
-    public boolean hasTel() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional string tel = 3;</code>
-     */
-    public java.lang.String getTel() {
-      java.lang.Object ref = tel_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          tel_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string tel = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTelBytes() {
-      java.lang.Object ref = tel_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tel_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // optional bool receivessms = 4;
-    public static final int RECEIVESSMS_FIELD_NUMBER = 4;
-    private boolean receivessms_;
-    /**
-     * <code>optional bool receivessms = 4;</code>
-     */
-    public boolean hasReceivessms() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional bool receivessms = 4;</code>
-     */
-    public boolean getReceivessms() {
-      return receivessms_;
-    }
-
-    private void initFields() {
-      id_ = 0L;
-      uUID_ = "";
-      tel_ = "";
-      receivessms_ = false;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getUUIDBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getTelBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBool(4, receivessms_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getUUIDBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getTelBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, receivessms_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.Device parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.Device parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Device parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.Device parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Device parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.Device parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Device parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.Device parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Device parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.Device parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.Device prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code Device}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.DeviceOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_Device_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_Device_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.Device.class, net.maivic.protocol.Model.Device.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.Device.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        id_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        uUID_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        tel_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
-        receivessms_ = false;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_Device_descriptor;
-      }
-
-      public net.maivic.protocol.Model.Device getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.Device.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.Device build() {
-        net.maivic.protocol.Model.Device result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.Device buildPartial() {
-        net.maivic.protocol.Model.Device result = new net.maivic.protocol.Model.Device(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.uUID_ = uUID_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.tel_ = tel_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.receivessms_ = receivessms_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.Device) {
-          return mergeFrom((net.maivic.protocol.Model.Device)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.Device other) {
-        if (other == net.maivic.protocol.Model.Device.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasUUID()) {
-          bitField0_ |= 0x00000002;
-          uUID_ = other.uUID_;
-          onChanged();
-        }
-        if (other.hasTel()) {
-          bitField0_ |= 0x00000004;
-          tel_ = other.tel_;
-          onChanged();
-        }
-        if (other.hasReceivessms()) {
-          setReceivessms(other.getReceivessms());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasId()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.Device parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.Device) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required int64 id = 1;
-      private long id_ ;
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder setId(long value) {
-        bitField0_ |= 0x00000001;
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string UUID = 2;
-      private java.lang.Object uUID_ = "";
-      /**
-       * <code>optional string UUID = 2;</code>
-       */
-      public boolean hasUUID() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional string UUID = 2;</code>
-       */
-      public java.lang.String getUUID() {
-        java.lang.Object ref = uUID_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          uUID_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string UUID = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getUUIDBytes() {
-        java.lang.Object ref = uUID_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          uUID_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string UUID = 2;</code>
-       */
-      public Builder setUUID(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        uUID_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string UUID = 2;</code>
-       */
-      public Builder clearUUID() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        uUID_ = getDefaultInstance().getUUID();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string UUID = 2;</code>
-       */
-      public Builder setUUIDBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        uUID_ = value;
-        onChanged();
-        return this;
-      }
-
-      // optional string tel = 3;
-      private java.lang.Object tel_ = "";
-      /**
-       * <code>optional string tel = 3;</code>
-       */
-      public boolean hasTel() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional string tel = 3;</code>
-       */
-      public java.lang.String getTel() {
-        java.lang.Object ref = tel_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          tel_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string tel = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTelBytes() {
-        java.lang.Object ref = tel_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tel_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string tel = 3;</code>
-       */
-      public Builder setTel(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        tel_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string tel = 3;</code>
-       */
-      public Builder clearTel() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        tel_ = getDefaultInstance().getTel();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string tel = 3;</code>
-       */
-      public Builder setTelBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        tel_ = value;
-        onChanged();
-        return this;
-      }
-
-      // optional bool receivessms = 4;
-      private boolean receivessms_ ;
-      /**
-       * <code>optional bool receivessms = 4;</code>
-       */
-      public boolean hasReceivessms() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional bool receivessms = 4;</code>
-       */
-      public boolean getReceivessms() {
-        return receivessms_;
-      }
-      /**
-       * <code>optional bool receivessms = 4;</code>
-       */
-      public Builder setReceivessms(boolean value) {
-        bitField0_ |= 0x00000008;
-        receivessms_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool receivessms = 4;</code>
-       */
-      public Builder clearReceivessms() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        receivessms_ = false;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:Device)
-    }
-
-    static {
-      defaultInstance = new Device(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:Device)
-  }
-
-  public interface ImageOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 id = 1;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    long getId();
-
-    // optional string name = 2;
-    /**
-     * <code>optional string name = 2;</code>
-     */
-    boolean hasName();
-    /**
-     * <code>optional string name = 2;</code>
-     */
-    java.lang.String getName();
-    /**
-     * <code>optional string name = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    // optional string data = 3;
-    /**
-     * <code>optional string data = 3;</code>
-     */
-    boolean hasData();
-    /**
-     * <code>optional string data = 3;</code>
-     */
-    java.lang.String getData();
-    /**
-     * <code>optional string data = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getDataBytes();
-
-    // optional int64 artist_id = 4;
-    /**
-     * <code>optional int64 artist_id = 4;</code>
-     */
-    boolean hasArtistId();
-    /**
-     * <code>optional int64 artist_id = 4;</code>
-     */
-    long getArtistId();
-
-    // optional string comment = 5;
-    /**
-     * <code>optional string comment = 5;</code>
-     */
-    boolean hasComment();
-    /**
-     * <code>optional string comment = 5;</code>
-     */
-    java.lang.String getComment();
-    /**
-     * <code>optional string comment = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getCommentBytes();
-  }
-  /**
-   * Protobuf type {@code Image}
-   */
-  public static final class Image extends
-      com.google.protobuf.GeneratedMessage
-      implements ImageOrBuilder {
-    // Use Image.newBuilder() to construct.
-    private Image(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private Image(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final Image defaultInstance;
-    public static Image getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public Image getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Image(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readInt64();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              name_ = input.readBytes();
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
-              data_ = input.readBytes();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              artistId_ = input.readInt64();
-              break;
-            }
-            case 42: {
+            case 40: {
               bitField0_ |= 0x00000010;
-              comment_ = input.readBytes();
+              active_ = input.readBool();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              taskId_ = input.readInt64();
               break;
             }
           }
@@ -6945,28 +4846,28 @@ public final class Model {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_Image_descriptor;
+      return net.maivic.protocol.Model.internal_static_Server_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_Image_fieldAccessorTable
+      return net.maivic.protocol.Model.internal_static_Server_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.Image.class, net.maivic.protocol.Model.Image.Builder.class);
+              net.maivic.protocol.Model.Server.class, net.maivic.protocol.Model.Server.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<Image> PARSER =
-        new com.google.protobuf.AbstractParser<Image>() {
-      public Image parsePartialFrom(
+    public static com.google.protobuf.Parser<Server> PARSER =
+        new com.google.protobuf.AbstractParser<Server>() {
+      public Server parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Image(input, extensionRegistry);
+        return new Server(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Image> getParserForType() {
+    public com.google.protobuf.Parser<Server> getParserForType() {
       return PARSER;
     }
 
@@ -6987,63 +4888,52 @@ public final class Model {
       return id_;
     }
 
-    // optional string name = 2;
-    public static final int NAME_FIELD_NUMBER = 2;
-    private java.lang.Object name_;
+    // optional int64 pid = 2;
+    public static final int PID_FIELD_NUMBER = 2;
+    private long pid_;
     /**
-     * <code>optional string name = 2;</code>
+     * <code>optional int64 pid = 2;</code>
      */
-    public boolean hasName() {
+    public boolean hasPid() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional string name = 2;</code>
+     * <code>optional int64 pid = 2;</code>
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          name_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string name = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getPid() {
+      return pid_;
     }
 
-    // optional string data = 3;
-    public static final int DATA_FIELD_NUMBER = 3;
-    private java.lang.Object data_;
+    // optional int64 rpc_subscription_listen_port = 3;
+    public static final int RPC_SUBSCRIPTION_LISTEN_PORT_FIELD_NUMBER = 3;
+    private long rpcSubscriptionListenPort_;
     /**
-     * <code>optional string data = 3;</code>
+     * <code>optional int64 rpc_subscription_listen_port = 3;</code>
      */
-    public boolean hasData() {
+    public boolean hasRpcSubscriptionListenPort() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional string data = 3;</code>
+     * <code>optional int64 rpc_subscription_listen_port = 3;</code>
      */
-    public java.lang.String getData() {
-      java.lang.Object ref = data_;
+    public long getRpcSubscriptionListenPort() {
+      return rpcSubscriptionListenPort_;
+    }
+
+    // optional string rpc_subscription_listen_ip = 4;
+    public static final int RPC_SUBSCRIPTION_LISTEN_IP_FIELD_NUMBER = 4;
+    private java.lang.Object rpcSubscriptionListenIp_;
+    /**
+     * <code>optional string rpc_subscription_listen_ip = 4;</code>
+     */
+    public boolean hasRpcSubscriptionListenIp() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string rpc_subscription_listen_ip = 4;</code>
+     */
+    public java.lang.String getRpcSubscriptionListenIp() {
+      java.lang.Object ref = rpcSubscriptionListenIp_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -7051,93 +4941,67 @@ public final class Model {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          data_ = s;
+          rpcSubscriptionListenIp_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>optional string data = 3;</code>
+     * <code>optional string rpc_subscription_listen_ip = 4;</code>
      */
     public com.google.protobuf.ByteString
-        getDataBytes() {
-      java.lang.Object ref = data_;
+        getRpcSubscriptionListenIpBytes() {
+      java.lang.Object ref = rpcSubscriptionListenIp_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        data_ = b;
+        rpcSubscriptionListenIp_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    // optional int64 artist_id = 4;
-    public static final int ARTIST_ID_FIELD_NUMBER = 4;
-    private long artistId_;
+    // optional bool active = 5;
+    public static final int ACTIVE_FIELD_NUMBER = 5;
+    private boolean active_;
     /**
-     * <code>optional int64 artist_id = 4;</code>
+     * <code>optional bool active = 5;</code>
      */
-    public boolean hasArtistId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional int64 artist_id = 4;</code>
-     */
-    public long getArtistId() {
-      return artistId_;
-    }
-
-    // optional string comment = 5;
-    public static final int COMMENT_FIELD_NUMBER = 5;
-    private java.lang.Object comment_;
-    /**
-     * <code>optional string comment = 5;</code>
-     */
-    public boolean hasComment() {
+    public boolean hasActive() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional string comment = 5;</code>
+     * <code>optional bool active = 5;</code>
      */
-    public java.lang.String getComment() {
-      java.lang.Object ref = comment_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          comment_ = s;
-        }
-        return s;
-      }
+    public boolean getActive() {
+      return active_;
+    }
+
+    // optional int64 task_id = 6;
+    public static final int TASK_ID_FIELD_NUMBER = 6;
+    private long taskId_;
+    /**
+     * <code>optional int64 task_id = 6;</code>
+     */
+    public boolean hasTaskId() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>optional string comment = 5;</code>
+     * <code>optional int64 task_id = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getCommentBytes() {
-      java.lang.Object ref = comment_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        comment_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getTaskId() {
+      return taskId_;
     }
 
     private void initFields() {
       id_ = 0L;
-      name_ = "";
-      data_ = "";
-      artistId_ = 0L;
-      comment_ = "";
+      pid_ = 0L;
+      rpcSubscriptionListenPort_ = 0L;
+      rpcSubscriptionListenIp_ = "";
+      active_ = false;
+      taskId_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -7159,16 +5023,19 @@ public final class Model {
         output.writeInt64(1, id_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getNameBytes());
+        output.writeInt64(2, pid_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getDataBytes());
+        output.writeInt64(3, rpcSubscriptionListenPort_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeInt64(4, artistId_);
+        output.writeBytes(4, getRpcSubscriptionListenIpBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(5, getCommentBytes());
+        output.writeBool(5, active_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeInt64(6, taskId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -7185,19 +5052,23 @@ public final class Model {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getNameBytes());
+          .computeInt64Size(2, pid_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getDataBytes());
+          .computeInt64Size(3, rpcSubscriptionListenPort_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, artistId_);
+          .computeBytesSize(4, getRpcSubscriptionListenIpBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getCommentBytes());
+          .computeBoolSize(5, active_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, taskId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -7211,53 +5082,53 @@ public final class Model {
       return super.writeReplace();
     }
 
-    public static net.maivic.protocol.Model.Image parseFrom(
+    public static net.maivic.protocol.Model.Server parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static net.maivic.protocol.Model.Image parseFrom(
+    public static net.maivic.protocol.Model.Server parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.Image parseFrom(byte[] data)
+    public static net.maivic.protocol.Model.Server parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static net.maivic.protocol.Model.Image parseFrom(
+    public static net.maivic.protocol.Model.Server parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.Image parseFrom(java.io.InputStream input)
+    public static net.maivic.protocol.Model.Server parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static net.maivic.protocol.Model.Image parseFrom(
+    public static net.maivic.protocol.Model.Server parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.Image parseDelimitedFrom(java.io.InputStream input)
+    public static net.maivic.protocol.Model.Server parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static net.maivic.protocol.Model.Image parseDelimitedFrom(
+    public static net.maivic.protocol.Model.Server parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.Image parseFrom(
+    public static net.maivic.protocol.Model.Server parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static net.maivic.protocol.Model.Image parseFrom(
+    public static net.maivic.protocol.Model.Server parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7266,7 +5137,7 @@ public final class Model {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.Image prototype) {
+    public static Builder newBuilder(net.maivic.protocol.Model.Server prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -7278,24 +5149,24 @@ public final class Model {
       return builder;
     }
     /**
-     * Protobuf type {@code Image}
+     * Protobuf type {@code Server}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.ImageOrBuilder {
+       implements net.maivic.protocol.Model.ServerOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_Image_descriptor;
+        return net.maivic.protocol.Model.internal_static_Server_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_Image_fieldAccessorTable
+        return net.maivic.protocol.Model.internal_static_Server_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.Image.class, net.maivic.protocol.Model.Image.Builder.class);
+                net.maivic.protocol.Model.Server.class, net.maivic.protocol.Model.Server.Builder.class);
       }
 
-      // Construct using net.maivic.protocol.Model.Image.newBuilder()
+      // Construct using net.maivic.protocol.Model.Server.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -7317,14 +5188,16 @@ public final class Model {
         super.clear();
         id_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
-        name_ = "";
+        pid_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
-        data_ = "";
+        rpcSubscriptionListenPort_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
-        artistId_ = 0L;
+        rpcSubscriptionListenIp_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
-        comment_ = "";
+        active_ = false;
         bitField0_ = (bitField0_ & ~0x00000010);
+        taskId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -7334,23 +5207,23 @@ public final class Model {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_Image_descriptor;
+        return net.maivic.protocol.Model.internal_static_Server_descriptor;
       }
 
-      public net.maivic.protocol.Model.Image getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.Image.getDefaultInstance();
+      public net.maivic.protocol.Model.Server getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.Server.getDefaultInstance();
       }
 
-      public net.maivic.protocol.Model.Image build() {
-        net.maivic.protocol.Model.Image result = buildPartial();
+      public net.maivic.protocol.Model.Server build() {
+        net.maivic.protocol.Model.Server result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public net.maivic.protocol.Model.Image buildPartial() {
-        net.maivic.protocol.Model.Image result = new net.maivic.protocol.Model.Image(this);
+      public net.maivic.protocol.Model.Server buildPartial() {
+        net.maivic.protocol.Model.Server result = new net.maivic.protocol.Model.Server(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -7360,55 +5233,58 @@ public final class Model {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.name_ = name_;
+        result.pid_ = pid_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.data_ = data_;
+        result.rpcSubscriptionListenPort_ = rpcSubscriptionListenPort_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.artistId_ = artistId_;
+        result.rpcSubscriptionListenIp_ = rpcSubscriptionListenIp_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.comment_ = comment_;
+        result.active_ = active_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.taskId_ = taskId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.Image) {
-          return mergeFrom((net.maivic.protocol.Model.Image)other);
+        if (other instanceof net.maivic.protocol.Model.Server) {
+          return mergeFrom((net.maivic.protocol.Model.Server)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(net.maivic.protocol.Model.Image other) {
-        if (other == net.maivic.protocol.Model.Image.getDefaultInstance()) return this;
+      public Builder mergeFrom(net.maivic.protocol.Model.Server other) {
+        if (other == net.maivic.protocol.Model.Server.getDefaultInstance()) return this;
         if (other.hasId()) {
           setId(other.getId());
         }
-        if (other.hasName()) {
-          bitField0_ |= 0x00000002;
-          name_ = other.name_;
+        if (other.hasPid()) {
+          setPid(other.getPid());
+        }
+        if (other.hasRpcSubscriptionListenPort()) {
+          setRpcSubscriptionListenPort(other.getRpcSubscriptionListenPort());
+        }
+        if (other.hasRpcSubscriptionListenIp()) {
+          bitField0_ |= 0x00000008;
+          rpcSubscriptionListenIp_ = other.rpcSubscriptionListenIp_;
           onChanged();
         }
-        if (other.hasData()) {
-          bitField0_ |= 0x00000004;
-          data_ = other.data_;
-          onChanged();
+        if (other.hasActive()) {
+          setActive(other.getActive());
         }
-        if (other.hasArtistId()) {
-          setArtistId(other.getArtistId());
-        }
-        if (other.hasComment()) {
-          bitField0_ |= 0x00000010;
-          comment_ = other.comment_;
-          onChanged();
+        if (other.hasTaskId()) {
+          setTaskId(other.getTaskId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -7426,11 +5302,11 @@ public final class Model {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        net.maivic.protocol.Model.Image parsedMessage = null;
+        net.maivic.protocol.Model.Server parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.Image) e.getUnfinishedMessage();
+          parsedMessage = (net.maivic.protocol.Model.Server) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -7474,270 +5350,1810 @@ public final class Model {
         return this;
       }
 
-      // optional string name = 2;
-      private java.lang.Object name_ = "";
+      // optional int64 pid = 2;
+      private long pid_ ;
       /**
-       * <code>optional string name = 2;</code>
+       * <code>optional int64 pid = 2;</code>
        */
-      public boolean hasName() {
+      public boolean hasPid() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional string name = 2;</code>
+       * <code>optional int64 pid = 2;</code>
        */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getPid() {
+        return pid_;
       }
       /**
-       * <code>optional string name = 2;</code>
+       * <code>optional int64 pid = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string name = 2;</code>
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        name_ = value;
+      public Builder setPid(long value) {
+        bitField0_ |= 0x00000002;
+        pid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string name = 2;</code>
+       * <code>optional int64 pid = 2;</code>
        */
-      public Builder clearName() {
+      public Builder clearPid() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string name = 2;</code>
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        name_ = value;
+        pid_ = 0L;
         onChanged();
         return this;
       }
 
-      // optional string data = 3;
-      private java.lang.Object data_ = "";
+      // optional int64 rpc_subscription_listen_port = 3;
+      private long rpcSubscriptionListenPort_ ;
       /**
-       * <code>optional string data = 3;</code>
+       * <code>optional int64 rpc_subscription_listen_port = 3;</code>
        */
-      public boolean hasData() {
+      public boolean hasRpcSubscriptionListenPort() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional string data = 3;</code>
+       * <code>optional int64 rpc_subscription_listen_port = 3;</code>
        */
-      public java.lang.String getData() {
-        java.lang.Object ref = data_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          data_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getRpcSubscriptionListenPort() {
+        return rpcSubscriptionListenPort_;
       }
       /**
-       * <code>optional string data = 3;</code>
+       * <code>optional int64 rpc_subscription_listen_port = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getDataBytes() {
-        java.lang.Object ref = data_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          data_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string data = 3;</code>
-       */
-      public Builder setData(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        data_ = value;
+      public Builder setRpcSubscriptionListenPort(long value) {
+        bitField0_ |= 0x00000004;
+        rpcSubscriptionListenPort_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string data = 3;</code>
+       * <code>optional int64 rpc_subscription_listen_port = 3;</code>
        */
-      public Builder clearData() {
+      public Builder clearRpcSubscriptionListenPort() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        data_ = getDefaultInstance().getData();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string data = 3;</code>
-       */
-      public Builder setDataBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        data_ = value;
+        rpcSubscriptionListenPort_ = 0L;
         onChanged();
         return this;
       }
 
-      // optional int64 artist_id = 4;
-      private long artistId_ ;
+      // optional string rpc_subscription_listen_ip = 4;
+      private java.lang.Object rpcSubscriptionListenIp_ = "";
       /**
-       * <code>optional int64 artist_id = 4;</code>
+       * <code>optional string rpc_subscription_listen_ip = 4;</code>
        */
-      public boolean hasArtistId() {
+      public boolean hasRpcSubscriptionListenIp() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional int64 artist_id = 4;</code>
+       * <code>optional string rpc_subscription_listen_ip = 4;</code>
        */
-      public long getArtistId() {
-        return artistId_;
-      }
-      /**
-       * <code>optional int64 artist_id = 4;</code>
-       */
-      public Builder setArtistId(long value) {
-        bitField0_ |= 0x00000008;
-        artistId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 artist_id = 4;</code>
-       */
-      public Builder clearArtistId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        artistId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string comment = 5;
-      private java.lang.Object comment_ = "";
-      /**
-       * <code>optional string comment = 5;</code>
-       */
-      public boolean hasComment() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional string comment = 5;</code>
-       */
-      public java.lang.String getComment() {
-        java.lang.Object ref = comment_;
+      public java.lang.String getRpcSubscriptionListenIp() {
+        java.lang.Object ref = rpcSubscriptionListenIp_;
         if (!(ref instanceof java.lang.String)) {
           java.lang.String s = ((com.google.protobuf.ByteString) ref)
               .toStringUtf8();
-          comment_ = s;
+          rpcSubscriptionListenIp_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string comment = 5;</code>
+       * <code>optional string rpc_subscription_listen_ip = 4;</code>
        */
       public com.google.protobuf.ByteString
-          getCommentBytes() {
-        java.lang.Object ref = comment_;
+          getRpcSubscriptionListenIpBytes() {
+        java.lang.Object ref = rpcSubscriptionListenIp_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          comment_ = b;
+          rpcSubscriptionListenIp_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string comment = 5;</code>
+       * <code>optional string rpc_subscription_listen_ip = 4;</code>
        */
-      public Builder setComment(
+      public Builder setRpcSubscriptionListenIp(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
-        comment_ = value;
+  bitField0_ |= 0x00000008;
+        rpcSubscriptionListenIp_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string comment = 5;</code>
+       * <code>optional string rpc_subscription_listen_ip = 4;</code>
        */
-      public Builder clearComment() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        comment_ = getDefaultInstance().getComment();
+      public Builder clearRpcSubscriptionListenIp() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        rpcSubscriptionListenIp_ = getDefaultInstance().getRpcSubscriptionListenIp();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string comment = 5;</code>
+       * <code>optional string rpc_subscription_listen_ip = 4;</code>
        */
-      public Builder setCommentBytes(
+      public Builder setRpcSubscriptionListenIpBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
-        comment_ = value;
+  bitField0_ |= 0x00000008;
+        rpcSubscriptionListenIp_ = value;
         onChanged();
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:Image)
+      // optional bool active = 5;
+      private boolean active_ ;
+      /**
+       * <code>optional bool active = 5;</code>
+       */
+      public boolean hasActive() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional bool active = 5;</code>
+       */
+      public boolean getActive() {
+        return active_;
+      }
+      /**
+       * <code>optional bool active = 5;</code>
+       */
+      public Builder setActive(boolean value) {
+        bitField0_ |= 0x00000010;
+        active_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool active = 5;</code>
+       */
+      public Builder clearActive() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        active_ = false;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 task_id = 6;
+      private long taskId_ ;
+      /**
+       * <code>optional int64 task_id = 6;</code>
+       */
+      public boolean hasTaskId() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional int64 task_id = 6;</code>
+       */
+      public long getTaskId() {
+        return taskId_;
+      }
+      /**
+       * <code>optional int64 task_id = 6;</code>
+       */
+      public Builder setTaskId(long value) {
+        bitField0_ |= 0x00000020;
+        taskId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 task_id = 6;</code>
+       */
+      public Builder clearTaskId() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        taskId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:Server)
     }
 
     static {
-      defaultInstance = new Image(true);
+      defaultInstance = new Server(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:Image)
+    // @@protoc_insertion_point(class_scope:Server)
+  }
+
+  public interface PaymentsToOrderOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int64 payment_id = 1;
+    /**
+     * <code>required int64 payment_id = 1;</code>
+     */
+    boolean hasPaymentId();
+    /**
+     * <code>required int64 payment_id = 1;</code>
+     */
+    long getPaymentId();
+
+    // required int64 order_id = 2;
+    /**
+     * <code>required int64 order_id = 2;</code>
+     */
+    boolean hasOrderId();
+    /**
+     * <code>required int64 order_id = 2;</code>
+     */
+    long getOrderId();
+
+    // optional .Decimal sum = 3;
+    /**
+     * <code>optional .Decimal sum = 3;</code>
+     */
+    boolean hasSum();
+    /**
+     * <code>optional .Decimal sum = 3;</code>
+     */
+    net.maivic.protocol.Model.Decimal getSum();
+    /**
+     * <code>optional .Decimal sum = 3;</code>
+     */
+    net.maivic.protocol.Model.DecimalOrBuilder getSumOrBuilder();
+
+    // required int64 seq = 4;
+    /**
+     * <code>required int64 seq = 4;</code>
+     */
+    boolean hasSeq();
+    /**
+     * <code>required int64 seq = 4;</code>
+     */
+    long getSeq();
+  }
+  /**
+   * Protobuf type {@code PaymentsToOrder}
+   */
+  public static final class PaymentsToOrder extends
+      com.google.protobuf.GeneratedMessage
+      implements PaymentsToOrderOrBuilder {
+    // Use PaymentsToOrder.newBuilder() to construct.
+    private PaymentsToOrder(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PaymentsToOrder(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PaymentsToOrder defaultInstance;
+    public static PaymentsToOrder getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PaymentsToOrder getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PaymentsToOrder(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              paymentId_ = input.readInt64();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              orderId_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              net.maivic.protocol.Model.Decimal.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = sum_.toBuilder();
+              }
+              sum_ = input.readMessage(net.maivic.protocol.Model.Decimal.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sum_);
+                sum_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              seq_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.maivic.protocol.Model.internal_static_PaymentsToOrder_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.maivic.protocol.Model.internal_static_PaymentsToOrder_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.maivic.protocol.Model.PaymentsToOrder.class, net.maivic.protocol.Model.PaymentsToOrder.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PaymentsToOrder> PARSER =
+        new com.google.protobuf.AbstractParser<PaymentsToOrder>() {
+      public PaymentsToOrder parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PaymentsToOrder(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PaymentsToOrder> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int64 payment_id = 1;
+    public static final int PAYMENT_ID_FIELD_NUMBER = 1;
+    private long paymentId_;
+    /**
+     * <code>required int64 payment_id = 1;</code>
+     */
+    public boolean hasPaymentId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 payment_id = 1;</code>
+     */
+    public long getPaymentId() {
+      return paymentId_;
+    }
+
+    // required int64 order_id = 2;
+    public static final int ORDER_ID_FIELD_NUMBER = 2;
+    private long orderId_;
+    /**
+     * <code>required int64 order_id = 2;</code>
+     */
+    public boolean hasOrderId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required int64 order_id = 2;</code>
+     */
+    public long getOrderId() {
+      return orderId_;
+    }
+
+    // optional .Decimal sum = 3;
+    public static final int SUM_FIELD_NUMBER = 3;
+    private net.maivic.protocol.Model.Decimal sum_;
+    /**
+     * <code>optional .Decimal sum = 3;</code>
+     */
+    public boolean hasSum() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional .Decimal sum = 3;</code>
+     */
+    public net.maivic.protocol.Model.Decimal getSum() {
+      return sum_;
+    }
+    /**
+     * <code>optional .Decimal sum = 3;</code>
+     */
+    public net.maivic.protocol.Model.DecimalOrBuilder getSumOrBuilder() {
+      return sum_;
+    }
+
+    // required int64 seq = 4;
+    public static final int SEQ_FIELD_NUMBER = 4;
+    private long seq_;
+    /**
+     * <code>required int64 seq = 4;</code>
+     */
+    public boolean hasSeq() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required int64 seq = 4;</code>
+     */
+    public long getSeq() {
+      return seq_;
+    }
+
+    private void initFields() {
+      paymentId_ = 0L;
+      orderId_ = 0L;
+      sum_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
+      seq_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasPaymentId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasOrderId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSeq()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (hasSum()) {
+        if (!getSum().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, paymentId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt64(2, orderId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeMessage(3, sum_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt64(4, seq_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, paymentId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, orderId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, sum_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, seq_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.PaymentsToOrder parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static net.maivic.protocol.Model.PaymentsToOrder parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(net.maivic.protocol.Model.PaymentsToOrder prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code PaymentsToOrder}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements net.maivic.protocol.Model.PaymentsToOrderOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.maivic.protocol.Model.internal_static_PaymentsToOrder_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.maivic.protocol.Model.internal_static_PaymentsToOrder_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.maivic.protocol.Model.PaymentsToOrder.class, net.maivic.protocol.Model.PaymentsToOrder.Builder.class);
+      }
+
+      // Construct using net.maivic.protocol.Model.PaymentsToOrder.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getSumFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        paymentId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        orderId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (sumBuilder_ == null) {
+          sum_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
+        } else {
+          sumBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        seq_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.maivic.protocol.Model.internal_static_PaymentsToOrder_descriptor;
+      }
+
+      public net.maivic.protocol.Model.PaymentsToOrder getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.PaymentsToOrder.getDefaultInstance();
+      }
+
+      public net.maivic.protocol.Model.PaymentsToOrder build() {
+        net.maivic.protocol.Model.PaymentsToOrder result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.maivic.protocol.Model.PaymentsToOrder buildPartial() {
+        net.maivic.protocol.Model.PaymentsToOrder result = new net.maivic.protocol.Model.PaymentsToOrder(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.paymentId_ = paymentId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.orderId_ = orderId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        if (sumBuilder_ == null) {
+          result.sum_ = sum_;
+        } else {
+          result.sum_ = sumBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.seq_ = seq_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.maivic.protocol.Model.PaymentsToOrder) {
+          return mergeFrom((net.maivic.protocol.Model.PaymentsToOrder)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.maivic.protocol.Model.PaymentsToOrder other) {
+        if (other == net.maivic.protocol.Model.PaymentsToOrder.getDefaultInstance()) return this;
+        if (other.hasPaymentId()) {
+          setPaymentId(other.getPaymentId());
+        }
+        if (other.hasOrderId()) {
+          setOrderId(other.getOrderId());
+        }
+        if (other.hasSum()) {
+          mergeSum(other.getSum());
+        }
+        if (other.hasSeq()) {
+          setSeq(other.getSeq());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasPaymentId()) {
+          
+          return false;
+        }
+        if (!hasOrderId()) {
+          
+          return false;
+        }
+        if (!hasSeq()) {
+          
+          return false;
+        }
+        if (hasSum()) {
+          if (!getSum().isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.maivic.protocol.Model.PaymentsToOrder parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.maivic.protocol.Model.PaymentsToOrder) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int64 payment_id = 1;
+      private long paymentId_ ;
+      /**
+       * <code>required int64 payment_id = 1;</code>
+       */
+      public boolean hasPaymentId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 payment_id = 1;</code>
+       */
+      public long getPaymentId() {
+        return paymentId_;
+      }
+      /**
+       * <code>required int64 payment_id = 1;</code>
+       */
+      public Builder setPaymentId(long value) {
+        bitField0_ |= 0x00000001;
+        paymentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 payment_id = 1;</code>
+       */
+      public Builder clearPaymentId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        paymentId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // required int64 order_id = 2;
+      private long orderId_ ;
+      /**
+       * <code>required int64 order_id = 2;</code>
+       */
+      public boolean hasOrderId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required int64 order_id = 2;</code>
+       */
+      public long getOrderId() {
+        return orderId_;
+      }
+      /**
+       * <code>required int64 order_id = 2;</code>
+       */
+      public Builder setOrderId(long value) {
+        bitField0_ |= 0x00000002;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 order_id = 2;</code>
+       */
+      public Builder clearOrderId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        orderId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional .Decimal sum = 3;
+      private net.maivic.protocol.Model.Decimal sum_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          net.maivic.protocol.Model.Decimal, net.maivic.protocol.Model.Decimal.Builder, net.maivic.protocol.Model.DecimalOrBuilder> sumBuilder_;
+      /**
+       * <code>optional .Decimal sum = 3;</code>
+       */
+      public boolean hasSum() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .Decimal sum = 3;</code>
+       */
+      public net.maivic.protocol.Model.Decimal getSum() {
+        if (sumBuilder_ == null) {
+          return sum_;
+        } else {
+          return sumBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Decimal sum = 3;</code>
+       */
+      public Builder setSum(net.maivic.protocol.Model.Decimal value) {
+        if (sumBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sum_ = value;
+          onChanged();
+        } else {
+          sumBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .Decimal sum = 3;</code>
+       */
+      public Builder setSum(
+          net.maivic.protocol.Model.Decimal.Builder builderForValue) {
+        if (sumBuilder_ == null) {
+          sum_ = builderForValue.build();
+          onChanged();
+        } else {
+          sumBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .Decimal sum = 3;</code>
+       */
+      public Builder mergeSum(net.maivic.protocol.Model.Decimal value) {
+        if (sumBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              sum_ != net.maivic.protocol.Model.Decimal.getDefaultInstance()) {
+            sum_ =
+              net.maivic.protocol.Model.Decimal.newBuilder(sum_).mergeFrom(value).buildPartial();
+          } else {
+            sum_ = value;
+          }
+          onChanged();
+        } else {
+          sumBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .Decimal sum = 3;</code>
+       */
+      public Builder clearSum() {
+        if (sumBuilder_ == null) {
+          sum_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
+          onChanged();
+        } else {
+          sumBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      /**
+       * <code>optional .Decimal sum = 3;</code>
+       */
+      public net.maivic.protocol.Model.Decimal.Builder getSumBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getSumFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Decimal sum = 3;</code>
+       */
+      public net.maivic.protocol.Model.DecimalOrBuilder getSumOrBuilder() {
+        if (sumBuilder_ != null) {
+          return sumBuilder_.getMessageOrBuilder();
+        } else {
+          return sum_;
+        }
+      }
+      /**
+       * <code>optional .Decimal sum = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          net.maivic.protocol.Model.Decimal, net.maivic.protocol.Model.Decimal.Builder, net.maivic.protocol.Model.DecimalOrBuilder> 
+          getSumFieldBuilder() {
+        if (sumBuilder_ == null) {
+          sumBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              net.maivic.protocol.Model.Decimal, net.maivic.protocol.Model.Decimal.Builder, net.maivic.protocol.Model.DecimalOrBuilder>(
+                  sum_,
+                  getParentForChildren(),
+                  isClean());
+          sum_ = null;
+        }
+        return sumBuilder_;
+      }
+
+      // required int64 seq = 4;
+      private long seq_ ;
+      /**
+       * <code>required int64 seq = 4;</code>
+       */
+      public boolean hasSeq() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required int64 seq = 4;</code>
+       */
+      public long getSeq() {
+        return seq_;
+      }
+      /**
+       * <code>required int64 seq = 4;</code>
+       */
+      public Builder setSeq(long value) {
+        bitField0_ |= 0x00000008;
+        seq_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 seq = 4;</code>
+       */
+      public Builder clearSeq() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        seq_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:PaymentsToOrder)
+    }
+
+    static {
+      defaultInstance = new PaymentsToOrder(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:PaymentsToOrder)
+  }
+
+  public interface DeviceConnectionOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int64 id = 1;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    long getId();
+
+    // optional bool active = 2;
+    /**
+     * <code>optional bool active = 2;</code>
+     */
+    boolean hasActive();
+    /**
+     * <code>optional bool active = 2;</code>
+     */
+    boolean getActive();
+
+    // optional int64 device_id = 3;
+    /**
+     * <code>optional int64 device_id = 3;</code>
+     */
+    boolean hasDeviceId();
+    /**
+     * <code>optional int64 device_id = 3;</code>
+     */
+    long getDeviceId();
+
+    // optional string from_ip = 4;
+    /**
+     * <code>optional string from_ip = 4;</code>
+     */
+    boolean hasFromIp();
+    /**
+     * <code>optional string from_ip = 4;</code>
+     */
+    java.lang.String getFromIp();
+    /**
+     * <code>optional string from_ip = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getFromIpBytes();
+
+    // optional int64 server_id = 5;
+    /**
+     * <code>optional int64 server_id = 5;</code>
+     */
+    boolean hasServerId();
+    /**
+     * <code>optional int64 server_id = 5;</code>
+     */
+    long getServerId();
+  }
+  /**
+   * Protobuf type {@code DeviceConnection}
+   */
+  public static final class DeviceConnection extends
+      com.google.protobuf.GeneratedMessage
+      implements DeviceConnectionOrBuilder {
+    // Use DeviceConnection.newBuilder() to construct.
+    private DeviceConnection(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private DeviceConnection(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final DeviceConnection defaultInstance;
+    public static DeviceConnection getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public DeviceConnection getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeviceConnection(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt64();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              active_ = input.readBool();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              deviceId_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              fromIp_ = input.readBytes();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              serverId_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.maivic.protocol.Model.internal_static_DeviceConnection_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.maivic.protocol.Model.internal_static_DeviceConnection_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.maivic.protocol.Model.DeviceConnection.class, net.maivic.protocol.Model.DeviceConnection.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<DeviceConnection> PARSER =
+        new com.google.protobuf.AbstractParser<DeviceConnection>() {
+      public DeviceConnection parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeviceConnection(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeviceConnection> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int64 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public long getId() {
+      return id_;
+    }
+
+    // optional bool active = 2;
+    public static final int ACTIVE_FIELD_NUMBER = 2;
+    private boolean active_;
+    /**
+     * <code>optional bool active = 2;</code>
+     */
+    public boolean hasActive() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional bool active = 2;</code>
+     */
+    public boolean getActive() {
+      return active_;
+    }
+
+    // optional int64 device_id = 3;
+    public static final int DEVICE_ID_FIELD_NUMBER = 3;
+    private long deviceId_;
+    /**
+     * <code>optional int64 device_id = 3;</code>
+     */
+    public boolean hasDeviceId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int64 device_id = 3;</code>
+     */
+    public long getDeviceId() {
+      return deviceId_;
+    }
+
+    // optional string from_ip = 4;
+    public static final int FROM_IP_FIELD_NUMBER = 4;
+    private java.lang.Object fromIp_;
+    /**
+     * <code>optional string from_ip = 4;</code>
+     */
+    public boolean hasFromIp() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string from_ip = 4;</code>
+     */
+    public java.lang.String getFromIp() {
+      java.lang.Object ref = fromIp_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          fromIp_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string from_ip = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFromIpBytes() {
+      java.lang.Object ref = fromIp_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fromIp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int64 server_id = 5;
+    public static final int SERVER_ID_FIELD_NUMBER = 5;
+    private long serverId_;
+    /**
+     * <code>optional int64 server_id = 5;</code>
+     */
+    public boolean hasServerId() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional int64 server_id = 5;</code>
+     */
+    public long getServerId() {
+      return serverId_;
+    }
+
+    private void initFields() {
+      id_ = 0L;
+      active_ = false;
+      deviceId_ = 0L;
+      fromIp_ = "";
+      serverId_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBool(2, active_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(3, deviceId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getFromIpBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt64(5, serverId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, active_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, deviceId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getFromIpBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, serverId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static net.maivic.protocol.Model.DeviceConnection parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.DeviceConnection parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.DeviceConnection parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.DeviceConnection parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.DeviceConnection parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.DeviceConnection parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.DeviceConnection parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static net.maivic.protocol.Model.DeviceConnection parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.DeviceConnection parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.DeviceConnection parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(net.maivic.protocol.Model.DeviceConnection prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code DeviceConnection}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements net.maivic.protocol.Model.DeviceConnectionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.maivic.protocol.Model.internal_static_DeviceConnection_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.maivic.protocol.Model.internal_static_DeviceConnection_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.maivic.protocol.Model.DeviceConnection.class, net.maivic.protocol.Model.DeviceConnection.Builder.class);
+      }
+
+      // Construct using net.maivic.protocol.Model.DeviceConnection.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        active_ = false;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        deviceId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        fromIp_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        serverId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.maivic.protocol.Model.internal_static_DeviceConnection_descriptor;
+      }
+
+      public net.maivic.protocol.Model.DeviceConnection getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.DeviceConnection.getDefaultInstance();
+      }
+
+      public net.maivic.protocol.Model.DeviceConnection build() {
+        net.maivic.protocol.Model.DeviceConnection result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.maivic.protocol.Model.DeviceConnection buildPartial() {
+        net.maivic.protocol.Model.DeviceConnection result = new net.maivic.protocol.Model.DeviceConnection(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.active_ = active_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.deviceId_ = deviceId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.fromIp_ = fromIp_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.serverId_ = serverId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.maivic.protocol.Model.DeviceConnection) {
+          return mergeFrom((net.maivic.protocol.Model.DeviceConnection)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.maivic.protocol.Model.DeviceConnection other) {
+        if (other == net.maivic.protocol.Model.DeviceConnection.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasActive()) {
+          setActive(other.getActive());
+        }
+        if (other.hasDeviceId()) {
+          setDeviceId(other.getDeviceId());
+        }
+        if (other.hasFromIp()) {
+          bitField0_ |= 0x00000008;
+          fromIp_ = other.fromIp_;
+          onChanged();
+        }
+        if (other.hasServerId()) {
+          setServerId(other.getServerId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.maivic.protocol.Model.DeviceConnection parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.maivic.protocol.Model.DeviceConnection) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int64 id = 1;
+      private long id_ ;
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder setId(long value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional bool active = 2;
+      private boolean active_ ;
+      /**
+       * <code>optional bool active = 2;</code>
+       */
+      public boolean hasActive() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional bool active = 2;</code>
+       */
+      public boolean getActive() {
+        return active_;
+      }
+      /**
+       * <code>optional bool active = 2;</code>
+       */
+      public Builder setActive(boolean value) {
+        bitField0_ |= 0x00000002;
+        active_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool active = 2;</code>
+       */
+      public Builder clearActive() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        active_ = false;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 device_id = 3;
+      private long deviceId_ ;
+      /**
+       * <code>optional int64 device_id = 3;</code>
+       */
+      public boolean hasDeviceId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int64 device_id = 3;</code>
+       */
+      public long getDeviceId() {
+        return deviceId_;
+      }
+      /**
+       * <code>optional int64 device_id = 3;</code>
+       */
+      public Builder setDeviceId(long value) {
+        bitField0_ |= 0x00000004;
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 device_id = 3;</code>
+       */
+      public Builder clearDeviceId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        deviceId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional string from_ip = 4;
+      private java.lang.Object fromIp_ = "";
+      /**
+       * <code>optional string from_ip = 4;</code>
+       */
+      public boolean hasFromIp() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string from_ip = 4;</code>
+       */
+      public java.lang.String getFromIp() {
+        java.lang.Object ref = fromIp_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          fromIp_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string from_ip = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFromIpBytes() {
+        java.lang.Object ref = fromIp_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fromIp_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string from_ip = 4;</code>
+       */
+      public Builder setFromIp(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        fromIp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string from_ip = 4;</code>
+       */
+      public Builder clearFromIp() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        fromIp_ = getDefaultInstance().getFromIp();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string from_ip = 4;</code>
+       */
+      public Builder setFromIpBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        fromIp_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 server_id = 5;
+      private long serverId_ ;
+      /**
+       * <code>optional int64 server_id = 5;</code>
+       */
+      public boolean hasServerId() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional int64 server_id = 5;</code>
+       */
+      public long getServerId() {
+        return serverId_;
+      }
+      /**
+       * <code>optional int64 server_id = 5;</code>
+       */
+      public Builder setServerId(long value) {
+        bitField0_ |= 0x00000010;
+        serverId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 server_id = 5;</code>
+       */
+      public Builder clearServerId() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        serverId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:DeviceConnection)
+    }
+
+    static {
+      defaultInstance = new DeviceConnection(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:DeviceConnection)
   }
 
   public interface OrderOrBuilder
@@ -7763,15 +7179,20 @@ public final class Model {
      */
     long getClientId();
 
-    // optional int64 delivery_place_id = 3;
+    // optional string client_notes = 3;
     /**
-     * <code>optional int64 delivery_place_id = 3;</code>
+     * <code>optional string client_notes = 3;</code>
      */
-    boolean hasDeliveryPlaceId();
+    boolean hasClientNotes();
     /**
-     * <code>optional int64 delivery_place_id = 3;</code>
+     * <code>optional string client_notes = 3;</code>
      */
-    long getDeliveryPlaceId();
+    java.lang.String getClientNotes();
+    /**
+     * <code>optional string client_notes = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getClientNotesBytes();
 
     // optional string delivery_box_id = 4;
     /**
@@ -7788,32 +7209,17 @@ public final class Model {
     com.google.protobuf.ByteString
         getDeliveryBoxIdBytes();
 
-    // optional string client_notes = 5;
+    // optional .Decimal tips = 5;
     /**
-     * <code>optional string client_notes = 5;</code>
-     */
-    boolean hasClientNotes();
-    /**
-     * <code>optional string client_notes = 5;</code>
-     */
-    java.lang.String getClientNotes();
-    /**
-     * <code>optional string client_notes = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getClientNotesBytes();
-
-    // optional .Decimal tips = 6;
-    /**
-     * <code>optional .Decimal tips = 6;</code>
+     * <code>optional .Decimal tips = 5;</code>
      */
     boolean hasTips();
     /**
-     * <code>optional .Decimal tips = 6;</code>
+     * <code>optional .Decimal tips = 5;</code>
      */
     net.maivic.protocol.Model.Decimal getTips();
     /**
-     * <code>optional .Decimal tips = 6;</code>
+     * <code>optional .Decimal tips = 5;</code>
      */
     net.maivic.protocol.Model.DecimalOrBuilder getTipsOrBuilder();
   }
@@ -7878,9 +7284,9 @@ public final class Model {
               clientId_ = input.readInt64();
               break;
             }
-            case 24: {
+            case 26: {
               bitField0_ |= 0x00000004;
-              deliveryPlaceId_ = input.readInt64();
+              clientNotes_ = input.readBytes();
               break;
             }
             case 34: {
@@ -7889,13 +7295,8 @@ public final class Model {
               break;
             }
             case 42: {
-              bitField0_ |= 0x00000010;
-              clientNotes_ = input.readBytes();
-              break;
-            }
-            case 50: {
               net.maivic.protocol.Model.Decimal.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000020) == 0x00000020)) {
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
                 subBuilder = tips_.toBuilder();
               }
               tips_ = input.readMessage(net.maivic.protocol.Model.Decimal.PARSER, extensionRegistry);
@@ -7903,7 +7304,7 @@ public final class Model {
                 subBuilder.mergeFrom(tips_);
                 tips_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000010;
               break;
             }
           }
@@ -7978,20 +7379,47 @@ public final class Model {
       return clientId_;
     }
 
-    // optional int64 delivery_place_id = 3;
-    public static final int DELIVERY_PLACE_ID_FIELD_NUMBER = 3;
-    private long deliveryPlaceId_;
+    // optional string client_notes = 3;
+    public static final int CLIENT_NOTES_FIELD_NUMBER = 3;
+    private java.lang.Object clientNotes_;
     /**
-     * <code>optional int64 delivery_place_id = 3;</code>
+     * <code>optional string client_notes = 3;</code>
      */
-    public boolean hasDeliveryPlaceId() {
+    public boolean hasClientNotes() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional int64 delivery_place_id = 3;</code>
+     * <code>optional string client_notes = 3;</code>
      */
-    public long getDeliveryPlaceId() {
-      return deliveryPlaceId_;
+    public java.lang.String getClientNotes() {
+      java.lang.Object ref = clientNotes_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          clientNotes_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string client_notes = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientNotesBytes() {
+      java.lang.Object ref = clientNotes_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientNotes_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     // optional string delivery_box_id = 4;
@@ -8037,66 +7465,23 @@ public final class Model {
       }
     }
 
-    // optional string client_notes = 5;
-    public static final int CLIENT_NOTES_FIELD_NUMBER = 5;
-    private java.lang.Object clientNotes_;
+    // optional .Decimal tips = 5;
+    public static final int TIPS_FIELD_NUMBER = 5;
+    private net.maivic.protocol.Model.Decimal tips_;
     /**
-     * <code>optional string client_notes = 5;</code>
+     * <code>optional .Decimal tips = 5;</code>
      */
-    public boolean hasClientNotes() {
+    public boolean hasTips() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional string client_notes = 5;</code>
-     */
-    public java.lang.String getClientNotes() {
-      java.lang.Object ref = clientNotes_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          clientNotes_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string client_notes = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getClientNotesBytes() {
-      java.lang.Object ref = clientNotes_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        clientNotes_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // optional .Decimal tips = 6;
-    public static final int TIPS_FIELD_NUMBER = 6;
-    private net.maivic.protocol.Model.Decimal tips_;
-    /**
-     * <code>optional .Decimal tips = 6;</code>
-     */
-    public boolean hasTips() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>optional .Decimal tips = 6;</code>
+     * <code>optional .Decimal tips = 5;</code>
      */
     public net.maivic.protocol.Model.Decimal getTips() {
       return tips_;
     }
     /**
-     * <code>optional .Decimal tips = 6;</code>
+     * <code>optional .Decimal tips = 5;</code>
      */
     public net.maivic.protocol.Model.DecimalOrBuilder getTipsOrBuilder() {
       return tips_;
@@ -8105,9 +7490,8 @@ public final class Model {
     private void initFields() {
       id_ = 0L;
       clientId_ = 0L;
-      deliveryPlaceId_ = 0L;
-      deliveryBoxId_ = "";
       clientNotes_ = "";
+      deliveryBoxId_ = "";
       tips_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
@@ -8139,16 +7523,13 @@ public final class Model {
         output.writeInt64(2, clientId_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt64(3, deliveryPlaceId_);
+        output.writeBytes(3, getClientNotesBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(4, getDeliveryBoxIdBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(5, getClientNotesBytes());
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeMessage(6, tips_);
+        output.writeMessage(5, tips_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -8169,7 +7550,7 @@ public final class Model {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, deliveryPlaceId_);
+          .computeBytesSize(3, getClientNotesBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
@@ -8177,11 +7558,7 @@ public final class Model {
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getClientNotesBytes());
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, tips_);
+          .computeMessageSize(5, tips_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -8304,18 +7681,16 @@ public final class Model {
         bitField0_ = (bitField0_ & ~0x00000001);
         clientId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
-        deliveryPlaceId_ = 0L;
+        clientNotes_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
         deliveryBoxId_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
-        clientNotes_ = "";
-        bitField0_ = (bitField0_ & ~0x00000010);
         if (tipsBuilder_ == null) {
           tips_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
         } else {
           tipsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -8355,17 +7730,13 @@ public final class Model {
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.deliveryPlaceId_ = deliveryPlaceId_;
+        result.clientNotes_ = clientNotes_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
         result.deliveryBoxId_ = deliveryBoxId_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
-        }
-        result.clientNotes_ = clientNotes_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
         }
         if (tipsBuilder_ == null) {
           result.tips_ = tips_;
@@ -8394,17 +7765,14 @@ public final class Model {
         if (other.hasClientId()) {
           setClientId(other.getClientId());
         }
-        if (other.hasDeliveryPlaceId()) {
-          setDeliveryPlaceId(other.getDeliveryPlaceId());
+        if (other.hasClientNotes()) {
+          bitField0_ |= 0x00000004;
+          clientNotes_ = other.clientNotes_;
+          onChanged();
         }
         if (other.hasDeliveryBoxId()) {
           bitField0_ |= 0x00000008;
           deliveryBoxId_ = other.deliveryBoxId_;
-          onChanged();
-        }
-        if (other.hasClientNotes()) {
-          bitField0_ |= 0x00000010;
-          clientNotes_ = other.clientNotes_;
           onChanged();
         }
         if (other.hasTips()) {
@@ -8513,35 +7881,76 @@ public final class Model {
         return this;
       }
 
-      // optional int64 delivery_place_id = 3;
-      private long deliveryPlaceId_ ;
+      // optional string client_notes = 3;
+      private java.lang.Object clientNotes_ = "";
       /**
-       * <code>optional int64 delivery_place_id = 3;</code>
+       * <code>optional string client_notes = 3;</code>
        */
-      public boolean hasDeliveryPlaceId() {
+      public boolean hasClientNotes() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional int64 delivery_place_id = 3;</code>
+       * <code>optional string client_notes = 3;</code>
        */
-      public long getDeliveryPlaceId() {
-        return deliveryPlaceId_;
+      public java.lang.String getClientNotes() {
+        java.lang.Object ref = clientNotes_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          clientNotes_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional int64 delivery_place_id = 3;</code>
+       * <code>optional string client_notes = 3;</code>
        */
-      public Builder setDeliveryPlaceId(long value) {
-        bitField0_ |= 0x00000004;
-        deliveryPlaceId_ = value;
+      public com.google.protobuf.ByteString
+          getClientNotesBytes() {
+        java.lang.Object ref = clientNotes_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientNotes_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string client_notes = 3;</code>
+       */
+      public Builder setClientNotes(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        clientNotes_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 delivery_place_id = 3;</code>
+       * <code>optional string client_notes = 3;</code>
        */
-      public Builder clearDeliveryPlaceId() {
+      public Builder clearClientNotes() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        deliveryPlaceId_ = 0L;
+        clientNotes_ = getDefaultInstance().getClientNotes();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string client_notes = 3;</code>
+       */
+      public Builder setClientNotesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        clientNotes_ = value;
         onChanged();
         return this;
       }
@@ -8620,92 +8029,18 @@ public final class Model {
         return this;
       }
 
-      // optional string client_notes = 5;
-      private java.lang.Object clientNotes_ = "";
-      /**
-       * <code>optional string client_notes = 5;</code>
-       */
-      public boolean hasClientNotes() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional string client_notes = 5;</code>
-       */
-      public java.lang.String getClientNotes() {
-        java.lang.Object ref = clientNotes_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          clientNotes_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string client_notes = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getClientNotesBytes() {
-        java.lang.Object ref = clientNotes_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          clientNotes_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string client_notes = 5;</code>
-       */
-      public Builder setClientNotes(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        clientNotes_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string client_notes = 5;</code>
-       */
-      public Builder clearClientNotes() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        clientNotes_ = getDefaultInstance().getClientNotes();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string client_notes = 5;</code>
-       */
-      public Builder setClientNotesBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        clientNotes_ = value;
-        onChanged();
-        return this;
-      }
-
-      // optional .Decimal tips = 6;
+      // optional .Decimal tips = 5;
       private net.maivic.protocol.Model.Decimal tips_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           net.maivic.protocol.Model.Decimal, net.maivic.protocol.Model.Decimal.Builder, net.maivic.protocol.Model.DecimalOrBuilder> tipsBuilder_;
       /**
-       * <code>optional .Decimal tips = 6;</code>
+       * <code>optional .Decimal tips = 5;</code>
        */
       public boolean hasTips() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional .Decimal tips = 6;</code>
+       * <code>optional .Decimal tips = 5;</code>
        */
       public net.maivic.protocol.Model.Decimal getTips() {
         if (tipsBuilder_ == null) {
@@ -8715,7 +8050,7 @@ public final class Model {
         }
       }
       /**
-       * <code>optional .Decimal tips = 6;</code>
+       * <code>optional .Decimal tips = 5;</code>
        */
       public Builder setTips(net.maivic.protocol.Model.Decimal value) {
         if (tipsBuilder_ == null) {
@@ -8727,11 +8062,11 @@ public final class Model {
         } else {
           tipsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>optional .Decimal tips = 6;</code>
+       * <code>optional .Decimal tips = 5;</code>
        */
       public Builder setTips(
           net.maivic.protocol.Model.Decimal.Builder builderForValue) {
@@ -8741,15 +8076,15 @@ public final class Model {
         } else {
           tipsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>optional .Decimal tips = 6;</code>
+       * <code>optional .Decimal tips = 5;</code>
        */
       public Builder mergeTips(net.maivic.protocol.Model.Decimal value) {
         if (tipsBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020) &&
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
               tips_ != net.maivic.protocol.Model.Decimal.getDefaultInstance()) {
             tips_ =
               net.maivic.protocol.Model.Decimal.newBuilder(tips_).mergeFrom(value).buildPartial();
@@ -8760,11 +8095,11 @@ public final class Model {
         } else {
           tipsBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>optional .Decimal tips = 6;</code>
+       * <code>optional .Decimal tips = 5;</code>
        */
       public Builder clearTips() {
         if (tipsBuilder_ == null) {
@@ -8773,19 +8108,19 @@ public final class Model {
         } else {
           tipsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
       /**
-       * <code>optional .Decimal tips = 6;</code>
+       * <code>optional .Decimal tips = 5;</code>
        */
       public net.maivic.protocol.Model.Decimal.Builder getTipsBuilder() {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
         return getTipsFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .Decimal tips = 6;</code>
+       * <code>optional .Decimal tips = 5;</code>
        */
       public net.maivic.protocol.Model.DecimalOrBuilder getTipsOrBuilder() {
         if (tipsBuilder_ != null) {
@@ -8795,7 +8130,7 @@ public final class Model {
         }
       }
       /**
-       * <code>optional .Decimal tips = 6;</code>
+       * <code>optional .Decimal tips = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           net.maivic.protocol.Model.Decimal, net.maivic.protocol.Model.Decimal.Builder, net.maivic.protocol.Model.DecimalOrBuilder> 
@@ -10087,123 +9422,78 @@ public final class Model {
     // @@protoc_insertion_point(class_scope:Contact)
   }
 
-  public interface GeometryColumnOrBuilder
+  public interface EventLogOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
-    // required string f_table_catalog = 1;
+    // required int64 id = 1;
     /**
-     * <code>required string f_table_catalog = 1;</code>
+     * <code>required int64 id = 1;</code>
      */
-    boolean hasFTableCatalog();
+    boolean hasId();
     /**
-     * <code>required string f_table_catalog = 1;</code>
+     * <code>required int64 id = 1;</code>
      */
-    java.lang.String getFTableCatalog();
+    long getId();
+
+    // optional string name = 2;
     /**
-     * <code>required string f_table_catalog = 1;</code>
+     * <code>optional string name = 2;</code>
+     */
+    boolean hasName();
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>optional string name = 2;</code>
      */
     com.google.protobuf.ByteString
-        getFTableCatalogBytes();
+        getNameBytes();
 
-    // required string f_table_schema = 2;
+    // optional int64 parent_id = 3;
     /**
-     * <code>required string f_table_schema = 2;</code>
+     * <code>optional int64 parent_id = 3;</code>
      */
-    boolean hasFTableSchema();
+    boolean hasParentId();
     /**
-     * <code>required string f_table_schema = 2;</code>
+     * <code>optional int64 parent_id = 3;</code>
      */
-    java.lang.String getFTableSchema();
+    long getParentId();
+
+    // optional string data = 4;
     /**
-     * <code>required string f_table_schema = 2;</code>
+     * <code>optional string data = 4;</code>
+     */
+    boolean hasData();
+    /**
+     * <code>optional string data = 4;</code>
+     */
+    java.lang.String getData();
+    /**
+     * <code>optional string data = 4;</code>
      */
     com.google.protobuf.ByteString
-        getFTableSchemaBytes();
-
-    // required string f_table_name = 3;
-    /**
-     * <code>required string f_table_name = 3;</code>
-     */
-    boolean hasFTableName();
-    /**
-     * <code>required string f_table_name = 3;</code>
-     */
-    java.lang.String getFTableName();
-    /**
-     * <code>required string f_table_name = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getFTableNameBytes();
-
-    // required string f_geometry_column = 4;
-    /**
-     * <code>required string f_geometry_column = 4;</code>
-     */
-    boolean hasFGeometryColumn();
-    /**
-     * <code>required string f_geometry_column = 4;</code>
-     */
-    java.lang.String getFGeometryColumn();
-    /**
-     * <code>required string f_geometry_column = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getFGeometryColumnBytes();
-
-    // optional int64 coord_dimension = 5;
-    /**
-     * <code>optional int64 coord_dimension = 5;</code>
-     */
-    boolean hasCoordDimension();
-    /**
-     * <code>optional int64 coord_dimension = 5;</code>
-     */
-    long getCoordDimension();
-
-    // optional int64 srid = 6;
-    /**
-     * <code>optional int64 srid = 6;</code>
-     */
-    boolean hasSrid();
-    /**
-     * <code>optional int64 srid = 6;</code>
-     */
-    long getSrid();
-
-    // optional string type = 7;
-    /**
-     * <code>optional string type = 7;</code>
-     */
-    boolean hasType();
-    /**
-     * <code>optional string type = 7;</code>
-     */
-    java.lang.String getType();
-    /**
-     * <code>optional string type = 7;</code>
-     */
-    com.google.protobuf.ByteString
-        getTypeBytes();
+        getDataBytes();
   }
   /**
-   * Protobuf type {@code GeometryColumn}
+   * Protobuf type {@code EventLog}
    */
-  public static final class GeometryColumn extends
+  public static final class EventLog extends
       com.google.protobuf.GeneratedMessage
-      implements GeometryColumnOrBuilder {
-    // Use GeometryColumn.newBuilder() to construct.
-    private GeometryColumn(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      implements EventLogOrBuilder {
+    // Use EventLog.newBuilder() to construct.
+    private EventLog(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private GeometryColumn(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private EventLog(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final GeometryColumn defaultInstance;
-    public static GeometryColumn getDefaultInstance() {
+    private static final EventLog defaultInstance;
+    public static EventLog getDefaultInstance() {
       return defaultInstance;
     }
 
-    public GeometryColumn getDefaultInstanceForType() {
+    public EventLog getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -10213,1236 +9503,7 @@ public final class Model {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private GeometryColumn(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              fTableCatalog_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              fTableSchema_ = input.readBytes();
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
-              fTableName_ = input.readBytes();
-              break;
-            }
-            case 34: {
-              bitField0_ |= 0x00000008;
-              fGeometryColumn_ = input.readBytes();
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000010;
-              coordDimension_ = input.readInt64();
-              break;
-            }
-            case 48: {
-              bitField0_ |= 0x00000020;
-              srid_ = input.readInt64();
-              break;
-            }
-            case 58: {
-              bitField0_ |= 0x00000040;
-              type_ = input.readBytes();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_GeometryColumn_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_GeometryColumn_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.GeometryColumn.class, net.maivic.protocol.Model.GeometryColumn.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<GeometryColumn> PARSER =
-        new com.google.protobuf.AbstractParser<GeometryColumn>() {
-      public GeometryColumn parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GeometryColumn(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<GeometryColumn> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required string f_table_catalog = 1;
-    public static final int F_TABLE_CATALOG_FIELD_NUMBER = 1;
-    private java.lang.Object fTableCatalog_;
-    /**
-     * <code>required string f_table_catalog = 1;</code>
-     */
-    public boolean hasFTableCatalog() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required string f_table_catalog = 1;</code>
-     */
-    public java.lang.String getFTableCatalog() {
-      java.lang.Object ref = fTableCatalog_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          fTableCatalog_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string f_table_catalog = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFTableCatalogBytes() {
-      java.lang.Object ref = fTableCatalog_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fTableCatalog_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // required string f_table_schema = 2;
-    public static final int F_TABLE_SCHEMA_FIELD_NUMBER = 2;
-    private java.lang.Object fTableSchema_;
-    /**
-     * <code>required string f_table_schema = 2;</code>
-     */
-    public boolean hasFTableSchema() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string f_table_schema = 2;</code>
-     */
-    public java.lang.String getFTableSchema() {
-      java.lang.Object ref = fTableSchema_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          fTableSchema_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string f_table_schema = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFTableSchemaBytes() {
-      java.lang.Object ref = fTableSchema_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fTableSchema_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // required string f_table_name = 3;
-    public static final int F_TABLE_NAME_FIELD_NUMBER = 3;
-    private java.lang.Object fTableName_;
-    /**
-     * <code>required string f_table_name = 3;</code>
-     */
-    public boolean hasFTableName() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>required string f_table_name = 3;</code>
-     */
-    public java.lang.String getFTableName() {
-      java.lang.Object ref = fTableName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          fTableName_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string f_table_name = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFTableNameBytes() {
-      java.lang.Object ref = fTableName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fTableName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // required string f_geometry_column = 4;
-    public static final int F_GEOMETRY_COLUMN_FIELD_NUMBER = 4;
-    private java.lang.Object fGeometryColumn_;
-    /**
-     * <code>required string f_geometry_column = 4;</code>
-     */
-    public boolean hasFGeometryColumn() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>required string f_geometry_column = 4;</code>
-     */
-    public java.lang.String getFGeometryColumn() {
-      java.lang.Object ref = fGeometryColumn_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          fGeometryColumn_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string f_geometry_column = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFGeometryColumnBytes() {
-      java.lang.Object ref = fGeometryColumn_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fGeometryColumn_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // optional int64 coord_dimension = 5;
-    public static final int COORD_DIMENSION_FIELD_NUMBER = 5;
-    private long coordDimension_;
-    /**
-     * <code>optional int64 coord_dimension = 5;</code>
-     */
-    public boolean hasCoordDimension() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional int64 coord_dimension = 5;</code>
-     */
-    public long getCoordDimension() {
-      return coordDimension_;
-    }
-
-    // optional int64 srid = 6;
-    public static final int SRID_FIELD_NUMBER = 6;
-    private long srid_;
-    /**
-     * <code>optional int64 srid = 6;</code>
-     */
-    public boolean hasSrid() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>optional int64 srid = 6;</code>
-     */
-    public long getSrid() {
-      return srid_;
-    }
-
-    // optional string type = 7;
-    public static final int TYPE_FIELD_NUMBER = 7;
-    private java.lang.Object type_;
-    /**
-     * <code>optional string type = 7;</code>
-     */
-    public boolean hasType() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    /**
-     * <code>optional string type = 7;</code>
-     */
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          type_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string type = 7;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        type_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private void initFields() {
-      fTableCatalog_ = "";
-      fTableSchema_ = "";
-      fTableName_ = "";
-      fGeometryColumn_ = "";
-      coordDimension_ = 0L;
-      srid_ = 0L;
-      type_ = "";
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasFTableCatalog()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasFTableSchema()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasFTableName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasFGeometryColumn()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getFTableCatalogBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getFTableSchemaBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getFTableNameBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getFGeometryColumnBytes());
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeInt64(5, coordDimension_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeInt64(6, srid_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeBytes(7, getTypeBytes());
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getFTableCatalogBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getFTableSchemaBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getFTableNameBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getFGeometryColumnBytes());
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, coordDimension_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, srid_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, getTypeBytes());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.GeometryColumn parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.GeometryColumn parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.GeometryColumn parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.GeometryColumn parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.GeometryColumn parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.GeometryColumn parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.GeometryColumn parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.GeometryColumn parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.GeometryColumn parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.GeometryColumn parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.GeometryColumn prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code GeometryColumn}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.GeometryColumnOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_GeometryColumn_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_GeometryColumn_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.GeometryColumn.class, net.maivic.protocol.Model.GeometryColumn.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.GeometryColumn.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        fTableCatalog_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        fTableSchema_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        fTableName_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
-        fGeometryColumn_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
-        coordDimension_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        srid_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000020);
-        type_ = "";
-        bitField0_ = (bitField0_ & ~0x00000040);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_GeometryColumn_descriptor;
-      }
-
-      public net.maivic.protocol.Model.GeometryColumn getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.GeometryColumn.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.GeometryColumn build() {
-        net.maivic.protocol.Model.GeometryColumn result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.GeometryColumn buildPartial() {
-        net.maivic.protocol.Model.GeometryColumn result = new net.maivic.protocol.Model.GeometryColumn(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.fTableCatalog_ = fTableCatalog_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.fTableSchema_ = fTableSchema_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.fTableName_ = fTableName_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.fGeometryColumn_ = fGeometryColumn_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.coordDimension_ = coordDimension_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.srid_ = srid_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-          to_bitField0_ |= 0x00000040;
-        }
-        result.type_ = type_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.GeometryColumn) {
-          return mergeFrom((net.maivic.protocol.Model.GeometryColumn)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.GeometryColumn other) {
-        if (other == net.maivic.protocol.Model.GeometryColumn.getDefaultInstance()) return this;
-        if (other.hasFTableCatalog()) {
-          bitField0_ |= 0x00000001;
-          fTableCatalog_ = other.fTableCatalog_;
-          onChanged();
-        }
-        if (other.hasFTableSchema()) {
-          bitField0_ |= 0x00000002;
-          fTableSchema_ = other.fTableSchema_;
-          onChanged();
-        }
-        if (other.hasFTableName()) {
-          bitField0_ |= 0x00000004;
-          fTableName_ = other.fTableName_;
-          onChanged();
-        }
-        if (other.hasFGeometryColumn()) {
-          bitField0_ |= 0x00000008;
-          fGeometryColumn_ = other.fGeometryColumn_;
-          onChanged();
-        }
-        if (other.hasCoordDimension()) {
-          setCoordDimension(other.getCoordDimension());
-        }
-        if (other.hasSrid()) {
-          setSrid(other.getSrid());
-        }
-        if (other.hasType()) {
-          bitField0_ |= 0x00000040;
-          type_ = other.type_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasFTableCatalog()) {
-          
-          return false;
-        }
-        if (!hasFTableSchema()) {
-          
-          return false;
-        }
-        if (!hasFTableName()) {
-          
-          return false;
-        }
-        if (!hasFGeometryColumn()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.GeometryColumn parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.GeometryColumn) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required string f_table_catalog = 1;
-      private java.lang.Object fTableCatalog_ = "";
-      /**
-       * <code>required string f_table_catalog = 1;</code>
-       */
-      public boolean hasFTableCatalog() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required string f_table_catalog = 1;</code>
-       */
-      public java.lang.String getFTableCatalog() {
-        java.lang.Object ref = fTableCatalog_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          fTableCatalog_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string f_table_catalog = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getFTableCatalogBytes() {
-        java.lang.Object ref = fTableCatalog_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fTableCatalog_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string f_table_catalog = 1;</code>
-       */
-      public Builder setFTableCatalog(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        fTableCatalog_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string f_table_catalog = 1;</code>
-       */
-      public Builder clearFTableCatalog() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        fTableCatalog_ = getDefaultInstance().getFTableCatalog();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string f_table_catalog = 1;</code>
-       */
-      public Builder setFTableCatalogBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        fTableCatalog_ = value;
-        onChanged();
-        return this;
-      }
-
-      // required string f_table_schema = 2;
-      private java.lang.Object fTableSchema_ = "";
-      /**
-       * <code>required string f_table_schema = 2;</code>
-       */
-      public boolean hasFTableSchema() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string f_table_schema = 2;</code>
-       */
-      public java.lang.String getFTableSchema() {
-        java.lang.Object ref = fTableSchema_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          fTableSchema_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string f_table_schema = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getFTableSchemaBytes() {
-        java.lang.Object ref = fTableSchema_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fTableSchema_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string f_table_schema = 2;</code>
-       */
-      public Builder setFTableSchema(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        fTableSchema_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string f_table_schema = 2;</code>
-       */
-      public Builder clearFTableSchema() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        fTableSchema_ = getDefaultInstance().getFTableSchema();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string f_table_schema = 2;</code>
-       */
-      public Builder setFTableSchemaBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        fTableSchema_ = value;
-        onChanged();
-        return this;
-      }
-
-      // required string f_table_name = 3;
-      private java.lang.Object fTableName_ = "";
-      /**
-       * <code>required string f_table_name = 3;</code>
-       */
-      public boolean hasFTableName() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>required string f_table_name = 3;</code>
-       */
-      public java.lang.String getFTableName() {
-        java.lang.Object ref = fTableName_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          fTableName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string f_table_name = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getFTableNameBytes() {
-        java.lang.Object ref = fTableName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fTableName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string f_table_name = 3;</code>
-       */
-      public Builder setFTableName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        fTableName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string f_table_name = 3;</code>
-       */
-      public Builder clearFTableName() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        fTableName_ = getDefaultInstance().getFTableName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string f_table_name = 3;</code>
-       */
-      public Builder setFTableNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        fTableName_ = value;
-        onChanged();
-        return this;
-      }
-
-      // required string f_geometry_column = 4;
-      private java.lang.Object fGeometryColumn_ = "";
-      /**
-       * <code>required string f_geometry_column = 4;</code>
-       */
-      public boolean hasFGeometryColumn() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>required string f_geometry_column = 4;</code>
-       */
-      public java.lang.String getFGeometryColumn() {
-        java.lang.Object ref = fGeometryColumn_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          fGeometryColumn_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string f_geometry_column = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getFGeometryColumnBytes() {
-        java.lang.Object ref = fGeometryColumn_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fGeometryColumn_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string f_geometry_column = 4;</code>
-       */
-      public Builder setFGeometryColumn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        fGeometryColumn_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string f_geometry_column = 4;</code>
-       */
-      public Builder clearFGeometryColumn() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        fGeometryColumn_ = getDefaultInstance().getFGeometryColumn();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string f_geometry_column = 4;</code>
-       */
-      public Builder setFGeometryColumnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        fGeometryColumn_ = value;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 coord_dimension = 5;
-      private long coordDimension_ ;
-      /**
-       * <code>optional int64 coord_dimension = 5;</code>
-       */
-      public boolean hasCoordDimension() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional int64 coord_dimension = 5;</code>
-       */
-      public long getCoordDimension() {
-        return coordDimension_;
-      }
-      /**
-       * <code>optional int64 coord_dimension = 5;</code>
-       */
-      public Builder setCoordDimension(long value) {
-        bitField0_ |= 0x00000010;
-        coordDimension_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 coord_dimension = 5;</code>
-       */
-      public Builder clearCoordDimension() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        coordDimension_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 srid = 6;
-      private long srid_ ;
-      /**
-       * <code>optional int64 srid = 6;</code>
-       */
-      public boolean hasSrid() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <code>optional int64 srid = 6;</code>
-       */
-      public long getSrid() {
-        return srid_;
-      }
-      /**
-       * <code>optional int64 srid = 6;</code>
-       */
-      public Builder setSrid(long value) {
-        bitField0_ |= 0x00000020;
-        srid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 srid = 6;</code>
-       */
-      public Builder clearSrid() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        srid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string type = 7;
-      private java.lang.Object type_ = "";
-      /**
-       * <code>optional string type = 7;</code>
-       */
-      public boolean hasType() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
-      }
-      /**
-       * <code>optional string type = 7;</code>
-       */
-      public java.lang.String getType() {
-        java.lang.Object ref = type_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          type_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string type = 7;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTypeBytes() {
-        java.lang.Object ref = type_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          type_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string type = 7;</code>
-       */
-      public Builder setType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000040;
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string type = 7;</code>
-       */
-      public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        type_ = getDefaultInstance().getType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string type = 7;</code>
-       */
-      public Builder setTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000040;
-        type_ = value;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:GeometryColumn)
-    }
-
-    static {
-      defaultInstance = new GeometryColumn(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:GeometryColumn)
-  }
-
-  public interface MeetingsToContactOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 contact_id = 1;
-    /**
-     * <code>required int64 contact_id = 1;</code>
-     */
-    boolean hasContactId();
-    /**
-     * <code>required int64 contact_id = 1;</code>
-     */
-    long getContactId();
-
-    // required string role = 2;
-    /**
-     * <code>required string role = 2;</code>
-     */
-    boolean hasRole();
-    /**
-     * <code>required string role = 2;</code>
-     */
-    java.lang.String getRole();
-    /**
-     * <code>required string role = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getRoleBytes();
-
-    // required int64 meeting_id = 3;
-    /**
-     * <code>required int64 meeting_id = 3;</code>
-     */
-    boolean hasMeetingId();
-    /**
-     * <code>required int64 meeting_id = 3;</code>
-     */
-    long getMeetingId();
-  }
-  /**
-   * Protobuf type {@code MeetingsToContact}
-   */
-  public static final class MeetingsToContact extends
-      com.google.protobuf.GeneratedMessage
-      implements MeetingsToContactOrBuilder {
-    // Use MeetingsToContact.newBuilder() to construct.
-    private MeetingsToContact(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private MeetingsToContact(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final MeetingsToContact defaultInstance;
-    public static MeetingsToContact getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public MeetingsToContact getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private MeetingsToContact(
+    private EventLog(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -11467,17 +9528,22 @@ public final class Model {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              contactId_ = input.readInt64();
+              id_ = input.readInt64();
               break;
             }
             case 18: {
               bitField0_ |= 0x00000002;
-              role_ = input.readBytes();
+              name_ = input.readBytes();
               break;
             }
             case 24: {
               bitField0_ |= 0x00000004;
-              meetingId_ = input.readInt64();
+              parentId_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              data_ = input.readBytes();
               break;
             }
           }
@@ -11494,62 +9560,62 @@ public final class Model {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_MeetingsToContact_descriptor;
+      return net.maivic.protocol.Model.internal_static_EventLog_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_MeetingsToContact_fieldAccessorTable
+      return net.maivic.protocol.Model.internal_static_EventLog_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.MeetingsToContact.class, net.maivic.protocol.Model.MeetingsToContact.Builder.class);
+              net.maivic.protocol.Model.EventLog.class, net.maivic.protocol.Model.EventLog.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<MeetingsToContact> PARSER =
-        new com.google.protobuf.AbstractParser<MeetingsToContact>() {
-      public MeetingsToContact parsePartialFrom(
+    public static com.google.protobuf.Parser<EventLog> PARSER =
+        new com.google.protobuf.AbstractParser<EventLog>() {
+      public EventLog parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MeetingsToContact(input, extensionRegistry);
+        return new EventLog(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MeetingsToContact> getParserForType() {
+    public com.google.protobuf.Parser<EventLog> getParserForType() {
       return PARSER;
     }
 
     private int bitField0_;
-    // required int64 contact_id = 1;
-    public static final int CONTACT_ID_FIELD_NUMBER = 1;
-    private long contactId_;
+    // required int64 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
     /**
-     * <code>required int64 contact_id = 1;</code>
+     * <code>required int64 id = 1;</code>
      */
-    public boolean hasContactId() {
+    public boolean hasId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required int64 contact_id = 1;</code>
+     * <code>required int64 id = 1;</code>
      */
-    public long getContactId() {
-      return contactId_;
+    public long getId() {
+      return id_;
     }
 
-    // required string role = 2;
-    public static final int ROLE_FIELD_NUMBER = 2;
-    private java.lang.Object role_;
+    // optional string name = 2;
+    public static final int NAME_FIELD_NUMBER = 2;
+    private java.lang.Object name_;
     /**
-     * <code>required string role = 2;</code>
+     * <code>optional string name = 2;</code>
      */
-    public boolean hasRole() {
+    public boolean hasName() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string role = 2;</code>
+     * <code>optional string name = 2;</code>
      */
-    public java.lang.String getRole() {
-      java.lang.Object ref = role_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -11557,63 +9623,99 @@ public final class Model {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          role_ = s;
+          name_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string role = 2;</code>
+     * <code>optional string name = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getRoleBytes() {
-      java.lang.Object ref = role_;
+        getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        role_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    // required int64 meeting_id = 3;
-    public static final int MEETING_ID_FIELD_NUMBER = 3;
-    private long meetingId_;
+    // optional int64 parent_id = 3;
+    public static final int PARENT_ID_FIELD_NUMBER = 3;
+    private long parentId_;
     /**
-     * <code>required int64 meeting_id = 3;</code>
+     * <code>optional int64 parent_id = 3;</code>
      */
-    public boolean hasMeetingId() {
+    public boolean hasParentId() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required int64 meeting_id = 3;</code>
+     * <code>optional int64 parent_id = 3;</code>
      */
-    public long getMeetingId() {
-      return meetingId_;
+    public long getParentId() {
+      return parentId_;
+    }
+
+    // optional string data = 4;
+    public static final int DATA_FIELD_NUMBER = 4;
+    private java.lang.Object data_;
+    /**
+     * <code>optional string data = 4;</code>
+     */
+    public boolean hasData() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string data = 4;</code>
+     */
+    public java.lang.String getData() {
+      java.lang.Object ref = data_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          data_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string data = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDataBytes() {
+      java.lang.Object ref = data_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        data_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private void initFields() {
-      contactId_ = 0L;
-      role_ = "";
-      meetingId_ = 0L;
+      id_ = 0L;
+      name_ = "";
+      parentId_ = 0L;
+      data_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
 
-      if (!hasContactId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasRole()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasMeetingId()) {
+      if (!hasId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -11625,13 +9727,16 @@ public final class Model {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, contactId_);
+        output.writeInt64(1, id_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getRoleBytes());
+        output.writeBytes(2, getNameBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt64(3, meetingId_);
+        output.writeInt64(3, parentId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getDataBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -11644,15 +9749,19 @@ public final class Model {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, contactId_);
+          .computeInt64Size(1, id_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getRoleBytes());
+          .computeBytesSize(2, getNameBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, meetingId_);
+          .computeInt64Size(3, parentId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getDataBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -11666,53 +9775,53 @@ public final class Model {
       return super.writeReplace();
     }
 
-    public static net.maivic.protocol.Model.MeetingsToContact parseFrom(
+    public static net.maivic.protocol.Model.EventLog parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static net.maivic.protocol.Model.MeetingsToContact parseFrom(
+    public static net.maivic.protocol.Model.EventLog parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.MeetingsToContact parseFrom(byte[] data)
+    public static net.maivic.protocol.Model.EventLog parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static net.maivic.protocol.Model.MeetingsToContact parseFrom(
+    public static net.maivic.protocol.Model.EventLog parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.MeetingsToContact parseFrom(java.io.InputStream input)
+    public static net.maivic.protocol.Model.EventLog parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static net.maivic.protocol.Model.MeetingsToContact parseFrom(
+    public static net.maivic.protocol.Model.EventLog parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.MeetingsToContact parseDelimitedFrom(java.io.InputStream input)
+    public static net.maivic.protocol.Model.EventLog parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static net.maivic.protocol.Model.MeetingsToContact parseDelimitedFrom(
+    public static net.maivic.protocol.Model.EventLog parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.MeetingsToContact parseFrom(
+    public static net.maivic.protocol.Model.EventLog parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static net.maivic.protocol.Model.MeetingsToContact parseFrom(
+    public static net.maivic.protocol.Model.EventLog parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11721,7 +9830,7 @@ public final class Model {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.MeetingsToContact prototype) {
+    public static Builder newBuilder(net.maivic.protocol.Model.EventLog prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -11733,24 +9842,24 @@ public final class Model {
       return builder;
     }
     /**
-     * Protobuf type {@code MeetingsToContact}
+     * Protobuf type {@code EventLog}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.MeetingsToContactOrBuilder {
+       implements net.maivic.protocol.Model.EventLogOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_MeetingsToContact_descriptor;
+        return net.maivic.protocol.Model.internal_static_EventLog_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_MeetingsToContact_fieldAccessorTable
+        return net.maivic.protocol.Model.internal_static_EventLog_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.MeetingsToContact.class, net.maivic.protocol.Model.MeetingsToContact.Builder.class);
+                net.maivic.protocol.Model.EventLog.class, net.maivic.protocol.Model.EventLog.Builder.class);
       }
 
-      // Construct using net.maivic.protocol.Model.MeetingsToContact.newBuilder()
+      // Construct using net.maivic.protocol.Model.EventLog.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -11770,12 +9879,14 @@ public final class Model {
 
       public Builder clear() {
         super.clear();
-        contactId_ = 0L;
+        id_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
-        role_ = "";
+        name_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        meetingId_ = 0L;
+        parentId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
+        data_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -11785,78 +9896,79 @@ public final class Model {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_MeetingsToContact_descriptor;
+        return net.maivic.protocol.Model.internal_static_EventLog_descriptor;
       }
 
-      public net.maivic.protocol.Model.MeetingsToContact getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.MeetingsToContact.getDefaultInstance();
+      public net.maivic.protocol.Model.EventLog getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.EventLog.getDefaultInstance();
       }
 
-      public net.maivic.protocol.Model.MeetingsToContact build() {
-        net.maivic.protocol.Model.MeetingsToContact result = buildPartial();
+      public net.maivic.protocol.Model.EventLog build() {
+        net.maivic.protocol.Model.EventLog result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public net.maivic.protocol.Model.MeetingsToContact buildPartial() {
-        net.maivic.protocol.Model.MeetingsToContact result = new net.maivic.protocol.Model.MeetingsToContact(this);
+      public net.maivic.protocol.Model.EventLog buildPartial() {
+        net.maivic.protocol.Model.EventLog result = new net.maivic.protocol.Model.EventLog(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.contactId_ = contactId_;
+        result.id_ = id_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.role_ = role_;
+        result.name_ = name_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.meetingId_ = meetingId_;
+        result.parentId_ = parentId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.data_ = data_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.MeetingsToContact) {
-          return mergeFrom((net.maivic.protocol.Model.MeetingsToContact)other);
+        if (other instanceof net.maivic.protocol.Model.EventLog) {
+          return mergeFrom((net.maivic.protocol.Model.EventLog)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(net.maivic.protocol.Model.MeetingsToContact other) {
-        if (other == net.maivic.protocol.Model.MeetingsToContact.getDefaultInstance()) return this;
-        if (other.hasContactId()) {
-          setContactId(other.getContactId());
+      public Builder mergeFrom(net.maivic.protocol.Model.EventLog other) {
+        if (other == net.maivic.protocol.Model.EventLog.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
         }
-        if (other.hasRole()) {
+        if (other.hasName()) {
           bitField0_ |= 0x00000002;
-          role_ = other.role_;
+          name_ = other.name_;
           onChanged();
         }
-        if (other.hasMeetingId()) {
-          setMeetingId(other.getMeetingId());
+        if (other.hasParentId()) {
+          setParentId(other.getParentId());
+        }
+        if (other.hasData()) {
+          bitField0_ |= 0x00000008;
+          data_ = other.data_;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
-        if (!hasContactId()) {
-          
-          return false;
-        }
-        if (!hasRole()) {
-          
-          return false;
-        }
-        if (!hasMeetingId()) {
+        if (!hasId()) {
           
           return false;
         }
@@ -11867,11 +9979,11 @@ public final class Model {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        net.maivic.protocol.Model.MeetingsToContact parsedMessage = null;
+        net.maivic.protocol.Model.EventLog parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.MeetingsToContact) e.getUnfinishedMessage();
+          parsedMessage = (net.maivic.protocol.Model.EventLog) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -11882,155 +9994,1640 @@ public final class Model {
       }
       private int bitField0_;
 
-      // required int64 contact_id = 1;
-      private long contactId_ ;
+      // required int64 id = 1;
+      private long id_ ;
       /**
-       * <code>required int64 contact_id = 1;</code>
+       * <code>required int64 id = 1;</code>
        */
-      public boolean hasContactId() {
+      public boolean hasId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required int64 contact_id = 1;</code>
+       * <code>required int64 id = 1;</code>
        */
-      public long getContactId() {
-        return contactId_;
+      public long getId() {
+        return id_;
       }
       /**
-       * <code>required int64 contact_id = 1;</code>
+       * <code>required int64 id = 1;</code>
        */
-      public Builder setContactId(long value) {
+      public Builder setId(long value) {
         bitField0_ |= 0x00000001;
-        contactId_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int64 contact_id = 1;</code>
+       * <code>required int64 id = 1;</code>
        */
-      public Builder clearContactId() {
+      public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        contactId_ = 0L;
+        id_ = 0L;
         onChanged();
         return this;
       }
 
-      // required string role = 2;
-      private java.lang.Object role_ = "";
+      // optional string name = 2;
+      private java.lang.Object name_ = "";
       /**
-       * <code>required string role = 2;</code>
+       * <code>optional string name = 2;</code>
        */
-      public boolean hasRole() {
+      public boolean hasName() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string role = 2;</code>
+       * <code>optional string name = 2;</code>
        */
-      public java.lang.String getRole() {
-        java.lang.Object ref = role_;
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
           java.lang.String s = ((com.google.protobuf.ByteString) ref)
               .toStringUtf8();
-          role_ = s;
+          name_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>required string role = 2;</code>
+       * <code>optional string name = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getRoleBytes() {
-        java.lang.Object ref = role_;
+          getNameBytes() {
+        java.lang.Object ref = name_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          role_ = b;
+          name_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string role = 2;</code>
+       * <code>optional string name = 2;</code>
        */
-      public Builder setRole(
+      public Builder setName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        role_ = value;
+        name_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string role = 2;</code>
+       * <code>optional string name = 2;</code>
        */
-      public Builder clearRole() {
+      public Builder clearName() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        role_ = getDefaultInstance().getRole();
+        name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
       /**
-       * <code>required string role = 2;</code>
+       * <code>optional string name = 2;</code>
        */
-      public Builder setRoleBytes(
+      public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        role_ = value;
+        name_ = value;
         onChanged();
         return this;
       }
 
-      // required int64 meeting_id = 3;
-      private long meetingId_ ;
+      // optional int64 parent_id = 3;
+      private long parentId_ ;
       /**
-       * <code>required int64 meeting_id = 3;</code>
+       * <code>optional int64 parent_id = 3;</code>
        */
-      public boolean hasMeetingId() {
+      public boolean hasParentId() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required int64 meeting_id = 3;</code>
+       * <code>optional int64 parent_id = 3;</code>
        */
-      public long getMeetingId() {
-        return meetingId_;
+      public long getParentId() {
+        return parentId_;
       }
       /**
-       * <code>required int64 meeting_id = 3;</code>
+       * <code>optional int64 parent_id = 3;</code>
        */
-      public Builder setMeetingId(long value) {
+      public Builder setParentId(long value) {
         bitField0_ |= 0x00000004;
-        meetingId_ = value;
+        parentId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int64 meeting_id = 3;</code>
+       * <code>optional int64 parent_id = 3;</code>
        */
-      public Builder clearMeetingId() {
+      public Builder clearParentId() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        meetingId_ = 0L;
+        parentId_ = 0L;
         onChanged();
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:MeetingsToContact)
+      // optional string data = 4;
+      private java.lang.Object data_ = "";
+      /**
+       * <code>optional string data = 4;</code>
+       */
+      public boolean hasData() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string data = 4;</code>
+       */
+      public java.lang.String getData() {
+        java.lang.Object ref = data_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          data_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string data = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDataBytes() {
+        java.lang.Object ref = data_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          data_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string data = 4;</code>
+       */
+      public Builder setData(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        data_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string data = 4;</code>
+       */
+      public Builder clearData() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        data_ = getDefaultInstance().getData();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string data = 4;</code>
+       */
+      public Builder setDataBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        data_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:EventLog)
     }
 
     static {
-      defaultInstance = new MeetingsToContact(true);
+      defaultInstance = new EventLog(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:MeetingsToContact)
+    // @@protoc_insertion_point(class_scope:EventLog)
+  }
+
+  public interface OrderEntryOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int64 id = 1;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    long getId();
+
+    // optional int64 order_id = 2;
+    /**
+     * <code>optional int64 order_id = 2;</code>
+     */
+    boolean hasOrderId();
+    /**
+     * <code>optional int64 order_id = 2;</code>
+     */
+    long getOrderId();
+
+    // optional int64 offer_id = 3;
+    /**
+     * <code>optional int64 offer_id = 3;</code>
+     */
+    boolean hasOfferId();
+    /**
+     * <code>optional int64 offer_id = 3;</code>
+     */
+    long getOfferId();
+
+    // optional .Decimal qty = 4;
+    /**
+     * <code>optional .Decimal qty = 4;</code>
+     */
+    boolean hasQty();
+    /**
+     * <code>optional .Decimal qty = 4;</code>
+     */
+    net.maivic.protocol.Model.Decimal getQty();
+    /**
+     * <code>optional .Decimal qty = 4;</code>
+     */
+    net.maivic.protocol.Model.DecimalOrBuilder getQtyOrBuilder();
+  }
+  /**
+   * Protobuf type {@code OrderEntry}
+   */
+  public static final class OrderEntry extends
+      com.google.protobuf.GeneratedMessage
+      implements OrderEntryOrBuilder {
+    // Use OrderEntry.newBuilder() to construct.
+    private OrderEntry(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private OrderEntry(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final OrderEntry defaultInstance;
+    public static OrderEntry getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public OrderEntry getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private OrderEntry(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt64();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              orderId_ = input.readInt64();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              offerId_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              net.maivic.protocol.Model.Decimal.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                subBuilder = qty_.toBuilder();
+              }
+              qty_ = input.readMessage(net.maivic.protocol.Model.Decimal.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(qty_);
+                qty_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000008;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.maivic.protocol.Model.internal_static_OrderEntry_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.maivic.protocol.Model.internal_static_OrderEntry_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.maivic.protocol.Model.OrderEntry.class, net.maivic.protocol.Model.OrderEntry.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<OrderEntry> PARSER =
+        new com.google.protobuf.AbstractParser<OrderEntry>() {
+      public OrderEntry parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new OrderEntry(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OrderEntry> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int64 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public long getId() {
+      return id_;
+    }
+
+    // optional int64 order_id = 2;
+    public static final int ORDER_ID_FIELD_NUMBER = 2;
+    private long orderId_;
+    /**
+     * <code>optional int64 order_id = 2;</code>
+     */
+    public boolean hasOrderId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int64 order_id = 2;</code>
+     */
+    public long getOrderId() {
+      return orderId_;
+    }
+
+    // optional int64 offer_id = 3;
+    public static final int OFFER_ID_FIELD_NUMBER = 3;
+    private long offerId_;
+    /**
+     * <code>optional int64 offer_id = 3;</code>
+     */
+    public boolean hasOfferId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int64 offer_id = 3;</code>
+     */
+    public long getOfferId() {
+      return offerId_;
+    }
+
+    // optional .Decimal qty = 4;
+    public static final int QTY_FIELD_NUMBER = 4;
+    private net.maivic.protocol.Model.Decimal qty_;
+    /**
+     * <code>optional .Decimal qty = 4;</code>
+     */
+    public boolean hasQty() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .Decimal qty = 4;</code>
+     */
+    public net.maivic.protocol.Model.Decimal getQty() {
+      return qty_;
+    }
+    /**
+     * <code>optional .Decimal qty = 4;</code>
+     */
+    public net.maivic.protocol.Model.DecimalOrBuilder getQtyOrBuilder() {
+      return qty_;
+    }
+
+    private void initFields() {
+      id_ = 0L;
+      orderId_ = 0L;
+      offerId_ = 0L;
+      qty_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (hasQty()) {
+        if (!getQty().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt64(2, orderId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(3, offerId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeMessage(4, qty_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, orderId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, offerId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, qty_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static net.maivic.protocol.Model.OrderEntry parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.OrderEntry parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.OrderEntry parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.OrderEntry parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.OrderEntry parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.OrderEntry parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.OrderEntry parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static net.maivic.protocol.Model.OrderEntry parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.OrderEntry parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.OrderEntry parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(net.maivic.protocol.Model.OrderEntry prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code OrderEntry}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements net.maivic.protocol.Model.OrderEntryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.maivic.protocol.Model.internal_static_OrderEntry_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.maivic.protocol.Model.internal_static_OrderEntry_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.maivic.protocol.Model.OrderEntry.class, net.maivic.protocol.Model.OrderEntry.Builder.class);
+      }
+
+      // Construct using net.maivic.protocol.Model.OrderEntry.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getQtyFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        orderId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        offerId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        if (qtyBuilder_ == null) {
+          qty_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
+        } else {
+          qtyBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.maivic.protocol.Model.internal_static_OrderEntry_descriptor;
+      }
+
+      public net.maivic.protocol.Model.OrderEntry getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.OrderEntry.getDefaultInstance();
+      }
+
+      public net.maivic.protocol.Model.OrderEntry build() {
+        net.maivic.protocol.Model.OrderEntry result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.maivic.protocol.Model.OrderEntry buildPartial() {
+        net.maivic.protocol.Model.OrderEntry result = new net.maivic.protocol.Model.OrderEntry(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.orderId_ = orderId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.offerId_ = offerId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        if (qtyBuilder_ == null) {
+          result.qty_ = qty_;
+        } else {
+          result.qty_ = qtyBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.maivic.protocol.Model.OrderEntry) {
+          return mergeFrom((net.maivic.protocol.Model.OrderEntry)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.maivic.protocol.Model.OrderEntry other) {
+        if (other == net.maivic.protocol.Model.OrderEntry.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasOrderId()) {
+          setOrderId(other.getOrderId());
+        }
+        if (other.hasOfferId()) {
+          setOfferId(other.getOfferId());
+        }
+        if (other.hasQty()) {
+          mergeQty(other.getQty());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasId()) {
+          
+          return false;
+        }
+        if (hasQty()) {
+          if (!getQty().isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.maivic.protocol.Model.OrderEntry parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.maivic.protocol.Model.OrderEntry) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int64 id = 1;
+      private long id_ ;
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder setId(long value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 order_id = 2;
+      private long orderId_ ;
+      /**
+       * <code>optional int64 order_id = 2;</code>
+       */
+      public boolean hasOrderId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int64 order_id = 2;</code>
+       */
+      public long getOrderId() {
+        return orderId_;
+      }
+      /**
+       * <code>optional int64 order_id = 2;</code>
+       */
+      public Builder setOrderId(long value) {
+        bitField0_ |= 0x00000002;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 order_id = 2;</code>
+       */
+      public Builder clearOrderId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        orderId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 offer_id = 3;
+      private long offerId_ ;
+      /**
+       * <code>optional int64 offer_id = 3;</code>
+       */
+      public boolean hasOfferId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int64 offer_id = 3;</code>
+       */
+      public long getOfferId() {
+        return offerId_;
+      }
+      /**
+       * <code>optional int64 offer_id = 3;</code>
+       */
+      public Builder setOfferId(long value) {
+        bitField0_ |= 0x00000004;
+        offerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 offer_id = 3;</code>
+       */
+      public Builder clearOfferId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        offerId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional .Decimal qty = 4;
+      private net.maivic.protocol.Model.Decimal qty_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          net.maivic.protocol.Model.Decimal, net.maivic.protocol.Model.Decimal.Builder, net.maivic.protocol.Model.DecimalOrBuilder> qtyBuilder_;
+      /**
+       * <code>optional .Decimal qty = 4;</code>
+       */
+      public boolean hasQty() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional .Decimal qty = 4;</code>
+       */
+      public net.maivic.protocol.Model.Decimal getQty() {
+        if (qtyBuilder_ == null) {
+          return qty_;
+        } else {
+          return qtyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Decimal qty = 4;</code>
+       */
+      public Builder setQty(net.maivic.protocol.Model.Decimal value) {
+        if (qtyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          qty_ = value;
+          onChanged();
+        } else {
+          qtyBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .Decimal qty = 4;</code>
+       */
+      public Builder setQty(
+          net.maivic.protocol.Model.Decimal.Builder builderForValue) {
+        if (qtyBuilder_ == null) {
+          qty_ = builderForValue.build();
+          onChanged();
+        } else {
+          qtyBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .Decimal qty = 4;</code>
+       */
+      public Builder mergeQty(net.maivic.protocol.Model.Decimal value) {
+        if (qtyBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008) &&
+              qty_ != net.maivic.protocol.Model.Decimal.getDefaultInstance()) {
+            qty_ =
+              net.maivic.protocol.Model.Decimal.newBuilder(qty_).mergeFrom(value).buildPartial();
+          } else {
+            qty_ = value;
+          }
+          onChanged();
+        } else {
+          qtyBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .Decimal qty = 4;</code>
+       */
+      public Builder clearQty() {
+        if (qtyBuilder_ == null) {
+          qty_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
+          onChanged();
+        } else {
+          qtyBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+      /**
+       * <code>optional .Decimal qty = 4;</code>
+       */
+      public net.maivic.protocol.Model.Decimal.Builder getQtyBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getQtyFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Decimal qty = 4;</code>
+       */
+      public net.maivic.protocol.Model.DecimalOrBuilder getQtyOrBuilder() {
+        if (qtyBuilder_ != null) {
+          return qtyBuilder_.getMessageOrBuilder();
+        } else {
+          return qty_;
+        }
+      }
+      /**
+       * <code>optional .Decimal qty = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          net.maivic.protocol.Model.Decimal, net.maivic.protocol.Model.Decimal.Builder, net.maivic.protocol.Model.DecimalOrBuilder> 
+          getQtyFieldBuilder() {
+        if (qtyBuilder_ == null) {
+          qtyBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              net.maivic.protocol.Model.Decimal, net.maivic.protocol.Model.Decimal.Builder, net.maivic.protocol.Model.DecimalOrBuilder>(
+                  qty_,
+                  getParentForChildren(),
+                  isClean());
+          qty_ = null;
+        }
+        return qtyBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:OrderEntry)
+    }
+
+    static {
+      defaultInstance = new OrderEntry(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:OrderEntry)
+  }
+
+  public interface OfferCatalogOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int64 id = 1;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    long getId();
+
+    // optional string name = 2;
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    boolean hasName();
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    // optional int64 supplier_id = 3;
+    /**
+     * <code>optional int64 supplier_id = 3;</code>
+     */
+    boolean hasSupplierId();
+    /**
+     * <code>optional int64 supplier_id = 3;</code>
+     */
+    long getSupplierId();
+  }
+  /**
+   * Protobuf type {@code OfferCatalog}
+   */
+  public static final class OfferCatalog extends
+      com.google.protobuf.GeneratedMessage
+      implements OfferCatalogOrBuilder {
+    // Use OfferCatalog.newBuilder() to construct.
+    private OfferCatalog(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private OfferCatalog(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final OfferCatalog defaultInstance;
+    public static OfferCatalog getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public OfferCatalog getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private OfferCatalog(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              name_ = input.readBytes();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              supplierId_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.maivic.protocol.Model.internal_static_OfferCatalog_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.maivic.protocol.Model.internal_static_OfferCatalog_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.maivic.protocol.Model.OfferCatalog.class, net.maivic.protocol.Model.OfferCatalog.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<OfferCatalog> PARSER =
+        new com.google.protobuf.AbstractParser<OfferCatalog>() {
+      public OfferCatalog parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new OfferCatalog(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OfferCatalog> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int64 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public long getId() {
+      return id_;
+    }
+
+    // optional string name = 2;
+    public static final int NAME_FIELD_NUMBER = 2;
+    private java.lang.Object name_;
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int64 supplier_id = 3;
+    public static final int SUPPLIER_ID_FIELD_NUMBER = 3;
+    private long supplierId_;
+    /**
+     * <code>optional int64 supplier_id = 3;</code>
+     */
+    public boolean hasSupplierId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int64 supplier_id = 3;</code>
+     */
+    public long getSupplierId() {
+      return supplierId_;
+    }
+
+    private void initFields() {
+      id_ = 0L;
+      name_ = "";
+      supplierId_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(3, supplierId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, supplierId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static net.maivic.protocol.Model.OfferCatalog parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.OfferCatalog parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.OfferCatalog parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.OfferCatalog parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.OfferCatalog parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.OfferCatalog parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.OfferCatalog parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static net.maivic.protocol.Model.OfferCatalog parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.OfferCatalog parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.OfferCatalog parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(net.maivic.protocol.Model.OfferCatalog prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code OfferCatalog}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements net.maivic.protocol.Model.OfferCatalogOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.maivic.protocol.Model.internal_static_OfferCatalog_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.maivic.protocol.Model.internal_static_OfferCatalog_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.maivic.protocol.Model.OfferCatalog.class, net.maivic.protocol.Model.OfferCatalog.Builder.class);
+      }
+
+      // Construct using net.maivic.protocol.Model.OfferCatalog.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        supplierId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.maivic.protocol.Model.internal_static_OfferCatalog_descriptor;
+      }
+
+      public net.maivic.protocol.Model.OfferCatalog getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.OfferCatalog.getDefaultInstance();
+      }
+
+      public net.maivic.protocol.Model.OfferCatalog build() {
+        net.maivic.protocol.Model.OfferCatalog result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.maivic.protocol.Model.OfferCatalog buildPartial() {
+        net.maivic.protocol.Model.OfferCatalog result = new net.maivic.protocol.Model.OfferCatalog(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.name_ = name_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.supplierId_ = supplierId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.maivic.protocol.Model.OfferCatalog) {
+          return mergeFrom((net.maivic.protocol.Model.OfferCatalog)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.maivic.protocol.Model.OfferCatalog other) {
+        if (other == net.maivic.protocol.Model.OfferCatalog.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasName()) {
+          bitField0_ |= 0x00000002;
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.hasSupplierId()) {
+          setSupplierId(other.getSupplierId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.maivic.protocol.Model.OfferCatalog parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.maivic.protocol.Model.OfferCatalog) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int64 id = 1;
+      private long id_ ;
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder setId(long value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional string name = 2;
+      private java.lang.Object name_ = "";
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 supplier_id = 3;
+      private long supplierId_ ;
+      /**
+       * <code>optional int64 supplier_id = 3;</code>
+       */
+      public boolean hasSupplierId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int64 supplier_id = 3;</code>
+       */
+      public long getSupplierId() {
+        return supplierId_;
+      }
+      /**
+       * <code>optional int64 supplier_id = 3;</code>
+       */
+      public Builder setSupplierId(long value) {
+        bitField0_ |= 0x00000004;
+        supplierId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 supplier_id = 3;</code>
+       */
+      public Builder clearSupplierId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        supplierId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:OfferCatalog)
+    }
+
+    static {
+      defaultInstance = new OfferCatalog(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:OfferCatalog)
   }
 
   public interface OrderEntryOptionOrBuilder
@@ -12680,73 +12277,63 @@ public final class Model {
     // @@protoc_insertion_point(class_scope:OrderEntryOption)
   }
 
-  public interface MenuOrBuilder
+  public interface InvoicesToContactOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
-    // required int64 id = 1;
+    // required int64 contact_id = 1;
     /**
-     * <code>required int64 id = 1;</code>
+     * <code>required int64 contact_id = 1;</code>
      */
-    boolean hasId();
+    boolean hasContactId();
     /**
-     * <code>required int64 id = 1;</code>
+     * <code>required int64 contact_id = 1;</code>
      */
-    long getId();
+    long getContactId();
 
-    // optional string recurrence = 2;
+    // required int64 invoice_id = 2;
     /**
-     * <code>optional string recurrence = 2;</code>
+     * <code>required int64 invoice_id = 2;</code>
      */
-    boolean hasRecurrence();
+    boolean hasInvoiceId();
     /**
-     * <code>optional string recurrence = 2;</code>
+     * <code>required int64 invoice_id = 2;</code>
      */
-    java.lang.String getRecurrence();
+    long getInvoiceId();
+
+    // required string role = 3;
     /**
-     * <code>optional string recurrence = 2;</code>
+     * <code>required string role = 3;</code>
+     */
+    boolean hasRole();
+    /**
+     * <code>required string role = 3;</code>
+     */
+    java.lang.String getRole();
+    /**
+     * <code>required string role = 3;</code>
      */
     com.google.protobuf.ByteString
-        getRecurrenceBytes();
-
-    // optional int64 restaurant_id = 3;
-    /**
-     * <code>optional int64 restaurant_id = 3;</code>
-     */
-    boolean hasRestaurantId();
-    /**
-     * <code>optional int64 restaurant_id = 3;</code>
-     */
-    long getRestaurantId();
-
-    // optional int64 location_id = 4;
-    /**
-     * <code>optional int64 location_id = 4;</code>
-     */
-    boolean hasLocationId();
-    /**
-     * <code>optional int64 location_id = 4;</code>
-     */
-    long getLocationId();
+        getRoleBytes();
   }
   /**
-   * Protobuf type {@code Menu}
+   * Protobuf type {@code InvoicesToContact}
    */
-  public static final class Menu extends
+  public static final class InvoicesToContact extends
       com.google.protobuf.GeneratedMessage
-      implements MenuOrBuilder {
-    // Use Menu.newBuilder() to construct.
-    private Menu(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      implements InvoicesToContactOrBuilder {
+    // Use InvoicesToContact.newBuilder() to construct.
+    private InvoicesToContact(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private Menu(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private InvoicesToContact(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final Menu defaultInstance;
-    public static Menu getDefaultInstance() {
+    private static final InvoicesToContact defaultInstance;
+    public static InvoicesToContact getDefaultInstance() {
       return defaultInstance;
     }
 
-    public Menu getDefaultInstanceForType() {
+    public InvoicesToContact getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -12756,7 +12343,7 @@ public final class Model {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private Menu(
+    private InvoicesToContact(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -12781,759 +12368,17 @@ public final class Model {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              id_ = input.readInt64();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              recurrence_ = input.readBytes();
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              restaurantId_ = input.readInt64();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              locationId_ = input.readInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_Menu_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_Menu_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.Menu.class, net.maivic.protocol.Model.Menu.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<Menu> PARSER =
-        new com.google.protobuf.AbstractParser<Menu>() {
-      public Menu parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Menu(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Menu> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int64 id = 1;
-    public static final int ID_FIELD_NUMBER = 1;
-    private long id_;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public long getId() {
-      return id_;
-    }
-
-    // optional string recurrence = 2;
-    public static final int RECURRENCE_FIELD_NUMBER = 2;
-    private java.lang.Object recurrence_;
-    /**
-     * <code>optional string recurrence = 2;</code>
-     */
-    public boolean hasRecurrence() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional string recurrence = 2;</code>
-     */
-    public java.lang.String getRecurrence() {
-      java.lang.Object ref = recurrence_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          recurrence_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string recurrence = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getRecurrenceBytes() {
-      java.lang.Object ref = recurrence_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        recurrence_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // optional int64 restaurant_id = 3;
-    public static final int RESTAURANT_ID_FIELD_NUMBER = 3;
-    private long restaurantId_;
-    /**
-     * <code>optional int64 restaurant_id = 3;</code>
-     */
-    public boolean hasRestaurantId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional int64 restaurant_id = 3;</code>
-     */
-    public long getRestaurantId() {
-      return restaurantId_;
-    }
-
-    // optional int64 location_id = 4;
-    public static final int LOCATION_ID_FIELD_NUMBER = 4;
-    private long locationId_;
-    /**
-     * <code>optional int64 location_id = 4;</code>
-     */
-    public boolean hasLocationId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional int64 location_id = 4;</code>
-     */
-    public long getLocationId() {
-      return locationId_;
-    }
-
-    private void initFields() {
-      id_ = 0L;
-      recurrence_ = "";
-      restaurantId_ = 0L;
-      locationId_ = 0L;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getRecurrenceBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt64(3, restaurantId_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeInt64(4, locationId_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getRecurrenceBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, restaurantId_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, locationId_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.Menu parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.Menu parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Menu parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.Menu parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Menu parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.Menu parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Menu parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.Menu parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Menu parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.Menu parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.Menu prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code Menu}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.MenuOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_Menu_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_Menu_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.Menu.class, net.maivic.protocol.Model.Menu.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.Menu.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        id_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        recurrence_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        restaurantId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        locationId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_Menu_descriptor;
-      }
-
-      public net.maivic.protocol.Model.Menu getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.Menu.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.Menu build() {
-        net.maivic.protocol.Model.Menu result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.Menu buildPartial() {
-        net.maivic.protocol.Model.Menu result = new net.maivic.protocol.Model.Menu(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.recurrence_ = recurrence_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.restaurantId_ = restaurantId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.locationId_ = locationId_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.Menu) {
-          return mergeFrom((net.maivic.protocol.Model.Menu)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.Menu other) {
-        if (other == net.maivic.protocol.Model.Menu.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasRecurrence()) {
-          bitField0_ |= 0x00000002;
-          recurrence_ = other.recurrence_;
-          onChanged();
-        }
-        if (other.hasRestaurantId()) {
-          setRestaurantId(other.getRestaurantId());
-        }
-        if (other.hasLocationId()) {
-          setLocationId(other.getLocationId());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasId()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.Menu parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.Menu) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required int64 id = 1;
-      private long id_ ;
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder setId(long value) {
-        bitField0_ |= 0x00000001;
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string recurrence = 2;
-      private java.lang.Object recurrence_ = "";
-      /**
-       * <code>optional string recurrence = 2;</code>
-       */
-      public boolean hasRecurrence() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional string recurrence = 2;</code>
-       */
-      public java.lang.String getRecurrence() {
-        java.lang.Object ref = recurrence_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          recurrence_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string recurrence = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getRecurrenceBytes() {
-        java.lang.Object ref = recurrence_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          recurrence_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string recurrence = 2;</code>
-       */
-      public Builder setRecurrence(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        recurrence_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string recurrence = 2;</code>
-       */
-      public Builder clearRecurrence() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        recurrence_ = getDefaultInstance().getRecurrence();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string recurrence = 2;</code>
-       */
-      public Builder setRecurrenceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        recurrence_ = value;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 restaurant_id = 3;
-      private long restaurantId_ ;
-      /**
-       * <code>optional int64 restaurant_id = 3;</code>
-       */
-      public boolean hasRestaurantId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional int64 restaurant_id = 3;</code>
-       */
-      public long getRestaurantId() {
-        return restaurantId_;
-      }
-      /**
-       * <code>optional int64 restaurant_id = 3;</code>
-       */
-      public Builder setRestaurantId(long value) {
-        bitField0_ |= 0x00000004;
-        restaurantId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 restaurant_id = 3;</code>
-       */
-      public Builder clearRestaurantId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        restaurantId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 location_id = 4;
-      private long locationId_ ;
-      /**
-       * <code>optional int64 location_id = 4;</code>
-       */
-      public boolean hasLocationId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional int64 location_id = 4;</code>
-       */
-      public long getLocationId() {
-        return locationId_;
-      }
-      /**
-       * <code>optional int64 location_id = 4;</code>
-       */
-      public Builder setLocationId(long value) {
-        bitField0_ |= 0x00000008;
-        locationId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 location_id = 4;</code>
-       */
-      public Builder clearLocationId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        locationId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:Menu)
-    }
-
-    static {
-      defaultInstance = new Menu(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:Menu)
-  }
-
-  public interface DeliveryPlaceOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 id = 1;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    long getId();
-
-    // optional int64 location_id = 2;
-    /**
-     * <code>optional int64 location_id = 2;</code>
-     */
-    boolean hasLocationId();
-    /**
-     * <code>optional int64 location_id = 2;</code>
-     */
-    long getLocationId();
-
-    // optional int64 building_id = 3;
-    /**
-     * <code>optional int64 building_id = 3;</code>
-     */
-    boolean hasBuildingId();
-    /**
-     * <code>optional int64 building_id = 3;</code>
-     */
-    long getBuildingId();
-
-    // optional string short_name = 4;
-    /**
-     * <code>optional string short_name = 4;</code>
-     */
-    boolean hasShortName();
-    /**
-     * <code>optional string short_name = 4;</code>
-     */
-    java.lang.String getShortName();
-    /**
-     * <code>optional string short_name = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getShortNameBytes();
-
-    // optional int64 place_types = 5;
-    /**
-     * <code>optional int64 place_types = 5;</code>
-     */
-    boolean hasPlaceTypes();
-    /**
-     * <code>optional int64 place_types = 5;</code>
-     */
-    long getPlaceTypes();
-  }
-  /**
-   * Protobuf type {@code DeliveryPlace}
-   */
-  public static final class DeliveryPlace extends
-      com.google.protobuf.GeneratedMessage
-      implements DeliveryPlaceOrBuilder {
-    // Use DeliveryPlace.newBuilder() to construct.
-    private DeliveryPlace(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private DeliveryPlace(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final DeliveryPlace defaultInstance;
-    public static DeliveryPlace getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public DeliveryPlace getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DeliveryPlace(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readInt64();
+              contactId_ = input.readInt64();
               break;
             }
             case 16: {
               bitField0_ |= 0x00000002;
-              locationId_ = input.readInt64();
+              invoiceId_ = input.readInt64();
               break;
             }
-            case 24: {
+            case 26: {
               bitField0_ |= 0x00000004;
-              buildingId_ = input.readInt64();
-              break;
-            }
-            case 34: {
-              bitField0_ |= 0x00000008;
-              shortName_ = input.readBytes();
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000010;
-              placeTypes_ = input.readInt64();
+              role_ = input.readBytes();
               break;
             }
           }
@@ -13550,94 +12395,78 @@ public final class Model {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_DeliveryPlace_descriptor;
+      return net.maivic.protocol.Model.internal_static_InvoicesToContact_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_DeliveryPlace_fieldAccessorTable
+      return net.maivic.protocol.Model.internal_static_InvoicesToContact_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.DeliveryPlace.class, net.maivic.protocol.Model.DeliveryPlace.Builder.class);
+              net.maivic.protocol.Model.InvoicesToContact.class, net.maivic.protocol.Model.InvoicesToContact.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<DeliveryPlace> PARSER =
-        new com.google.protobuf.AbstractParser<DeliveryPlace>() {
-      public DeliveryPlace parsePartialFrom(
+    public static com.google.protobuf.Parser<InvoicesToContact> PARSER =
+        new com.google.protobuf.AbstractParser<InvoicesToContact>() {
+      public InvoicesToContact parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DeliveryPlace(input, extensionRegistry);
+        return new InvoicesToContact(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DeliveryPlace> getParserForType() {
+    public com.google.protobuf.Parser<InvoicesToContact> getParserForType() {
       return PARSER;
     }
 
     private int bitField0_;
-    // required int64 id = 1;
-    public static final int ID_FIELD_NUMBER = 1;
-    private long id_;
+    // required int64 contact_id = 1;
+    public static final int CONTACT_ID_FIELD_NUMBER = 1;
+    private long contactId_;
     /**
-     * <code>required int64 id = 1;</code>
+     * <code>required int64 contact_id = 1;</code>
      */
-    public boolean hasId() {
+    public boolean hasContactId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required int64 id = 1;</code>
+     * <code>required int64 contact_id = 1;</code>
      */
-    public long getId() {
-      return id_;
+    public long getContactId() {
+      return contactId_;
     }
 
-    // optional int64 location_id = 2;
-    public static final int LOCATION_ID_FIELD_NUMBER = 2;
-    private long locationId_;
+    // required int64 invoice_id = 2;
+    public static final int INVOICE_ID_FIELD_NUMBER = 2;
+    private long invoiceId_;
     /**
-     * <code>optional int64 location_id = 2;</code>
+     * <code>required int64 invoice_id = 2;</code>
      */
-    public boolean hasLocationId() {
+    public boolean hasInvoiceId() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional int64 location_id = 2;</code>
+     * <code>required int64 invoice_id = 2;</code>
      */
-    public long getLocationId() {
-      return locationId_;
+    public long getInvoiceId() {
+      return invoiceId_;
     }
 
-    // optional int64 building_id = 3;
-    public static final int BUILDING_ID_FIELD_NUMBER = 3;
-    private long buildingId_;
+    // required string role = 3;
+    public static final int ROLE_FIELD_NUMBER = 3;
+    private java.lang.Object role_;
     /**
-     * <code>optional int64 building_id = 3;</code>
+     * <code>required string role = 3;</code>
      */
-    public boolean hasBuildingId() {
+    public boolean hasRole() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional int64 building_id = 3;</code>
+     * <code>required string role = 3;</code>
      */
-    public long getBuildingId() {
-      return buildingId_;
-    }
-
-    // optional string short_name = 4;
-    public static final int SHORT_NAME_FIELD_NUMBER = 4;
-    private java.lang.Object shortName_;
-    /**
-     * <code>optional string short_name = 4;</code>
-     */
-    public boolean hasShortName() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional string short_name = 4;</code>
-     */
-    public java.lang.String getShortName() {
-      java.lang.Object ref = shortName_;
+    public java.lang.String getRole() {
+      java.lang.Object ref = role_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -13645,57 +12474,47 @@ public final class Model {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          shortName_ = s;
+          role_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>optional string short_name = 4;</code>
+     * <code>required string role = 3;</code>
      */
     public com.google.protobuf.ByteString
-        getShortNameBytes() {
-      java.lang.Object ref = shortName_;
+        getRoleBytes() {
+      java.lang.Object ref = role_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        shortName_ = b;
+        role_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    // optional int64 place_types = 5;
-    public static final int PLACE_TYPES_FIELD_NUMBER = 5;
-    private long placeTypes_;
-    /**
-     * <code>optional int64 place_types = 5;</code>
-     */
-    public boolean hasPlaceTypes() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional int64 place_types = 5;</code>
-     */
-    public long getPlaceTypes() {
-      return placeTypes_;
-    }
-
     private void initFields() {
-      id_ = 0L;
-      locationId_ = 0L;
-      buildingId_ = 0L;
-      shortName_ = "";
-      placeTypes_ = 0L;
+      contactId_ = 0L;
+      invoiceId_ = 0L;
+      role_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
 
-      if (!hasId()) {
+      if (!hasContactId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasInvoiceId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRole()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -13707,19 +12526,13 @@ public final class Model {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, id_);
+        output.writeInt64(1, contactId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, locationId_);
+        output.writeInt64(2, invoiceId_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt64(3, buildingId_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getShortNameBytes());
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeInt64(5, placeTypes_);
+        output.writeBytes(3, getRoleBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -13732,23 +12545,15 @@ public final class Model {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
+          .computeInt64Size(1, contactId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, locationId_);
+          .computeInt64Size(2, invoiceId_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, buildingId_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getShortNameBytes());
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, placeTypes_);
+          .computeBytesSize(3, getRoleBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -13762,53 +12567,53 @@ public final class Model {
       return super.writeReplace();
     }
 
-    public static net.maivic.protocol.Model.DeliveryPlace parseFrom(
+    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static net.maivic.protocol.Model.DeliveryPlace parseFrom(
+    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.DeliveryPlace parseFrom(byte[] data)
+    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static net.maivic.protocol.Model.DeliveryPlace parseFrom(
+    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.DeliveryPlace parseFrom(java.io.InputStream input)
+    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static net.maivic.protocol.Model.DeliveryPlace parseFrom(
+    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.DeliveryPlace parseDelimitedFrom(java.io.InputStream input)
+    public static net.maivic.protocol.Model.InvoicesToContact parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static net.maivic.protocol.Model.DeliveryPlace parseDelimitedFrom(
+    public static net.maivic.protocol.Model.InvoicesToContact parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.DeliveryPlace parseFrom(
+    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static net.maivic.protocol.Model.DeliveryPlace parseFrom(
+    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -13817,7 +12622,7 @@ public final class Model {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.DeliveryPlace prototype) {
+    public static Builder newBuilder(net.maivic.protocol.Model.InvoicesToContact prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -13829,24 +12634,24 @@ public final class Model {
       return builder;
     }
     /**
-     * Protobuf type {@code DeliveryPlace}
+     * Protobuf type {@code InvoicesToContact}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.DeliveryPlaceOrBuilder {
+       implements net.maivic.protocol.Model.InvoicesToContactOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_DeliveryPlace_descriptor;
+        return net.maivic.protocol.Model.internal_static_InvoicesToContact_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_DeliveryPlace_fieldAccessorTable
+        return net.maivic.protocol.Model.internal_static_InvoicesToContact_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.DeliveryPlace.class, net.maivic.protocol.Model.DeliveryPlace.Builder.class);
+                net.maivic.protocol.Model.InvoicesToContact.class, net.maivic.protocol.Model.InvoicesToContact.Builder.class);
       }
 
-      // Construct using net.maivic.protocol.Model.DeliveryPlace.newBuilder()
+      // Construct using net.maivic.protocol.Model.InvoicesToContact.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -13866,16 +12671,12 @@ public final class Model {
 
       public Builder clear() {
         super.clear();
-        id_ = 0L;
+        contactId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
-        locationId_ = 0L;
+        invoiceId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
-        buildingId_ = 0L;
+        role_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        shortName_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
-        placeTypes_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -13885,84 +12686,78 @@ public final class Model {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_DeliveryPlace_descriptor;
+        return net.maivic.protocol.Model.internal_static_InvoicesToContact_descriptor;
       }
 
-      public net.maivic.protocol.Model.DeliveryPlace getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.DeliveryPlace.getDefaultInstance();
+      public net.maivic.protocol.Model.InvoicesToContact getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.InvoicesToContact.getDefaultInstance();
       }
 
-      public net.maivic.protocol.Model.DeliveryPlace build() {
-        net.maivic.protocol.Model.DeliveryPlace result = buildPartial();
+      public net.maivic.protocol.Model.InvoicesToContact build() {
+        net.maivic.protocol.Model.InvoicesToContact result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public net.maivic.protocol.Model.DeliveryPlace buildPartial() {
-        net.maivic.protocol.Model.DeliveryPlace result = new net.maivic.protocol.Model.DeliveryPlace(this);
+      public net.maivic.protocol.Model.InvoicesToContact buildPartial() {
+        net.maivic.protocol.Model.InvoicesToContact result = new net.maivic.protocol.Model.InvoicesToContact(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.id_ = id_;
+        result.contactId_ = contactId_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.locationId_ = locationId_;
+        result.invoiceId_ = invoiceId_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.buildingId_ = buildingId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.shortName_ = shortName_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.placeTypes_ = placeTypes_;
+        result.role_ = role_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.DeliveryPlace) {
-          return mergeFrom((net.maivic.protocol.Model.DeliveryPlace)other);
+        if (other instanceof net.maivic.protocol.Model.InvoicesToContact) {
+          return mergeFrom((net.maivic.protocol.Model.InvoicesToContact)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(net.maivic.protocol.Model.DeliveryPlace other) {
-        if (other == net.maivic.protocol.Model.DeliveryPlace.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
+      public Builder mergeFrom(net.maivic.protocol.Model.InvoicesToContact other) {
+        if (other == net.maivic.protocol.Model.InvoicesToContact.getDefaultInstance()) return this;
+        if (other.hasContactId()) {
+          setContactId(other.getContactId());
         }
-        if (other.hasLocationId()) {
-          setLocationId(other.getLocationId());
+        if (other.hasInvoiceId()) {
+          setInvoiceId(other.getInvoiceId());
         }
-        if (other.hasBuildingId()) {
-          setBuildingId(other.getBuildingId());
-        }
-        if (other.hasShortName()) {
-          bitField0_ |= 0x00000008;
-          shortName_ = other.shortName_;
+        if (other.hasRole()) {
+          bitField0_ |= 0x00000004;
+          role_ = other.role_;
           onChanged();
-        }
-        if (other.hasPlaceTypes()) {
-          setPlaceTypes(other.getPlaceTypes());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
-        if (!hasId()) {
+        if (!hasContactId()) {
+          
+          return false;
+        }
+        if (!hasInvoiceId()) {
+          
+          return false;
+        }
+        if (!hasRole()) {
           
           return false;
         }
@@ -13973,11 +12768,11 @@ public final class Model {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        net.maivic.protocol.Model.DeliveryPlace parsedMessage = null;
+        net.maivic.protocol.Model.InvoicesToContact parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.DeliveryPlace) e.getUnfinishedMessage();
+          parsedMessage = (net.maivic.protocol.Model.InvoicesToContact) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -13988,1105 +12783,155 @@ public final class Model {
       }
       private int bitField0_;
 
-      // required int64 id = 1;
-      private long id_ ;
+      // required int64 contact_id = 1;
+      private long contactId_ ;
       /**
-       * <code>required int64 id = 1;</code>
+       * <code>required int64 contact_id = 1;</code>
        */
-      public boolean hasId() {
+      public boolean hasContactId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required int64 id = 1;</code>
+       * <code>required int64 contact_id = 1;</code>
        */
-      public long getId() {
-        return id_;
+      public long getContactId() {
+        return contactId_;
       }
       /**
-       * <code>required int64 id = 1;</code>
+       * <code>required int64 contact_id = 1;</code>
        */
-      public Builder setId(long value) {
+      public Builder setContactId(long value) {
         bitField0_ |= 0x00000001;
-        id_ = value;
+        contactId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int64 id = 1;</code>
+       * <code>required int64 contact_id = 1;</code>
        */
-      public Builder clearId() {
+      public Builder clearContactId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
+        contactId_ = 0L;
         onChanged();
         return this;
       }
 
-      // optional int64 location_id = 2;
-      private long locationId_ ;
+      // required int64 invoice_id = 2;
+      private long invoiceId_ ;
       /**
-       * <code>optional int64 location_id = 2;</code>
+       * <code>required int64 invoice_id = 2;</code>
        */
-      public boolean hasLocationId() {
+      public boolean hasInvoiceId() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional int64 location_id = 2;</code>
+       * <code>required int64 invoice_id = 2;</code>
        */
-      public long getLocationId() {
-        return locationId_;
+      public long getInvoiceId() {
+        return invoiceId_;
       }
       /**
-       * <code>optional int64 location_id = 2;</code>
+       * <code>required int64 invoice_id = 2;</code>
        */
-      public Builder setLocationId(long value) {
+      public Builder setInvoiceId(long value) {
         bitField0_ |= 0x00000002;
-        locationId_ = value;
+        invoiceId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 location_id = 2;</code>
+       * <code>required int64 invoice_id = 2;</code>
        */
-      public Builder clearLocationId() {
+      public Builder clearInvoiceId() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        locationId_ = 0L;
+        invoiceId_ = 0L;
         onChanged();
         return this;
       }
 
-      // optional int64 building_id = 3;
-      private long buildingId_ ;
+      // required string role = 3;
+      private java.lang.Object role_ = "";
       /**
-       * <code>optional int64 building_id = 3;</code>
+       * <code>required string role = 3;</code>
        */
-      public boolean hasBuildingId() {
+      public boolean hasRole() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional int64 building_id = 3;</code>
+       * <code>required string role = 3;</code>
        */
-      public long getBuildingId() {
-        return buildingId_;
-      }
-      /**
-       * <code>optional int64 building_id = 3;</code>
-       */
-      public Builder setBuildingId(long value) {
-        bitField0_ |= 0x00000004;
-        buildingId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 building_id = 3;</code>
-       */
-      public Builder clearBuildingId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        buildingId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string short_name = 4;
-      private java.lang.Object shortName_ = "";
-      /**
-       * <code>optional string short_name = 4;</code>
-       */
-      public boolean hasShortName() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional string short_name = 4;</code>
-       */
-      public java.lang.String getShortName() {
-        java.lang.Object ref = shortName_;
+      public java.lang.String getRole() {
+        java.lang.Object ref = role_;
         if (!(ref instanceof java.lang.String)) {
           java.lang.String s = ((com.google.protobuf.ByteString) ref)
               .toStringUtf8();
-          shortName_ = s;
+          role_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string short_name = 4;</code>
+       * <code>required string role = 3;</code>
        */
       public com.google.protobuf.ByteString
-          getShortNameBytes() {
-        java.lang.Object ref = shortName_;
+          getRoleBytes() {
+        java.lang.Object ref = role_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          shortName_ = b;
+          role_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string short_name = 4;</code>
+       * <code>required string role = 3;</code>
        */
-      public Builder setShortName(
+      public Builder setRole(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
-        shortName_ = value;
+  bitField0_ |= 0x00000004;
+        role_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string short_name = 4;</code>
+       * <code>required string role = 3;</code>
        */
-      public Builder clearShortName() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        shortName_ = getDefaultInstance().getShortName();
+      public Builder clearRole() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        role_ = getDefaultInstance().getRole();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string short_name = 4;</code>
+       * <code>required string role = 3;</code>
        */
-      public Builder setShortNameBytes(
+      public Builder setRoleBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
-        shortName_ = value;
+  bitField0_ |= 0x00000004;
+        role_ = value;
         onChanged();
         return this;
       }
 
-      // optional int64 place_types = 5;
-      private long placeTypes_ ;
-      /**
-       * <code>optional int64 place_types = 5;</code>
-       */
-      public boolean hasPlaceTypes() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional int64 place_types = 5;</code>
-       */
-      public long getPlaceTypes() {
-        return placeTypes_;
-      }
-      /**
-       * <code>optional int64 place_types = 5;</code>
-       */
-      public Builder setPlaceTypes(long value) {
-        bitField0_ |= 0x00000010;
-        placeTypes_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 place_types = 5;</code>
-       */
-      public Builder clearPlaceTypes() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        placeTypes_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:DeliveryPlace)
+      // @@protoc_insertion_point(builder_scope:InvoicesToContact)
     }
 
     static {
-      defaultInstance = new DeliveryPlace(true);
+      defaultInstance = new InvoicesToContact(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:DeliveryPlace)
-  }
-
-  public interface DeliveryPlaceSpecificationOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 id = 1;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    long getId();
-
-    // optional int64 location_id = 2;
-    /**
-     * <code>optional int64 location_id = 2;</code>
-     */
-    boolean hasLocationId();
-    /**
-     * <code>optional int64 location_id = 2;</code>
-     */
-    long getLocationId();
-
-    // optional int64 building_id = 3;
-    /**
-     * <code>optional int64 building_id = 3;</code>
-     */
-    boolean hasBuildingId();
-    /**
-     * <code>optional int64 building_id = 3;</code>
-     */
-    long getBuildingId();
-
-    // optional int64 delivery_place_id = 4;
-    /**
-     * <code>optional int64 delivery_place_id = 4;</code>
-     */
-    boolean hasDeliveryPlaceId();
-    /**
-     * <code>optional int64 delivery_place_id = 4;</code>
-     */
-    long getDeliveryPlaceId();
-
-    // optional int64 place_type_id = 5;
-    /**
-     * <code>optional int64 place_type_id = 5;</code>
-     */
-    boolean hasPlaceTypeId();
-    /**
-     * <code>optional int64 place_type_id = 5;</code>
-     */
-    long getPlaceTypeId();
-
-    // optional string text_value = 6;
-    /**
-     * <code>optional string text_value = 6;</code>
-     */
-    boolean hasTextValue();
-    /**
-     * <code>optional string text_value = 6;</code>
-     */
-    java.lang.String getTextValue();
-    /**
-     * <code>optional string text_value = 6;</code>
-     */
-    com.google.protobuf.ByteString
-        getTextValueBytes();
-  }
-  /**
-   * Protobuf type {@code DeliveryPlaceSpecification}
-   */
-  public static final class DeliveryPlaceSpecification extends
-      com.google.protobuf.GeneratedMessage
-      implements DeliveryPlaceSpecificationOrBuilder {
-    // Use DeliveryPlaceSpecification.newBuilder() to construct.
-    private DeliveryPlaceSpecification(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private DeliveryPlaceSpecification(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final DeliveryPlaceSpecification defaultInstance;
-    public static DeliveryPlaceSpecification getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public DeliveryPlaceSpecification getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DeliveryPlaceSpecification(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readInt64();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              locationId_ = input.readInt64();
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              buildingId_ = input.readInt64();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              deliveryPlaceId_ = input.readInt64();
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000010;
-              placeTypeId_ = input.readInt64();
-              break;
-            }
-            case 50: {
-              bitField0_ |= 0x00000020;
-              textValue_ = input.readBytes();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_DeliveryPlaceSpecification_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_DeliveryPlaceSpecification_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.DeliveryPlaceSpecification.class, net.maivic.protocol.Model.DeliveryPlaceSpecification.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<DeliveryPlaceSpecification> PARSER =
-        new com.google.protobuf.AbstractParser<DeliveryPlaceSpecification>() {
-      public DeliveryPlaceSpecification parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DeliveryPlaceSpecification(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DeliveryPlaceSpecification> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int64 id = 1;
-    public static final int ID_FIELD_NUMBER = 1;
-    private long id_;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public long getId() {
-      return id_;
-    }
-
-    // optional int64 location_id = 2;
-    public static final int LOCATION_ID_FIELD_NUMBER = 2;
-    private long locationId_;
-    /**
-     * <code>optional int64 location_id = 2;</code>
-     */
-    public boolean hasLocationId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional int64 location_id = 2;</code>
-     */
-    public long getLocationId() {
-      return locationId_;
-    }
-
-    // optional int64 building_id = 3;
-    public static final int BUILDING_ID_FIELD_NUMBER = 3;
-    private long buildingId_;
-    /**
-     * <code>optional int64 building_id = 3;</code>
-     */
-    public boolean hasBuildingId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional int64 building_id = 3;</code>
-     */
-    public long getBuildingId() {
-      return buildingId_;
-    }
-
-    // optional int64 delivery_place_id = 4;
-    public static final int DELIVERY_PLACE_ID_FIELD_NUMBER = 4;
-    private long deliveryPlaceId_;
-    /**
-     * <code>optional int64 delivery_place_id = 4;</code>
-     */
-    public boolean hasDeliveryPlaceId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional int64 delivery_place_id = 4;</code>
-     */
-    public long getDeliveryPlaceId() {
-      return deliveryPlaceId_;
-    }
-
-    // optional int64 place_type_id = 5;
-    public static final int PLACE_TYPE_ID_FIELD_NUMBER = 5;
-    private long placeTypeId_;
-    /**
-     * <code>optional int64 place_type_id = 5;</code>
-     */
-    public boolean hasPlaceTypeId() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional int64 place_type_id = 5;</code>
-     */
-    public long getPlaceTypeId() {
-      return placeTypeId_;
-    }
-
-    // optional string text_value = 6;
-    public static final int TEXT_VALUE_FIELD_NUMBER = 6;
-    private java.lang.Object textValue_;
-    /**
-     * <code>optional string text_value = 6;</code>
-     */
-    public boolean hasTextValue() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>optional string text_value = 6;</code>
-     */
-    public java.lang.String getTextValue() {
-      java.lang.Object ref = textValue_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          textValue_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string text_value = 6;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTextValueBytes() {
-      java.lang.Object ref = textValue_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        textValue_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private void initFields() {
-      id_ = 0L;
-      locationId_ = 0L;
-      buildingId_ = 0L;
-      deliveryPlaceId_ = 0L;
-      placeTypeId_ = 0L;
-      textValue_ = "";
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, locationId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt64(3, buildingId_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeInt64(4, deliveryPlaceId_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeInt64(5, placeTypeId_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeBytes(6, getTextValueBytes());
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, locationId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, buildingId_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, deliveryPlaceId_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, placeTypeId_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, getTextValueBytes());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.DeliveryPlaceSpecification parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.DeliveryPlaceSpecification parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.DeliveryPlaceSpecification parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.DeliveryPlaceSpecification parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.DeliveryPlaceSpecification parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.DeliveryPlaceSpecification parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.DeliveryPlaceSpecification parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.DeliveryPlaceSpecification parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.DeliveryPlaceSpecification parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.DeliveryPlaceSpecification parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.DeliveryPlaceSpecification prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code DeliveryPlaceSpecification}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.DeliveryPlaceSpecificationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_DeliveryPlaceSpecification_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_DeliveryPlaceSpecification_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.DeliveryPlaceSpecification.class, net.maivic.protocol.Model.DeliveryPlaceSpecification.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.DeliveryPlaceSpecification.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        id_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        locationId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        buildingId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        deliveryPlaceId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        placeTypeId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        textValue_ = "";
-        bitField0_ = (bitField0_ & ~0x00000020);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_DeliveryPlaceSpecification_descriptor;
-      }
-
-      public net.maivic.protocol.Model.DeliveryPlaceSpecification getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.DeliveryPlaceSpecification.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.DeliveryPlaceSpecification build() {
-        net.maivic.protocol.Model.DeliveryPlaceSpecification result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.DeliveryPlaceSpecification buildPartial() {
-        net.maivic.protocol.Model.DeliveryPlaceSpecification result = new net.maivic.protocol.Model.DeliveryPlaceSpecification(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.locationId_ = locationId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.buildingId_ = buildingId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.deliveryPlaceId_ = deliveryPlaceId_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.placeTypeId_ = placeTypeId_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.textValue_ = textValue_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.DeliveryPlaceSpecification) {
-          return mergeFrom((net.maivic.protocol.Model.DeliveryPlaceSpecification)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.DeliveryPlaceSpecification other) {
-        if (other == net.maivic.protocol.Model.DeliveryPlaceSpecification.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasLocationId()) {
-          setLocationId(other.getLocationId());
-        }
-        if (other.hasBuildingId()) {
-          setBuildingId(other.getBuildingId());
-        }
-        if (other.hasDeliveryPlaceId()) {
-          setDeliveryPlaceId(other.getDeliveryPlaceId());
-        }
-        if (other.hasPlaceTypeId()) {
-          setPlaceTypeId(other.getPlaceTypeId());
-        }
-        if (other.hasTextValue()) {
-          bitField0_ |= 0x00000020;
-          textValue_ = other.textValue_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasId()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.DeliveryPlaceSpecification parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.DeliveryPlaceSpecification) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required int64 id = 1;
-      private long id_ ;
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder setId(long value) {
-        bitField0_ |= 0x00000001;
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 location_id = 2;
-      private long locationId_ ;
-      /**
-       * <code>optional int64 location_id = 2;</code>
-       */
-      public boolean hasLocationId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional int64 location_id = 2;</code>
-       */
-      public long getLocationId() {
-        return locationId_;
-      }
-      /**
-       * <code>optional int64 location_id = 2;</code>
-       */
-      public Builder setLocationId(long value) {
-        bitField0_ |= 0x00000002;
-        locationId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 location_id = 2;</code>
-       */
-      public Builder clearLocationId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        locationId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 building_id = 3;
-      private long buildingId_ ;
-      /**
-       * <code>optional int64 building_id = 3;</code>
-       */
-      public boolean hasBuildingId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional int64 building_id = 3;</code>
-       */
-      public long getBuildingId() {
-        return buildingId_;
-      }
-      /**
-       * <code>optional int64 building_id = 3;</code>
-       */
-      public Builder setBuildingId(long value) {
-        bitField0_ |= 0x00000004;
-        buildingId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 building_id = 3;</code>
-       */
-      public Builder clearBuildingId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        buildingId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 delivery_place_id = 4;
-      private long deliveryPlaceId_ ;
-      /**
-       * <code>optional int64 delivery_place_id = 4;</code>
-       */
-      public boolean hasDeliveryPlaceId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional int64 delivery_place_id = 4;</code>
-       */
-      public long getDeliveryPlaceId() {
-        return deliveryPlaceId_;
-      }
-      /**
-       * <code>optional int64 delivery_place_id = 4;</code>
-       */
-      public Builder setDeliveryPlaceId(long value) {
-        bitField0_ |= 0x00000008;
-        deliveryPlaceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 delivery_place_id = 4;</code>
-       */
-      public Builder clearDeliveryPlaceId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        deliveryPlaceId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 place_type_id = 5;
-      private long placeTypeId_ ;
-      /**
-       * <code>optional int64 place_type_id = 5;</code>
-       */
-      public boolean hasPlaceTypeId() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional int64 place_type_id = 5;</code>
-       */
-      public long getPlaceTypeId() {
-        return placeTypeId_;
-      }
-      /**
-       * <code>optional int64 place_type_id = 5;</code>
-       */
-      public Builder setPlaceTypeId(long value) {
-        bitField0_ |= 0x00000010;
-        placeTypeId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 place_type_id = 5;</code>
-       */
-      public Builder clearPlaceTypeId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        placeTypeId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string text_value = 6;
-      private java.lang.Object textValue_ = "";
-      /**
-       * <code>optional string text_value = 6;</code>
-       */
-      public boolean hasTextValue() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <code>optional string text_value = 6;</code>
-       */
-      public java.lang.String getTextValue() {
-        java.lang.Object ref = textValue_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          textValue_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string text_value = 6;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTextValueBytes() {
-        java.lang.Object ref = textValue_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          textValue_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string text_value = 6;</code>
-       */
-      public Builder setTextValue(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
-        textValue_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string text_value = 6;</code>
-       */
-      public Builder clearTextValue() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        textValue_ = getDefaultInstance().getTextValue();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string text_value = 6;</code>
-       */
-      public Builder setTextValueBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
-        textValue_ = value;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:DeliveryPlaceSpecification)
-    }
-
-    static {
-      defaultInstance = new DeliveryPlaceSpecification(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:DeliveryPlaceSpecification)
+    // @@protoc_insertion_point(class_scope:InvoicesToContact)
   }
 
   public interface OfferOrBuilder
@@ -16250,6489 +14095,6 @@ public final class Model {
     }
 
     // @@protoc_insertion_point(class_scope:Offer)
-  }
-
-  public interface BuildingOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 id = 1;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    long getId();
-
-    // optional int64 location_id = 2;
-    /**
-     * <code>optional int64 location_id = 2;</code>
-     */
-    boolean hasLocationId();
-    /**
-     * <code>optional int64 location_id = 2;</code>
-     */
-    long getLocationId();
-  }
-  /**
-   * Protobuf type {@code Building}
-   */
-  public static final class Building extends
-      com.google.protobuf.GeneratedMessage
-      implements BuildingOrBuilder {
-    // Use Building.newBuilder() to construct.
-    private Building(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private Building(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final Building defaultInstance;
-    public static Building getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public Building getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Building(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readInt64();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              locationId_ = input.readInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_Building_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_Building_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.Building.class, net.maivic.protocol.Model.Building.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<Building> PARSER =
-        new com.google.protobuf.AbstractParser<Building>() {
-      public Building parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Building(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Building> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int64 id = 1;
-    public static final int ID_FIELD_NUMBER = 1;
-    private long id_;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public long getId() {
-      return id_;
-    }
-
-    // optional int64 location_id = 2;
-    public static final int LOCATION_ID_FIELD_NUMBER = 2;
-    private long locationId_;
-    /**
-     * <code>optional int64 location_id = 2;</code>
-     */
-    public boolean hasLocationId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional int64 location_id = 2;</code>
-     */
-    public long getLocationId() {
-      return locationId_;
-    }
-
-    private void initFields() {
-      id_ = 0L;
-      locationId_ = 0L;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, locationId_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, locationId_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.Building parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.Building parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Building parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.Building parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Building parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.Building parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Building parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.Building parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Building parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.Building parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.Building prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code Building}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.BuildingOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_Building_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_Building_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.Building.class, net.maivic.protocol.Model.Building.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.Building.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        id_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        locationId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_Building_descriptor;
-      }
-
-      public net.maivic.protocol.Model.Building getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.Building.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.Building build() {
-        net.maivic.protocol.Model.Building result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.Building buildPartial() {
-        net.maivic.protocol.Model.Building result = new net.maivic.protocol.Model.Building(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.locationId_ = locationId_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.Building) {
-          return mergeFrom((net.maivic.protocol.Model.Building)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.Building other) {
-        if (other == net.maivic.protocol.Model.Building.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasLocationId()) {
-          setLocationId(other.getLocationId());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasId()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.Building parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.Building) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required int64 id = 1;
-      private long id_ ;
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder setId(long value) {
-        bitField0_ |= 0x00000001;
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 location_id = 2;
-      private long locationId_ ;
-      /**
-       * <code>optional int64 location_id = 2;</code>
-       */
-      public boolean hasLocationId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional int64 location_id = 2;</code>
-       */
-      public long getLocationId() {
-        return locationId_;
-      }
-      /**
-       * <code>optional int64 location_id = 2;</code>
-       */
-      public Builder setLocationId(long value) {
-        bitField0_ |= 0x00000002;
-        locationId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 location_id = 2;</code>
-       */
-      public Builder clearLocationId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        locationId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:Building)
-    }
-
-    static {
-      defaultInstance = new Building(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:Building)
-  }
-
-  public interface PaymentsToOrderOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 payment_id = 1;
-    /**
-     * <code>required int64 payment_id = 1;</code>
-     */
-    boolean hasPaymentId();
-    /**
-     * <code>required int64 payment_id = 1;</code>
-     */
-    long getPaymentId();
-
-    // required int64 order_id = 2;
-    /**
-     * <code>required int64 order_id = 2;</code>
-     */
-    boolean hasOrderId();
-    /**
-     * <code>required int64 order_id = 2;</code>
-     */
-    long getOrderId();
-
-    // optional .Decimal sum = 3;
-    /**
-     * <code>optional .Decimal sum = 3;</code>
-     */
-    boolean hasSum();
-    /**
-     * <code>optional .Decimal sum = 3;</code>
-     */
-    net.maivic.protocol.Model.Decimal getSum();
-    /**
-     * <code>optional .Decimal sum = 3;</code>
-     */
-    net.maivic.protocol.Model.DecimalOrBuilder getSumOrBuilder();
-
-    // required int64 seq = 4;
-    /**
-     * <code>required int64 seq = 4;</code>
-     */
-    boolean hasSeq();
-    /**
-     * <code>required int64 seq = 4;</code>
-     */
-    long getSeq();
-  }
-  /**
-   * Protobuf type {@code PaymentsToOrder}
-   */
-  public static final class PaymentsToOrder extends
-      com.google.protobuf.GeneratedMessage
-      implements PaymentsToOrderOrBuilder {
-    // Use PaymentsToOrder.newBuilder() to construct.
-    private PaymentsToOrder(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private PaymentsToOrder(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final PaymentsToOrder defaultInstance;
-    public static PaymentsToOrder getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public PaymentsToOrder getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private PaymentsToOrder(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              paymentId_ = input.readInt64();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              orderId_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              net.maivic.protocol.Model.Decimal.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                subBuilder = sum_.toBuilder();
-              }
-              sum_ = input.readMessage(net.maivic.protocol.Model.Decimal.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sum_);
-                sum_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              seq_ = input.readInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_PaymentsToOrder_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_PaymentsToOrder_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.PaymentsToOrder.class, net.maivic.protocol.Model.PaymentsToOrder.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<PaymentsToOrder> PARSER =
-        new com.google.protobuf.AbstractParser<PaymentsToOrder>() {
-      public PaymentsToOrder parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PaymentsToOrder(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PaymentsToOrder> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int64 payment_id = 1;
-    public static final int PAYMENT_ID_FIELD_NUMBER = 1;
-    private long paymentId_;
-    /**
-     * <code>required int64 payment_id = 1;</code>
-     */
-    public boolean hasPaymentId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int64 payment_id = 1;</code>
-     */
-    public long getPaymentId() {
-      return paymentId_;
-    }
-
-    // required int64 order_id = 2;
-    public static final int ORDER_ID_FIELD_NUMBER = 2;
-    private long orderId_;
-    /**
-     * <code>required int64 order_id = 2;</code>
-     */
-    public boolean hasOrderId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required int64 order_id = 2;</code>
-     */
-    public long getOrderId() {
-      return orderId_;
-    }
-
-    // optional .Decimal sum = 3;
-    public static final int SUM_FIELD_NUMBER = 3;
-    private net.maivic.protocol.Model.Decimal sum_;
-    /**
-     * <code>optional .Decimal sum = 3;</code>
-     */
-    public boolean hasSum() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional .Decimal sum = 3;</code>
-     */
-    public net.maivic.protocol.Model.Decimal getSum() {
-      return sum_;
-    }
-    /**
-     * <code>optional .Decimal sum = 3;</code>
-     */
-    public net.maivic.protocol.Model.DecimalOrBuilder getSumOrBuilder() {
-      return sum_;
-    }
-
-    // required int64 seq = 4;
-    public static final int SEQ_FIELD_NUMBER = 4;
-    private long seq_;
-    /**
-     * <code>required int64 seq = 4;</code>
-     */
-    public boolean hasSeq() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>required int64 seq = 4;</code>
-     */
-    public long getSeq() {
-      return seq_;
-    }
-
-    private void initFields() {
-      paymentId_ = 0L;
-      orderId_ = 0L;
-      sum_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
-      seq_ = 0L;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasPaymentId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasOrderId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasSeq()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (hasSum()) {
-        if (!getSum().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, paymentId_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, orderId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeMessage(3, sum_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeInt64(4, seq_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, paymentId_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, orderId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, sum_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, seq_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.PaymentsToOrder parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.PaymentsToOrder parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.PaymentsToOrder parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.PaymentsToOrder prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code PaymentsToOrder}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.PaymentsToOrderOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_PaymentsToOrder_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_PaymentsToOrder_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.PaymentsToOrder.class, net.maivic.protocol.Model.PaymentsToOrder.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.PaymentsToOrder.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getSumFieldBuilder();
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        paymentId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        orderId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (sumBuilder_ == null) {
-          sum_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
-        } else {
-          sumBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000004);
-        seq_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_PaymentsToOrder_descriptor;
-      }
-
-      public net.maivic.protocol.Model.PaymentsToOrder getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.PaymentsToOrder.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.PaymentsToOrder build() {
-        net.maivic.protocol.Model.PaymentsToOrder result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.PaymentsToOrder buildPartial() {
-        net.maivic.protocol.Model.PaymentsToOrder result = new net.maivic.protocol.Model.PaymentsToOrder(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.paymentId_ = paymentId_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.orderId_ = orderId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        if (sumBuilder_ == null) {
-          result.sum_ = sum_;
-        } else {
-          result.sum_ = sumBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.seq_ = seq_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.PaymentsToOrder) {
-          return mergeFrom((net.maivic.protocol.Model.PaymentsToOrder)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.PaymentsToOrder other) {
-        if (other == net.maivic.protocol.Model.PaymentsToOrder.getDefaultInstance()) return this;
-        if (other.hasPaymentId()) {
-          setPaymentId(other.getPaymentId());
-        }
-        if (other.hasOrderId()) {
-          setOrderId(other.getOrderId());
-        }
-        if (other.hasSum()) {
-          mergeSum(other.getSum());
-        }
-        if (other.hasSeq()) {
-          setSeq(other.getSeq());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasPaymentId()) {
-          
-          return false;
-        }
-        if (!hasOrderId()) {
-          
-          return false;
-        }
-        if (!hasSeq()) {
-          
-          return false;
-        }
-        if (hasSum()) {
-          if (!getSum().isInitialized()) {
-            
-            return false;
-          }
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.PaymentsToOrder parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.PaymentsToOrder) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required int64 payment_id = 1;
-      private long paymentId_ ;
-      /**
-       * <code>required int64 payment_id = 1;</code>
-       */
-      public boolean hasPaymentId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int64 payment_id = 1;</code>
-       */
-      public long getPaymentId() {
-        return paymentId_;
-      }
-      /**
-       * <code>required int64 payment_id = 1;</code>
-       */
-      public Builder setPaymentId(long value) {
-        bitField0_ |= 0x00000001;
-        paymentId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 payment_id = 1;</code>
-       */
-      public Builder clearPaymentId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        paymentId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // required int64 order_id = 2;
-      private long orderId_ ;
-      /**
-       * <code>required int64 order_id = 2;</code>
-       */
-      public boolean hasOrderId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required int64 order_id = 2;</code>
-       */
-      public long getOrderId() {
-        return orderId_;
-      }
-      /**
-       * <code>required int64 order_id = 2;</code>
-       */
-      public Builder setOrderId(long value) {
-        bitField0_ |= 0x00000002;
-        orderId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 order_id = 2;</code>
-       */
-      public Builder clearOrderId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        orderId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional .Decimal sum = 3;
-      private net.maivic.protocol.Model.Decimal sum_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          net.maivic.protocol.Model.Decimal, net.maivic.protocol.Model.Decimal.Builder, net.maivic.protocol.Model.DecimalOrBuilder> sumBuilder_;
-      /**
-       * <code>optional .Decimal sum = 3;</code>
-       */
-      public boolean hasSum() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional .Decimal sum = 3;</code>
-       */
-      public net.maivic.protocol.Model.Decimal getSum() {
-        if (sumBuilder_ == null) {
-          return sum_;
-        } else {
-          return sumBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .Decimal sum = 3;</code>
-       */
-      public Builder setSum(net.maivic.protocol.Model.Decimal value) {
-        if (sumBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          sum_ = value;
-          onChanged();
-        } else {
-          sumBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      /**
-       * <code>optional .Decimal sum = 3;</code>
-       */
-      public Builder setSum(
-          net.maivic.protocol.Model.Decimal.Builder builderForValue) {
-        if (sumBuilder_ == null) {
-          sum_ = builderForValue.build();
-          onChanged();
-        } else {
-          sumBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      /**
-       * <code>optional .Decimal sum = 3;</code>
-       */
-      public Builder mergeSum(net.maivic.protocol.Model.Decimal value) {
-        if (sumBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004) &&
-              sum_ != net.maivic.protocol.Model.Decimal.getDefaultInstance()) {
-            sum_ =
-              net.maivic.protocol.Model.Decimal.newBuilder(sum_).mergeFrom(value).buildPartial();
-          } else {
-            sum_ = value;
-          }
-          onChanged();
-        } else {
-          sumBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      /**
-       * <code>optional .Decimal sum = 3;</code>
-       */
-      public Builder clearSum() {
-        if (sumBuilder_ == null) {
-          sum_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
-          onChanged();
-        } else {
-          sumBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-      /**
-       * <code>optional .Decimal sum = 3;</code>
-       */
-      public net.maivic.protocol.Model.Decimal.Builder getSumBuilder() {
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return getSumFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .Decimal sum = 3;</code>
-       */
-      public net.maivic.protocol.Model.DecimalOrBuilder getSumOrBuilder() {
-        if (sumBuilder_ != null) {
-          return sumBuilder_.getMessageOrBuilder();
-        } else {
-          return sum_;
-        }
-      }
-      /**
-       * <code>optional .Decimal sum = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          net.maivic.protocol.Model.Decimal, net.maivic.protocol.Model.Decimal.Builder, net.maivic.protocol.Model.DecimalOrBuilder> 
-          getSumFieldBuilder() {
-        if (sumBuilder_ == null) {
-          sumBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.maivic.protocol.Model.Decimal, net.maivic.protocol.Model.Decimal.Builder, net.maivic.protocol.Model.DecimalOrBuilder>(
-                  sum_,
-                  getParentForChildren(),
-                  isClean());
-          sum_ = null;
-        }
-        return sumBuilder_;
-      }
-
-      // required int64 seq = 4;
-      private long seq_ ;
-      /**
-       * <code>required int64 seq = 4;</code>
-       */
-      public boolean hasSeq() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>required int64 seq = 4;</code>
-       */
-      public long getSeq() {
-        return seq_;
-      }
-      /**
-       * <code>required int64 seq = 4;</code>
-       */
-      public Builder setSeq(long value) {
-        bitField0_ |= 0x00000008;
-        seq_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 seq = 4;</code>
-       */
-      public Builder clearSeq() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        seq_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:PaymentsToOrder)
-    }
-
-    static {
-      defaultInstance = new PaymentsToOrder(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:PaymentsToOrder)
-  }
-
-  public interface DecimalOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 value = 1;
-    /**
-     * <code>required int64 value = 1;</code>
-     */
-    boolean hasValue();
-    /**
-     * <code>required int64 value = 1;</code>
-     */
-    long getValue();
-
-    // optional int32 scale = 2 [default = 0];
-    /**
-     * <code>optional int32 scale = 2 [default = 0];</code>
-     */
-    boolean hasScale();
-    /**
-     * <code>optional int32 scale = 2 [default = 0];</code>
-     */
-    int getScale();
-  }
-  /**
-   * Protobuf type {@code Decimal}
-   */
-  public static final class Decimal extends
-      com.google.protobuf.GeneratedMessage
-      implements DecimalOrBuilder {
-    // Use Decimal.newBuilder() to construct.
-    private Decimal(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private Decimal(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final Decimal defaultInstance;
-    public static Decimal getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public Decimal getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Decimal(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              value_ = input.readInt64();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              scale_ = input.readInt32();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_Decimal_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_Decimal_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.Decimal.class, net.maivic.protocol.Model.Decimal.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<Decimal> PARSER =
-        new com.google.protobuf.AbstractParser<Decimal>() {
-      public Decimal parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Decimal(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Decimal> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int64 value = 1;
-    public static final int VALUE_FIELD_NUMBER = 1;
-    private long value_;
-    /**
-     * <code>required int64 value = 1;</code>
-     */
-    public boolean hasValue() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int64 value = 1;</code>
-     */
-    public long getValue() {
-      return value_;
-    }
-
-    // optional int32 scale = 2 [default = 0];
-    public static final int SCALE_FIELD_NUMBER = 2;
-    private int scale_;
-    /**
-     * <code>optional int32 scale = 2 [default = 0];</code>
-     */
-    public boolean hasScale() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional int32 scale = 2 [default = 0];</code>
-     */
-    public int getScale() {
-      return scale_;
-    }
-
-    private void initFields() {
-      value_ = 0L;
-      scale_ = 0;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasValue()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, value_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(2, scale_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, value_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, scale_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.Decimal parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.Decimal parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Decimal parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.Decimal parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Decimal parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.Decimal parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Decimal parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.Decimal parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Decimal parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.Decimal parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.Decimal prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code Decimal}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.DecimalOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_Decimal_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_Decimal_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.Decimal.class, net.maivic.protocol.Model.Decimal.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.Decimal.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        value_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        scale_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_Decimal_descriptor;
-      }
-
-      public net.maivic.protocol.Model.Decimal getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.Decimal.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.Decimal build() {
-        net.maivic.protocol.Model.Decimal result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.Decimal buildPartial() {
-        net.maivic.protocol.Model.Decimal result = new net.maivic.protocol.Model.Decimal(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.value_ = value_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.scale_ = scale_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.Decimal) {
-          return mergeFrom((net.maivic.protocol.Model.Decimal)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.Decimal other) {
-        if (other == net.maivic.protocol.Model.Decimal.getDefaultInstance()) return this;
-        if (other.hasValue()) {
-          setValue(other.getValue());
-        }
-        if (other.hasScale()) {
-          setScale(other.getScale());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasValue()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.Decimal parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.Decimal) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required int64 value = 1;
-      private long value_ ;
-      /**
-       * <code>required int64 value = 1;</code>
-       */
-      public boolean hasValue() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int64 value = 1;</code>
-       */
-      public long getValue() {
-        return value_;
-      }
-      /**
-       * <code>required int64 value = 1;</code>
-       */
-      public Builder setValue(long value) {
-        bitField0_ |= 0x00000001;
-        value_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 value = 1;</code>
-       */
-      public Builder clearValue() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        value_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int32 scale = 2 [default = 0];
-      private int scale_ ;
-      /**
-       * <code>optional int32 scale = 2 [default = 0];</code>
-       */
-      public boolean hasScale() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional int32 scale = 2 [default = 0];</code>
-       */
-      public int getScale() {
-        return scale_;
-      }
-      /**
-       * <code>optional int32 scale = 2 [default = 0];</code>
-       */
-      public Builder setScale(int value) {
-        bitField0_ |= 0x00000002;
-        scale_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 scale = 2 [default = 0];</code>
-       */
-      public Builder clearScale() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        scale_ = 0;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:Decimal)
-    }
-
-    static {
-      defaultInstance = new Decimal(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:Decimal)
-  }
-
-  public interface IntervalOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // optional uint64 start = 1;
-    /**
-     * <code>optional uint64 start = 1;</code>
-     */
-    boolean hasStart();
-    /**
-     * <code>optional uint64 start = 1;</code>
-     */
-    long getStart();
-
-    // optional uint64 end = 2;
-    /**
-     * <code>optional uint64 end = 2;</code>
-     */
-    boolean hasEnd();
-    /**
-     * <code>optional uint64 end = 2;</code>
-     */
-    long getEnd();
-  }
-  /**
-   * Protobuf type {@code Interval}
-   */
-  public static final class Interval extends
-      com.google.protobuf.GeneratedMessage
-      implements IntervalOrBuilder {
-    // Use Interval.newBuilder() to construct.
-    private Interval(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private Interval(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final Interval defaultInstance;
-    public static Interval getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public Interval getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Interval(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              start_ = input.readUInt64();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              end_ = input.readUInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_Interval_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_Interval_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.Interval.class, net.maivic.protocol.Model.Interval.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<Interval> PARSER =
-        new com.google.protobuf.AbstractParser<Interval>() {
-      public Interval parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Interval(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Interval> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // optional uint64 start = 1;
-    public static final int START_FIELD_NUMBER = 1;
-    private long start_;
-    /**
-     * <code>optional uint64 start = 1;</code>
-     */
-    public boolean hasStart() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>optional uint64 start = 1;</code>
-     */
-    public long getStart() {
-      return start_;
-    }
-
-    // optional uint64 end = 2;
-    public static final int END_FIELD_NUMBER = 2;
-    private long end_;
-    /**
-     * <code>optional uint64 end = 2;</code>
-     */
-    public boolean hasEnd() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional uint64 end = 2;</code>
-     */
-    public long getEnd() {
-      return end_;
-    }
-
-    private void initFields() {
-      start_ = 0L;
-      end_ = 0L;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt64(1, start_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeUInt64(2, end_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, start_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, end_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.Interval parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.Interval parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Interval parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.Interval parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Interval parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.Interval parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Interval parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.Interval parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.Interval parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.Interval parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.Interval prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code Interval}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.IntervalOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_Interval_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_Interval_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.Interval.class, net.maivic.protocol.Model.Interval.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.Interval.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        start_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        end_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_Interval_descriptor;
-      }
-
-      public net.maivic.protocol.Model.Interval getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.Interval.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.Interval build() {
-        net.maivic.protocol.Model.Interval result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.Interval buildPartial() {
-        net.maivic.protocol.Model.Interval result = new net.maivic.protocol.Model.Interval(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.start_ = start_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.end_ = end_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.Interval) {
-          return mergeFrom((net.maivic.protocol.Model.Interval)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.Interval other) {
-        if (other == net.maivic.protocol.Model.Interval.getDefaultInstance()) return this;
-        if (other.hasStart()) {
-          setStart(other.getStart());
-        }
-        if (other.hasEnd()) {
-          setEnd(other.getEnd());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.Interval parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.Interval) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // optional uint64 start = 1;
-      private long start_ ;
-      /**
-       * <code>optional uint64 start = 1;</code>
-       */
-      public boolean hasStart() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>optional uint64 start = 1;</code>
-       */
-      public long getStart() {
-        return start_;
-      }
-      /**
-       * <code>optional uint64 start = 1;</code>
-       */
-      public Builder setStart(long value) {
-        bitField0_ |= 0x00000001;
-        start_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional uint64 start = 1;</code>
-       */
-      public Builder clearStart() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        start_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional uint64 end = 2;
-      private long end_ ;
-      /**
-       * <code>optional uint64 end = 2;</code>
-       */
-      public boolean hasEnd() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional uint64 end = 2;</code>
-       */
-      public long getEnd() {
-        return end_;
-      }
-      /**
-       * <code>optional uint64 end = 2;</code>
-       */
-      public Builder setEnd(long value) {
-        bitField0_ |= 0x00000002;
-        end_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional uint64 end = 2;</code>
-       */
-      public Builder clearEnd() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        end_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:Interval)
-    }
-
-    static {
-      defaultInstance = new Interval(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:Interval)
-  }
-
-  public interface NameSpacePairOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 id = 1;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    long getId();
-
-    // required int64 domain = 2;
-    /**
-     * <code>required int64 domain = 2;</code>
-     */
-    boolean hasDomain();
-    /**
-     * <code>required int64 domain = 2;</code>
-     */
-    long getDomain();
-
-    // optional string value = 3;
-    /**
-     * <code>optional string value = 3;</code>
-     */
-    boolean hasValue();
-    /**
-     * <code>optional string value = 3;</code>
-     */
-    java.lang.String getValue();
-    /**
-     * <code>optional string value = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getValueBytes();
-  }
-  /**
-   * Protobuf type {@code NameSpacePair}
-   */
-  public static final class NameSpacePair extends
-      com.google.protobuf.GeneratedMessage
-      implements NameSpacePairOrBuilder {
-    // Use NameSpacePair.newBuilder() to construct.
-    private NameSpacePair(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private NameSpacePair(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final NameSpacePair defaultInstance;
-    public static NameSpacePair getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public NameSpacePair getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private NameSpacePair(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readInt64();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              domain_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
-              value_ = input.readBytes();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_NameSpacePair_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_NameSpacePair_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.NameSpacePair.class, net.maivic.protocol.Model.NameSpacePair.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<NameSpacePair> PARSER =
-        new com.google.protobuf.AbstractParser<NameSpacePair>() {
-      public NameSpacePair parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new NameSpacePair(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<NameSpacePair> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int64 id = 1;
-    public static final int ID_FIELD_NUMBER = 1;
-    private long id_;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public long getId() {
-      return id_;
-    }
-
-    // required int64 domain = 2;
-    public static final int DOMAIN_FIELD_NUMBER = 2;
-    private long domain_;
-    /**
-     * <code>required int64 domain = 2;</code>
-     */
-    public boolean hasDomain() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required int64 domain = 2;</code>
-     */
-    public long getDomain() {
-      return domain_;
-    }
-
-    // optional string value = 3;
-    public static final int VALUE_FIELD_NUMBER = 3;
-    private java.lang.Object value_;
-    /**
-     * <code>optional string value = 3;</code>
-     */
-    public boolean hasValue() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional string value = 3;</code>
-     */
-    public java.lang.String getValue() {
-      java.lang.Object ref = value_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          value_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string value = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getValueBytes() {
-      java.lang.Object ref = value_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        value_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private void initFields() {
-      id_ = 0L;
-      domain_ = 0L;
-      value_ = "";
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasDomain()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, domain_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getValueBytes());
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, domain_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getValueBytes());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.NameSpacePair parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.NameSpacePair parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.NameSpacePair parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.NameSpacePair parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.NameSpacePair parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.NameSpacePair parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.NameSpacePair parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.NameSpacePair parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.NameSpacePair parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.NameSpacePair parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.NameSpacePair prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code NameSpacePair}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.NameSpacePairOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_NameSpacePair_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_NameSpacePair_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.NameSpacePair.class, net.maivic.protocol.Model.NameSpacePair.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.NameSpacePair.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        id_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        domain_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        value_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_NameSpacePair_descriptor;
-      }
-
-      public net.maivic.protocol.Model.NameSpacePair getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.NameSpacePair.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.NameSpacePair build() {
-        net.maivic.protocol.Model.NameSpacePair result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.NameSpacePair buildPartial() {
-        net.maivic.protocol.Model.NameSpacePair result = new net.maivic.protocol.Model.NameSpacePair(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.domain_ = domain_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.value_ = value_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.NameSpacePair) {
-          return mergeFrom((net.maivic.protocol.Model.NameSpacePair)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.NameSpacePair other) {
-        if (other == net.maivic.protocol.Model.NameSpacePair.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasDomain()) {
-          setDomain(other.getDomain());
-        }
-        if (other.hasValue()) {
-          bitField0_ |= 0x00000004;
-          value_ = other.value_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasId()) {
-          
-          return false;
-        }
-        if (!hasDomain()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.NameSpacePair parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.NameSpacePair) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required int64 id = 1;
-      private long id_ ;
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder setId(long value) {
-        bitField0_ |= 0x00000001;
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // required int64 domain = 2;
-      private long domain_ ;
-      /**
-       * <code>required int64 domain = 2;</code>
-       */
-      public boolean hasDomain() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required int64 domain = 2;</code>
-       */
-      public long getDomain() {
-        return domain_;
-      }
-      /**
-       * <code>required int64 domain = 2;</code>
-       */
-      public Builder setDomain(long value) {
-        bitField0_ |= 0x00000002;
-        domain_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 domain = 2;</code>
-       */
-      public Builder clearDomain() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        domain_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string value = 3;
-      private java.lang.Object value_ = "";
-      /**
-       * <code>optional string value = 3;</code>
-       */
-      public boolean hasValue() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional string value = 3;</code>
-       */
-      public java.lang.String getValue() {
-        java.lang.Object ref = value_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          value_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string value = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getValueBytes() {
-        java.lang.Object ref = value_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          value_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string value = 3;</code>
-       */
-      public Builder setValue(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        value_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string value = 3;</code>
-       */
-      public Builder clearValue() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        value_ = getDefaultInstance().getValue();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string value = 3;</code>
-       */
-      public Builder setValueBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        value_ = value;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:NameSpacePair)
-    }
-
-    static {
-      defaultInstance = new NameSpacePair(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:NameSpacePair)
-  }
-
-  public interface ContactsToLegalEntityOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 contact_id = 1;
-    /**
-     * <code>required int64 contact_id = 1;</code>
-     */
-    boolean hasContactId();
-    /**
-     * <code>required int64 contact_id = 1;</code>
-     */
-    long getContactId();
-
-    // optional string role = 2;
-    /**
-     * <code>optional string role = 2;</code>
-     */
-    boolean hasRole();
-    /**
-     * <code>optional string role = 2;</code>
-     */
-    java.lang.String getRole();
-    /**
-     * <code>optional string role = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getRoleBytes();
-
-    // required int64 legal_entity_id = 3;
-    /**
-     * <code>required int64 legal_entity_id = 3;</code>
-     */
-    boolean hasLegalEntityId();
-    /**
-     * <code>required int64 legal_entity_id = 3;</code>
-     */
-    long getLegalEntityId();
-  }
-  /**
-   * Protobuf type {@code ContactsToLegalEntity}
-   */
-  public static final class ContactsToLegalEntity extends
-      com.google.protobuf.GeneratedMessage
-      implements ContactsToLegalEntityOrBuilder {
-    // Use ContactsToLegalEntity.newBuilder() to construct.
-    private ContactsToLegalEntity(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private ContactsToLegalEntity(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final ContactsToLegalEntity defaultInstance;
-    public static ContactsToLegalEntity getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public ContactsToLegalEntity getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ContactsToLegalEntity(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              contactId_ = input.readInt64();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              role_ = input.readBytes();
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              legalEntityId_ = input.readInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_ContactsToLegalEntity_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_ContactsToLegalEntity_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.ContactsToLegalEntity.class, net.maivic.protocol.Model.ContactsToLegalEntity.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<ContactsToLegalEntity> PARSER =
-        new com.google.protobuf.AbstractParser<ContactsToLegalEntity>() {
-      public ContactsToLegalEntity parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ContactsToLegalEntity(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ContactsToLegalEntity> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int64 contact_id = 1;
-    public static final int CONTACT_ID_FIELD_NUMBER = 1;
-    private long contactId_;
-    /**
-     * <code>required int64 contact_id = 1;</code>
-     */
-    public boolean hasContactId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int64 contact_id = 1;</code>
-     */
-    public long getContactId() {
-      return contactId_;
-    }
-
-    // optional string role = 2;
-    public static final int ROLE_FIELD_NUMBER = 2;
-    private java.lang.Object role_;
-    /**
-     * <code>optional string role = 2;</code>
-     */
-    public boolean hasRole() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional string role = 2;</code>
-     */
-    public java.lang.String getRole() {
-      java.lang.Object ref = role_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          role_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string role = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getRoleBytes() {
-      java.lang.Object ref = role_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        role_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // required int64 legal_entity_id = 3;
-    public static final int LEGAL_ENTITY_ID_FIELD_NUMBER = 3;
-    private long legalEntityId_;
-    /**
-     * <code>required int64 legal_entity_id = 3;</code>
-     */
-    public boolean hasLegalEntityId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>required int64 legal_entity_id = 3;</code>
-     */
-    public long getLegalEntityId() {
-      return legalEntityId_;
-    }
-
-    private void initFields() {
-      contactId_ = 0L;
-      role_ = "";
-      legalEntityId_ = 0L;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasContactId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasLegalEntityId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, contactId_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getRoleBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt64(3, legalEntityId_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, contactId_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getRoleBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, legalEntityId_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.ContactsToLegalEntity parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.ContactsToLegalEntity parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.ContactsToLegalEntity prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code ContactsToLegalEntity}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.ContactsToLegalEntityOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_ContactsToLegalEntity_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_ContactsToLegalEntity_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.ContactsToLegalEntity.class, net.maivic.protocol.Model.ContactsToLegalEntity.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.ContactsToLegalEntity.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        contactId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        role_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        legalEntityId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_ContactsToLegalEntity_descriptor;
-      }
-
-      public net.maivic.protocol.Model.ContactsToLegalEntity getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.ContactsToLegalEntity.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.ContactsToLegalEntity build() {
-        net.maivic.protocol.Model.ContactsToLegalEntity result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.ContactsToLegalEntity buildPartial() {
-        net.maivic.protocol.Model.ContactsToLegalEntity result = new net.maivic.protocol.Model.ContactsToLegalEntity(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.contactId_ = contactId_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.role_ = role_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.legalEntityId_ = legalEntityId_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.ContactsToLegalEntity) {
-          return mergeFrom((net.maivic.protocol.Model.ContactsToLegalEntity)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.ContactsToLegalEntity other) {
-        if (other == net.maivic.protocol.Model.ContactsToLegalEntity.getDefaultInstance()) return this;
-        if (other.hasContactId()) {
-          setContactId(other.getContactId());
-        }
-        if (other.hasRole()) {
-          bitField0_ |= 0x00000002;
-          role_ = other.role_;
-          onChanged();
-        }
-        if (other.hasLegalEntityId()) {
-          setLegalEntityId(other.getLegalEntityId());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasContactId()) {
-          
-          return false;
-        }
-        if (!hasLegalEntityId()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.ContactsToLegalEntity parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.ContactsToLegalEntity) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required int64 contact_id = 1;
-      private long contactId_ ;
-      /**
-       * <code>required int64 contact_id = 1;</code>
-       */
-      public boolean hasContactId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int64 contact_id = 1;</code>
-       */
-      public long getContactId() {
-        return contactId_;
-      }
-      /**
-       * <code>required int64 contact_id = 1;</code>
-       */
-      public Builder setContactId(long value) {
-        bitField0_ |= 0x00000001;
-        contactId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 contact_id = 1;</code>
-       */
-      public Builder clearContactId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        contactId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string role = 2;
-      private java.lang.Object role_ = "";
-      /**
-       * <code>optional string role = 2;</code>
-       */
-      public boolean hasRole() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional string role = 2;</code>
-       */
-      public java.lang.String getRole() {
-        java.lang.Object ref = role_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          role_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string role = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getRoleBytes() {
-        java.lang.Object ref = role_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          role_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string role = 2;</code>
-       */
-      public Builder setRole(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        role_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string role = 2;</code>
-       */
-      public Builder clearRole() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        role_ = getDefaultInstance().getRole();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string role = 2;</code>
-       */
-      public Builder setRoleBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        role_ = value;
-        onChanged();
-        return this;
-      }
-
-      // required int64 legal_entity_id = 3;
-      private long legalEntityId_ ;
-      /**
-       * <code>required int64 legal_entity_id = 3;</code>
-       */
-      public boolean hasLegalEntityId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>required int64 legal_entity_id = 3;</code>
-       */
-      public long getLegalEntityId() {
-        return legalEntityId_;
-      }
-      /**
-       * <code>required int64 legal_entity_id = 3;</code>
-       */
-      public Builder setLegalEntityId(long value) {
-        bitField0_ |= 0x00000004;
-        legalEntityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 legal_entity_id = 3;</code>
-       */
-      public Builder clearLegalEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        legalEntityId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:ContactsToLegalEntity)
-    }
-
-    static {
-      defaultInstance = new ContactsToLegalEntity(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:ContactsToLegalEntity)
-  }
-
-  public interface OrderStatusOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 id = 1;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    long getId();
-
-    // optional int64 order_id = 2;
-    /**
-     * <code>optional int64 order_id = 2;</code>
-     */
-    boolean hasOrderId();
-    /**
-     * <code>optional int64 order_id = 2;</code>
-     */
-    long getOrderId();
-
-    // optional int64 status_code_id = 3;
-    /**
-     * <code>optional int64 status_code_id = 3;</code>
-     */
-    boolean hasStatusCodeId();
-    /**
-     * <code>optional int64 status_code_id = 3;</code>
-     */
-    long getStatusCodeId();
-
-    // optional string status_note = 4;
-    /**
-     * <code>optional string status_note = 4;</code>
-     */
-    boolean hasStatusNote();
-    /**
-     * <code>optional string status_note = 4;</code>
-     */
-    java.lang.String getStatusNote();
-    /**
-     * <code>optional string status_note = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getStatusNoteBytes();
-  }
-  /**
-   * Protobuf type {@code OrderStatus}
-   */
-  public static final class OrderStatus extends
-      com.google.protobuf.GeneratedMessage
-      implements OrderStatusOrBuilder {
-    // Use OrderStatus.newBuilder() to construct.
-    private OrderStatus(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private OrderStatus(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final OrderStatus defaultInstance;
-    public static OrderStatus getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public OrderStatus getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private OrderStatus(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readInt64();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              orderId_ = input.readInt64();
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              statusCodeId_ = input.readInt64();
-              break;
-            }
-            case 34: {
-              bitField0_ |= 0x00000008;
-              statusNote_ = input.readBytes();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_OrderStatus_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_OrderStatus_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.OrderStatus.class, net.maivic.protocol.Model.OrderStatus.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<OrderStatus> PARSER =
-        new com.google.protobuf.AbstractParser<OrderStatus>() {
-      public OrderStatus parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OrderStatus(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<OrderStatus> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int64 id = 1;
-    public static final int ID_FIELD_NUMBER = 1;
-    private long id_;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public long getId() {
-      return id_;
-    }
-
-    // optional int64 order_id = 2;
-    public static final int ORDER_ID_FIELD_NUMBER = 2;
-    private long orderId_;
-    /**
-     * <code>optional int64 order_id = 2;</code>
-     */
-    public boolean hasOrderId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional int64 order_id = 2;</code>
-     */
-    public long getOrderId() {
-      return orderId_;
-    }
-
-    // optional int64 status_code_id = 3;
-    public static final int STATUS_CODE_ID_FIELD_NUMBER = 3;
-    private long statusCodeId_;
-    /**
-     * <code>optional int64 status_code_id = 3;</code>
-     */
-    public boolean hasStatusCodeId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional int64 status_code_id = 3;</code>
-     */
-    public long getStatusCodeId() {
-      return statusCodeId_;
-    }
-
-    // optional string status_note = 4;
-    public static final int STATUS_NOTE_FIELD_NUMBER = 4;
-    private java.lang.Object statusNote_;
-    /**
-     * <code>optional string status_note = 4;</code>
-     */
-    public boolean hasStatusNote() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional string status_note = 4;</code>
-     */
-    public java.lang.String getStatusNote() {
-      java.lang.Object ref = statusNote_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          statusNote_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string status_note = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getStatusNoteBytes() {
-      java.lang.Object ref = statusNote_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        statusNote_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private void initFields() {
-      id_ = 0L;
-      orderId_ = 0L;
-      statusCodeId_ = 0L;
-      statusNote_ = "";
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, orderId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt64(3, statusCodeId_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getStatusNoteBytes());
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, orderId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, statusCodeId_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getStatusNoteBytes());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.OrderStatus parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.OrderStatus parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.OrderStatus parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.OrderStatus parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.OrderStatus parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.OrderStatus parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.OrderStatus parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.OrderStatus parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.OrderStatus parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.OrderStatus parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.OrderStatus prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code OrderStatus}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.OrderStatusOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_OrderStatus_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_OrderStatus_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.OrderStatus.class, net.maivic.protocol.Model.OrderStatus.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.OrderStatus.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        id_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        orderId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        statusCodeId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        statusNote_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_OrderStatus_descriptor;
-      }
-
-      public net.maivic.protocol.Model.OrderStatus getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.OrderStatus.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.OrderStatus build() {
-        net.maivic.protocol.Model.OrderStatus result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.OrderStatus buildPartial() {
-        net.maivic.protocol.Model.OrderStatus result = new net.maivic.protocol.Model.OrderStatus(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.orderId_ = orderId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.statusCodeId_ = statusCodeId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.statusNote_ = statusNote_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.OrderStatus) {
-          return mergeFrom((net.maivic.protocol.Model.OrderStatus)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.OrderStatus other) {
-        if (other == net.maivic.protocol.Model.OrderStatus.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasOrderId()) {
-          setOrderId(other.getOrderId());
-        }
-        if (other.hasStatusCodeId()) {
-          setStatusCodeId(other.getStatusCodeId());
-        }
-        if (other.hasStatusNote()) {
-          bitField0_ |= 0x00000008;
-          statusNote_ = other.statusNote_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasId()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.OrderStatus parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.OrderStatus) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required int64 id = 1;
-      private long id_ ;
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder setId(long value) {
-        bitField0_ |= 0x00000001;
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 order_id = 2;
-      private long orderId_ ;
-      /**
-       * <code>optional int64 order_id = 2;</code>
-       */
-      public boolean hasOrderId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional int64 order_id = 2;</code>
-       */
-      public long getOrderId() {
-        return orderId_;
-      }
-      /**
-       * <code>optional int64 order_id = 2;</code>
-       */
-      public Builder setOrderId(long value) {
-        bitField0_ |= 0x00000002;
-        orderId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 order_id = 2;</code>
-       */
-      public Builder clearOrderId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        orderId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 status_code_id = 3;
-      private long statusCodeId_ ;
-      /**
-       * <code>optional int64 status_code_id = 3;</code>
-       */
-      public boolean hasStatusCodeId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional int64 status_code_id = 3;</code>
-       */
-      public long getStatusCodeId() {
-        return statusCodeId_;
-      }
-      /**
-       * <code>optional int64 status_code_id = 3;</code>
-       */
-      public Builder setStatusCodeId(long value) {
-        bitField0_ |= 0x00000004;
-        statusCodeId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 status_code_id = 3;</code>
-       */
-      public Builder clearStatusCodeId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        statusCodeId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string status_note = 4;
-      private java.lang.Object statusNote_ = "";
-      /**
-       * <code>optional string status_note = 4;</code>
-       */
-      public boolean hasStatusNote() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional string status_note = 4;</code>
-       */
-      public java.lang.String getStatusNote() {
-        java.lang.Object ref = statusNote_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          statusNote_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string status_note = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getStatusNoteBytes() {
-        java.lang.Object ref = statusNote_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          statusNote_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string status_note = 4;</code>
-       */
-      public Builder setStatusNote(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        statusNote_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string status_note = 4;</code>
-       */
-      public Builder clearStatusNote() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        statusNote_ = getDefaultInstance().getStatusNote();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string status_note = 4;</code>
-       */
-      public Builder setStatusNoteBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        statusNote_ = value;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:OrderStatus)
-    }
-
-    static {
-      defaultInstance = new OrderStatus(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:OrderStatus)
-  }
-
-  public interface MenuEntryOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 id = 1;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    long getId();
-
-    // optional int64 menu_id = 2;
-    /**
-     * <code>optional int64 menu_id = 2;</code>
-     */
-    boolean hasMenuId();
-    /**
-     * <code>optional int64 menu_id = 2;</code>
-     */
-    long getMenuId();
-
-    // optional string name = 3;
-    /**
-     * <code>optional string name = 3;</code>
-     */
-    boolean hasName();
-    /**
-     * <code>optional string name = 3;</code>
-     */
-    java.lang.String getName();
-    /**
-     * <code>optional string name = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    // optional int64 option_for = 4;
-    /**
-     * <code>optional int64 option_for = 4;</code>
-     */
-    boolean hasOptionFor();
-    /**
-     * <code>optional int64 option_for = 4;</code>
-     */
-    long getOptionFor();
-
-    // optional int64 option_max_qty = 5;
-    /**
-     * <code>optional int64 option_max_qty = 5;</code>
-     */
-    boolean hasOptionMaxQty();
-    /**
-     * <code>optional int64 option_max_qty = 5;</code>
-     */
-    long getOptionMaxQty();
-  }
-  /**
-   * Protobuf type {@code MenuEntry}
-   */
-  public static final class MenuEntry extends
-      com.google.protobuf.GeneratedMessage
-      implements MenuEntryOrBuilder {
-    // Use MenuEntry.newBuilder() to construct.
-    private MenuEntry(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private MenuEntry(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final MenuEntry defaultInstance;
-    public static MenuEntry getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public MenuEntry getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private MenuEntry(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readInt64();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              menuId_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
-              name_ = input.readBytes();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              optionFor_ = input.readInt64();
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000010;
-              optionMaxQty_ = input.readInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_MenuEntry_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_MenuEntry_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.MenuEntry.class, net.maivic.protocol.Model.MenuEntry.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<MenuEntry> PARSER =
-        new com.google.protobuf.AbstractParser<MenuEntry>() {
-      public MenuEntry parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MenuEntry(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MenuEntry> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int64 id = 1;
-    public static final int ID_FIELD_NUMBER = 1;
-    private long id_;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public long getId() {
-      return id_;
-    }
-
-    // optional int64 menu_id = 2;
-    public static final int MENU_ID_FIELD_NUMBER = 2;
-    private long menuId_;
-    /**
-     * <code>optional int64 menu_id = 2;</code>
-     */
-    public boolean hasMenuId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional int64 menu_id = 2;</code>
-     */
-    public long getMenuId() {
-      return menuId_;
-    }
-
-    // optional string name = 3;
-    public static final int NAME_FIELD_NUMBER = 3;
-    private java.lang.Object name_;
-    /**
-     * <code>optional string name = 3;</code>
-     */
-    public boolean hasName() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional string name = 3;</code>
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          name_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string name = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // optional int64 option_for = 4;
-    public static final int OPTION_FOR_FIELD_NUMBER = 4;
-    private long optionFor_;
-    /**
-     * <code>optional int64 option_for = 4;</code>
-     */
-    public boolean hasOptionFor() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional int64 option_for = 4;</code>
-     */
-    public long getOptionFor() {
-      return optionFor_;
-    }
-
-    // optional int64 option_max_qty = 5;
-    public static final int OPTION_MAX_QTY_FIELD_NUMBER = 5;
-    private long optionMaxQty_;
-    /**
-     * <code>optional int64 option_max_qty = 5;</code>
-     */
-    public boolean hasOptionMaxQty() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional int64 option_max_qty = 5;</code>
-     */
-    public long getOptionMaxQty() {
-      return optionMaxQty_;
-    }
-
-    private void initFields() {
-      id_ = 0L;
-      menuId_ = 0L;
-      name_ = "";
-      optionFor_ = 0L;
-      optionMaxQty_ = 0L;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, menuId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getNameBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeInt64(4, optionFor_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeInt64(5, optionMaxQty_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, menuId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getNameBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, optionFor_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, optionMaxQty_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.MenuEntry parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.MenuEntry parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.MenuEntry parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.MenuEntry parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.MenuEntry parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.MenuEntry parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.MenuEntry parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.MenuEntry parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.MenuEntry parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.MenuEntry parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.MenuEntry prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code MenuEntry}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.MenuEntryOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_MenuEntry_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_MenuEntry_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.MenuEntry.class, net.maivic.protocol.Model.MenuEntry.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.MenuEntry.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        id_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        menuId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        name_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
-        optionFor_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        optionMaxQty_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_MenuEntry_descriptor;
-      }
-
-      public net.maivic.protocol.Model.MenuEntry getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.MenuEntry.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.MenuEntry build() {
-        net.maivic.protocol.Model.MenuEntry result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.MenuEntry buildPartial() {
-        net.maivic.protocol.Model.MenuEntry result = new net.maivic.protocol.Model.MenuEntry(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.menuId_ = menuId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.name_ = name_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.optionFor_ = optionFor_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.optionMaxQty_ = optionMaxQty_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.MenuEntry) {
-          return mergeFrom((net.maivic.protocol.Model.MenuEntry)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.MenuEntry other) {
-        if (other == net.maivic.protocol.Model.MenuEntry.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasMenuId()) {
-          setMenuId(other.getMenuId());
-        }
-        if (other.hasName()) {
-          bitField0_ |= 0x00000004;
-          name_ = other.name_;
-          onChanged();
-        }
-        if (other.hasOptionFor()) {
-          setOptionFor(other.getOptionFor());
-        }
-        if (other.hasOptionMaxQty()) {
-          setOptionMaxQty(other.getOptionMaxQty());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasId()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.MenuEntry parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.MenuEntry) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required int64 id = 1;
-      private long id_ ;
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder setId(long value) {
-        bitField0_ |= 0x00000001;
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 menu_id = 2;
-      private long menuId_ ;
-      /**
-       * <code>optional int64 menu_id = 2;</code>
-       */
-      public boolean hasMenuId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional int64 menu_id = 2;</code>
-       */
-      public long getMenuId() {
-        return menuId_;
-      }
-      /**
-       * <code>optional int64 menu_id = 2;</code>
-       */
-      public Builder setMenuId(long value) {
-        bitField0_ |= 0x00000002;
-        menuId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 menu_id = 2;</code>
-       */
-      public Builder clearMenuId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        menuId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string name = 3;
-      private java.lang.Object name_ = "";
-      /**
-       * <code>optional string name = 3;</code>
-       */
-      public boolean hasName() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional string name = 3;</code>
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string name = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string name = 3;</code>
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string name = 3;</code>
-       */
-      public Builder clearName() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string name = 3;</code>
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        name_ = value;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 option_for = 4;
-      private long optionFor_ ;
-      /**
-       * <code>optional int64 option_for = 4;</code>
-       */
-      public boolean hasOptionFor() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional int64 option_for = 4;</code>
-       */
-      public long getOptionFor() {
-        return optionFor_;
-      }
-      /**
-       * <code>optional int64 option_for = 4;</code>
-       */
-      public Builder setOptionFor(long value) {
-        bitField0_ |= 0x00000008;
-        optionFor_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 option_for = 4;</code>
-       */
-      public Builder clearOptionFor() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        optionFor_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 option_max_qty = 5;
-      private long optionMaxQty_ ;
-      /**
-       * <code>optional int64 option_max_qty = 5;</code>
-       */
-      public boolean hasOptionMaxQty() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional int64 option_max_qty = 5;</code>
-       */
-      public long getOptionMaxQty() {
-        return optionMaxQty_;
-      }
-      /**
-       * <code>optional int64 option_max_qty = 5;</code>
-       */
-      public Builder setOptionMaxQty(long value) {
-        bitField0_ |= 0x00000010;
-        optionMaxQty_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 option_max_qty = 5;</code>
-       */
-      public Builder clearOptionMaxQty() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        optionMaxQty_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:MenuEntry)
-    }
-
-    static {
-      defaultInstance = new MenuEntry(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:MenuEntry)
-  }
-
-  public interface InvoicesToContactOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 contact_id = 1;
-    /**
-     * <code>required int64 contact_id = 1;</code>
-     */
-    boolean hasContactId();
-    /**
-     * <code>required int64 contact_id = 1;</code>
-     */
-    long getContactId();
-
-    // required int64 invoice_id = 2;
-    /**
-     * <code>required int64 invoice_id = 2;</code>
-     */
-    boolean hasInvoiceId();
-    /**
-     * <code>required int64 invoice_id = 2;</code>
-     */
-    long getInvoiceId();
-
-    // required string role = 3;
-    /**
-     * <code>required string role = 3;</code>
-     */
-    boolean hasRole();
-    /**
-     * <code>required string role = 3;</code>
-     */
-    java.lang.String getRole();
-    /**
-     * <code>required string role = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getRoleBytes();
-  }
-  /**
-   * Protobuf type {@code InvoicesToContact}
-   */
-  public static final class InvoicesToContact extends
-      com.google.protobuf.GeneratedMessage
-      implements InvoicesToContactOrBuilder {
-    // Use InvoicesToContact.newBuilder() to construct.
-    private InvoicesToContact(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private InvoicesToContact(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final InvoicesToContact defaultInstance;
-    public static InvoicesToContact getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public InvoicesToContact getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private InvoicesToContact(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              contactId_ = input.readInt64();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              invoiceId_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
-              role_ = input.readBytes();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_InvoicesToContact_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_InvoicesToContact_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.InvoicesToContact.class, net.maivic.protocol.Model.InvoicesToContact.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<InvoicesToContact> PARSER =
-        new com.google.protobuf.AbstractParser<InvoicesToContact>() {
-      public InvoicesToContact parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InvoicesToContact(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<InvoicesToContact> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int64 contact_id = 1;
-    public static final int CONTACT_ID_FIELD_NUMBER = 1;
-    private long contactId_;
-    /**
-     * <code>required int64 contact_id = 1;</code>
-     */
-    public boolean hasContactId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int64 contact_id = 1;</code>
-     */
-    public long getContactId() {
-      return contactId_;
-    }
-
-    // required int64 invoice_id = 2;
-    public static final int INVOICE_ID_FIELD_NUMBER = 2;
-    private long invoiceId_;
-    /**
-     * <code>required int64 invoice_id = 2;</code>
-     */
-    public boolean hasInvoiceId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required int64 invoice_id = 2;</code>
-     */
-    public long getInvoiceId() {
-      return invoiceId_;
-    }
-
-    // required string role = 3;
-    public static final int ROLE_FIELD_NUMBER = 3;
-    private java.lang.Object role_;
-    /**
-     * <code>required string role = 3;</code>
-     */
-    public boolean hasRole() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>required string role = 3;</code>
-     */
-    public java.lang.String getRole() {
-      java.lang.Object ref = role_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          role_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string role = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getRoleBytes() {
-      java.lang.Object ref = role_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        role_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private void initFields() {
-      contactId_ = 0L;
-      invoiceId_ = 0L;
-      role_ = "";
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasContactId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasInvoiceId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasRole()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, contactId_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, invoiceId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getRoleBytes());
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, contactId_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, invoiceId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getRoleBytes());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.InvoicesToContact parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.InvoicesToContact parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.InvoicesToContact parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.InvoicesToContact prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code InvoicesToContact}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.InvoicesToContactOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_InvoicesToContact_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_InvoicesToContact_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.InvoicesToContact.class, net.maivic.protocol.Model.InvoicesToContact.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.InvoicesToContact.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        contactId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        invoiceId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        role_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_InvoicesToContact_descriptor;
-      }
-
-      public net.maivic.protocol.Model.InvoicesToContact getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.InvoicesToContact.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.InvoicesToContact build() {
-        net.maivic.protocol.Model.InvoicesToContact result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.InvoicesToContact buildPartial() {
-        net.maivic.protocol.Model.InvoicesToContact result = new net.maivic.protocol.Model.InvoicesToContact(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.contactId_ = contactId_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.invoiceId_ = invoiceId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.role_ = role_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.InvoicesToContact) {
-          return mergeFrom((net.maivic.protocol.Model.InvoicesToContact)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.InvoicesToContact other) {
-        if (other == net.maivic.protocol.Model.InvoicesToContact.getDefaultInstance()) return this;
-        if (other.hasContactId()) {
-          setContactId(other.getContactId());
-        }
-        if (other.hasInvoiceId()) {
-          setInvoiceId(other.getInvoiceId());
-        }
-        if (other.hasRole()) {
-          bitField0_ |= 0x00000004;
-          role_ = other.role_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasContactId()) {
-          
-          return false;
-        }
-        if (!hasInvoiceId()) {
-          
-          return false;
-        }
-        if (!hasRole()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.InvoicesToContact parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.InvoicesToContact) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required int64 contact_id = 1;
-      private long contactId_ ;
-      /**
-       * <code>required int64 contact_id = 1;</code>
-       */
-      public boolean hasContactId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int64 contact_id = 1;</code>
-       */
-      public long getContactId() {
-        return contactId_;
-      }
-      /**
-       * <code>required int64 contact_id = 1;</code>
-       */
-      public Builder setContactId(long value) {
-        bitField0_ |= 0x00000001;
-        contactId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 contact_id = 1;</code>
-       */
-      public Builder clearContactId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        contactId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // required int64 invoice_id = 2;
-      private long invoiceId_ ;
-      /**
-       * <code>required int64 invoice_id = 2;</code>
-       */
-      public boolean hasInvoiceId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required int64 invoice_id = 2;</code>
-       */
-      public long getInvoiceId() {
-        return invoiceId_;
-      }
-      /**
-       * <code>required int64 invoice_id = 2;</code>
-       */
-      public Builder setInvoiceId(long value) {
-        bitField0_ |= 0x00000002;
-        invoiceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 invoice_id = 2;</code>
-       */
-      public Builder clearInvoiceId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        invoiceId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // required string role = 3;
-      private java.lang.Object role_ = "";
-      /**
-       * <code>required string role = 3;</code>
-       */
-      public boolean hasRole() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>required string role = 3;</code>
-       */
-      public java.lang.String getRole() {
-        java.lang.Object ref = role_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          role_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string role = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getRoleBytes() {
-        java.lang.Object ref = role_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          role_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string role = 3;</code>
-       */
-      public Builder setRole(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        role_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string role = 3;</code>
-       */
-      public Builder clearRole() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        role_ = getDefaultInstance().getRole();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string role = 3;</code>
-       */
-      public Builder setRoleBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        role_ = value;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:InvoicesToContact)
-    }
-
-    static {
-      defaultInstance = new InvoicesToContact(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:InvoicesToContact)
-  }
-
-  public interface OrderEntryOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-
-    // required int64 id = 1;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    long getId();
-
-    // optional int64 order_id = 2;
-    /**
-     * <code>optional int64 order_id = 2;</code>
-     */
-    boolean hasOrderId();
-    /**
-     * <code>optional int64 order_id = 2;</code>
-     */
-    long getOrderId();
-
-    // optional int64 offer_id = 3;
-    /**
-     * <code>optional int64 offer_id = 3;</code>
-     */
-    boolean hasOfferId();
-    /**
-     * <code>optional int64 offer_id = 3;</code>
-     */
-    long getOfferId();
-
-    // optional .Decimal qty = 4;
-    /**
-     * <code>optional .Decimal qty = 4;</code>
-     */
-    boolean hasQty();
-    /**
-     * <code>optional .Decimal qty = 4;</code>
-     */
-    net.maivic.protocol.Model.Decimal getQty();
-    /**
-     * <code>optional .Decimal qty = 4;</code>
-     */
-    net.maivic.protocol.Model.DecimalOrBuilder getQtyOrBuilder();
-  }
-  /**
-   * Protobuf type {@code OrderEntry}
-   */
-  public static final class OrderEntry extends
-      com.google.protobuf.GeneratedMessage
-      implements OrderEntryOrBuilder {
-    // Use OrderEntry.newBuilder() to construct.
-    private OrderEntry(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private OrderEntry(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final OrderEntry defaultInstance;
-    public static OrderEntry getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public OrderEntry getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private OrderEntry(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readInt64();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              orderId_ = input.readInt64();
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              offerId_ = input.readInt64();
-              break;
-            }
-            case 34: {
-              net.maivic.protocol.Model.Decimal.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                subBuilder = qty_.toBuilder();
-              }
-              qty_ = input.readMessage(net.maivic.protocol.Model.Decimal.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(qty_);
-                qty_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000008;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_OrderEntry_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_OrderEntry_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.OrderEntry.class, net.maivic.protocol.Model.OrderEntry.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<OrderEntry> PARSER =
-        new com.google.protobuf.AbstractParser<OrderEntry>() {
-      public OrderEntry parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OrderEntry(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<OrderEntry> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int64 id = 1;
-    public static final int ID_FIELD_NUMBER = 1;
-    private long id_;
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int64 id = 1;</code>
-     */
-    public long getId() {
-      return id_;
-    }
-
-    // optional int64 order_id = 2;
-    public static final int ORDER_ID_FIELD_NUMBER = 2;
-    private long orderId_;
-    /**
-     * <code>optional int64 order_id = 2;</code>
-     */
-    public boolean hasOrderId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional int64 order_id = 2;</code>
-     */
-    public long getOrderId() {
-      return orderId_;
-    }
-
-    // optional int64 offer_id = 3;
-    public static final int OFFER_ID_FIELD_NUMBER = 3;
-    private long offerId_;
-    /**
-     * <code>optional int64 offer_id = 3;</code>
-     */
-    public boolean hasOfferId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional int64 offer_id = 3;</code>
-     */
-    public long getOfferId() {
-      return offerId_;
-    }
-
-    // optional .Decimal qty = 4;
-    public static final int QTY_FIELD_NUMBER = 4;
-    private net.maivic.protocol.Model.Decimal qty_;
-    /**
-     * <code>optional .Decimal qty = 4;</code>
-     */
-    public boolean hasQty() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional .Decimal qty = 4;</code>
-     */
-    public net.maivic.protocol.Model.Decimal getQty() {
-      return qty_;
-    }
-    /**
-     * <code>optional .Decimal qty = 4;</code>
-     */
-    public net.maivic.protocol.Model.DecimalOrBuilder getQtyOrBuilder() {
-      return qty_;
-    }
-
-    private void initFields() {
-      id_ = 0L;
-      orderId_ = 0L;
-      offerId_ = 0L;
-      qty_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (hasQty()) {
-        if (!getQty().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, orderId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt64(3, offerId_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeMessage(4, qty_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, orderId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, offerId_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, qty_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static net.maivic.protocol.Model.OrderEntry parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.OrderEntry parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.OrderEntry parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static net.maivic.protocol.Model.OrderEntry parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.OrderEntry parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.OrderEntry parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.OrderEntry parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static net.maivic.protocol.Model.OrderEntry parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static net.maivic.protocol.Model.OrderEntry parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static net.maivic.protocol.Model.OrderEntry parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.OrderEntry prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code OrderEntry}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.OrderEntryOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_OrderEntry_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_OrderEntry_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.OrderEntry.class, net.maivic.protocol.Model.OrderEntry.Builder.class);
-      }
-
-      // Construct using net.maivic.protocol.Model.OrderEntry.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getQtyFieldBuilder();
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        id_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        orderId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        offerId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        if (qtyBuilder_ == null) {
-          qty_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
-        } else {
-          qtyBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_OrderEntry_descriptor;
-      }
-
-      public net.maivic.protocol.Model.OrderEntry getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.OrderEntry.getDefaultInstance();
-      }
-
-      public net.maivic.protocol.Model.OrderEntry build() {
-        net.maivic.protocol.Model.OrderEntry result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public net.maivic.protocol.Model.OrderEntry buildPartial() {
-        net.maivic.protocol.Model.OrderEntry result = new net.maivic.protocol.Model.OrderEntry(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.orderId_ = orderId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.offerId_ = offerId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        if (qtyBuilder_ == null) {
-          result.qty_ = qty_;
-        } else {
-          result.qty_ = qtyBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.OrderEntry) {
-          return mergeFrom((net.maivic.protocol.Model.OrderEntry)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(net.maivic.protocol.Model.OrderEntry other) {
-        if (other == net.maivic.protocol.Model.OrderEntry.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasOrderId()) {
-          setOrderId(other.getOrderId());
-        }
-        if (other.hasOfferId()) {
-          setOfferId(other.getOfferId());
-        }
-        if (other.hasQty()) {
-          mergeQty(other.getQty());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasId()) {
-          
-          return false;
-        }
-        if (hasQty()) {
-          if (!getQty().isInitialized()) {
-            
-            return false;
-          }
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        net.maivic.protocol.Model.OrderEntry parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.OrderEntry) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      // required int64 id = 1;
-      private long id_ ;
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder setId(long value) {
-        bitField0_ |= 0x00000001;
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 id = 1;</code>
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 order_id = 2;
-      private long orderId_ ;
-      /**
-       * <code>optional int64 order_id = 2;</code>
-       */
-      public boolean hasOrderId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional int64 order_id = 2;</code>
-       */
-      public long getOrderId() {
-        return orderId_;
-      }
-      /**
-       * <code>optional int64 order_id = 2;</code>
-       */
-      public Builder setOrderId(long value) {
-        bitField0_ |= 0x00000002;
-        orderId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 order_id = 2;</code>
-       */
-      public Builder clearOrderId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        orderId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 offer_id = 3;
-      private long offerId_ ;
-      /**
-       * <code>optional int64 offer_id = 3;</code>
-       */
-      public boolean hasOfferId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional int64 offer_id = 3;</code>
-       */
-      public long getOfferId() {
-        return offerId_;
-      }
-      /**
-       * <code>optional int64 offer_id = 3;</code>
-       */
-      public Builder setOfferId(long value) {
-        bitField0_ |= 0x00000004;
-        offerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 offer_id = 3;</code>
-       */
-      public Builder clearOfferId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        offerId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional .Decimal qty = 4;
-      private net.maivic.protocol.Model.Decimal qty_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          net.maivic.protocol.Model.Decimal, net.maivic.protocol.Model.Decimal.Builder, net.maivic.protocol.Model.DecimalOrBuilder> qtyBuilder_;
-      /**
-       * <code>optional .Decimal qty = 4;</code>
-       */
-      public boolean hasQty() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional .Decimal qty = 4;</code>
-       */
-      public net.maivic.protocol.Model.Decimal getQty() {
-        if (qtyBuilder_ == null) {
-          return qty_;
-        } else {
-          return qtyBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .Decimal qty = 4;</code>
-       */
-      public Builder setQty(net.maivic.protocol.Model.Decimal value) {
-        if (qtyBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          qty_ = value;
-          onChanged();
-        } else {
-          qtyBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000008;
-        return this;
-      }
-      /**
-       * <code>optional .Decimal qty = 4;</code>
-       */
-      public Builder setQty(
-          net.maivic.protocol.Model.Decimal.Builder builderForValue) {
-        if (qtyBuilder_ == null) {
-          qty_ = builderForValue.build();
-          onChanged();
-        } else {
-          qtyBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000008;
-        return this;
-      }
-      /**
-       * <code>optional .Decimal qty = 4;</code>
-       */
-      public Builder mergeQty(net.maivic.protocol.Model.Decimal value) {
-        if (qtyBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008) &&
-              qty_ != net.maivic.protocol.Model.Decimal.getDefaultInstance()) {
-            qty_ =
-              net.maivic.protocol.Model.Decimal.newBuilder(qty_).mergeFrom(value).buildPartial();
-          } else {
-            qty_ = value;
-          }
-          onChanged();
-        } else {
-          qtyBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000008;
-        return this;
-      }
-      /**
-       * <code>optional .Decimal qty = 4;</code>
-       */
-      public Builder clearQty() {
-        if (qtyBuilder_ == null) {
-          qty_ = net.maivic.protocol.Model.Decimal.getDefaultInstance();
-          onChanged();
-        } else {
-          qtyBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
-      /**
-       * <code>optional .Decimal qty = 4;</code>
-       */
-      public net.maivic.protocol.Model.Decimal.Builder getQtyBuilder() {
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return getQtyFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .Decimal qty = 4;</code>
-       */
-      public net.maivic.protocol.Model.DecimalOrBuilder getQtyOrBuilder() {
-        if (qtyBuilder_ != null) {
-          return qtyBuilder_.getMessageOrBuilder();
-        } else {
-          return qty_;
-        }
-      }
-      /**
-       * <code>optional .Decimal qty = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          net.maivic.protocol.Model.Decimal, net.maivic.protocol.Model.Decimal.Builder, net.maivic.protocol.Model.DecimalOrBuilder> 
-          getQtyFieldBuilder() {
-        if (qtyBuilder_ == null) {
-          qtyBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.maivic.protocol.Model.Decimal, net.maivic.protocol.Model.Decimal.Builder, net.maivic.protocol.Model.DecimalOrBuilder>(
-                  qty_,
-                  getParentForChildren(),
-                  isClean());
-          qty_ = null;
-        }
-        return qtyBuilder_;
-      }
-
-      // @@protoc_insertion_point(builder_scope:OrderEntry)
-    }
-
-    static {
-      defaultInstance = new OrderEntry(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:OrderEntry)
   }
 
   public interface ReceiptOrBuilder
@@ -24537,6 +15899,6108 @@ public final class Model {
     }
 
     // @@protoc_insertion_point(class_scope:SpatialRefSy)
+  }
+
+  public interface DecimalOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int64 value = 1;
+    /**
+     * <code>required int64 value = 1;</code>
+     */
+    boolean hasValue();
+    /**
+     * <code>required int64 value = 1;</code>
+     */
+    long getValue();
+
+    // optional int32 scale = 2 [default = 0];
+    /**
+     * <code>optional int32 scale = 2 [default = 0];</code>
+     */
+    boolean hasScale();
+    /**
+     * <code>optional int32 scale = 2 [default = 0];</code>
+     */
+    int getScale();
+  }
+  /**
+   * Protobuf type {@code Decimal}
+   */
+  public static final class Decimal extends
+      com.google.protobuf.GeneratedMessage
+      implements DecimalOrBuilder {
+    // Use Decimal.newBuilder() to construct.
+    private Decimal(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private Decimal(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final Decimal defaultInstance;
+    public static Decimal getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public Decimal getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Decimal(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              value_ = input.readInt64();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              scale_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.maivic.protocol.Model.internal_static_Decimal_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.maivic.protocol.Model.internal_static_Decimal_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.maivic.protocol.Model.Decimal.class, net.maivic.protocol.Model.Decimal.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<Decimal> PARSER =
+        new com.google.protobuf.AbstractParser<Decimal>() {
+      public Decimal parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Decimal(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Decimal> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int64 value = 1;
+    public static final int VALUE_FIELD_NUMBER = 1;
+    private long value_;
+    /**
+     * <code>required int64 value = 1;</code>
+     */
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 value = 1;</code>
+     */
+    public long getValue() {
+      return value_;
+    }
+
+    // optional int32 scale = 2 [default = 0];
+    public static final int SCALE_FIELD_NUMBER = 2;
+    private int scale_;
+    /**
+     * <code>optional int32 scale = 2 [default = 0];</code>
+     */
+    public boolean hasScale() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int32 scale = 2 [default = 0];</code>
+     */
+    public int getScale() {
+      return scale_;
+    }
+
+    private void initFields() {
+      value_ = 0L;
+      scale_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasValue()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, value_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, scale_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, value_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, scale_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static net.maivic.protocol.Model.Decimal parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.Decimal parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.Decimal parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.Decimal parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.Decimal parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.Decimal parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.Decimal parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static net.maivic.protocol.Model.Decimal parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.Decimal parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.Decimal parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(net.maivic.protocol.Model.Decimal prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Decimal}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements net.maivic.protocol.Model.DecimalOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.maivic.protocol.Model.internal_static_Decimal_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.maivic.protocol.Model.internal_static_Decimal_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.maivic.protocol.Model.Decimal.class, net.maivic.protocol.Model.Decimal.Builder.class);
+      }
+
+      // Construct using net.maivic.protocol.Model.Decimal.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        value_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        scale_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.maivic.protocol.Model.internal_static_Decimal_descriptor;
+      }
+
+      public net.maivic.protocol.Model.Decimal getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.Decimal.getDefaultInstance();
+      }
+
+      public net.maivic.protocol.Model.Decimal build() {
+        net.maivic.protocol.Model.Decimal result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.maivic.protocol.Model.Decimal buildPartial() {
+        net.maivic.protocol.Model.Decimal result = new net.maivic.protocol.Model.Decimal(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.value_ = value_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.scale_ = scale_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.maivic.protocol.Model.Decimal) {
+          return mergeFrom((net.maivic.protocol.Model.Decimal)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.maivic.protocol.Model.Decimal other) {
+        if (other == net.maivic.protocol.Model.Decimal.getDefaultInstance()) return this;
+        if (other.hasValue()) {
+          setValue(other.getValue());
+        }
+        if (other.hasScale()) {
+          setScale(other.getScale());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasValue()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.maivic.protocol.Model.Decimal parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.maivic.protocol.Model.Decimal) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int64 value = 1;
+      private long value_ ;
+      /**
+       * <code>required int64 value = 1;</code>
+       */
+      public boolean hasValue() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 value = 1;</code>
+       */
+      public long getValue() {
+        return value_;
+      }
+      /**
+       * <code>required int64 value = 1;</code>
+       */
+      public Builder setValue(long value) {
+        bitField0_ |= 0x00000001;
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 value = 1;</code>
+       */
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        value_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional int32 scale = 2 [default = 0];
+      private int scale_ ;
+      /**
+       * <code>optional int32 scale = 2 [default = 0];</code>
+       */
+      public boolean hasScale() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int32 scale = 2 [default = 0];</code>
+       */
+      public int getScale() {
+        return scale_;
+      }
+      /**
+       * <code>optional int32 scale = 2 [default = 0];</code>
+       */
+      public Builder setScale(int value) {
+        bitField0_ |= 0x00000002;
+        scale_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 scale = 2 [default = 0];</code>
+       */
+      public Builder clearScale() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        scale_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:Decimal)
+    }
+
+    static {
+      defaultInstance = new Decimal(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:Decimal)
+  }
+
+  public interface IntervalOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // optional uint64 start = 1;
+    /**
+     * <code>optional uint64 start = 1;</code>
+     */
+    boolean hasStart();
+    /**
+     * <code>optional uint64 start = 1;</code>
+     */
+    long getStart();
+
+    // optional uint64 end = 2;
+    /**
+     * <code>optional uint64 end = 2;</code>
+     */
+    boolean hasEnd();
+    /**
+     * <code>optional uint64 end = 2;</code>
+     */
+    long getEnd();
+  }
+  /**
+   * Protobuf type {@code Interval}
+   */
+  public static final class Interval extends
+      com.google.protobuf.GeneratedMessage
+      implements IntervalOrBuilder {
+    // Use Interval.newBuilder() to construct.
+    private Interval(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private Interval(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final Interval defaultInstance;
+    public static Interval getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public Interval getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Interval(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              start_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              end_ = input.readUInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.maivic.protocol.Model.internal_static_Interval_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.maivic.protocol.Model.internal_static_Interval_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.maivic.protocol.Model.Interval.class, net.maivic.protocol.Model.Interval.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<Interval> PARSER =
+        new com.google.protobuf.AbstractParser<Interval>() {
+      public Interval parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Interval(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Interval> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // optional uint64 start = 1;
+    public static final int START_FIELD_NUMBER = 1;
+    private long start_;
+    /**
+     * <code>optional uint64 start = 1;</code>
+     */
+    public boolean hasStart() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional uint64 start = 1;</code>
+     */
+    public long getStart() {
+      return start_;
+    }
+
+    // optional uint64 end = 2;
+    public static final int END_FIELD_NUMBER = 2;
+    private long end_;
+    /**
+     * <code>optional uint64 end = 2;</code>
+     */
+    public boolean hasEnd() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional uint64 end = 2;</code>
+     */
+    public long getEnd() {
+      return end_;
+    }
+
+    private void initFields() {
+      start_ = 0L;
+      end_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt64(1, start_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt64(2, end_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, start_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, end_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static net.maivic.protocol.Model.Interval parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.Interval parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.Interval parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.Interval parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.Interval parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.Interval parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.Interval parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static net.maivic.protocol.Model.Interval parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.Interval parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.Interval parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(net.maivic.protocol.Model.Interval prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Interval}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements net.maivic.protocol.Model.IntervalOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.maivic.protocol.Model.internal_static_Interval_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.maivic.protocol.Model.internal_static_Interval_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.maivic.protocol.Model.Interval.class, net.maivic.protocol.Model.Interval.Builder.class);
+      }
+
+      // Construct using net.maivic.protocol.Model.Interval.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        start_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        end_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.maivic.protocol.Model.internal_static_Interval_descriptor;
+      }
+
+      public net.maivic.protocol.Model.Interval getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.Interval.getDefaultInstance();
+      }
+
+      public net.maivic.protocol.Model.Interval build() {
+        net.maivic.protocol.Model.Interval result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.maivic.protocol.Model.Interval buildPartial() {
+        net.maivic.protocol.Model.Interval result = new net.maivic.protocol.Model.Interval(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.start_ = start_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.end_ = end_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.maivic.protocol.Model.Interval) {
+          return mergeFrom((net.maivic.protocol.Model.Interval)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.maivic.protocol.Model.Interval other) {
+        if (other == net.maivic.protocol.Model.Interval.getDefaultInstance()) return this;
+        if (other.hasStart()) {
+          setStart(other.getStart());
+        }
+        if (other.hasEnd()) {
+          setEnd(other.getEnd());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.maivic.protocol.Model.Interval parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.maivic.protocol.Model.Interval) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // optional uint64 start = 1;
+      private long start_ ;
+      /**
+       * <code>optional uint64 start = 1;</code>
+       */
+      public boolean hasStart() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint64 start = 1;</code>
+       */
+      public long getStart() {
+        return start_;
+      }
+      /**
+       * <code>optional uint64 start = 1;</code>
+       */
+      public Builder setStart(long value) {
+        bitField0_ |= 0x00000001;
+        start_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 start = 1;</code>
+       */
+      public Builder clearStart() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        start_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional uint64 end = 2;
+      private long end_ ;
+      /**
+       * <code>optional uint64 end = 2;</code>
+       */
+      public boolean hasEnd() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional uint64 end = 2;</code>
+       */
+      public long getEnd() {
+        return end_;
+      }
+      /**
+       * <code>optional uint64 end = 2;</code>
+       */
+      public Builder setEnd(long value) {
+        bitField0_ |= 0x00000002;
+        end_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 end = 2;</code>
+       */
+      public Builder clearEnd() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        end_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:Interval)
+    }
+
+    static {
+      defaultInstance = new Interval(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:Interval)
+  }
+
+  public interface NameSpacePairOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int64 id = 1;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    long getId();
+
+    // required int64 domain = 2;
+    /**
+     * <code>required int64 domain = 2;</code>
+     */
+    boolean hasDomain();
+    /**
+     * <code>required int64 domain = 2;</code>
+     */
+    long getDomain();
+
+    // optional string value = 3;
+    /**
+     * <code>optional string value = 3;</code>
+     */
+    boolean hasValue();
+    /**
+     * <code>optional string value = 3;</code>
+     */
+    java.lang.String getValue();
+    /**
+     * <code>optional string value = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getValueBytes();
+  }
+  /**
+   * Protobuf type {@code NameSpacePair}
+   */
+  public static final class NameSpacePair extends
+      com.google.protobuf.GeneratedMessage
+      implements NameSpacePairOrBuilder {
+    // Use NameSpacePair.newBuilder() to construct.
+    private NameSpacePair(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private NameSpacePair(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final NameSpacePair defaultInstance;
+    public static NameSpacePair getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public NameSpacePair getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private NameSpacePair(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt64();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              domain_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              value_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.maivic.protocol.Model.internal_static_NameSpacePair_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.maivic.protocol.Model.internal_static_NameSpacePair_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.maivic.protocol.Model.NameSpacePair.class, net.maivic.protocol.Model.NameSpacePair.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<NameSpacePair> PARSER =
+        new com.google.protobuf.AbstractParser<NameSpacePair>() {
+      public NameSpacePair parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new NameSpacePair(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NameSpacePair> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int64 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public long getId() {
+      return id_;
+    }
+
+    // required int64 domain = 2;
+    public static final int DOMAIN_FIELD_NUMBER = 2;
+    private long domain_;
+    /**
+     * <code>required int64 domain = 2;</code>
+     */
+    public boolean hasDomain() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required int64 domain = 2;</code>
+     */
+    public long getDomain() {
+      return domain_;
+    }
+
+    // optional string value = 3;
+    public static final int VALUE_FIELD_NUMBER = 3;
+    private java.lang.Object value_;
+    /**
+     * <code>optional string value = 3;</code>
+     */
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string value = 3;</code>
+     */
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          value_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string value = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      id_ = 0L;
+      domain_ = 0L;
+      value_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasDomain()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt64(2, domain_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getValueBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, domain_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getValueBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static net.maivic.protocol.Model.NameSpacePair parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.NameSpacePair parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.NameSpacePair parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.NameSpacePair parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.NameSpacePair parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.NameSpacePair parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.NameSpacePair parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static net.maivic.protocol.Model.NameSpacePair parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.NameSpacePair parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.NameSpacePair parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(net.maivic.protocol.Model.NameSpacePair prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code NameSpacePair}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements net.maivic.protocol.Model.NameSpacePairOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.maivic.protocol.Model.internal_static_NameSpacePair_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.maivic.protocol.Model.internal_static_NameSpacePair_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.maivic.protocol.Model.NameSpacePair.class, net.maivic.protocol.Model.NameSpacePair.Builder.class);
+      }
+
+      // Construct using net.maivic.protocol.Model.NameSpacePair.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        domain_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        value_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.maivic.protocol.Model.internal_static_NameSpacePair_descriptor;
+      }
+
+      public net.maivic.protocol.Model.NameSpacePair getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.NameSpacePair.getDefaultInstance();
+      }
+
+      public net.maivic.protocol.Model.NameSpacePair build() {
+        net.maivic.protocol.Model.NameSpacePair result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.maivic.protocol.Model.NameSpacePair buildPartial() {
+        net.maivic.protocol.Model.NameSpacePair result = new net.maivic.protocol.Model.NameSpacePair(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.domain_ = domain_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.value_ = value_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.maivic.protocol.Model.NameSpacePair) {
+          return mergeFrom((net.maivic.protocol.Model.NameSpacePair)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.maivic.protocol.Model.NameSpacePair other) {
+        if (other == net.maivic.protocol.Model.NameSpacePair.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasDomain()) {
+          setDomain(other.getDomain());
+        }
+        if (other.hasValue()) {
+          bitField0_ |= 0x00000004;
+          value_ = other.value_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasId()) {
+          
+          return false;
+        }
+        if (!hasDomain()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.maivic.protocol.Model.NameSpacePair parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.maivic.protocol.Model.NameSpacePair) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int64 id = 1;
+      private long id_ ;
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder setId(long value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // required int64 domain = 2;
+      private long domain_ ;
+      /**
+       * <code>required int64 domain = 2;</code>
+       */
+      public boolean hasDomain() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required int64 domain = 2;</code>
+       */
+      public long getDomain() {
+        return domain_;
+      }
+      /**
+       * <code>required int64 domain = 2;</code>
+       */
+      public Builder setDomain(long value) {
+        bitField0_ |= 0x00000002;
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 domain = 2;</code>
+       */
+      public Builder clearDomain() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        domain_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional string value = 3;
+      private java.lang.Object value_ = "";
+      /**
+       * <code>optional string value = 3;</code>
+       */
+      public boolean hasValue() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string value = 3;</code>
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string value = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string value = 3;</code>
+       */
+      public Builder setValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string value = 3;</code>
+       */
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string value = 3;</code>
+       */
+      public Builder setValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        value_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:NameSpacePair)
+    }
+
+    static {
+      defaultInstance = new NameSpacePair(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:NameSpacePair)
+  }
+
+  public interface NotificationOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int64 id = 1;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    long getId();
+
+    // optional string name = 2;
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    boolean hasName();
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+  }
+  /**
+   * Protobuf type {@code Notification}
+   */
+  public static final class Notification extends
+      com.google.protobuf.GeneratedMessage
+      implements NotificationOrBuilder {
+    // Use Notification.newBuilder() to construct.
+    private Notification(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private Notification(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final Notification defaultInstance;
+    public static Notification getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public Notification getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Notification(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              name_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.maivic.protocol.Model.internal_static_Notification_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.maivic.protocol.Model.internal_static_Notification_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.maivic.protocol.Model.Notification.class, net.maivic.protocol.Model.Notification.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<Notification> PARSER =
+        new com.google.protobuf.AbstractParser<Notification>() {
+      public Notification parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Notification(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Notification> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int64 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public long getId() {
+      return id_;
+    }
+
+    // optional string name = 2;
+    public static final int NAME_FIELD_NUMBER = 2;
+    private java.lang.Object name_;
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      id_ = 0L;
+      name_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getNameBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getNameBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static net.maivic.protocol.Model.Notification parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.Notification parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.Notification parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.Notification parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.Notification parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.Notification parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.Notification parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static net.maivic.protocol.Model.Notification parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.Notification parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.Notification parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(net.maivic.protocol.Model.Notification prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Notification}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements net.maivic.protocol.Model.NotificationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.maivic.protocol.Model.internal_static_Notification_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.maivic.protocol.Model.internal_static_Notification_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.maivic.protocol.Model.Notification.class, net.maivic.protocol.Model.Notification.Builder.class);
+      }
+
+      // Construct using net.maivic.protocol.Model.Notification.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.maivic.protocol.Model.internal_static_Notification_descriptor;
+      }
+
+      public net.maivic.protocol.Model.Notification getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.Notification.getDefaultInstance();
+      }
+
+      public net.maivic.protocol.Model.Notification build() {
+        net.maivic.protocol.Model.Notification result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.maivic.protocol.Model.Notification buildPartial() {
+        net.maivic.protocol.Model.Notification result = new net.maivic.protocol.Model.Notification(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.name_ = name_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.maivic.protocol.Model.Notification) {
+          return mergeFrom((net.maivic.protocol.Model.Notification)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.maivic.protocol.Model.Notification other) {
+        if (other == net.maivic.protocol.Model.Notification.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasName()) {
+          bitField0_ |= 0x00000002;
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.maivic.protocol.Model.Notification parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.maivic.protocol.Model.Notification) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int64 id = 1;
+      private long id_ ;
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder setId(long value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional string name = 2;
+      private java.lang.Object name_ = "";
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:Notification)
+    }
+
+    static {
+      defaultInstance = new Notification(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:Notification)
+  }
+
+  public interface OrderStatusOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int64 id = 1;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    long getId();
+
+    // optional int64 order_id = 2;
+    /**
+     * <code>optional int64 order_id = 2;</code>
+     */
+    boolean hasOrderId();
+    /**
+     * <code>optional int64 order_id = 2;</code>
+     */
+    long getOrderId();
+
+    // optional int64 status_code_id = 3;
+    /**
+     * <code>optional int64 status_code_id = 3;</code>
+     */
+    boolean hasStatusCodeId();
+    /**
+     * <code>optional int64 status_code_id = 3;</code>
+     */
+    long getStatusCodeId();
+
+    // optional string status_note = 4;
+    /**
+     * <code>optional string status_note = 4;</code>
+     */
+    boolean hasStatusNote();
+    /**
+     * <code>optional string status_note = 4;</code>
+     */
+    java.lang.String getStatusNote();
+    /**
+     * <code>optional string status_note = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getStatusNoteBytes();
+  }
+  /**
+   * Protobuf type {@code OrderStatus}
+   */
+  public static final class OrderStatus extends
+      com.google.protobuf.GeneratedMessage
+      implements OrderStatusOrBuilder {
+    // Use OrderStatus.newBuilder() to construct.
+    private OrderStatus(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private OrderStatus(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final OrderStatus defaultInstance;
+    public static OrderStatus getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public OrderStatus getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private OrderStatus(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt64();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              orderId_ = input.readInt64();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              statusCodeId_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              statusNote_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.maivic.protocol.Model.internal_static_OrderStatus_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.maivic.protocol.Model.internal_static_OrderStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.maivic.protocol.Model.OrderStatus.class, net.maivic.protocol.Model.OrderStatus.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<OrderStatus> PARSER =
+        new com.google.protobuf.AbstractParser<OrderStatus>() {
+      public OrderStatus parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new OrderStatus(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OrderStatus> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int64 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public long getId() {
+      return id_;
+    }
+
+    // optional int64 order_id = 2;
+    public static final int ORDER_ID_FIELD_NUMBER = 2;
+    private long orderId_;
+    /**
+     * <code>optional int64 order_id = 2;</code>
+     */
+    public boolean hasOrderId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int64 order_id = 2;</code>
+     */
+    public long getOrderId() {
+      return orderId_;
+    }
+
+    // optional int64 status_code_id = 3;
+    public static final int STATUS_CODE_ID_FIELD_NUMBER = 3;
+    private long statusCodeId_;
+    /**
+     * <code>optional int64 status_code_id = 3;</code>
+     */
+    public boolean hasStatusCodeId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int64 status_code_id = 3;</code>
+     */
+    public long getStatusCodeId() {
+      return statusCodeId_;
+    }
+
+    // optional string status_note = 4;
+    public static final int STATUS_NOTE_FIELD_NUMBER = 4;
+    private java.lang.Object statusNote_;
+    /**
+     * <code>optional string status_note = 4;</code>
+     */
+    public boolean hasStatusNote() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string status_note = 4;</code>
+     */
+    public java.lang.String getStatusNote() {
+      java.lang.Object ref = statusNote_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          statusNote_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string status_note = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStatusNoteBytes() {
+      java.lang.Object ref = statusNote_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        statusNote_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      id_ = 0L;
+      orderId_ = 0L;
+      statusCodeId_ = 0L;
+      statusNote_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt64(2, orderId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(3, statusCodeId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getStatusNoteBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, orderId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, statusCodeId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getStatusNoteBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static net.maivic.protocol.Model.OrderStatus parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.OrderStatus parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.OrderStatus parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.OrderStatus parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.OrderStatus parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.OrderStatus parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.OrderStatus parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static net.maivic.protocol.Model.OrderStatus parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.OrderStatus parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.OrderStatus parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(net.maivic.protocol.Model.OrderStatus prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code OrderStatus}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements net.maivic.protocol.Model.OrderStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.maivic.protocol.Model.internal_static_OrderStatus_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.maivic.protocol.Model.internal_static_OrderStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.maivic.protocol.Model.OrderStatus.class, net.maivic.protocol.Model.OrderStatus.Builder.class);
+      }
+
+      // Construct using net.maivic.protocol.Model.OrderStatus.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        orderId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        statusCodeId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        statusNote_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.maivic.protocol.Model.internal_static_OrderStatus_descriptor;
+      }
+
+      public net.maivic.protocol.Model.OrderStatus getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.OrderStatus.getDefaultInstance();
+      }
+
+      public net.maivic.protocol.Model.OrderStatus build() {
+        net.maivic.protocol.Model.OrderStatus result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.maivic.protocol.Model.OrderStatus buildPartial() {
+        net.maivic.protocol.Model.OrderStatus result = new net.maivic.protocol.Model.OrderStatus(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.orderId_ = orderId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.statusCodeId_ = statusCodeId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.statusNote_ = statusNote_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.maivic.protocol.Model.OrderStatus) {
+          return mergeFrom((net.maivic.protocol.Model.OrderStatus)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.maivic.protocol.Model.OrderStatus other) {
+        if (other == net.maivic.protocol.Model.OrderStatus.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasOrderId()) {
+          setOrderId(other.getOrderId());
+        }
+        if (other.hasStatusCodeId()) {
+          setStatusCodeId(other.getStatusCodeId());
+        }
+        if (other.hasStatusNote()) {
+          bitField0_ |= 0x00000008;
+          statusNote_ = other.statusNote_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.maivic.protocol.Model.OrderStatus parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.maivic.protocol.Model.OrderStatus) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int64 id = 1;
+      private long id_ ;
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder setId(long value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 order_id = 2;
+      private long orderId_ ;
+      /**
+       * <code>optional int64 order_id = 2;</code>
+       */
+      public boolean hasOrderId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int64 order_id = 2;</code>
+       */
+      public long getOrderId() {
+        return orderId_;
+      }
+      /**
+       * <code>optional int64 order_id = 2;</code>
+       */
+      public Builder setOrderId(long value) {
+        bitField0_ |= 0x00000002;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 order_id = 2;</code>
+       */
+      public Builder clearOrderId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        orderId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 status_code_id = 3;
+      private long statusCodeId_ ;
+      /**
+       * <code>optional int64 status_code_id = 3;</code>
+       */
+      public boolean hasStatusCodeId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int64 status_code_id = 3;</code>
+       */
+      public long getStatusCodeId() {
+        return statusCodeId_;
+      }
+      /**
+       * <code>optional int64 status_code_id = 3;</code>
+       */
+      public Builder setStatusCodeId(long value) {
+        bitField0_ |= 0x00000004;
+        statusCodeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 status_code_id = 3;</code>
+       */
+      public Builder clearStatusCodeId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        statusCodeId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional string status_note = 4;
+      private java.lang.Object statusNote_ = "";
+      /**
+       * <code>optional string status_note = 4;</code>
+       */
+      public boolean hasStatusNote() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string status_note = 4;</code>
+       */
+      public java.lang.String getStatusNote() {
+        java.lang.Object ref = statusNote_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          statusNote_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string status_note = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStatusNoteBytes() {
+        java.lang.Object ref = statusNote_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          statusNote_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string status_note = 4;</code>
+       */
+      public Builder setStatusNote(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        statusNote_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string status_note = 4;</code>
+       */
+      public Builder clearStatusNote() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        statusNote_ = getDefaultInstance().getStatusNote();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string status_note = 4;</code>
+       */
+      public Builder setStatusNoteBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        statusNote_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:OrderStatus)
+    }
+
+    static {
+      defaultInstance = new OrderStatus(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:OrderStatus)
+  }
+
+  public interface GeometryColumnOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required string f_table_catalog = 1;
+    /**
+     * <code>required string f_table_catalog = 1;</code>
+     */
+    boolean hasFTableCatalog();
+    /**
+     * <code>required string f_table_catalog = 1;</code>
+     */
+    java.lang.String getFTableCatalog();
+    /**
+     * <code>required string f_table_catalog = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getFTableCatalogBytes();
+
+    // required string f_table_schema = 2;
+    /**
+     * <code>required string f_table_schema = 2;</code>
+     */
+    boolean hasFTableSchema();
+    /**
+     * <code>required string f_table_schema = 2;</code>
+     */
+    java.lang.String getFTableSchema();
+    /**
+     * <code>required string f_table_schema = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getFTableSchemaBytes();
+
+    // required string f_table_name = 3;
+    /**
+     * <code>required string f_table_name = 3;</code>
+     */
+    boolean hasFTableName();
+    /**
+     * <code>required string f_table_name = 3;</code>
+     */
+    java.lang.String getFTableName();
+    /**
+     * <code>required string f_table_name = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getFTableNameBytes();
+
+    // required string f_geometry_column = 4;
+    /**
+     * <code>required string f_geometry_column = 4;</code>
+     */
+    boolean hasFGeometryColumn();
+    /**
+     * <code>required string f_geometry_column = 4;</code>
+     */
+    java.lang.String getFGeometryColumn();
+    /**
+     * <code>required string f_geometry_column = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getFGeometryColumnBytes();
+
+    // optional int64 coord_dimension = 5;
+    /**
+     * <code>optional int64 coord_dimension = 5;</code>
+     */
+    boolean hasCoordDimension();
+    /**
+     * <code>optional int64 coord_dimension = 5;</code>
+     */
+    long getCoordDimension();
+
+    // optional int64 srid = 6;
+    /**
+     * <code>optional int64 srid = 6;</code>
+     */
+    boolean hasSrid();
+    /**
+     * <code>optional int64 srid = 6;</code>
+     */
+    long getSrid();
+
+    // optional string type = 7;
+    /**
+     * <code>optional string type = 7;</code>
+     */
+    boolean hasType();
+    /**
+     * <code>optional string type = 7;</code>
+     */
+    java.lang.String getType();
+    /**
+     * <code>optional string type = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+  }
+  /**
+   * Protobuf type {@code GeometryColumn}
+   */
+  public static final class GeometryColumn extends
+      com.google.protobuf.GeneratedMessage
+      implements GeometryColumnOrBuilder {
+    // Use GeometryColumn.newBuilder() to construct.
+    private GeometryColumn(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private GeometryColumn(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final GeometryColumn defaultInstance;
+    public static GeometryColumn getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public GeometryColumn getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GeometryColumn(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              fTableCatalog_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              fTableSchema_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              fTableName_ = input.readBytes();
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              fGeometryColumn_ = input.readBytes();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              coordDimension_ = input.readInt64();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              srid_ = input.readInt64();
+              break;
+            }
+            case 58: {
+              bitField0_ |= 0x00000040;
+              type_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.maivic.protocol.Model.internal_static_GeometryColumn_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.maivic.protocol.Model.internal_static_GeometryColumn_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.maivic.protocol.Model.GeometryColumn.class, net.maivic.protocol.Model.GeometryColumn.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<GeometryColumn> PARSER =
+        new com.google.protobuf.AbstractParser<GeometryColumn>() {
+      public GeometryColumn parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GeometryColumn(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GeometryColumn> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required string f_table_catalog = 1;
+    public static final int F_TABLE_CATALOG_FIELD_NUMBER = 1;
+    private java.lang.Object fTableCatalog_;
+    /**
+     * <code>required string f_table_catalog = 1;</code>
+     */
+    public boolean hasFTableCatalog() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string f_table_catalog = 1;</code>
+     */
+    public java.lang.String getFTableCatalog() {
+      java.lang.Object ref = fTableCatalog_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          fTableCatalog_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string f_table_catalog = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFTableCatalogBytes() {
+      java.lang.Object ref = fTableCatalog_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fTableCatalog_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required string f_table_schema = 2;
+    public static final int F_TABLE_SCHEMA_FIELD_NUMBER = 2;
+    private java.lang.Object fTableSchema_;
+    /**
+     * <code>required string f_table_schema = 2;</code>
+     */
+    public boolean hasFTableSchema() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string f_table_schema = 2;</code>
+     */
+    public java.lang.String getFTableSchema() {
+      java.lang.Object ref = fTableSchema_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          fTableSchema_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string f_table_schema = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFTableSchemaBytes() {
+      java.lang.Object ref = fTableSchema_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fTableSchema_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required string f_table_name = 3;
+    public static final int F_TABLE_NAME_FIELD_NUMBER = 3;
+    private java.lang.Object fTableName_;
+    /**
+     * <code>required string f_table_name = 3;</code>
+     */
+    public boolean hasFTableName() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string f_table_name = 3;</code>
+     */
+    public java.lang.String getFTableName() {
+      java.lang.Object ref = fTableName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          fTableName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string f_table_name = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFTableNameBytes() {
+      java.lang.Object ref = fTableName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fTableName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required string f_geometry_column = 4;
+    public static final int F_GEOMETRY_COLUMN_FIELD_NUMBER = 4;
+    private java.lang.Object fGeometryColumn_;
+    /**
+     * <code>required string f_geometry_column = 4;</code>
+     */
+    public boolean hasFGeometryColumn() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required string f_geometry_column = 4;</code>
+     */
+    public java.lang.String getFGeometryColumn() {
+      java.lang.Object ref = fGeometryColumn_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          fGeometryColumn_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string f_geometry_column = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFGeometryColumnBytes() {
+      java.lang.Object ref = fGeometryColumn_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fGeometryColumn_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int64 coord_dimension = 5;
+    public static final int COORD_DIMENSION_FIELD_NUMBER = 5;
+    private long coordDimension_;
+    /**
+     * <code>optional int64 coord_dimension = 5;</code>
+     */
+    public boolean hasCoordDimension() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional int64 coord_dimension = 5;</code>
+     */
+    public long getCoordDimension() {
+      return coordDimension_;
+    }
+
+    // optional int64 srid = 6;
+    public static final int SRID_FIELD_NUMBER = 6;
+    private long srid_;
+    /**
+     * <code>optional int64 srid = 6;</code>
+     */
+    public boolean hasSrid() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional int64 srid = 6;</code>
+     */
+    public long getSrid() {
+      return srid_;
+    }
+
+    // optional string type = 7;
+    public static final int TYPE_FIELD_NUMBER = 7;
+    private java.lang.Object type_;
+    /**
+     * <code>optional string type = 7;</code>
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional string type = 7;</code>
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          type_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string type = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      fTableCatalog_ = "";
+      fTableSchema_ = "";
+      fTableName_ = "";
+      fGeometryColumn_ = "";
+      coordDimension_ = 0L;
+      srid_ = 0L;
+      type_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasFTableCatalog()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasFTableSchema()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasFTableName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasFGeometryColumn()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getFTableCatalogBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getFTableSchemaBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getFTableNameBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getFGeometryColumnBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt64(5, coordDimension_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeInt64(6, srid_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getTypeBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getFTableCatalogBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getFTableSchemaBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getFTableNameBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getFGeometryColumnBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, coordDimension_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, srid_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getTypeBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static net.maivic.protocol.Model.GeometryColumn parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.GeometryColumn parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.GeometryColumn parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.GeometryColumn parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.GeometryColumn parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.GeometryColumn parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.GeometryColumn parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static net.maivic.protocol.Model.GeometryColumn parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.GeometryColumn parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.GeometryColumn parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(net.maivic.protocol.Model.GeometryColumn prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code GeometryColumn}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements net.maivic.protocol.Model.GeometryColumnOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.maivic.protocol.Model.internal_static_GeometryColumn_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.maivic.protocol.Model.internal_static_GeometryColumn_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.maivic.protocol.Model.GeometryColumn.class, net.maivic.protocol.Model.GeometryColumn.Builder.class);
+      }
+
+      // Construct using net.maivic.protocol.Model.GeometryColumn.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        fTableCatalog_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        fTableSchema_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        fTableName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        fGeometryColumn_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        coordDimension_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        srid_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        type_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.maivic.protocol.Model.internal_static_GeometryColumn_descriptor;
+      }
+
+      public net.maivic.protocol.Model.GeometryColumn getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.GeometryColumn.getDefaultInstance();
+      }
+
+      public net.maivic.protocol.Model.GeometryColumn build() {
+        net.maivic.protocol.Model.GeometryColumn result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.maivic.protocol.Model.GeometryColumn buildPartial() {
+        net.maivic.protocol.Model.GeometryColumn result = new net.maivic.protocol.Model.GeometryColumn(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.fTableCatalog_ = fTableCatalog_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.fTableSchema_ = fTableSchema_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.fTableName_ = fTableName_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.fGeometryColumn_ = fGeometryColumn_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.coordDimension_ = coordDimension_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.srid_ = srid_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.type_ = type_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.maivic.protocol.Model.GeometryColumn) {
+          return mergeFrom((net.maivic.protocol.Model.GeometryColumn)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.maivic.protocol.Model.GeometryColumn other) {
+        if (other == net.maivic.protocol.Model.GeometryColumn.getDefaultInstance()) return this;
+        if (other.hasFTableCatalog()) {
+          bitField0_ |= 0x00000001;
+          fTableCatalog_ = other.fTableCatalog_;
+          onChanged();
+        }
+        if (other.hasFTableSchema()) {
+          bitField0_ |= 0x00000002;
+          fTableSchema_ = other.fTableSchema_;
+          onChanged();
+        }
+        if (other.hasFTableName()) {
+          bitField0_ |= 0x00000004;
+          fTableName_ = other.fTableName_;
+          onChanged();
+        }
+        if (other.hasFGeometryColumn()) {
+          bitField0_ |= 0x00000008;
+          fGeometryColumn_ = other.fGeometryColumn_;
+          onChanged();
+        }
+        if (other.hasCoordDimension()) {
+          setCoordDimension(other.getCoordDimension());
+        }
+        if (other.hasSrid()) {
+          setSrid(other.getSrid());
+        }
+        if (other.hasType()) {
+          bitField0_ |= 0x00000040;
+          type_ = other.type_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasFTableCatalog()) {
+          
+          return false;
+        }
+        if (!hasFTableSchema()) {
+          
+          return false;
+        }
+        if (!hasFTableName()) {
+          
+          return false;
+        }
+        if (!hasFGeometryColumn()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.maivic.protocol.Model.GeometryColumn parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.maivic.protocol.Model.GeometryColumn) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required string f_table_catalog = 1;
+      private java.lang.Object fTableCatalog_ = "";
+      /**
+       * <code>required string f_table_catalog = 1;</code>
+       */
+      public boolean hasFTableCatalog() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string f_table_catalog = 1;</code>
+       */
+      public java.lang.String getFTableCatalog() {
+        java.lang.Object ref = fTableCatalog_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          fTableCatalog_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string f_table_catalog = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFTableCatalogBytes() {
+        java.lang.Object ref = fTableCatalog_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fTableCatalog_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string f_table_catalog = 1;</code>
+       */
+      public Builder setFTableCatalog(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        fTableCatalog_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string f_table_catalog = 1;</code>
+       */
+      public Builder clearFTableCatalog() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        fTableCatalog_ = getDefaultInstance().getFTableCatalog();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string f_table_catalog = 1;</code>
+       */
+      public Builder setFTableCatalogBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        fTableCatalog_ = value;
+        onChanged();
+        return this;
+      }
+
+      // required string f_table_schema = 2;
+      private java.lang.Object fTableSchema_ = "";
+      /**
+       * <code>required string f_table_schema = 2;</code>
+       */
+      public boolean hasFTableSchema() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string f_table_schema = 2;</code>
+       */
+      public java.lang.String getFTableSchema() {
+        java.lang.Object ref = fTableSchema_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          fTableSchema_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string f_table_schema = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFTableSchemaBytes() {
+        java.lang.Object ref = fTableSchema_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fTableSchema_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string f_table_schema = 2;</code>
+       */
+      public Builder setFTableSchema(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        fTableSchema_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string f_table_schema = 2;</code>
+       */
+      public Builder clearFTableSchema() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        fTableSchema_ = getDefaultInstance().getFTableSchema();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string f_table_schema = 2;</code>
+       */
+      public Builder setFTableSchemaBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        fTableSchema_ = value;
+        onChanged();
+        return this;
+      }
+
+      // required string f_table_name = 3;
+      private java.lang.Object fTableName_ = "";
+      /**
+       * <code>required string f_table_name = 3;</code>
+       */
+      public boolean hasFTableName() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string f_table_name = 3;</code>
+       */
+      public java.lang.String getFTableName() {
+        java.lang.Object ref = fTableName_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          fTableName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string f_table_name = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFTableNameBytes() {
+        java.lang.Object ref = fTableName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fTableName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string f_table_name = 3;</code>
+       */
+      public Builder setFTableName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        fTableName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string f_table_name = 3;</code>
+       */
+      public Builder clearFTableName() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        fTableName_ = getDefaultInstance().getFTableName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string f_table_name = 3;</code>
+       */
+      public Builder setFTableNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        fTableName_ = value;
+        onChanged();
+        return this;
+      }
+
+      // required string f_geometry_column = 4;
+      private java.lang.Object fGeometryColumn_ = "";
+      /**
+       * <code>required string f_geometry_column = 4;</code>
+       */
+      public boolean hasFGeometryColumn() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required string f_geometry_column = 4;</code>
+       */
+      public java.lang.String getFGeometryColumn() {
+        java.lang.Object ref = fGeometryColumn_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          fGeometryColumn_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string f_geometry_column = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFGeometryColumnBytes() {
+        java.lang.Object ref = fGeometryColumn_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fGeometryColumn_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string f_geometry_column = 4;</code>
+       */
+      public Builder setFGeometryColumn(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        fGeometryColumn_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string f_geometry_column = 4;</code>
+       */
+      public Builder clearFGeometryColumn() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        fGeometryColumn_ = getDefaultInstance().getFGeometryColumn();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string f_geometry_column = 4;</code>
+       */
+      public Builder setFGeometryColumnBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        fGeometryColumn_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 coord_dimension = 5;
+      private long coordDimension_ ;
+      /**
+       * <code>optional int64 coord_dimension = 5;</code>
+       */
+      public boolean hasCoordDimension() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional int64 coord_dimension = 5;</code>
+       */
+      public long getCoordDimension() {
+        return coordDimension_;
+      }
+      /**
+       * <code>optional int64 coord_dimension = 5;</code>
+       */
+      public Builder setCoordDimension(long value) {
+        bitField0_ |= 0x00000010;
+        coordDimension_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 coord_dimension = 5;</code>
+       */
+      public Builder clearCoordDimension() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        coordDimension_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 srid = 6;
+      private long srid_ ;
+      /**
+       * <code>optional int64 srid = 6;</code>
+       */
+      public boolean hasSrid() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional int64 srid = 6;</code>
+       */
+      public long getSrid() {
+        return srid_;
+      }
+      /**
+       * <code>optional int64 srid = 6;</code>
+       */
+      public Builder setSrid(long value) {
+        bitField0_ |= 0x00000020;
+        srid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 srid = 6;</code>
+       */
+      public Builder clearSrid() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        srid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional string type = 7;
+      private java.lang.Object type_ = "";
+      /**
+       * <code>optional string type = 7;</code>
+       */
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional string type = 7;</code>
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string type = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string type = 7;</code>
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string type = 7;</code>
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string type = 7;</code>
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:GeometryColumn)
+    }
+
+    static {
+      defaultInstance = new GeometryColumn(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:GeometryColumn)
+  }
+
+  public interface RpcSubscriptionOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int64 id = 1;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    long getId();
+
+    // optional bool active = 2;
+    /**
+     * <code>optional bool active = 2;</code>
+     */
+    boolean hasActive();
+    /**
+     * <code>optional bool active = 2;</code>
+     */
+    boolean getActive();
+
+    // optional int64 id_client = 3;
+    /**
+     * <code>optional int64 id_client = 3;</code>
+     */
+    boolean hasIdClient();
+    /**
+     * <code>optional int64 id_client = 3;</code>
+     */
+    long getIdClient();
+
+    // optional string client_uuid = 4;
+    /**
+     * <code>optional string client_uuid = 4;</code>
+     */
+    boolean hasClientUuid();
+    /**
+     * <code>optional string client_uuid = 4;</code>
+     */
+    java.lang.String getClientUuid();
+    /**
+     * <code>optional string client_uuid = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getClientUuidBytes();
+
+    // optional string rpc_method = 5;
+    /**
+     * <code>optional string rpc_method = 5;</code>
+     */
+    boolean hasRpcMethod();
+    /**
+     * <code>optional string rpc_method = 5;</code>
+     */
+    java.lang.String getRpcMethod();
+    /**
+     * <code>optional string rpc_method = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getRpcMethodBytes();
+
+    // optional string rpc_args = 6;
+    /**
+     * <code>optional string rpc_args = 6;</code>
+     */
+    boolean hasRpcArgs();
+    /**
+     * <code>optional string rpc_args = 6;</code>
+     */
+    java.lang.String getRpcArgs();
+    /**
+     * <code>optional string rpc_args = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getRpcArgsBytes();
+
+    // optional string rpc_last_result = 7;
+    /**
+     * <code>optional string rpc_last_result = 7;</code>
+     */
+    boolean hasRpcLastResult();
+    /**
+     * <code>optional string rpc_last_result = 7;</code>
+     */
+    java.lang.String getRpcLastResult();
+    /**
+     * <code>optional string rpc_last_result = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getRpcLastResultBytes();
+
+    // optional int64 device_id = 8;
+    /**
+     * <code>optional int64 device_id = 8;</code>
+     */
+    boolean hasDeviceId();
+    /**
+     * <code>optional int64 device_id = 8;</code>
+     */
+    long getDeviceId();
+  }
+  /**
+   * Protobuf type {@code RpcSubscription}
+   */
+  public static final class RpcSubscription extends
+      com.google.protobuf.GeneratedMessage
+      implements RpcSubscriptionOrBuilder {
+    // Use RpcSubscription.newBuilder() to construct.
+    private RpcSubscription(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private RpcSubscription(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final RpcSubscription defaultInstance;
+    public static RpcSubscription getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public RpcSubscription getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RpcSubscription(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt64();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              active_ = input.readBool();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              idClient_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              clientUuid_ = input.readBytes();
+              break;
+            }
+            case 42: {
+              bitField0_ |= 0x00000010;
+              rpcMethod_ = input.readBytes();
+              break;
+            }
+            case 50: {
+              bitField0_ |= 0x00000020;
+              rpcArgs_ = input.readBytes();
+              break;
+            }
+            case 58: {
+              bitField0_ |= 0x00000040;
+              rpcLastResult_ = input.readBytes();
+              break;
+            }
+            case 64: {
+              bitField0_ |= 0x00000080;
+              deviceId_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.maivic.protocol.Model.internal_static_RpcSubscription_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.maivic.protocol.Model.internal_static_RpcSubscription_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.maivic.protocol.Model.RpcSubscription.class, net.maivic.protocol.Model.RpcSubscription.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<RpcSubscription> PARSER =
+        new com.google.protobuf.AbstractParser<RpcSubscription>() {
+      public RpcSubscription parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RpcSubscription(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RpcSubscription> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int64 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 id = 1;</code>
+     */
+    public long getId() {
+      return id_;
+    }
+
+    // optional bool active = 2;
+    public static final int ACTIVE_FIELD_NUMBER = 2;
+    private boolean active_;
+    /**
+     * <code>optional bool active = 2;</code>
+     */
+    public boolean hasActive() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional bool active = 2;</code>
+     */
+    public boolean getActive() {
+      return active_;
+    }
+
+    // optional int64 id_client = 3;
+    public static final int ID_CLIENT_FIELD_NUMBER = 3;
+    private long idClient_;
+    /**
+     * <code>optional int64 id_client = 3;</code>
+     */
+    public boolean hasIdClient() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int64 id_client = 3;</code>
+     */
+    public long getIdClient() {
+      return idClient_;
+    }
+
+    // optional string client_uuid = 4;
+    public static final int CLIENT_UUID_FIELD_NUMBER = 4;
+    private java.lang.Object clientUuid_;
+    /**
+     * <code>optional string client_uuid = 4;</code>
+     */
+    public boolean hasClientUuid() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string client_uuid = 4;</code>
+     */
+    public java.lang.String getClientUuid() {
+      java.lang.Object ref = clientUuid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          clientUuid_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string client_uuid = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientUuidBytes() {
+      java.lang.Object ref = clientUuid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientUuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string rpc_method = 5;
+    public static final int RPC_METHOD_FIELD_NUMBER = 5;
+    private java.lang.Object rpcMethod_;
+    /**
+     * <code>optional string rpc_method = 5;</code>
+     */
+    public boolean hasRpcMethod() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional string rpc_method = 5;</code>
+     */
+    public java.lang.String getRpcMethod() {
+      java.lang.Object ref = rpcMethod_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          rpcMethod_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string rpc_method = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRpcMethodBytes() {
+      java.lang.Object ref = rpcMethod_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rpcMethod_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string rpc_args = 6;
+    public static final int RPC_ARGS_FIELD_NUMBER = 6;
+    private java.lang.Object rpcArgs_;
+    /**
+     * <code>optional string rpc_args = 6;</code>
+     */
+    public boolean hasRpcArgs() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional string rpc_args = 6;</code>
+     */
+    public java.lang.String getRpcArgs() {
+      java.lang.Object ref = rpcArgs_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          rpcArgs_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string rpc_args = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRpcArgsBytes() {
+      java.lang.Object ref = rpcArgs_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rpcArgs_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string rpc_last_result = 7;
+    public static final int RPC_LAST_RESULT_FIELD_NUMBER = 7;
+    private java.lang.Object rpcLastResult_;
+    /**
+     * <code>optional string rpc_last_result = 7;</code>
+     */
+    public boolean hasRpcLastResult() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional string rpc_last_result = 7;</code>
+     */
+    public java.lang.String getRpcLastResult() {
+      java.lang.Object ref = rpcLastResult_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          rpcLastResult_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string rpc_last_result = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRpcLastResultBytes() {
+      java.lang.Object ref = rpcLastResult_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rpcLastResult_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int64 device_id = 8;
+    public static final int DEVICE_ID_FIELD_NUMBER = 8;
+    private long deviceId_;
+    /**
+     * <code>optional int64 device_id = 8;</code>
+     */
+    public boolean hasDeviceId() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional int64 device_id = 8;</code>
+     */
+    public long getDeviceId() {
+      return deviceId_;
+    }
+
+    private void initFields() {
+      id_ = 0L;
+      active_ = false;
+      idClient_ = 0L;
+      clientUuid_ = "";
+      rpcMethod_ = "";
+      rpcArgs_ = "";
+      rpcLastResult_ = "";
+      deviceId_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBool(2, active_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(3, idClient_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getClientUuidBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getRpcMethodBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getRpcArgsBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getRpcLastResultBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeInt64(8, deviceId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, active_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, idClient_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getClientUuidBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getRpcMethodBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getRpcArgsBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getRpcLastResultBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(8, deviceId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static net.maivic.protocol.Model.RpcSubscription parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.RpcSubscription parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.RpcSubscription parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.RpcSubscription parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.RpcSubscription parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.RpcSubscription parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.RpcSubscription parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static net.maivic.protocol.Model.RpcSubscription parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.RpcSubscription parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.RpcSubscription parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(net.maivic.protocol.Model.RpcSubscription prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code RpcSubscription}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements net.maivic.protocol.Model.RpcSubscriptionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.maivic.protocol.Model.internal_static_RpcSubscription_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.maivic.protocol.Model.internal_static_RpcSubscription_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.maivic.protocol.Model.RpcSubscription.class, net.maivic.protocol.Model.RpcSubscription.Builder.class);
+      }
+
+      // Construct using net.maivic.protocol.Model.RpcSubscription.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        active_ = false;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        idClient_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        clientUuid_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        rpcMethod_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        rpcArgs_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
+        rpcLastResult_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
+        deviceId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.maivic.protocol.Model.internal_static_RpcSubscription_descriptor;
+      }
+
+      public net.maivic.protocol.Model.RpcSubscription getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.RpcSubscription.getDefaultInstance();
+      }
+
+      public net.maivic.protocol.Model.RpcSubscription build() {
+        net.maivic.protocol.Model.RpcSubscription result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.maivic.protocol.Model.RpcSubscription buildPartial() {
+        net.maivic.protocol.Model.RpcSubscription result = new net.maivic.protocol.Model.RpcSubscription(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.active_ = active_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.idClient_ = idClient_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.clientUuid_ = clientUuid_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.rpcMethod_ = rpcMethod_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.rpcArgs_ = rpcArgs_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.rpcLastResult_ = rpcLastResult_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.deviceId_ = deviceId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.maivic.protocol.Model.RpcSubscription) {
+          return mergeFrom((net.maivic.protocol.Model.RpcSubscription)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.maivic.protocol.Model.RpcSubscription other) {
+        if (other == net.maivic.protocol.Model.RpcSubscription.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasActive()) {
+          setActive(other.getActive());
+        }
+        if (other.hasIdClient()) {
+          setIdClient(other.getIdClient());
+        }
+        if (other.hasClientUuid()) {
+          bitField0_ |= 0x00000008;
+          clientUuid_ = other.clientUuid_;
+          onChanged();
+        }
+        if (other.hasRpcMethod()) {
+          bitField0_ |= 0x00000010;
+          rpcMethod_ = other.rpcMethod_;
+          onChanged();
+        }
+        if (other.hasRpcArgs()) {
+          bitField0_ |= 0x00000020;
+          rpcArgs_ = other.rpcArgs_;
+          onChanged();
+        }
+        if (other.hasRpcLastResult()) {
+          bitField0_ |= 0x00000040;
+          rpcLastResult_ = other.rpcLastResult_;
+          onChanged();
+        }
+        if (other.hasDeviceId()) {
+          setDeviceId(other.getDeviceId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.maivic.protocol.Model.RpcSubscription parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.maivic.protocol.Model.RpcSubscription) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int64 id = 1;
+      private long id_ ;
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder setId(long value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 id = 1;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional bool active = 2;
+      private boolean active_ ;
+      /**
+       * <code>optional bool active = 2;</code>
+       */
+      public boolean hasActive() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional bool active = 2;</code>
+       */
+      public boolean getActive() {
+        return active_;
+      }
+      /**
+       * <code>optional bool active = 2;</code>
+       */
+      public Builder setActive(boolean value) {
+        bitField0_ |= 0x00000002;
+        active_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool active = 2;</code>
+       */
+      public Builder clearActive() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        active_ = false;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 id_client = 3;
+      private long idClient_ ;
+      /**
+       * <code>optional int64 id_client = 3;</code>
+       */
+      public boolean hasIdClient() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int64 id_client = 3;</code>
+       */
+      public long getIdClient() {
+        return idClient_;
+      }
+      /**
+       * <code>optional int64 id_client = 3;</code>
+       */
+      public Builder setIdClient(long value) {
+        bitField0_ |= 0x00000004;
+        idClient_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 id_client = 3;</code>
+       */
+      public Builder clearIdClient() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        idClient_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional string client_uuid = 4;
+      private java.lang.Object clientUuid_ = "";
+      /**
+       * <code>optional string client_uuid = 4;</code>
+       */
+      public boolean hasClientUuid() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string client_uuid = 4;</code>
+       */
+      public java.lang.String getClientUuid() {
+        java.lang.Object ref = clientUuid_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          clientUuid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string client_uuid = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClientUuidBytes() {
+        java.lang.Object ref = clientUuid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientUuid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string client_uuid = 4;</code>
+       */
+      public Builder setClientUuid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        clientUuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string client_uuid = 4;</code>
+       */
+      public Builder clearClientUuid() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        clientUuid_ = getDefaultInstance().getClientUuid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string client_uuid = 4;</code>
+       */
+      public Builder setClientUuidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        clientUuid_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional string rpc_method = 5;
+      private java.lang.Object rpcMethod_ = "";
+      /**
+       * <code>optional string rpc_method = 5;</code>
+       */
+      public boolean hasRpcMethod() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional string rpc_method = 5;</code>
+       */
+      public java.lang.String getRpcMethod() {
+        java.lang.Object ref = rpcMethod_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          rpcMethod_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string rpc_method = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRpcMethodBytes() {
+        java.lang.Object ref = rpcMethod_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rpcMethod_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string rpc_method = 5;</code>
+       */
+      public Builder setRpcMethod(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        rpcMethod_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string rpc_method = 5;</code>
+       */
+      public Builder clearRpcMethod() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        rpcMethod_ = getDefaultInstance().getRpcMethod();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string rpc_method = 5;</code>
+       */
+      public Builder setRpcMethodBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        rpcMethod_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional string rpc_args = 6;
+      private java.lang.Object rpcArgs_ = "";
+      /**
+       * <code>optional string rpc_args = 6;</code>
+       */
+      public boolean hasRpcArgs() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional string rpc_args = 6;</code>
+       */
+      public java.lang.String getRpcArgs() {
+        java.lang.Object ref = rpcArgs_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          rpcArgs_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string rpc_args = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRpcArgsBytes() {
+        java.lang.Object ref = rpcArgs_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rpcArgs_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string rpc_args = 6;</code>
+       */
+      public Builder setRpcArgs(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        rpcArgs_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string rpc_args = 6;</code>
+       */
+      public Builder clearRpcArgs() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        rpcArgs_ = getDefaultInstance().getRpcArgs();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string rpc_args = 6;</code>
+       */
+      public Builder setRpcArgsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        rpcArgs_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional string rpc_last_result = 7;
+      private java.lang.Object rpcLastResult_ = "";
+      /**
+       * <code>optional string rpc_last_result = 7;</code>
+       */
+      public boolean hasRpcLastResult() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional string rpc_last_result = 7;</code>
+       */
+      public java.lang.String getRpcLastResult() {
+        java.lang.Object ref = rpcLastResult_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          rpcLastResult_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string rpc_last_result = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRpcLastResultBytes() {
+        java.lang.Object ref = rpcLastResult_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rpcLastResult_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string rpc_last_result = 7;</code>
+       */
+      public Builder setRpcLastResult(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        rpcLastResult_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string rpc_last_result = 7;</code>
+       */
+      public Builder clearRpcLastResult() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        rpcLastResult_ = getDefaultInstance().getRpcLastResult();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string rpc_last_result = 7;</code>
+       */
+      public Builder setRpcLastResultBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        rpcLastResult_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 device_id = 8;
+      private long deviceId_ ;
+      /**
+       * <code>optional int64 device_id = 8;</code>
+       */
+      public boolean hasDeviceId() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional int64 device_id = 8;</code>
+       */
+      public long getDeviceId() {
+        return deviceId_;
+      }
+      /**
+       * <code>optional int64 device_id = 8;</code>
+       */
+      public Builder setDeviceId(long value) {
+        bitField0_ |= 0x00000080;
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 device_id = 8;</code>
+       */
+      public Builder clearDeviceId() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        deviceId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:RpcSubscription)
+    }
+
+    static {
+      defaultInstance = new RpcSubscription(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:RpcSubscription)
+  }
+
+  public interface ContactsToLegalEntityOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int64 contact_id = 1;
+    /**
+     * <code>required int64 contact_id = 1;</code>
+     */
+    boolean hasContactId();
+    /**
+     * <code>required int64 contact_id = 1;</code>
+     */
+    long getContactId();
+
+    // optional string role = 2;
+    /**
+     * <code>optional string role = 2;</code>
+     */
+    boolean hasRole();
+    /**
+     * <code>optional string role = 2;</code>
+     */
+    java.lang.String getRole();
+    /**
+     * <code>optional string role = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getRoleBytes();
+
+    // required int64 legal_entity_id = 3;
+    /**
+     * <code>required int64 legal_entity_id = 3;</code>
+     */
+    boolean hasLegalEntityId();
+    /**
+     * <code>required int64 legal_entity_id = 3;</code>
+     */
+    long getLegalEntityId();
+  }
+  /**
+   * Protobuf type {@code ContactsToLegalEntity}
+   */
+  public static final class ContactsToLegalEntity extends
+      com.google.protobuf.GeneratedMessage
+      implements ContactsToLegalEntityOrBuilder {
+    // Use ContactsToLegalEntity.newBuilder() to construct.
+    private ContactsToLegalEntity(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ContactsToLegalEntity(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ContactsToLegalEntity defaultInstance;
+    public static ContactsToLegalEntity getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ContactsToLegalEntity getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ContactsToLegalEntity(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              contactId_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              role_ = input.readBytes();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              legalEntityId_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.maivic.protocol.Model.internal_static_ContactsToLegalEntity_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.maivic.protocol.Model.internal_static_ContactsToLegalEntity_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.maivic.protocol.Model.ContactsToLegalEntity.class, net.maivic.protocol.Model.ContactsToLegalEntity.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ContactsToLegalEntity> PARSER =
+        new com.google.protobuf.AbstractParser<ContactsToLegalEntity>() {
+      public ContactsToLegalEntity parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ContactsToLegalEntity(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ContactsToLegalEntity> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int64 contact_id = 1;
+    public static final int CONTACT_ID_FIELD_NUMBER = 1;
+    private long contactId_;
+    /**
+     * <code>required int64 contact_id = 1;</code>
+     */
+    public boolean hasContactId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 contact_id = 1;</code>
+     */
+    public long getContactId() {
+      return contactId_;
+    }
+
+    // optional string role = 2;
+    public static final int ROLE_FIELD_NUMBER = 2;
+    private java.lang.Object role_;
+    /**
+     * <code>optional string role = 2;</code>
+     */
+    public boolean hasRole() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string role = 2;</code>
+     */
+    public java.lang.String getRole() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          role_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string role = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRoleBytes() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        role_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required int64 legal_entity_id = 3;
+    public static final int LEGAL_ENTITY_ID_FIELD_NUMBER = 3;
+    private long legalEntityId_;
+    /**
+     * <code>required int64 legal_entity_id = 3;</code>
+     */
+    public boolean hasLegalEntityId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required int64 legal_entity_id = 3;</code>
+     */
+    public long getLegalEntityId() {
+      return legalEntityId_;
+    }
+
+    private void initFields() {
+      contactId_ = 0L;
+      role_ = "";
+      legalEntityId_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasContactId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasLegalEntityId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, contactId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getRoleBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(3, legalEntityId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, contactId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getRoleBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, legalEntityId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.ContactsToLegalEntity parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static net.maivic.protocol.Model.ContactsToLegalEntity parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static net.maivic.protocol.Model.ContactsToLegalEntity parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(net.maivic.protocol.Model.ContactsToLegalEntity prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ContactsToLegalEntity}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements net.maivic.protocol.Model.ContactsToLegalEntityOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.maivic.protocol.Model.internal_static_ContactsToLegalEntity_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.maivic.protocol.Model.internal_static_ContactsToLegalEntity_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.maivic.protocol.Model.ContactsToLegalEntity.class, net.maivic.protocol.Model.ContactsToLegalEntity.Builder.class);
+      }
+
+      // Construct using net.maivic.protocol.Model.ContactsToLegalEntity.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        contactId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        role_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        legalEntityId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.maivic.protocol.Model.internal_static_ContactsToLegalEntity_descriptor;
+      }
+
+      public net.maivic.protocol.Model.ContactsToLegalEntity getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.ContactsToLegalEntity.getDefaultInstance();
+      }
+
+      public net.maivic.protocol.Model.ContactsToLegalEntity build() {
+        net.maivic.protocol.Model.ContactsToLegalEntity result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.maivic.protocol.Model.ContactsToLegalEntity buildPartial() {
+        net.maivic.protocol.Model.ContactsToLegalEntity result = new net.maivic.protocol.Model.ContactsToLegalEntity(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.contactId_ = contactId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.role_ = role_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.legalEntityId_ = legalEntityId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.maivic.protocol.Model.ContactsToLegalEntity) {
+          return mergeFrom((net.maivic.protocol.Model.ContactsToLegalEntity)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.maivic.protocol.Model.ContactsToLegalEntity other) {
+        if (other == net.maivic.protocol.Model.ContactsToLegalEntity.getDefaultInstance()) return this;
+        if (other.hasContactId()) {
+          setContactId(other.getContactId());
+        }
+        if (other.hasRole()) {
+          bitField0_ |= 0x00000002;
+          role_ = other.role_;
+          onChanged();
+        }
+        if (other.hasLegalEntityId()) {
+          setLegalEntityId(other.getLegalEntityId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasContactId()) {
+          
+          return false;
+        }
+        if (!hasLegalEntityId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.maivic.protocol.Model.ContactsToLegalEntity parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.maivic.protocol.Model.ContactsToLegalEntity) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int64 contact_id = 1;
+      private long contactId_ ;
+      /**
+       * <code>required int64 contact_id = 1;</code>
+       */
+      public boolean hasContactId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 contact_id = 1;</code>
+       */
+      public long getContactId() {
+        return contactId_;
+      }
+      /**
+       * <code>required int64 contact_id = 1;</code>
+       */
+      public Builder setContactId(long value) {
+        bitField0_ |= 0x00000001;
+        contactId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 contact_id = 1;</code>
+       */
+      public Builder clearContactId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        contactId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional string role = 2;
+      private java.lang.Object role_ = "";
+      /**
+       * <code>optional string role = 2;</code>
+       */
+      public boolean hasRole() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string role = 2;</code>
+       */
+      public java.lang.String getRole() {
+        java.lang.Object ref = role_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          role_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string role = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRoleBytes() {
+        java.lang.Object ref = role_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          role_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string role = 2;</code>
+       */
+      public Builder setRole(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        role_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string role = 2;</code>
+       */
+      public Builder clearRole() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        role_ = getDefaultInstance().getRole();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string role = 2;</code>
+       */
+      public Builder setRoleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        role_ = value;
+        onChanged();
+        return this;
+      }
+
+      // required int64 legal_entity_id = 3;
+      private long legalEntityId_ ;
+      /**
+       * <code>required int64 legal_entity_id = 3;</code>
+       */
+      public boolean hasLegalEntityId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required int64 legal_entity_id = 3;</code>
+       */
+      public long getLegalEntityId() {
+        return legalEntityId_;
+      }
+      /**
+       * <code>required int64 legal_entity_id = 3;</code>
+       */
+      public Builder setLegalEntityId(long value) {
+        bitField0_ |= 0x00000004;
+        legalEntityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 legal_entity_id = 3;</code>
+       */
+      public Builder clearLegalEntityId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        legalEntityId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:ContactsToLegalEntity)
+    }
+
+    static {
+      defaultInstance = new ContactsToLegalEntity(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:ContactsToLegalEntity)
   }
 
   public interface OfferOptionOrBuilder
@@ -27231,7 +24695,7 @@ public final class Model {
     // @@protoc_insertion_point(class_scope:Client)
   }
 
-  public interface MenuOptionOrBuilder
+  public interface DeviceOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
     // required int64 id = 1;
@@ -27244,60 +24708,55 @@ public final class Model {
      */
     long getId();
 
-    // optional int64 menu_id = 2;
+    // optional string uuid = 2;
     /**
-     * <code>optional int64 menu_id = 2;</code>
+     * <code>optional string uuid = 2;</code>
      */
-    boolean hasMenuId();
+    boolean hasUuid();
     /**
-     * <code>optional int64 menu_id = 2;</code>
+     * <code>optional string uuid = 2;</code>
      */
-    long getMenuId();
-
-    // optional string name = 3;
+    java.lang.String getUuid();
     /**
-     * <code>optional string name = 3;</code>
-     */
-    boolean hasName();
-    /**
-     * <code>optional string name = 3;</code>
-     */
-    java.lang.String getName();
-    /**
-     * <code>optional string name = 3;</code>
+     * <code>optional string uuid = 2;</code>
      */
     com.google.protobuf.ByteString
-        getNameBytes();
+        getUuidBytes();
 
-    // optional bool is_menu_changer = 4;
+    // optional string rpc_namespace = 3;
     /**
-     * <code>optional bool is_menu_changer = 4;</code>
+     * <code>optional string rpc_namespace = 3;</code>
      */
-    boolean hasIsMenuChanger();
+    boolean hasRpcNamespace();
     /**
-     * <code>optional bool is_menu_changer = 4;</code>
+     * <code>optional string rpc_namespace = 3;</code>
      */
-    boolean getIsMenuChanger();
+    java.lang.String getRpcNamespace();
+    /**
+     * <code>optional string rpc_namespace = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getRpcNamespaceBytes();
   }
   /**
-   * Protobuf type {@code MenuOption}
+   * Protobuf type {@code Device}
    */
-  public static final class MenuOption extends
+  public static final class Device extends
       com.google.protobuf.GeneratedMessage
-      implements MenuOptionOrBuilder {
-    // Use MenuOption.newBuilder() to construct.
-    private MenuOption(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      implements DeviceOrBuilder {
+    // Use Device.newBuilder() to construct.
+    private Device(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private MenuOption(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private Device(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final MenuOption defaultInstance;
-    public static MenuOption getDefaultInstance() {
+    private static final Device defaultInstance;
+    public static Device getDefaultInstance() {
       return defaultInstance;
     }
 
-    public MenuOption getDefaultInstanceForType() {
+    public Device getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -27307,7 +24766,7 @@ public final class Model {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private MenuOption(
+    private Device(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -27335,19 +24794,14 @@ public final class Model {
               id_ = input.readInt64();
               break;
             }
-            case 16: {
+            case 18: {
               bitField0_ |= 0x00000002;
-              menuId_ = input.readInt64();
+              uuid_ = input.readBytes();
               break;
             }
             case 26: {
               bitField0_ |= 0x00000004;
-              name_ = input.readBytes();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              isMenuChanger_ = input.readBool();
+              rpcNamespace_ = input.readBytes();
               break;
             }
           }
@@ -27364,28 +24818,28 @@ public final class Model {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_MenuOption_descriptor;
+      return net.maivic.protocol.Model.internal_static_Device_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_MenuOption_fieldAccessorTable
+      return net.maivic.protocol.Model.internal_static_Device_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.MenuOption.class, net.maivic.protocol.Model.MenuOption.Builder.class);
+              net.maivic.protocol.Model.Device.class, net.maivic.protocol.Model.Device.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<MenuOption> PARSER =
-        new com.google.protobuf.AbstractParser<MenuOption>() {
-      public MenuOption parsePartialFrom(
+    public static com.google.protobuf.Parser<Device> PARSER =
+        new com.google.protobuf.AbstractParser<Device>() {
+      public Device parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MenuOption(input, extensionRegistry);
+        return new Device(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MenuOption> getParserForType() {
+    public com.google.protobuf.Parser<Device> getParserForType() {
       return PARSER;
     }
 
@@ -27406,36 +24860,20 @@ public final class Model {
       return id_;
     }
 
-    // optional int64 menu_id = 2;
-    public static final int MENU_ID_FIELD_NUMBER = 2;
-    private long menuId_;
+    // optional string uuid = 2;
+    public static final int UUID_FIELD_NUMBER = 2;
+    private java.lang.Object uuid_;
     /**
-     * <code>optional int64 menu_id = 2;</code>
+     * <code>optional string uuid = 2;</code>
      */
-    public boolean hasMenuId() {
+    public boolean hasUuid() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional int64 menu_id = 2;</code>
+     * <code>optional string uuid = 2;</code>
      */
-    public long getMenuId() {
-      return menuId_;
-    }
-
-    // optional string name = 3;
-    public static final int NAME_FIELD_NUMBER = 3;
-    private java.lang.Object name_;
-    /**
-     * <code>optional string name = 3;</code>
-     */
-    public boolean hasName() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional string name = 3;</code>
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getUuid() {
+      java.lang.Object ref = uuid_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -27443,49 +24881,75 @@ public final class Model {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          name_ = s;
+          uuid_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>optional string name = 3;</code>
+     * <code>optional string uuid = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getUuidBytes() {
+      java.lang.Object ref = uuid_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        uuid_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    // optional bool is_menu_changer = 4;
-    public static final int IS_MENU_CHANGER_FIELD_NUMBER = 4;
-    private boolean isMenuChanger_;
+    // optional string rpc_namespace = 3;
+    public static final int RPC_NAMESPACE_FIELD_NUMBER = 3;
+    private java.lang.Object rpcNamespace_;
     /**
-     * <code>optional bool is_menu_changer = 4;</code>
+     * <code>optional string rpc_namespace = 3;</code>
      */
-    public boolean hasIsMenuChanger() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+    public boolean hasRpcNamespace() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional bool is_menu_changer = 4;</code>
+     * <code>optional string rpc_namespace = 3;</code>
      */
-    public boolean getIsMenuChanger() {
-      return isMenuChanger_;
+    public java.lang.String getRpcNamespace() {
+      java.lang.Object ref = rpcNamespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          rpcNamespace_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string rpc_namespace = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRpcNamespaceBytes() {
+      java.lang.Object ref = rpcNamespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rpcNamespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private void initFields() {
       id_ = 0L;
-      menuId_ = 0L;
-      name_ = "";
-      isMenuChanger_ = false;
+      uuid_ = "";
+      rpcNamespace_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -27507,13 +24971,10 @@ public final class Model {
         output.writeInt64(1, id_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, menuId_);
+        output.writeBytes(2, getUuidBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getNameBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBool(4, isMenuChanger_);
+        output.writeBytes(3, getRpcNamespaceBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -27530,15 +24991,11 @@ public final class Model {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, menuId_);
+          .computeBytesSize(2, getUuidBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getNameBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isMenuChanger_);
+          .computeBytesSize(3, getRpcNamespaceBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -27552,53 +25009,53 @@ public final class Model {
       return super.writeReplace();
     }
 
-    public static net.maivic.protocol.Model.MenuOption parseFrom(
+    public static net.maivic.protocol.Model.Device parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static net.maivic.protocol.Model.MenuOption parseFrom(
+    public static net.maivic.protocol.Model.Device parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.MenuOption parseFrom(byte[] data)
+    public static net.maivic.protocol.Model.Device parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static net.maivic.protocol.Model.MenuOption parseFrom(
+    public static net.maivic.protocol.Model.Device parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.MenuOption parseFrom(java.io.InputStream input)
+    public static net.maivic.protocol.Model.Device parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static net.maivic.protocol.Model.MenuOption parseFrom(
+    public static net.maivic.protocol.Model.Device parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.MenuOption parseDelimitedFrom(java.io.InputStream input)
+    public static net.maivic.protocol.Model.Device parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static net.maivic.protocol.Model.MenuOption parseDelimitedFrom(
+    public static net.maivic.protocol.Model.Device parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.MenuOption parseFrom(
+    public static net.maivic.protocol.Model.Device parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static net.maivic.protocol.Model.MenuOption parseFrom(
+    public static net.maivic.protocol.Model.Device parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -27607,7 +25064,7 @@ public final class Model {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.MenuOption prototype) {
+    public static Builder newBuilder(net.maivic.protocol.Model.Device prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -27619,24 +25076,24 @@ public final class Model {
       return builder;
     }
     /**
-     * Protobuf type {@code MenuOption}
+     * Protobuf type {@code Device}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.MenuOptionOrBuilder {
+       implements net.maivic.protocol.Model.DeviceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_MenuOption_descriptor;
+        return net.maivic.protocol.Model.internal_static_Device_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_MenuOption_fieldAccessorTable
+        return net.maivic.protocol.Model.internal_static_Device_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.MenuOption.class, net.maivic.protocol.Model.MenuOption.Builder.class);
+                net.maivic.protocol.Model.Device.class, net.maivic.protocol.Model.Device.Builder.class);
       }
 
-      // Construct using net.maivic.protocol.Model.MenuOption.newBuilder()
+      // Construct using net.maivic.protocol.Model.Device.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -27658,12 +25115,10 @@ public final class Model {
         super.clear();
         id_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
-        menuId_ = 0L;
+        uuid_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        name_ = "";
+        rpcNamespace_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        isMenuChanger_ = false;
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -27673,23 +25128,23 @@ public final class Model {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_MenuOption_descriptor;
+        return net.maivic.protocol.Model.internal_static_Device_descriptor;
       }
 
-      public net.maivic.protocol.Model.MenuOption getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.MenuOption.getDefaultInstance();
+      public net.maivic.protocol.Model.Device getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.Device.getDefaultInstance();
       }
 
-      public net.maivic.protocol.Model.MenuOption build() {
-        net.maivic.protocol.Model.MenuOption result = buildPartial();
+      public net.maivic.protocol.Model.Device build() {
+        net.maivic.protocol.Model.Device result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public net.maivic.protocol.Model.MenuOption buildPartial() {
-        net.maivic.protocol.Model.MenuOption result = new net.maivic.protocol.Model.MenuOption(this);
+      public net.maivic.protocol.Model.Device buildPartial() {
+        net.maivic.protocol.Model.Device result = new net.maivic.protocol.Model.Device(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -27699,44 +25154,39 @@ public final class Model {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.menuId_ = menuId_;
+        result.uuid_ = uuid_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.name_ = name_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.isMenuChanger_ = isMenuChanger_;
+        result.rpcNamespace_ = rpcNamespace_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.MenuOption) {
-          return mergeFrom((net.maivic.protocol.Model.MenuOption)other);
+        if (other instanceof net.maivic.protocol.Model.Device) {
+          return mergeFrom((net.maivic.protocol.Model.Device)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(net.maivic.protocol.Model.MenuOption other) {
-        if (other == net.maivic.protocol.Model.MenuOption.getDefaultInstance()) return this;
+      public Builder mergeFrom(net.maivic.protocol.Model.Device other) {
+        if (other == net.maivic.protocol.Model.Device.getDefaultInstance()) return this;
         if (other.hasId()) {
           setId(other.getId());
         }
-        if (other.hasMenuId()) {
-          setMenuId(other.getMenuId());
-        }
-        if (other.hasName()) {
-          bitField0_ |= 0x00000004;
-          name_ = other.name_;
+        if (other.hasUuid()) {
+          bitField0_ |= 0x00000002;
+          uuid_ = other.uuid_;
           onChanged();
         }
-        if (other.hasIsMenuChanger()) {
-          setIsMenuChanger(other.getIsMenuChanger());
+        if (other.hasRpcNamespace()) {
+          bitField0_ |= 0x00000004;
+          rpcNamespace_ = other.rpcNamespace_;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -27754,11 +25204,11 @@ public final class Model {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        net.maivic.protocol.Model.MenuOption parsedMessage = null;
+        net.maivic.protocol.Model.Device parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.MenuOption) e.getUnfinishedMessage();
+          parsedMessage = (net.maivic.protocol.Model.Device) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -27802,155 +25252,163 @@ public final class Model {
         return this;
       }
 
-      // optional int64 menu_id = 2;
-      private long menuId_ ;
+      // optional string uuid = 2;
+      private java.lang.Object uuid_ = "";
       /**
-       * <code>optional int64 menu_id = 2;</code>
+       * <code>optional string uuid = 2;</code>
        */
-      public boolean hasMenuId() {
+      public boolean hasUuid() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional int64 menu_id = 2;</code>
+       * <code>optional string uuid = 2;</code>
        */
-      public long getMenuId() {
-        return menuId_;
-      }
-      /**
-       * <code>optional int64 menu_id = 2;</code>
-       */
-      public Builder setMenuId(long value) {
-        bitField0_ |= 0x00000002;
-        menuId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 menu_id = 2;</code>
-       */
-      public Builder clearMenuId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        menuId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string name = 3;
-      private java.lang.Object name_ = "";
-      /**
-       * <code>optional string name = 3;</code>
-       */
-      public boolean hasName() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional string name = 3;</code>
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
+      public java.lang.String getUuid() {
+        java.lang.Object ref = uuid_;
         if (!(ref instanceof java.lang.String)) {
           java.lang.String s = ((com.google.protobuf.ByteString) ref)
               .toStringUtf8();
-          name_ = s;
+          uuid_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string name = 3;</code>
+       * <code>optional string uuid = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
+          getUuidBytes() {
+        java.lang.Object ref = uuid_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          name_ = b;
+          uuid_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string name = 3;</code>
+       * <code>optional string uuid = 2;</code>
        */
-      public Builder setName(
+      public Builder setUuid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        uuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string uuid = 2;</code>
+       */
+      public Builder clearUuid() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        uuid_ = getDefaultInstance().getUuid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string uuid = 2;</code>
+       */
+      public Builder setUuidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        uuid_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional string rpc_namespace = 3;
+      private java.lang.Object rpcNamespace_ = "";
+      /**
+       * <code>optional string rpc_namespace = 3;</code>
+       */
+      public boolean hasRpcNamespace() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string rpc_namespace = 3;</code>
+       */
+      public java.lang.String getRpcNamespace() {
+        java.lang.Object ref = rpcNamespace_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          rpcNamespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string rpc_namespace = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRpcNamespaceBytes() {
+        java.lang.Object ref = rpcNamespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rpcNamespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string rpc_namespace = 3;</code>
+       */
+      public Builder setRpcNamespace(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000004;
-        name_ = value;
+        rpcNamespace_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string name = 3;</code>
+       * <code>optional string rpc_namespace = 3;</code>
        */
-      public Builder clearName() {
+      public Builder clearRpcNamespace() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        name_ = getDefaultInstance().getName();
+        rpcNamespace_ = getDefaultInstance().getRpcNamespace();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string name = 3;</code>
+       * <code>optional string rpc_namespace = 3;</code>
        */
-      public Builder setNameBytes(
+      public Builder setRpcNamespaceBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000004;
-        name_ = value;
+        rpcNamespace_ = value;
         onChanged();
         return this;
       }
 
-      // optional bool is_menu_changer = 4;
-      private boolean isMenuChanger_ ;
-      /**
-       * <code>optional bool is_menu_changer = 4;</code>
-       */
-      public boolean hasIsMenuChanger() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional bool is_menu_changer = 4;</code>
-       */
-      public boolean getIsMenuChanger() {
-        return isMenuChanger_;
-      }
-      /**
-       * <code>optional bool is_menu_changer = 4;</code>
-       */
-      public Builder setIsMenuChanger(boolean value) {
-        bitField0_ |= 0x00000008;
-        isMenuChanger_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool is_menu_changer = 4;</code>
-       */
-      public Builder clearIsMenuChanger() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        isMenuChanger_ = false;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:MenuOption)
+      // @@protoc_insertion_point(builder_scope:Device)
     }
 
     static {
-      defaultInstance = new MenuOption(true);
+      defaultInstance = new Device(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:MenuOption)
+    // @@protoc_insertion_point(class_scope:Device)
   }
 
   public interface PaymentOrBuilder
@@ -29461,7 +26919,7 @@ public final class Model {
     // @@protoc_insertion_point(class_scope:RestaurantsToContact)
   }
 
-  public interface PlaceTypeOrBuilder
+  public interface LocationBitOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
     // required int64 id = 1;
@@ -29473,26 +26931,71 @@ public final class Model {
      * <code>required int64 id = 1;</code>
      */
     long getId();
+
+    // optional int64 parent_id = 2;
+    /**
+     * <code>optional int64 parent_id = 2;</code>
+     */
+    boolean hasParentId();
+    /**
+     * <code>optional int64 parent_id = 2;</code>
+     */
+    long getParentId();
+
+    // optional string name = 3;
+    /**
+     * <code>optional string name = 3;</code>
+     */
+    boolean hasName();
+    /**
+     * <code>optional string name = 3;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>optional string name = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    // optional int64 address_id = 4;
+    /**
+     * <code>optional int64 address_id = 4;</code>
+     */
+    boolean hasAddressId();
+    /**
+     * <code>optional int64 address_id = 4;</code>
+     */
+    long getAddressId();
+
+    // optional int64 dataset_level_id = 5;
+    /**
+     * <code>optional int64 dataset_level_id = 5;</code>
+     */
+    boolean hasDatasetLevelId();
+    /**
+     * <code>optional int64 dataset_level_id = 5;</code>
+     */
+    long getDatasetLevelId();
   }
   /**
-   * Protobuf type {@code PlaceType}
+   * Protobuf type {@code LocationBit}
    */
-  public static final class PlaceType extends
+  public static final class LocationBit extends
       com.google.protobuf.GeneratedMessage
-      implements PlaceTypeOrBuilder {
-    // Use PlaceType.newBuilder() to construct.
-    private PlaceType(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      implements LocationBitOrBuilder {
+    // Use LocationBit.newBuilder() to construct.
+    private LocationBit(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private PlaceType(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private LocationBit(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final PlaceType defaultInstance;
-    public static PlaceType getDefaultInstance() {
+    private static final LocationBit defaultInstance;
+    public static LocationBit getDefaultInstance() {
       return defaultInstance;
     }
 
-    public PlaceType getDefaultInstanceForType() {
+    public LocationBit getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -29502,7 +27005,7 @@ public final class Model {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private PlaceType(
+    private LocationBit(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -29530,6 +27033,26 @@ public final class Model {
               id_ = input.readInt64();
               break;
             }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              parentId_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              name_ = input.readBytes();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              addressId_ = input.readInt64();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              datasetLevelId_ = input.readInt64();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -29544,28 +27067,28 @@ public final class Model {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return net.maivic.protocol.Model.internal_static_PlaceType_descriptor;
+      return net.maivic.protocol.Model.internal_static_LocationBit_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return net.maivic.protocol.Model.internal_static_PlaceType_fieldAccessorTable
+      return net.maivic.protocol.Model.internal_static_LocationBit_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              net.maivic.protocol.Model.PlaceType.class, net.maivic.protocol.Model.PlaceType.Builder.class);
+              net.maivic.protocol.Model.LocationBit.class, net.maivic.protocol.Model.LocationBit.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<PlaceType> PARSER =
-        new com.google.protobuf.AbstractParser<PlaceType>() {
-      public PlaceType parsePartialFrom(
+    public static com.google.protobuf.Parser<LocationBit> PARSER =
+        new com.google.protobuf.AbstractParser<LocationBit>() {
+      public LocationBit parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlaceType(input, extensionRegistry);
+        return new LocationBit(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PlaceType> getParserForType() {
+    public com.google.protobuf.Parser<LocationBit> getParserForType() {
       return PARSER;
     }
 
@@ -29586,8 +27109,103 @@ public final class Model {
       return id_;
     }
 
+    // optional int64 parent_id = 2;
+    public static final int PARENT_ID_FIELD_NUMBER = 2;
+    private long parentId_;
+    /**
+     * <code>optional int64 parent_id = 2;</code>
+     */
+    public boolean hasParentId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int64 parent_id = 2;</code>
+     */
+    public long getParentId() {
+      return parentId_;
+    }
+
+    // optional string name = 3;
+    public static final int NAME_FIELD_NUMBER = 3;
+    private java.lang.Object name_;
+    /**
+     * <code>optional string name = 3;</code>
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string name = 3;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string name = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int64 address_id = 4;
+    public static final int ADDRESS_ID_FIELD_NUMBER = 4;
+    private long addressId_;
+    /**
+     * <code>optional int64 address_id = 4;</code>
+     */
+    public boolean hasAddressId() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int64 address_id = 4;</code>
+     */
+    public long getAddressId() {
+      return addressId_;
+    }
+
+    // optional int64 dataset_level_id = 5;
+    public static final int DATASET_LEVEL_ID_FIELD_NUMBER = 5;
+    private long datasetLevelId_;
+    /**
+     * <code>optional int64 dataset_level_id = 5;</code>
+     */
+    public boolean hasDatasetLevelId() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional int64 dataset_level_id = 5;</code>
+     */
+    public long getDatasetLevelId() {
+      return datasetLevelId_;
+    }
+
     private void initFields() {
       id_ = 0L;
+      parentId_ = 0L;
+      name_ = "";
+      addressId_ = 0L;
+      datasetLevelId_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -29608,6 +27226,18 @@ public final class Model {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt64(1, id_);
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt64(2, parentId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getNameBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt64(4, addressId_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt64(5, datasetLevelId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -29621,6 +27251,22 @@ public final class Model {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, id_);
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, parentId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getNameBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, addressId_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, datasetLevelId_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -29633,53 +27279,53 @@ public final class Model {
       return super.writeReplace();
     }
 
-    public static net.maivic.protocol.Model.PlaceType parseFrom(
+    public static net.maivic.protocol.Model.LocationBit parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static net.maivic.protocol.Model.PlaceType parseFrom(
+    public static net.maivic.protocol.Model.LocationBit parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.PlaceType parseFrom(byte[] data)
+    public static net.maivic.protocol.Model.LocationBit parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static net.maivic.protocol.Model.PlaceType parseFrom(
+    public static net.maivic.protocol.Model.LocationBit parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.PlaceType parseFrom(java.io.InputStream input)
+    public static net.maivic.protocol.Model.LocationBit parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static net.maivic.protocol.Model.PlaceType parseFrom(
+    public static net.maivic.protocol.Model.LocationBit parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.PlaceType parseDelimitedFrom(java.io.InputStream input)
+    public static net.maivic.protocol.Model.LocationBit parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static net.maivic.protocol.Model.PlaceType parseDelimitedFrom(
+    public static net.maivic.protocol.Model.LocationBit parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static net.maivic.protocol.Model.PlaceType parseFrom(
+    public static net.maivic.protocol.Model.LocationBit parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static net.maivic.protocol.Model.PlaceType parseFrom(
+    public static net.maivic.protocol.Model.LocationBit parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -29688,7 +27334,7 @@ public final class Model {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.maivic.protocol.Model.PlaceType prototype) {
+    public static Builder newBuilder(net.maivic.protocol.Model.LocationBit prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -29700,24 +27346,24 @@ public final class Model {
       return builder;
     }
     /**
-     * Protobuf type {@code PlaceType}
+     * Protobuf type {@code LocationBit}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements net.maivic.protocol.Model.PlaceTypeOrBuilder {
+       implements net.maivic.protocol.Model.LocationBitOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return net.maivic.protocol.Model.internal_static_PlaceType_descriptor;
+        return net.maivic.protocol.Model.internal_static_LocationBit_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return net.maivic.protocol.Model.internal_static_PlaceType_fieldAccessorTable
+        return net.maivic.protocol.Model.internal_static_LocationBit_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                net.maivic.protocol.Model.PlaceType.class, net.maivic.protocol.Model.PlaceType.Builder.class);
+                net.maivic.protocol.Model.LocationBit.class, net.maivic.protocol.Model.LocationBit.Builder.class);
       }
 
-      // Construct using net.maivic.protocol.Model.PlaceType.newBuilder()
+      // Construct using net.maivic.protocol.Model.LocationBit.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -29739,6 +27385,14 @@ public final class Model {
         super.clear();
         id_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
+        parentId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        addressId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        datasetLevelId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -29748,47 +27402,77 @@ public final class Model {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return net.maivic.protocol.Model.internal_static_PlaceType_descriptor;
+        return net.maivic.protocol.Model.internal_static_LocationBit_descriptor;
       }
 
-      public net.maivic.protocol.Model.PlaceType getDefaultInstanceForType() {
-        return net.maivic.protocol.Model.PlaceType.getDefaultInstance();
+      public net.maivic.protocol.Model.LocationBit getDefaultInstanceForType() {
+        return net.maivic.protocol.Model.LocationBit.getDefaultInstance();
       }
 
-      public net.maivic.protocol.Model.PlaceType build() {
-        net.maivic.protocol.Model.PlaceType result = buildPartial();
+      public net.maivic.protocol.Model.LocationBit build() {
+        net.maivic.protocol.Model.LocationBit result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public net.maivic.protocol.Model.PlaceType buildPartial() {
-        net.maivic.protocol.Model.PlaceType result = new net.maivic.protocol.Model.PlaceType(this);
+      public net.maivic.protocol.Model.LocationBit buildPartial() {
+        net.maivic.protocol.Model.LocationBit result = new net.maivic.protocol.Model.LocationBit(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
         result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.parentId_ = parentId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.name_ = name_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.addressId_ = addressId_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.datasetLevelId_ = datasetLevelId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof net.maivic.protocol.Model.PlaceType) {
-          return mergeFrom((net.maivic.protocol.Model.PlaceType)other);
+        if (other instanceof net.maivic.protocol.Model.LocationBit) {
+          return mergeFrom((net.maivic.protocol.Model.LocationBit)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(net.maivic.protocol.Model.PlaceType other) {
-        if (other == net.maivic.protocol.Model.PlaceType.getDefaultInstance()) return this;
+      public Builder mergeFrom(net.maivic.protocol.Model.LocationBit other) {
+        if (other == net.maivic.protocol.Model.LocationBit.getDefaultInstance()) return this;
         if (other.hasId()) {
           setId(other.getId());
+        }
+        if (other.hasParentId()) {
+          setParentId(other.getParentId());
+        }
+        if (other.hasName()) {
+          bitField0_ |= 0x00000004;
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.hasAddressId()) {
+          setAddressId(other.getAddressId());
+        }
+        if (other.hasDatasetLevelId()) {
+          setDatasetLevelId(other.getDatasetLevelId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -29806,11 +27490,11 @@ public final class Model {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        net.maivic.protocol.Model.PlaceType parsedMessage = null;
+        net.maivic.protocol.Model.LocationBit parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (net.maivic.protocol.Model.PlaceType) e.getUnfinishedMessage();
+          parsedMessage = (net.maivic.protocol.Model.LocationBit) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -29854,15 +27538,188 @@ public final class Model {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:PlaceType)
+      // optional int64 parent_id = 2;
+      private long parentId_ ;
+      /**
+       * <code>optional int64 parent_id = 2;</code>
+       */
+      public boolean hasParentId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int64 parent_id = 2;</code>
+       */
+      public long getParentId() {
+        return parentId_;
+      }
+      /**
+       * <code>optional int64 parent_id = 2;</code>
+       */
+      public Builder setParentId(long value) {
+        bitField0_ |= 0x00000002;
+        parentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 parent_id = 2;</code>
+       */
+      public Builder clearParentId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        parentId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional string name = 3;
+      private java.lang.Object name_ = "";
+      /**
+       * <code>optional string name = 3;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string name = 3;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 3;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 3;</code>
+       */
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 3;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 address_id = 4;
+      private long addressId_ ;
+      /**
+       * <code>optional int64 address_id = 4;</code>
+       */
+      public boolean hasAddressId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int64 address_id = 4;</code>
+       */
+      public long getAddressId() {
+        return addressId_;
+      }
+      /**
+       * <code>optional int64 address_id = 4;</code>
+       */
+      public Builder setAddressId(long value) {
+        bitField0_ |= 0x00000008;
+        addressId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 address_id = 4;</code>
+       */
+      public Builder clearAddressId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        addressId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 dataset_level_id = 5;
+      private long datasetLevelId_ ;
+      /**
+       * <code>optional int64 dataset_level_id = 5;</code>
+       */
+      public boolean hasDatasetLevelId() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional int64 dataset_level_id = 5;</code>
+       */
+      public long getDatasetLevelId() {
+        return datasetLevelId_;
+      }
+      /**
+       * <code>optional int64 dataset_level_id = 5;</code>
+       */
+      public Builder setDatasetLevelId(long value) {
+        bitField0_ |= 0x00000010;
+        datasetLevelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 dataset_level_id = 5;</code>
+       */
+      public Builder clearDatasetLevelId() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        datasetLevelId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:LocationBit)
     }
 
     static {
-      defaultInstance = new PlaceType(true);
+      defaultInstance = new LocationBit(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:PlaceType)
+    // @@protoc_insertion_point(class_scope:LocationBit)
   }
 
   public interface RestaurantOrBuilder
@@ -29878,105 +27735,105 @@ public final class Model {
      */
     long getId();
 
-    // optional int64 address_id = 2;
+    // optional string name_short = 2;
     /**
-     * <code>optional int64 address_id = 2;</code>
-     */
-    boolean hasAddressId();
-    /**
-     * <code>optional int64 address_id = 2;</code>
-     */
-    long getAddressId();
-
-    // optional int64 legal_entity_id = 3;
-    /**
-     * <code>optional int64 legal_entity_id = 3;</code>
-     */
-    boolean hasLegalEntityId();
-    /**
-     * <code>optional int64 legal_entity_id = 3;</code>
-     */
-    long getLegalEntityId();
-
-    // optional string customer_telephone_number = 4;
-    /**
-     * <code>optional string customer_telephone_number = 4;</code>
-     */
-    boolean hasCustomerTelephoneNumber();
-    /**
-     * <code>optional string customer_telephone_number = 4;</code>
-     */
-    java.lang.String getCustomerTelephoneNumber();
-    /**
-     * <code>optional string customer_telephone_number = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getCustomerTelephoneNumberBytes();
-
-    // optional int64 customer_contact_id = 5;
-    /**
-     * <code>optional int64 customer_contact_id = 5;</code>
-     */
-    boolean hasCustomerContactId();
-    /**
-     * <code>optional int64 customer_contact_id = 5;</code>
-     */
-    long getCustomerContactId();
-
-    // optional string logo = 6;
-    /**
-     * <code>optional string logo = 6;</code>
-     */
-    boolean hasLogo();
-    /**
-     * <code>optional string logo = 6;</code>
-     */
-    java.lang.String getLogo();
-    /**
-     * <code>optional string logo = 6;</code>
-     */
-    com.google.protobuf.ByteString
-        getLogoBytes();
-
-    // optional int64 logo_src_image_id = 7;
-    /**
-     * <code>optional int64 logo_src_image_id = 7;</code>
-     */
-    boolean hasLogoSrcImageId();
-    /**
-     * <code>optional int64 logo_src_image_id = 7;</code>
-     */
-    long getLogoSrcImageId();
-
-    // optional string name_short = 8;
-    /**
-     * <code>optional string name_short = 8;</code>
+     * <code>optional string name_short = 2;</code>
      */
     boolean hasNameShort();
     /**
-     * <code>optional string name_short = 8;</code>
+     * <code>optional string name_short = 2;</code>
      */
     java.lang.String getNameShort();
     /**
-     * <code>optional string name_short = 8;</code>
+     * <code>optional string name_short = 2;</code>
      */
     com.google.protobuf.ByteString
         getNameShortBytes();
 
-    // optional string name_long = 9;
+    // optional string name_long = 3;
     /**
-     * <code>optional string name_long = 9;</code>
+     * <code>optional string name_long = 3;</code>
      */
     boolean hasNameLong();
     /**
-     * <code>optional string name_long = 9;</code>
+     * <code>optional string name_long = 3;</code>
      */
     java.lang.String getNameLong();
     /**
-     * <code>optional string name_long = 9;</code>
+     * <code>optional string name_long = 3;</code>
      */
     com.google.protobuf.ByteString
         getNameLongBytes();
+
+    // optional int64 address_id = 4;
+    /**
+     * <code>optional int64 address_id = 4;</code>
+     */
+    boolean hasAddressId();
+    /**
+     * <code>optional int64 address_id = 4;</code>
+     */
+    long getAddressId();
+
+    // optional int64 legal_entity_id = 5;
+    /**
+     * <code>optional int64 legal_entity_id = 5;</code>
+     */
+    boolean hasLegalEntityId();
+    /**
+     * <code>optional int64 legal_entity_id = 5;</code>
+     */
+    long getLegalEntityId();
+
+    // optional string customer_telephone_number = 6;
+    /**
+     * <code>optional string customer_telephone_number = 6;</code>
+     */
+    boolean hasCustomerTelephoneNumber();
+    /**
+     * <code>optional string customer_telephone_number = 6;</code>
+     */
+    java.lang.String getCustomerTelephoneNumber();
+    /**
+     * <code>optional string customer_telephone_number = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getCustomerTelephoneNumberBytes();
+
+    // optional int64 customer_contact_id = 7;
+    /**
+     * <code>optional int64 customer_contact_id = 7;</code>
+     */
+    boolean hasCustomerContactId();
+    /**
+     * <code>optional int64 customer_contact_id = 7;</code>
+     */
+    long getCustomerContactId();
+
+    // optional string logo = 8;
+    /**
+     * <code>optional string logo = 8;</code>
+     */
+    boolean hasLogo();
+    /**
+     * <code>optional string logo = 8;</code>
+     */
+    java.lang.String getLogo();
+    /**
+     * <code>optional string logo = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getLogoBytes();
+
+    // optional int64 logo_src_image_id = 9;
+    /**
+     * <code>optional int64 logo_src_image_id = 9;</code>
+     */
+    boolean hasLogoSrcImageId();
+    /**
+     * <code>optional int64 logo_src_image_id = 9;</code>
+     */
+    long getLogoSrcImageId();
   }
   /**
    * Protobuf type {@code Restaurant}
@@ -30034,44 +27891,44 @@ public final class Model {
               id_ = input.readInt64();
               break;
             }
-            case 16: {
+            case 18: {
               bitField0_ |= 0x00000002;
-              addressId_ = input.readInt64();
+              nameShort_ = input.readBytes();
               break;
             }
-            case 24: {
+            case 26: {
               bitField0_ |= 0x00000004;
-              legalEntityId_ = input.readInt64();
+              nameLong_ = input.readBytes();
               break;
             }
-            case 34: {
+            case 32: {
               bitField0_ |= 0x00000008;
-              customerTelephoneNumber_ = input.readBytes();
+              addressId_ = input.readInt64();
               break;
             }
             case 40: {
               bitField0_ |= 0x00000010;
-              customerContactId_ = input.readInt64();
+              legalEntityId_ = input.readInt64();
               break;
             }
             case 50: {
               bitField0_ |= 0x00000020;
-              logo_ = input.readBytes();
+              customerTelephoneNumber_ = input.readBytes();
               break;
             }
             case 56: {
               bitField0_ |= 0x00000040;
-              logoSrcImageId_ = input.readInt64();
+              customerContactId_ = input.readInt64();
               break;
             }
             case 66: {
               bitField0_ |= 0x00000080;
-              nameShort_ = input.readBytes();
+              logo_ = input.readBytes();
               break;
             }
-            case 74: {
+            case 72: {
               bitField0_ |= 0x00000100;
-              nameLong_ = input.readBytes();
+              logoSrcImageId_ = input.readInt64();
               break;
             }
           }
@@ -30130,167 +27987,17 @@ public final class Model {
       return id_;
     }
 
-    // optional int64 address_id = 2;
-    public static final int ADDRESS_ID_FIELD_NUMBER = 2;
-    private long addressId_;
+    // optional string name_short = 2;
+    public static final int NAME_SHORT_FIELD_NUMBER = 2;
+    private java.lang.Object nameShort_;
     /**
-     * <code>optional int64 address_id = 2;</code>
+     * <code>optional string name_short = 2;</code>
      */
-    public boolean hasAddressId() {
+    public boolean hasNameShort() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional int64 address_id = 2;</code>
-     */
-    public long getAddressId() {
-      return addressId_;
-    }
-
-    // optional int64 legal_entity_id = 3;
-    public static final int LEGAL_ENTITY_ID_FIELD_NUMBER = 3;
-    private long legalEntityId_;
-    /**
-     * <code>optional int64 legal_entity_id = 3;</code>
-     */
-    public boolean hasLegalEntityId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional int64 legal_entity_id = 3;</code>
-     */
-    public long getLegalEntityId() {
-      return legalEntityId_;
-    }
-
-    // optional string customer_telephone_number = 4;
-    public static final int CUSTOMER_TELEPHONE_NUMBER_FIELD_NUMBER = 4;
-    private java.lang.Object customerTelephoneNumber_;
-    /**
-     * <code>optional string customer_telephone_number = 4;</code>
-     */
-    public boolean hasCustomerTelephoneNumber() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional string customer_telephone_number = 4;</code>
-     */
-    public java.lang.String getCustomerTelephoneNumber() {
-      java.lang.Object ref = customerTelephoneNumber_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          customerTelephoneNumber_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string customer_telephone_number = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getCustomerTelephoneNumberBytes() {
-      java.lang.Object ref = customerTelephoneNumber_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        customerTelephoneNumber_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // optional int64 customer_contact_id = 5;
-    public static final int CUSTOMER_CONTACT_ID_FIELD_NUMBER = 5;
-    private long customerContactId_;
-    /**
-     * <code>optional int64 customer_contact_id = 5;</code>
-     */
-    public boolean hasCustomerContactId() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional int64 customer_contact_id = 5;</code>
-     */
-    public long getCustomerContactId() {
-      return customerContactId_;
-    }
-
-    // optional string logo = 6;
-    public static final int LOGO_FIELD_NUMBER = 6;
-    private java.lang.Object logo_;
-    /**
-     * <code>optional string logo = 6;</code>
-     */
-    public boolean hasLogo() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>optional string logo = 6;</code>
-     */
-    public java.lang.String getLogo() {
-      java.lang.Object ref = logo_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          logo_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string logo = 6;</code>
-     */
-    public com.google.protobuf.ByteString
-        getLogoBytes() {
-      java.lang.Object ref = logo_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        logo_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // optional int64 logo_src_image_id = 7;
-    public static final int LOGO_SRC_IMAGE_ID_FIELD_NUMBER = 7;
-    private long logoSrcImageId_;
-    /**
-     * <code>optional int64 logo_src_image_id = 7;</code>
-     */
-    public boolean hasLogoSrcImageId() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    /**
-     * <code>optional int64 logo_src_image_id = 7;</code>
-     */
-    public long getLogoSrcImageId() {
-      return logoSrcImageId_;
-    }
-
-    // optional string name_short = 8;
-    public static final int NAME_SHORT_FIELD_NUMBER = 8;
-    private java.lang.Object nameShort_;
-    /**
-     * <code>optional string name_short = 8;</code>
-     */
-    public boolean hasNameShort() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
-    }
-    /**
-     * <code>optional string name_short = 8;</code>
+     * <code>optional string name_short = 2;</code>
      */
     public java.lang.String getNameShort() {
       java.lang.Object ref = nameShort_;
@@ -30307,7 +28014,7 @@ public final class Model {
       }
     }
     /**
-     * <code>optional string name_short = 8;</code>
+     * <code>optional string name_short = 2;</code>
      */
     public com.google.protobuf.ByteString
         getNameShortBytes() {
@@ -30323,17 +28030,17 @@ public final class Model {
       }
     }
 
-    // optional string name_long = 9;
-    public static final int NAME_LONG_FIELD_NUMBER = 9;
+    // optional string name_long = 3;
+    public static final int NAME_LONG_FIELD_NUMBER = 3;
     private java.lang.Object nameLong_;
     /**
-     * <code>optional string name_long = 9;</code>
+     * <code>optional string name_long = 3;</code>
      */
     public boolean hasNameLong() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional string name_long = 9;</code>
+     * <code>optional string name_long = 3;</code>
      */
     public java.lang.String getNameLong() {
       java.lang.Object ref = nameLong_;
@@ -30350,7 +28057,7 @@ public final class Model {
       }
     }
     /**
-     * <code>optional string name_long = 9;</code>
+     * <code>optional string name_long = 3;</code>
      */
     public com.google.protobuf.ByteString
         getNameLongBytes() {
@@ -30366,16 +28073,166 @@ public final class Model {
       }
     }
 
+    // optional int64 address_id = 4;
+    public static final int ADDRESS_ID_FIELD_NUMBER = 4;
+    private long addressId_;
+    /**
+     * <code>optional int64 address_id = 4;</code>
+     */
+    public boolean hasAddressId() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int64 address_id = 4;</code>
+     */
+    public long getAddressId() {
+      return addressId_;
+    }
+
+    // optional int64 legal_entity_id = 5;
+    public static final int LEGAL_ENTITY_ID_FIELD_NUMBER = 5;
+    private long legalEntityId_;
+    /**
+     * <code>optional int64 legal_entity_id = 5;</code>
+     */
+    public boolean hasLegalEntityId() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional int64 legal_entity_id = 5;</code>
+     */
+    public long getLegalEntityId() {
+      return legalEntityId_;
+    }
+
+    // optional string customer_telephone_number = 6;
+    public static final int CUSTOMER_TELEPHONE_NUMBER_FIELD_NUMBER = 6;
+    private java.lang.Object customerTelephoneNumber_;
+    /**
+     * <code>optional string customer_telephone_number = 6;</code>
+     */
+    public boolean hasCustomerTelephoneNumber() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional string customer_telephone_number = 6;</code>
+     */
+    public java.lang.String getCustomerTelephoneNumber() {
+      java.lang.Object ref = customerTelephoneNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          customerTelephoneNumber_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string customer_telephone_number = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCustomerTelephoneNumberBytes() {
+      java.lang.Object ref = customerTelephoneNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        customerTelephoneNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int64 customer_contact_id = 7;
+    public static final int CUSTOMER_CONTACT_ID_FIELD_NUMBER = 7;
+    private long customerContactId_;
+    /**
+     * <code>optional int64 customer_contact_id = 7;</code>
+     */
+    public boolean hasCustomerContactId() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional int64 customer_contact_id = 7;</code>
+     */
+    public long getCustomerContactId() {
+      return customerContactId_;
+    }
+
+    // optional string logo = 8;
+    public static final int LOGO_FIELD_NUMBER = 8;
+    private java.lang.Object logo_;
+    /**
+     * <code>optional string logo = 8;</code>
+     */
+    public boolean hasLogo() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional string logo = 8;</code>
+     */
+    public java.lang.String getLogo() {
+      java.lang.Object ref = logo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          logo_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string logo = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLogoBytes() {
+      java.lang.Object ref = logo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        logo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int64 logo_src_image_id = 9;
+    public static final int LOGO_SRC_IMAGE_ID_FIELD_NUMBER = 9;
+    private long logoSrcImageId_;
+    /**
+     * <code>optional int64 logo_src_image_id = 9;</code>
+     */
+    public boolean hasLogoSrcImageId() {
+      return ((bitField0_ & 0x00000100) == 0x00000100);
+    }
+    /**
+     * <code>optional int64 logo_src_image_id = 9;</code>
+     */
+    public long getLogoSrcImageId() {
+      return logoSrcImageId_;
+    }
+
     private void initFields() {
       id_ = 0L;
+      nameShort_ = "";
+      nameLong_ = "";
       addressId_ = 0L;
       legalEntityId_ = 0L;
       customerTelephoneNumber_ = "";
       customerContactId_ = 0L;
       logo_ = "";
       logoSrcImageId_ = 0L;
-      nameShort_ = "";
-      nameLong_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -30397,28 +28254,28 @@ public final class Model {
         output.writeInt64(1, id_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, addressId_);
+        output.writeBytes(2, getNameShortBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt64(3, legalEntityId_);
+        output.writeBytes(3, getNameLongBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getCustomerTelephoneNumberBytes());
+        output.writeInt64(4, addressId_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeInt64(5, customerContactId_);
+        output.writeInt64(5, legalEntityId_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeBytes(6, getLogoBytes());
+        output.writeBytes(6, getCustomerTelephoneNumberBytes());
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeInt64(7, logoSrcImageId_);
+        output.writeInt64(7, customerContactId_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeBytes(8, getNameShortBytes());
+        output.writeBytes(8, getLogoBytes());
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeBytes(9, getNameLongBytes());
+        output.writeInt64(9, logoSrcImageId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -30435,35 +28292,35 @@ public final class Model {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, addressId_);
+          .computeBytesSize(2, getNameShortBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, legalEntityId_);
+          .computeBytesSize(3, getNameLongBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getCustomerTelephoneNumberBytes());
+          .computeInt64Size(4, addressId_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, customerContactId_);
+          .computeInt64Size(5, legalEntityId_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, getLogoBytes());
+          .computeBytesSize(6, getCustomerTelephoneNumberBytes());
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, logoSrcImageId_);
+          .computeInt64Size(7, customerContactId_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(8, getNameShortBytes());
+          .computeBytesSize(8, getLogoBytes());
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(9, getNameLongBytes());
+          .computeInt64Size(9, logoSrcImageId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -30583,21 +28440,21 @@ public final class Model {
         super.clear();
         id_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
-        addressId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        legalEntityId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        customerTelephoneNumber_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
-        customerContactId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        logo_ = "";
-        bitField0_ = (bitField0_ & ~0x00000020);
-        logoSrcImageId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000040);
         nameShort_ = "";
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000002);
         nameLong_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        addressId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        legalEntityId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        customerTelephoneNumber_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
+        customerContactId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        logo_ = "";
+        bitField0_ = (bitField0_ & ~0x00000080);
+        logoSrcImageId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
@@ -30634,35 +28491,35 @@ public final class Model {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.addressId_ = addressId_;
+        result.nameShort_ = nameShort_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.legalEntityId_ = legalEntityId_;
+        result.nameLong_ = nameLong_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.customerTelephoneNumber_ = customerTelephoneNumber_;
+        result.addressId_ = addressId_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.customerContactId_ = customerContactId_;
+        result.legalEntityId_ = legalEntityId_;
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.logo_ = logo_;
+        result.customerTelephoneNumber_ = customerTelephoneNumber_;
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.logoSrcImageId_ = logoSrcImageId_;
+        result.customerContactId_ = customerContactId_;
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
-        result.nameShort_ = nameShort_;
+        result.logo_ = logo_;
         if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000100;
         }
-        result.nameLong_ = nameLong_;
+        result.logoSrcImageId_ = logoSrcImageId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -30682,6 +28539,16 @@ public final class Model {
         if (other.hasId()) {
           setId(other.getId());
         }
+        if (other.hasNameShort()) {
+          bitField0_ |= 0x00000002;
+          nameShort_ = other.nameShort_;
+          onChanged();
+        }
+        if (other.hasNameLong()) {
+          bitField0_ |= 0x00000004;
+          nameLong_ = other.nameLong_;
+          onChanged();
+        }
         if (other.hasAddressId()) {
           setAddressId(other.getAddressId());
         }
@@ -30689,7 +28556,7 @@ public final class Model {
           setLegalEntityId(other.getLegalEntityId());
         }
         if (other.hasCustomerTelephoneNumber()) {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000020;
           customerTelephoneNumber_ = other.customerTelephoneNumber_;
           onChanged();
         }
@@ -30697,22 +28564,12 @@ public final class Model {
           setCustomerContactId(other.getCustomerContactId());
         }
         if (other.hasLogo()) {
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000080;
           logo_ = other.logo_;
           onChanged();
         }
         if (other.hasLogoSrcImageId()) {
           setLogoSrcImageId(other.getLogoSrcImageId());
-        }
-        if (other.hasNameShort()) {
-          bitField0_ |= 0x00000080;
-          nameShort_ = other.nameShort_;
-          onChanged();
-        }
-        if (other.hasNameLong()) {
-          bitField0_ |= 0x00000100;
-          nameLong_ = other.nameLong_;
-          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -30778,296 +28635,16 @@ public final class Model {
         return this;
       }
 
-      // optional int64 address_id = 2;
-      private long addressId_ ;
+      // optional string name_short = 2;
+      private java.lang.Object nameShort_ = "";
       /**
-       * <code>optional int64 address_id = 2;</code>
+       * <code>optional string name_short = 2;</code>
        */
-      public boolean hasAddressId() {
+      public boolean hasNameShort() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional int64 address_id = 2;</code>
-       */
-      public long getAddressId() {
-        return addressId_;
-      }
-      /**
-       * <code>optional int64 address_id = 2;</code>
-       */
-      public Builder setAddressId(long value) {
-        bitField0_ |= 0x00000002;
-        addressId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 address_id = 2;</code>
-       */
-      public Builder clearAddressId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        addressId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 legal_entity_id = 3;
-      private long legalEntityId_ ;
-      /**
-       * <code>optional int64 legal_entity_id = 3;</code>
-       */
-      public boolean hasLegalEntityId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional int64 legal_entity_id = 3;</code>
-       */
-      public long getLegalEntityId() {
-        return legalEntityId_;
-      }
-      /**
-       * <code>optional int64 legal_entity_id = 3;</code>
-       */
-      public Builder setLegalEntityId(long value) {
-        bitField0_ |= 0x00000004;
-        legalEntityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 legal_entity_id = 3;</code>
-       */
-      public Builder clearLegalEntityId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        legalEntityId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string customer_telephone_number = 4;
-      private java.lang.Object customerTelephoneNumber_ = "";
-      /**
-       * <code>optional string customer_telephone_number = 4;</code>
-       */
-      public boolean hasCustomerTelephoneNumber() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional string customer_telephone_number = 4;</code>
-       */
-      public java.lang.String getCustomerTelephoneNumber() {
-        java.lang.Object ref = customerTelephoneNumber_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          customerTelephoneNumber_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string customer_telephone_number = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getCustomerTelephoneNumberBytes() {
-        java.lang.Object ref = customerTelephoneNumber_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          customerTelephoneNumber_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string customer_telephone_number = 4;</code>
-       */
-      public Builder setCustomerTelephoneNumber(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        customerTelephoneNumber_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string customer_telephone_number = 4;</code>
-       */
-      public Builder clearCustomerTelephoneNumber() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        customerTelephoneNumber_ = getDefaultInstance().getCustomerTelephoneNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string customer_telephone_number = 4;</code>
-       */
-      public Builder setCustomerTelephoneNumberBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        customerTelephoneNumber_ = value;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 customer_contact_id = 5;
-      private long customerContactId_ ;
-      /**
-       * <code>optional int64 customer_contact_id = 5;</code>
-       */
-      public boolean hasCustomerContactId() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional int64 customer_contact_id = 5;</code>
-       */
-      public long getCustomerContactId() {
-        return customerContactId_;
-      }
-      /**
-       * <code>optional int64 customer_contact_id = 5;</code>
-       */
-      public Builder setCustomerContactId(long value) {
-        bitField0_ |= 0x00000010;
-        customerContactId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 customer_contact_id = 5;</code>
-       */
-      public Builder clearCustomerContactId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        customerContactId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string logo = 6;
-      private java.lang.Object logo_ = "";
-      /**
-       * <code>optional string logo = 6;</code>
-       */
-      public boolean hasLogo() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <code>optional string logo = 6;</code>
-       */
-      public java.lang.String getLogo() {
-        java.lang.Object ref = logo_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          logo_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string logo = 6;</code>
-       */
-      public com.google.protobuf.ByteString
-          getLogoBytes() {
-        java.lang.Object ref = logo_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          logo_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string logo = 6;</code>
-       */
-      public Builder setLogo(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
-        logo_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string logo = 6;</code>
-       */
-      public Builder clearLogo() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        logo_ = getDefaultInstance().getLogo();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string logo = 6;</code>
-       */
-      public Builder setLogoBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
-        logo_ = value;
-        onChanged();
-        return this;
-      }
-
-      // optional int64 logo_src_image_id = 7;
-      private long logoSrcImageId_ ;
-      /**
-       * <code>optional int64 logo_src_image_id = 7;</code>
-       */
-      public boolean hasLogoSrcImageId() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
-      }
-      /**
-       * <code>optional int64 logo_src_image_id = 7;</code>
-       */
-      public long getLogoSrcImageId() {
-        return logoSrcImageId_;
-      }
-      /**
-       * <code>optional int64 logo_src_image_id = 7;</code>
-       */
-      public Builder setLogoSrcImageId(long value) {
-        bitField0_ |= 0x00000040;
-        logoSrcImageId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 logo_src_image_id = 7;</code>
-       */
-      public Builder clearLogoSrcImageId() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        logoSrcImageId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // optional string name_short = 8;
-      private java.lang.Object nameShort_ = "";
-      /**
-       * <code>optional string name_short = 8;</code>
-       */
-      public boolean hasNameShort() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
-      }
-      /**
-       * <code>optional string name_short = 8;</code>
+       * <code>optional string name_short = 2;</code>
        */
       public java.lang.String getNameShort() {
         java.lang.Object ref = nameShort_;
@@ -31081,7 +28658,7 @@ public final class Model {
         }
       }
       /**
-       * <code>optional string name_short = 8;</code>
+       * <code>optional string name_short = 2;</code>
        */
       public com.google.protobuf.ByteString
           getNameShortBytes() {
@@ -31097,51 +28674,51 @@ public final class Model {
         }
       }
       /**
-       * <code>optional string name_short = 8;</code>
+       * <code>optional string name_short = 2;</code>
        */
       public Builder setNameShort(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  bitField0_ |= 0x00000002;
         nameShort_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string name_short = 8;</code>
+       * <code>optional string name_short = 2;</code>
        */
       public Builder clearNameShort() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000002);
         nameShort_ = getDefaultInstance().getNameShort();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string name_short = 8;</code>
+       * <code>optional string name_short = 2;</code>
        */
       public Builder setNameShortBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  bitField0_ |= 0x00000002;
         nameShort_ = value;
         onChanged();
         return this;
       }
 
-      // optional string name_long = 9;
+      // optional string name_long = 3;
       private java.lang.Object nameLong_ = "";
       /**
-       * <code>optional string name_long = 9;</code>
+       * <code>optional string name_long = 3;</code>
        */
       public boolean hasNameLong() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional string name_long = 9;</code>
+       * <code>optional string name_long = 3;</code>
        */
       public java.lang.String getNameLong() {
         java.lang.Object ref = nameLong_;
@@ -31155,7 +28732,7 @@ public final class Model {
         }
       }
       /**
-       * <code>optional string name_long = 9;</code>
+       * <code>optional string name_long = 3;</code>
        */
       public com.google.protobuf.ByteString
           getNameLongBytes() {
@@ -31171,37 +28748,317 @@ public final class Model {
         }
       }
       /**
-       * <code>optional string name_long = 9;</code>
+       * <code>optional string name_long = 3;</code>
        */
       public Builder setNameLong(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000100;
+  bitField0_ |= 0x00000004;
         nameLong_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string name_long = 9;</code>
+       * <code>optional string name_long = 3;</code>
        */
       public Builder clearNameLong() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000004);
         nameLong_ = getDefaultInstance().getNameLong();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string name_long = 9;</code>
+       * <code>optional string name_long = 3;</code>
        */
       public Builder setNameLongBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000100;
+  bitField0_ |= 0x00000004;
         nameLong_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 address_id = 4;
+      private long addressId_ ;
+      /**
+       * <code>optional int64 address_id = 4;</code>
+       */
+      public boolean hasAddressId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int64 address_id = 4;</code>
+       */
+      public long getAddressId() {
+        return addressId_;
+      }
+      /**
+       * <code>optional int64 address_id = 4;</code>
+       */
+      public Builder setAddressId(long value) {
+        bitField0_ |= 0x00000008;
+        addressId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 address_id = 4;</code>
+       */
+      public Builder clearAddressId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        addressId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 legal_entity_id = 5;
+      private long legalEntityId_ ;
+      /**
+       * <code>optional int64 legal_entity_id = 5;</code>
+       */
+      public boolean hasLegalEntityId() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional int64 legal_entity_id = 5;</code>
+       */
+      public long getLegalEntityId() {
+        return legalEntityId_;
+      }
+      /**
+       * <code>optional int64 legal_entity_id = 5;</code>
+       */
+      public Builder setLegalEntityId(long value) {
+        bitField0_ |= 0x00000010;
+        legalEntityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 legal_entity_id = 5;</code>
+       */
+      public Builder clearLegalEntityId() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        legalEntityId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional string customer_telephone_number = 6;
+      private java.lang.Object customerTelephoneNumber_ = "";
+      /**
+       * <code>optional string customer_telephone_number = 6;</code>
+       */
+      public boolean hasCustomerTelephoneNumber() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional string customer_telephone_number = 6;</code>
+       */
+      public java.lang.String getCustomerTelephoneNumber() {
+        java.lang.Object ref = customerTelephoneNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          customerTelephoneNumber_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string customer_telephone_number = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCustomerTelephoneNumberBytes() {
+        java.lang.Object ref = customerTelephoneNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          customerTelephoneNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string customer_telephone_number = 6;</code>
+       */
+      public Builder setCustomerTelephoneNumber(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        customerTelephoneNumber_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string customer_telephone_number = 6;</code>
+       */
+      public Builder clearCustomerTelephoneNumber() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        customerTelephoneNumber_ = getDefaultInstance().getCustomerTelephoneNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string customer_telephone_number = 6;</code>
+       */
+      public Builder setCustomerTelephoneNumberBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        customerTelephoneNumber_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 customer_contact_id = 7;
+      private long customerContactId_ ;
+      /**
+       * <code>optional int64 customer_contact_id = 7;</code>
+       */
+      public boolean hasCustomerContactId() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional int64 customer_contact_id = 7;</code>
+       */
+      public long getCustomerContactId() {
+        return customerContactId_;
+      }
+      /**
+       * <code>optional int64 customer_contact_id = 7;</code>
+       */
+      public Builder setCustomerContactId(long value) {
+        bitField0_ |= 0x00000040;
+        customerContactId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 customer_contact_id = 7;</code>
+       */
+      public Builder clearCustomerContactId() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        customerContactId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional string logo = 8;
+      private java.lang.Object logo_ = "";
+      /**
+       * <code>optional string logo = 8;</code>
+       */
+      public boolean hasLogo() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional string logo = 8;</code>
+       */
+      public java.lang.String getLogo() {
+        java.lang.Object ref = logo_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          logo_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string logo = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLogoBytes() {
+        java.lang.Object ref = logo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          logo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string logo = 8;</code>
+       */
+      public Builder setLogo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        logo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string logo = 8;</code>
+       */
+      public Builder clearLogo() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        logo_ = getDefaultInstance().getLogo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string logo = 8;</code>
+       */
+      public Builder setLogoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        logo_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 logo_src_image_id = 9;
+      private long logoSrcImageId_ ;
+      /**
+       * <code>optional int64 logo_src_image_id = 9;</code>
+       */
+      public boolean hasLogoSrcImageId() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
+      /**
+       * <code>optional int64 logo_src_image_id = 9;</code>
+       */
+      public long getLogoSrcImageId() {
+        return logoSrcImageId_;
+      }
+      /**
+       * <code>optional int64 logo_src_image_id = 9;</code>
+       */
+      public Builder setLogoSrcImageId(long value) {
+        bitField0_ |= 0x00000100;
+        logoSrcImageId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 logo_src_image_id = 9;</code>
+       */
+      public Builder clearLogoSrcImageId() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        logoSrcImageId_ = 0L;
         onChanged();
         return this;
       }
@@ -31218,6 +29075,11 @@ public final class Model {
   }
 
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_DatasetLevel_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_DatasetLevel_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_Address_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -31233,30 +29095,25 @@ public final class Model {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_LegalEntity_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_Meeting_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_Meeting_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_Location_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_Location_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_Delivery_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_Delivery_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_Device_descriptor;
+    internal_static_Server_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_Device_fieldAccessorTable;
+      internal_static_Server_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_Image_descriptor;
+    internal_static_PaymentsToOrder_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_Image_fieldAccessorTable;
+      internal_static_PaymentsToOrder_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_DeviceConnection_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_DeviceConnection_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_Order_descriptor;
   private static
@@ -31268,50 +29125,45 @@ public final class Model {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_Contact_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_GeometryColumn_descriptor;
+    internal_static_EventLog_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_GeometryColumn_fieldAccessorTable;
+      internal_static_EventLog_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_MeetingsToContact_descriptor;
+    internal_static_OrderEntry_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_MeetingsToContact_fieldAccessorTable;
+      internal_static_OrderEntry_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_OfferCatalog_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_OfferCatalog_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_OrderEntryOption_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_OrderEntryOption_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_Menu_descriptor;
+    internal_static_InvoicesToContact_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_Menu_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_DeliveryPlace_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_DeliveryPlace_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_DeliveryPlaceSpecification_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_DeliveryPlaceSpecification_fieldAccessorTable;
+      internal_static_InvoicesToContact_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_Offer_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_Offer_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_Building_descriptor;
+    internal_static_Receipt_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_Building_fieldAccessorTable;
+      internal_static_Receipt_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_PaymentsToOrder_descriptor;
+    internal_static_SpatialRefSy_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_PaymentsToOrder_fieldAccessorTable;
+      internal_static_SpatialRefSy_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_Decimal_descriptor;
   private static
@@ -31328,40 +29180,30 @@ public final class Model {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_NameSpacePair_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_ContactsToLegalEntity_descriptor;
+    internal_static_Notification_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_ContactsToLegalEntity_fieldAccessorTable;
+      internal_static_Notification_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_OrderStatus_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_OrderStatus_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_MenuEntry_descriptor;
+    internal_static_GeometryColumn_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_MenuEntry_fieldAccessorTable;
+      internal_static_GeometryColumn_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_InvoicesToContact_descriptor;
+    internal_static_RpcSubscription_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_InvoicesToContact_fieldAccessorTable;
+      internal_static_RpcSubscription_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_OrderEntry_descriptor;
+    internal_static_ContactsToLegalEntity_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_OrderEntry_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_Receipt_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_Receipt_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_SpatialRefSy_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_SpatialRefSy_fieldAccessorTable;
+      internal_static_ContactsToLegalEntity_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_OfferOption_descriptor;
   private static
@@ -31373,10 +29215,10 @@ public final class Model {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_Client_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_MenuOption_descriptor;
+    internal_static_Device_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_MenuOption_fieldAccessorTable;
+      internal_static_Device_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_Payment_descriptor;
   private static
@@ -31388,10 +29230,10 @@ public final class Model {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_RestaurantsToContact_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_PlaceType_descriptor;
+    internal_static_LocationBit_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_PlaceType_fieldAccessorTable;
+      internal_static_LocationBit_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_Restaurant_descriptor;
   private static
@@ -31406,325 +29248,300 @@ public final class Model {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017gen/model.proto\"\204\001\n\007Address\022\n\n\002id\030\001 \002(" +
-      "\003\022\016\n\006street\030\002 \001(\t\022\014\n\004zone\030\003 \001(\t\022\020\n\010distr" +
-      "ict\030\004 \001(\t\022\016\n\006number\030\005 \001(\t\022\014\n\004city\030\006 \001(\t\022" +
-      "\016\n\006county\030\007 \001(\t\022\017\n\007country\030\010 \001(\t\"\213\001\n\007Inv" +
-      "oice\022\n\n\002id\030\001 \002(\003\022\022\n\nemmiter_id\030\002 \001(\003\022\024\n\014" +
-      "recipient_id\030\003 \001(\003\022\025\n\003sum\030\004 \001(\0132\010.Decima" +
-      "l\022\027\n\017legal_entity_id\030\005 \001(\003\022\032\n\022receiver_p" +
-      "erson_id\030\006 \001(\003\"r\n\013LegalEntity\022\n\n\002id\030\001 \002(" +
-      "\003\022\032\n\022billing_address_id\030\002 \001(\003\022\r\n\005VATIN\030\003" +
-      " \001(\t\022\034\n\024registered_office_id\030\004 \001(\003\022\016\n\006re",
-      "f_no\030\005 \001(\t\"n\n\007Meeting\022\n\n\002id\030\001 \002(\003\022\014\n\004dat" +
-      "e\030\002 \001(\003\022\033\n\010duration\030\003 \001(\0132\t.Interval\022\r\n\005" +
-      "topic\030\004 \001(\t\022\016\n\006result\030\005 \001(\t\022\r\n\005place\030\006 \001" +
-      "(\003\"=\n\010Location\022\n\n\002id\030\001 \002(\003\022\021\n\tname_long\030" +
-      "\002 \001(\t\022\022\n\nname_short\030\003 \001(\t\"\224\001\n\010Delivery\022\n" +
-      "\n\002id\030\001 \002(\003\022\025\n\rrestaurant_id\030\002 \001(\003\022\031\n\021del" +
-      "ivering_guy_id\030\003 \001(\003\022\020\n\010order_id\030\004 \001(\003\022\022" +
-      "\n\neta_arival\030\005 \001(\003\022\017\n\007arrival\030\006 \001(\003\022\023\n\013l" +
-      "ocation_id\030\007 \001(\003\"D\n\006Device\022\n\n\002id\030\001 \002(\003\022\014" +
-      "\n\004UUID\030\002 \001(\t\022\013\n\003tel\030\003 \001(\t\022\023\n\013receivessms",
-      "\030\004 \001(\010\"S\n\005Image\022\n\n\002id\030\001 \002(\003\022\014\n\004name\030\002 \001(" +
-      "\t\022\014\n\004data\030\003 \001(\t\022\021\n\tartist_id\030\004 \001(\003\022\017\n\007co" +
-      "mment\030\005 \001(\t\"\210\001\n\005Order\022\n\n\002id\030\001 \002(\003\022\021\n\tcli" +
-      "ent_id\030\002 \001(\003\022\031\n\021delivery_place_id\030\003 \001(\003\022" +
-      "\027\n\017delivery_box_id\030\004 \001(\t\022\024\n\014client_notes" +
-      "\030\005 \001(\t\022\026\n\004tips\030\006 \001(\0132\010.Decimal\"w\n\007Contac" +
-      "t\022\n\n\002id\030\001 \002(\003\022\014\n\004name\030\002 \001(\t\022\022\n\naddress_i" +
-      "d\030\003 \001(\003\022\016\n\006mobile\030\004 \001(\t\022\r\n\005email\030\005 \001(\t\022\020" +
-      "\n\010landline\030\006 \001(\t\022\r\n\005VATIN\030\007 \001(\t\"\247\001\n\016Geom" +
-      "etryColumn\022\027\n\017f_table_catalog\030\001 \002(\t\022\026\n\016f",
-      "_table_schema\030\002 \002(\t\022\024\n\014f_table_name\030\003 \002(" +
-      "\t\022\031\n\021f_geometry_column\030\004 \002(\t\022\027\n\017coord_di" +
-      "mension\030\005 \001(\003\022\014\n\004srid\030\006 \001(\003\022\014\n\004type\030\007 \001(" +
-      "\t\"I\n\021MeetingsToContact\022\022\n\ncontact_id\030\001 \002" +
-      "(\003\022\014\n\004role\030\002 \002(\t\022\022\n\nmeeting_id\030\003 \002(\003\"\\\n\020" +
-      "OrderEntryOption\022\n\n\002id\030\001 \002(\003\022\026\n\016order_en" +
-      "try_id\030\002 \001(\003\022\027\n\017offer_option_id\030\003 \001(\003\022\013\n" +
-      "\003qty\030\004 \001(\003\"R\n\004Menu\022\n\n\002id\030\001 \002(\003\022\022\n\nrecurr" +
-      "ence\030\002 \001(\t\022\025\n\rrestaurant_id\030\003 \001(\003\022\023\n\013loc" +
-      "ation_id\030\004 \001(\003\"n\n\rDeliveryPlace\022\n\n\002id\030\001 ",
-      "\002(\003\022\023\n\013location_id\030\002 \001(\003\022\023\n\013building_id\030" +
-      "\003 \001(\003\022\022\n\nshort_name\030\004 \001(\t\022\023\n\013place_types" +
-      "\030\005 \001(\003\"\230\001\n\032DeliveryPlaceSpecification\022\n\n" +
-      "\002id\030\001 \002(\003\022\023\n\013location_id\030\002 \001(\003\022\023\n\013buildi" +
-      "ng_id\030\003 \001(\003\022\031\n\021delivery_place_id\030\004 \001(\003\022\025" +
-      "\n\rplace_type_id\030\005 \001(\003\022\022\n\ntext_value\030\006 \001(" +
-      "\t\"\223\001\n\005Offer\022\n\n\002id\030\001 \002(\003\022\027\n\005price\030\002 \001(\0132\010" +
-      ".Decimal\022\025\n\rname_singular\030\003 \001(\t\022\023\n\013name_" +
-      "plural\030\004 \001(\t\022\025\n\rmax_per_order\030\005 \001(\003\022\025\n\rm" +
-      "in_per_order\030\006 \001(\003\022\013\n\003seq\030\007 \001(\003\"+\n\010Build",
-      "ing\022\n\n\002id\030\001 \002(\003\022\023\n\013location_id\030\002 \001(\003\"[\n\017" +
-      "PaymentsToOrder\022\022\n\npayment_id\030\001 \002(\003\022\020\n\010o" +
-      "rder_id\030\002 \002(\003\022\025\n\003sum\030\003 \001(\0132\010.Decimal\022\013\n\003" +
-      "seq\030\004 \002(\003\"*\n\007Decimal\022\r\n\005value\030\001 \002(\003\022\020\n\005s" +
-      "cale\030\002 \001(\005:\0010\"&\n\010Interval\022\r\n\005start\030\001 \001(\004" +
-      "\022\013\n\003end\030\002 \001(\004\":\n\rNameSpacePair\022\n\n\002id\030\001 \002" +
-      "(\003\022\016\n\006domain\030\002 \002(\003\022\r\n\005value\030\003 \001(\t\"R\n\025Con" +
-      "tactsToLegalEntity\022\022\n\ncontact_id\030\001 \002(\003\022\014" +
-      "\n\004role\030\002 \001(\t\022\027\n\017legal_entity_id\030\003 \002(\003\"X\n" +
-      "\013OrderStatus\022\n\n\002id\030\001 \002(\003\022\020\n\010order_id\030\002 \001",
-      "(\003\022\026\n\016status_code_id\030\003 \001(\003\022\023\n\013status_not" +
-      "e\030\004 \001(\t\"b\n\tMenuEntry\022\n\n\002id\030\001 \002(\003\022\017\n\007menu" +
-      "_id\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\022\022\n\noption_for\030\004 " +
-      "\001(\003\022\026\n\016option_max_qty\030\005 \001(\003\"I\n\021InvoicesT" +
-      "oContact\022\022\n\ncontact_id\030\001 \002(\003\022\022\n\ninvoice_" +
-      "id\030\002 \002(\003\022\014\n\004role\030\003 \002(\t\"S\n\nOrderEntry\022\n\n\002" +
-      "id\030\001 \002(\003\022\020\n\010order_id\030\002 \001(\003\022\020\n\010offer_id\030\003" +
-      " \001(\003\022\025\n\003qty\030\004 \001(\0132\010.Decimal\"e\n\007Receipt\022\n" +
-      "\n\002id\030\001 \002(\003\022\022\n\nemitter_id\030\002 \001(\003\022\014\n\004date\030\003" +
-      " \001(\003\022\025\n\003sum\030\004 \001(\0132\010.Decimal\022\025\n\remission_",
-      "date\030\005 \001(\003\"e\n\014SpatialRefSy\022\014\n\004srid\030\001 \002(\003" +
-      "\022\021\n\tauth_name\030\002 \001(\t\022\021\n\tauth_srid\030\003 \001(\003\022\016" +
-      "\n\006srtext\030\004 \001(\t\022\021\n\tproj4text\030\005 \001(\t\"\307\002\n\013Of" +
-      "ferOption\022\n\n\002id\030\001 \002(\003\022\030\n\020is_offer_change" +
-      "r\030\002 \001(\010\022\027\n\005price\030\003 \001(\0132\010.Decimal\022&\n\024pric" +
-      "e_delta_positive\030\004 \001(\0132\010.Decimal\022&\n\024pric" +
-      "e_delta_negative\030\005 \001(\0132\010.Decimal\022\025\n\rname" +
-      "_singular\030\006 \001(\t\022\023\n\013name_plural\030\007 \001(\t\022\025\n\r" +
-      "max_per_offer\030\010 \001(\003\022\025\n\rmax_per_order\030\t \001" +
-      "(\003\022\013\n\003seq\030\n \001(\003\022\025\n\rmin_per_offer\030\013 \001(\003\022\025",
-      "\n\rmin_per_order\030\014 \001(\003\022\024\n\014included_qty\030\r " +
-      "\001(\003\"G\n\006Client\022\n\n\002id\030\001 \002(\003\022\022\n\ncontact_id\030" +
-      "\002 \001(\003\022\014\n\004user\030\003 \001(\t\022\017\n\007passmd5\030\004 \001(\t\"P\n\n" +
-      "MenuOption\022\n\n\002id\030\001 \002(\003\022\017\n\007menu_id\030\002 \001(\003\022" +
-      "\014\n\004name\030\003 \001(\t\022\027\n\017is_menu_changer\030\004 \001(\010\"S" +
-      "\n\007Payment\022\n\n\002id\030\001 \002(\003\022\021\n\tclient_id\030\002 \001(\003" +
-      "\022\025\n\003sum\030\003 \001(\0132\010.Decimal\022\022\n\nreceipt_id\030\004 " +
-      "\001(\003\"h\n\024RestaurantsToContact\022\025\n\rrestauran" +
-      "t_id\030\001 \002(\003\022\022\n\ncontact_id\030\002 \002(\003\022\020\n\010positi" +
-      "on\030\003 \002(\t\022\023\n\013can_deliver\030\004 \001(\010\"\027\n\tPlaceTy",
-      "pe\022\n\n\002id\030\001 \002(\003\"\325\001\n\nRestaurant\022\n\n\002id\030\001 \002(" +
-      "\003\022\022\n\naddress_id\030\002 \001(\003\022\027\n\017legal_entity_id" +
-      "\030\003 \001(\003\022!\n\031customer_telephone_number\030\004 \001(" +
-      "\t\022\033\n\023customer_contact_id\030\005 \001(\003\022\014\n\004logo\030\006" +
-      " \001(\t\022\031\n\021logo_src_image_id\030\007 \001(\003\022\022\n\nname_" +
-      "short\030\010 \001(\t\022\021\n\tname_long\030\t \001(\tB\025\n\023net.ma" +
-      "ivic.protocol"
+      "\n\017gen/model.proto\"(\n\014DatasetLevel\022\n\n\002id\030" +
+      "\001 \002(\003\022\014\n\004name\030\002 \001(\t\"\204\001\n\007Address\022\n\n\002id\030\001 " +
+      "\002(\003\022\016\n\006street\030\002 \001(\t\022\014\n\004zone\030\003 \001(\t\022\020\n\010dis" +
+      "trict\030\004 \001(\t\022\016\n\006number\030\005 \001(\t\022\014\n\004city\030\006 \001(" +
+      "\t\022\016\n\006county\030\007 \001(\t\022\017\n\007country\030\010 \001(\t\"\213\001\n\007I" +
+      "nvoice\022\n\n\002id\030\001 \002(\003\022\022\n\nemmiter_id\030\002 \001(\003\022\024" +
+      "\n\014recipient_id\030\003 \001(\003\022\025\n\003sum\030\004 \001(\0132\010.Deci" +
+      "mal\022\027\n\017legal_entity_id\030\005 \001(\003\022\032\n\022receiver" +
+      "_person_id\030\006 \001(\003\"r\n\013LegalEntity\022\n\n\002id\030\001 " +
+      "\002(\003\022\032\n\022billing_address_id\030\002 \001(\003\022\r\n\005VATIN",
+      "\030\003 \001(\t\022\034\n\024registered_office_id\030\004 \001(\003\022\016\n\006" +
+      "ref_no\030\005 \001(\t\"\177\n\010Delivery\022\n\n\002id\030\001 \002(\003\022\025\n\r" +
+      "restaurant_id\030\002 \001(\003\022\031\n\021delivering_guy_id" +
+      "\030\003 \001(\003\022\020\n\010order_id\030\004 \001(\003\022\022\n\neta_arival\030\005" +
+      " \001(\003\022\017\n\007arrival\030\006 \001(\003\"\214\001\n\006Server\022\n\n\002id\030\001" +
+      " \002(\003\022\013\n\003pid\030\002 \001(\003\022$\n\034rpc_subscription_li" +
+      "sten_port\030\003 \001(\003\022\"\n\032rpc_subscription_list" +
+      "en_ip\030\004 \001(\t\022\016\n\006active\030\005 \001(\010\022\017\n\007task_id\030\006" +
+      " \001(\003\"[\n\017PaymentsToOrder\022\022\n\npayment_id\030\001 " +
+      "\002(\003\022\020\n\010order_id\030\002 \002(\003\022\025\n\003sum\030\003 \001(\0132\010.Dec",
+      "imal\022\013\n\003seq\030\004 \002(\003\"e\n\020DeviceConnection\022\n\n" +
+      "\002id\030\001 \002(\003\022\016\n\006active\030\002 \001(\010\022\021\n\tdevice_id\030\003" +
+      " \001(\003\022\017\n\007from_ip\030\004 \001(\t\022\021\n\tserver_id\030\005 \001(\003" +
+      "\"m\n\005Order\022\n\n\002id\030\001 \002(\003\022\021\n\tclient_id\030\002 \001(\003" +
+      "\022\024\n\014client_notes\030\003 \001(\t\022\027\n\017delivery_box_i" +
+      "d\030\004 \001(\t\022\026\n\004tips\030\005 \001(\0132\010.Decimal\"w\n\007Conta" +
+      "ct\022\n\n\002id\030\001 \002(\003\022\014\n\004name\030\002 \001(\t\022\022\n\naddress_" +
+      "id\030\003 \001(\003\022\016\n\006mobile\030\004 \001(\t\022\r\n\005email\030\005 \001(\t\022" +
+      "\020\n\010landline\030\006 \001(\t\022\r\n\005VATIN\030\007 \001(\t\"E\n\010Even" +
+      "tLog\022\n\n\002id\030\001 \002(\003\022\014\n\004name\030\002 \001(\t\022\021\n\tparent",
+      "_id\030\003 \001(\003\022\014\n\004data\030\004 \001(\t\"S\n\nOrderEntry\022\n\n" +
+      "\002id\030\001 \002(\003\022\020\n\010order_id\030\002 \001(\003\022\020\n\010offer_id\030" +
+      "\003 \001(\003\022\025\n\003qty\030\004 \001(\0132\010.Decimal\"=\n\014OfferCat" +
+      "alog\022\n\n\002id\030\001 \002(\003\022\014\n\004name\030\002 \001(\t\022\023\n\013suppli" +
+      "er_id\030\003 \001(\003\"\\\n\020OrderEntryOption\022\n\n\002id\030\001 " +
+      "\002(\003\022\026\n\016order_entry_id\030\002 \001(\003\022\027\n\017offer_opt" +
+      "ion_id\030\003 \001(\003\022\013\n\003qty\030\004 \001(\003\"I\n\021InvoicesToC" +
+      "ontact\022\022\n\ncontact_id\030\001 \002(\003\022\022\n\ninvoice_id" +
+      "\030\002 \002(\003\022\014\n\004role\030\003 \002(\t\"\223\001\n\005Offer\022\n\n\002id\030\001 \002" +
+      "(\003\022\027\n\005price\030\002 \001(\0132\010.Decimal\022\025\n\rname_sing",
+      "ular\030\003 \001(\t\022\023\n\013name_plural\030\004 \001(\t\022\025\n\rmax_p" +
+      "er_order\030\005 \001(\003\022\025\n\rmin_per_order\030\006 \001(\003\022\013\n" +
+      "\003seq\030\007 \001(\003\"e\n\007Receipt\022\n\n\002id\030\001 \002(\003\022\022\n\nemi" +
+      "tter_id\030\002 \001(\003\022\014\n\004date\030\003 \001(\003\022\025\n\003sum\030\004 \001(\013" +
+      "2\010.Decimal\022\025\n\remission_date\030\005 \001(\003\"e\n\014Spa" +
+      "tialRefSy\022\014\n\004srid\030\001 \002(\003\022\021\n\tauth_name\030\002 \001" +
+      "(\t\022\021\n\tauth_srid\030\003 \001(\003\022\016\n\006srtext\030\004 \001(\t\022\021\n" +
+      "\tproj4text\030\005 \001(\t\"*\n\007Decimal\022\r\n\005value\030\001 \002" +
+      "(\003\022\020\n\005scale\030\002 \001(\005:\0010\"&\n\010Interval\022\r\n\005star" +
+      "t\030\001 \001(\004\022\013\n\003end\030\002 \001(\004\":\n\rNameSpacePair\022\n\n",
+      "\002id\030\001 \002(\003\022\016\n\006domain\030\002 \002(\003\022\r\n\005value\030\003 \001(\t" +
+      "\"(\n\014Notification\022\n\n\002id\030\001 \002(\003\022\014\n\004name\030\002 \001" +
+      "(\t\"X\n\013OrderStatus\022\n\n\002id\030\001 \002(\003\022\020\n\010order_i" +
+      "d\030\002 \001(\003\022\026\n\016status_code_id\030\003 \001(\003\022\023\n\013statu" +
+      "s_note\030\004 \001(\t\"\247\001\n\016GeometryColumn\022\027\n\017f_tab" +
+      "le_catalog\030\001 \002(\t\022\026\n\016f_table_schema\030\002 \002(\t" +
+      "\022\024\n\014f_table_name\030\003 \002(\t\022\031\n\021f_geometry_col" +
+      "umn\030\004 \002(\t\022\027\n\017coord_dimension\030\005 \001(\003\022\014\n\004sr" +
+      "id\030\006 \001(\003\022\014\n\004type\030\007 \001(\t\"\247\001\n\017RpcSubscripti" +
+      "on\022\n\n\002id\030\001 \002(\003\022\016\n\006active\030\002 \001(\010\022\021\n\tid_cli",
+      "ent\030\003 \001(\003\022\023\n\013client_uuid\030\004 \001(\t\022\022\n\nrpc_me" +
+      "thod\030\005 \001(\t\022\020\n\010rpc_args\030\006 \001(\t\022\027\n\017rpc_last" +
+      "_result\030\007 \001(\t\022\021\n\tdevice_id\030\010 \001(\003\"R\n\025Cont" +
+      "actsToLegalEntity\022\022\n\ncontact_id\030\001 \002(\003\022\014\n" +
+      "\004role\030\002 \001(\t\022\027\n\017legal_entity_id\030\003 \002(\003\"\307\002\n" +
+      "\013OfferOption\022\n\n\002id\030\001 \002(\003\022\030\n\020is_offer_cha" +
+      "nger\030\002 \001(\010\022\027\n\005price\030\003 \001(\0132\010.Decimal\022&\n\024p" +
+      "rice_delta_positive\030\004 \001(\0132\010.Decimal\022&\n\024p" +
+      "rice_delta_negative\030\005 \001(\0132\010.Decimal\022\025\n\rn" +
+      "ame_singular\030\006 \001(\t\022\023\n\013name_plural\030\007 \001(\t\022",
+      "\025\n\rmax_per_offer\030\010 \001(\003\022\025\n\rmax_per_order\030" +
+      "\t \001(\003\022\013\n\003seq\030\n \001(\003\022\025\n\rmin_per_offer\030\013 \001(" +
+      "\003\022\025\n\rmin_per_order\030\014 \001(\003\022\024\n\014included_qty" +
+      "\030\r \001(\003\"G\n\006Client\022\n\n\002id\030\001 \002(\003\022\022\n\ncontact_" +
+      "id\030\002 \001(\003\022\014\n\004user\030\003 \001(\t\022\017\n\007passmd5\030\004 \001(\t\"" +
+      "9\n\006Device\022\n\n\002id\030\001 \002(\003\022\014\n\004uuid\030\002 \001(\t\022\025\n\rr" +
+      "pc_namespace\030\003 \001(\t\"S\n\007Payment\022\n\n\002id\030\001 \002(" +
+      "\003\022\021\n\tclient_id\030\002 \001(\003\022\025\n\003sum\030\003 \001(\0132\010.Deci" +
+      "mal\022\022\n\nreceipt_id\030\004 \001(\003\"h\n\024RestaurantsTo" +
+      "Contact\022\025\n\rrestaurant_id\030\001 \002(\003\022\022\n\ncontac",
+      "t_id\030\002 \002(\003\022\020\n\010position\030\003 \002(\t\022\023\n\013can_deli" +
+      "ver\030\004 \001(\010\"h\n\013LocationBit\022\n\n\002id\030\001 \002(\003\022\021\n\t" +
+      "parent_id\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\022\022\n\naddress" +
+      "_id\030\004 \001(\003\022\030\n\020dataset_level_id\030\005 \001(\003\"\325\001\n\n" +
+      "Restaurant\022\n\n\002id\030\001 \002(\003\022\022\n\nname_short\030\002 \001" +
+      "(\t\022\021\n\tname_long\030\003 \001(\t\022\022\n\naddress_id\030\004 \001(" +
+      "\003\022\027\n\017legal_entity_id\030\005 \001(\003\022!\n\031customer_t" +
+      "elephone_number\030\006 \001(\t\022\033\n\023customer_contac" +
+      "t_id\030\007 \001(\003\022\014\n\004logo\030\010 \001(\t\022\031\n\021logo_src_ima" +
+      "ge_id\030\t \001(\003B\025\n\023net.maivic.protocol"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
         public com.google.protobuf.ExtensionRegistry assignDescriptors(
             com.google.protobuf.Descriptors.FileDescriptor root) {
           descriptor = root;
-          internal_static_Address_descriptor =
+          internal_static_DatasetLevel_descriptor =
             getDescriptor().getMessageTypes().get(0);
+          internal_static_DatasetLevel_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_DatasetLevel_descriptor,
+              new java.lang.String[] { "Id", "Name", });
+          internal_static_Address_descriptor =
+            getDescriptor().getMessageTypes().get(1);
           internal_static_Address_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Address_descriptor,
               new java.lang.String[] { "Id", "Street", "Zone", "District", "Number", "City", "County", "Country", });
           internal_static_Invoice_descriptor =
-            getDescriptor().getMessageTypes().get(1);
+            getDescriptor().getMessageTypes().get(2);
           internal_static_Invoice_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Invoice_descriptor,
               new java.lang.String[] { "Id", "EmmiterId", "RecipientId", "Sum", "LegalEntityId", "ReceiverPersonId", });
           internal_static_LegalEntity_descriptor =
-            getDescriptor().getMessageTypes().get(2);
+            getDescriptor().getMessageTypes().get(3);
           internal_static_LegalEntity_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_LegalEntity_descriptor,
               new java.lang.String[] { "Id", "BillingAddressId", "VATIN", "RegisteredOfficeId", "RefNo", });
-          internal_static_Meeting_descriptor =
-            getDescriptor().getMessageTypes().get(3);
-          internal_static_Meeting_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_Meeting_descriptor,
-              new java.lang.String[] { "Id", "Date", "Duration", "Topic", "Result", "Place", });
-          internal_static_Location_descriptor =
-            getDescriptor().getMessageTypes().get(4);
-          internal_static_Location_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_Location_descriptor,
-              new java.lang.String[] { "Id", "NameLong", "NameShort", });
           internal_static_Delivery_descriptor =
-            getDescriptor().getMessageTypes().get(5);
+            getDescriptor().getMessageTypes().get(4);
           internal_static_Delivery_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Delivery_descriptor,
-              new java.lang.String[] { "Id", "RestaurantId", "DeliveringGuyId", "OrderId", "EtaArival", "Arrival", "LocationId", });
-          internal_static_Device_descriptor =
+              new java.lang.String[] { "Id", "RestaurantId", "DeliveringGuyId", "OrderId", "EtaArival", "Arrival", });
+          internal_static_Server_descriptor =
+            getDescriptor().getMessageTypes().get(5);
+          internal_static_Server_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_Server_descriptor,
+              new java.lang.String[] { "Id", "Pid", "RpcSubscriptionListenPort", "RpcSubscriptionListenIp", "Active", "TaskId", });
+          internal_static_PaymentsToOrder_descriptor =
             getDescriptor().getMessageTypes().get(6);
-          internal_static_Device_fieldAccessorTable = new
+          internal_static_PaymentsToOrder_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_Device_descriptor,
-              new java.lang.String[] { "Id", "UUID", "Tel", "Receivessms", });
-          internal_static_Image_descriptor =
+              internal_static_PaymentsToOrder_descriptor,
+              new java.lang.String[] { "PaymentId", "OrderId", "Sum", "Seq", });
+          internal_static_DeviceConnection_descriptor =
             getDescriptor().getMessageTypes().get(7);
-          internal_static_Image_fieldAccessorTable = new
+          internal_static_DeviceConnection_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_Image_descriptor,
-              new java.lang.String[] { "Id", "Name", "Data", "ArtistId", "Comment", });
+              internal_static_DeviceConnection_descriptor,
+              new java.lang.String[] { "Id", "Active", "DeviceId", "FromIp", "ServerId", });
           internal_static_Order_descriptor =
             getDescriptor().getMessageTypes().get(8);
           internal_static_Order_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Order_descriptor,
-              new java.lang.String[] { "Id", "ClientId", "DeliveryPlaceId", "DeliveryBoxId", "ClientNotes", "Tips", });
+              new java.lang.String[] { "Id", "ClientId", "ClientNotes", "DeliveryBoxId", "Tips", });
           internal_static_Contact_descriptor =
             getDescriptor().getMessageTypes().get(9);
           internal_static_Contact_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Contact_descriptor,
               new java.lang.String[] { "Id", "Name", "AddressId", "Mobile", "Email", "Landline", "VATIN", });
-          internal_static_GeometryColumn_descriptor =
+          internal_static_EventLog_descriptor =
             getDescriptor().getMessageTypes().get(10);
-          internal_static_GeometryColumn_fieldAccessorTable = new
+          internal_static_EventLog_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_GeometryColumn_descriptor,
-              new java.lang.String[] { "FTableCatalog", "FTableSchema", "FTableName", "FGeometryColumn", "CoordDimension", "Srid", "Type", });
-          internal_static_MeetingsToContact_descriptor =
-            getDescriptor().getMessageTypes().get(11);
-          internal_static_MeetingsToContact_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_MeetingsToContact_descriptor,
-              new java.lang.String[] { "ContactId", "Role", "MeetingId", });
-          internal_static_OrderEntryOption_descriptor =
-            getDescriptor().getMessageTypes().get(12);
-          internal_static_OrderEntryOption_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_OrderEntryOption_descriptor,
-              new java.lang.String[] { "Id", "OrderEntryId", "OfferOptionId", "Qty", });
-          internal_static_Menu_descriptor =
-            getDescriptor().getMessageTypes().get(13);
-          internal_static_Menu_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_Menu_descriptor,
-              new java.lang.String[] { "Id", "Recurrence", "RestaurantId", "LocationId", });
-          internal_static_DeliveryPlace_descriptor =
-            getDescriptor().getMessageTypes().get(14);
-          internal_static_DeliveryPlace_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_DeliveryPlace_descriptor,
-              new java.lang.String[] { "Id", "LocationId", "BuildingId", "ShortName", "PlaceTypes", });
-          internal_static_DeliveryPlaceSpecification_descriptor =
-            getDescriptor().getMessageTypes().get(15);
-          internal_static_DeliveryPlaceSpecification_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_DeliveryPlaceSpecification_descriptor,
-              new java.lang.String[] { "Id", "LocationId", "BuildingId", "DeliveryPlaceId", "PlaceTypeId", "TextValue", });
-          internal_static_Offer_descriptor =
-            getDescriptor().getMessageTypes().get(16);
-          internal_static_Offer_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_Offer_descriptor,
-              new java.lang.String[] { "Id", "Price", "NameSingular", "NamePlural", "MaxPerOrder", "MinPerOrder", "Seq", });
-          internal_static_Building_descriptor =
-            getDescriptor().getMessageTypes().get(17);
-          internal_static_Building_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_Building_descriptor,
-              new java.lang.String[] { "Id", "LocationId", });
-          internal_static_PaymentsToOrder_descriptor =
-            getDescriptor().getMessageTypes().get(18);
-          internal_static_PaymentsToOrder_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_PaymentsToOrder_descriptor,
-              new java.lang.String[] { "PaymentId", "OrderId", "Sum", "Seq", });
-          internal_static_Decimal_descriptor =
-            getDescriptor().getMessageTypes().get(19);
-          internal_static_Decimal_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_Decimal_descriptor,
-              new java.lang.String[] { "Value", "Scale", });
-          internal_static_Interval_descriptor =
-            getDescriptor().getMessageTypes().get(20);
-          internal_static_Interval_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_Interval_descriptor,
-              new java.lang.String[] { "Start", "End", });
-          internal_static_NameSpacePair_descriptor =
-            getDescriptor().getMessageTypes().get(21);
-          internal_static_NameSpacePair_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_NameSpacePair_descriptor,
-              new java.lang.String[] { "Id", "Domain", "Value", });
-          internal_static_ContactsToLegalEntity_descriptor =
-            getDescriptor().getMessageTypes().get(22);
-          internal_static_ContactsToLegalEntity_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_ContactsToLegalEntity_descriptor,
-              new java.lang.String[] { "ContactId", "Role", "LegalEntityId", });
-          internal_static_OrderStatus_descriptor =
-            getDescriptor().getMessageTypes().get(23);
-          internal_static_OrderStatus_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_OrderStatus_descriptor,
-              new java.lang.String[] { "Id", "OrderId", "StatusCodeId", "StatusNote", });
-          internal_static_MenuEntry_descriptor =
-            getDescriptor().getMessageTypes().get(24);
-          internal_static_MenuEntry_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_MenuEntry_descriptor,
-              new java.lang.String[] { "Id", "MenuId", "Name", "OptionFor", "OptionMaxQty", });
-          internal_static_InvoicesToContact_descriptor =
-            getDescriptor().getMessageTypes().get(25);
-          internal_static_InvoicesToContact_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_InvoicesToContact_descriptor,
-              new java.lang.String[] { "ContactId", "InvoiceId", "Role", });
+              internal_static_EventLog_descriptor,
+              new java.lang.String[] { "Id", "Name", "ParentId", "Data", });
           internal_static_OrderEntry_descriptor =
-            getDescriptor().getMessageTypes().get(26);
+            getDescriptor().getMessageTypes().get(11);
           internal_static_OrderEntry_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_OrderEntry_descriptor,
               new java.lang.String[] { "Id", "OrderId", "OfferId", "Qty", });
+          internal_static_OfferCatalog_descriptor =
+            getDescriptor().getMessageTypes().get(12);
+          internal_static_OfferCatalog_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_OfferCatalog_descriptor,
+              new java.lang.String[] { "Id", "Name", "SupplierId", });
+          internal_static_OrderEntryOption_descriptor =
+            getDescriptor().getMessageTypes().get(13);
+          internal_static_OrderEntryOption_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_OrderEntryOption_descriptor,
+              new java.lang.String[] { "Id", "OrderEntryId", "OfferOptionId", "Qty", });
+          internal_static_InvoicesToContact_descriptor =
+            getDescriptor().getMessageTypes().get(14);
+          internal_static_InvoicesToContact_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_InvoicesToContact_descriptor,
+              new java.lang.String[] { "ContactId", "InvoiceId", "Role", });
+          internal_static_Offer_descriptor =
+            getDescriptor().getMessageTypes().get(15);
+          internal_static_Offer_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_Offer_descriptor,
+              new java.lang.String[] { "Id", "Price", "NameSingular", "NamePlural", "MaxPerOrder", "MinPerOrder", "Seq", });
           internal_static_Receipt_descriptor =
-            getDescriptor().getMessageTypes().get(27);
+            getDescriptor().getMessageTypes().get(16);
           internal_static_Receipt_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Receipt_descriptor,
               new java.lang.String[] { "Id", "EmitterId", "Date", "Sum", "EmissionDate", });
           internal_static_SpatialRefSy_descriptor =
-            getDescriptor().getMessageTypes().get(28);
+            getDescriptor().getMessageTypes().get(17);
           internal_static_SpatialRefSy_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SpatialRefSy_descriptor,
               new java.lang.String[] { "Srid", "AuthName", "AuthSrid", "Srtext", "Proj4Text", });
+          internal_static_Decimal_descriptor =
+            getDescriptor().getMessageTypes().get(18);
+          internal_static_Decimal_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_Decimal_descriptor,
+              new java.lang.String[] { "Value", "Scale", });
+          internal_static_Interval_descriptor =
+            getDescriptor().getMessageTypes().get(19);
+          internal_static_Interval_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_Interval_descriptor,
+              new java.lang.String[] { "Start", "End", });
+          internal_static_NameSpacePair_descriptor =
+            getDescriptor().getMessageTypes().get(20);
+          internal_static_NameSpacePair_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_NameSpacePair_descriptor,
+              new java.lang.String[] { "Id", "Domain", "Value", });
+          internal_static_Notification_descriptor =
+            getDescriptor().getMessageTypes().get(21);
+          internal_static_Notification_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_Notification_descriptor,
+              new java.lang.String[] { "Id", "Name", });
+          internal_static_OrderStatus_descriptor =
+            getDescriptor().getMessageTypes().get(22);
+          internal_static_OrderStatus_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_OrderStatus_descriptor,
+              new java.lang.String[] { "Id", "OrderId", "StatusCodeId", "StatusNote", });
+          internal_static_GeometryColumn_descriptor =
+            getDescriptor().getMessageTypes().get(23);
+          internal_static_GeometryColumn_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_GeometryColumn_descriptor,
+              new java.lang.String[] { "FTableCatalog", "FTableSchema", "FTableName", "FGeometryColumn", "CoordDimension", "Srid", "Type", });
+          internal_static_RpcSubscription_descriptor =
+            getDescriptor().getMessageTypes().get(24);
+          internal_static_RpcSubscription_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_RpcSubscription_descriptor,
+              new java.lang.String[] { "Id", "Active", "IdClient", "ClientUuid", "RpcMethod", "RpcArgs", "RpcLastResult", "DeviceId", });
+          internal_static_ContactsToLegalEntity_descriptor =
+            getDescriptor().getMessageTypes().get(25);
+          internal_static_ContactsToLegalEntity_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_ContactsToLegalEntity_descriptor,
+              new java.lang.String[] { "ContactId", "Role", "LegalEntityId", });
           internal_static_OfferOption_descriptor =
-            getDescriptor().getMessageTypes().get(29);
+            getDescriptor().getMessageTypes().get(26);
           internal_static_OfferOption_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_OfferOption_descriptor,
               new java.lang.String[] { "Id", "IsOfferChanger", "Price", "PriceDeltaPositive", "PriceDeltaNegative", "NameSingular", "NamePlural", "MaxPerOffer", "MaxPerOrder", "Seq", "MinPerOffer", "MinPerOrder", "IncludedQty", });
           internal_static_Client_descriptor =
-            getDescriptor().getMessageTypes().get(30);
+            getDescriptor().getMessageTypes().get(27);
           internal_static_Client_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Client_descriptor,
               new java.lang.String[] { "Id", "ContactId", "User", "Passmd5", });
-          internal_static_MenuOption_descriptor =
-            getDescriptor().getMessageTypes().get(31);
-          internal_static_MenuOption_fieldAccessorTable = new
+          internal_static_Device_descriptor =
+            getDescriptor().getMessageTypes().get(28);
+          internal_static_Device_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_MenuOption_descriptor,
-              new java.lang.String[] { "Id", "MenuId", "Name", "IsMenuChanger", });
+              internal_static_Device_descriptor,
+              new java.lang.String[] { "Id", "Uuid", "RpcNamespace", });
           internal_static_Payment_descriptor =
-            getDescriptor().getMessageTypes().get(32);
+            getDescriptor().getMessageTypes().get(29);
           internal_static_Payment_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Payment_descriptor,
               new java.lang.String[] { "Id", "ClientId", "Sum", "ReceiptId", });
           internal_static_RestaurantsToContact_descriptor =
-            getDescriptor().getMessageTypes().get(33);
+            getDescriptor().getMessageTypes().get(30);
           internal_static_RestaurantsToContact_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_RestaurantsToContact_descriptor,
               new java.lang.String[] { "RestaurantId", "ContactId", "Position", "CanDeliver", });
-          internal_static_PlaceType_descriptor =
-            getDescriptor().getMessageTypes().get(34);
-          internal_static_PlaceType_fieldAccessorTable = new
+          internal_static_LocationBit_descriptor =
+            getDescriptor().getMessageTypes().get(31);
+          internal_static_LocationBit_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_PlaceType_descriptor,
-              new java.lang.String[] { "Id", });
+              internal_static_LocationBit_descriptor,
+              new java.lang.String[] { "Id", "ParentId", "Name", "AddressId", "DatasetLevelId", });
           internal_static_Restaurant_descriptor =
-            getDescriptor().getMessageTypes().get(35);
+            getDescriptor().getMessageTypes().get(32);
           internal_static_Restaurant_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Restaurant_descriptor,
-              new java.lang.String[] { "Id", "AddressId", "LegalEntityId", "CustomerTelephoneNumber", "CustomerContactId", "Logo", "LogoSrcImageId", "NameShort", "NameLong", });
+              new java.lang.String[] { "Id", "NameShort", "NameLong", "AddressId", "LegalEntityId", "CustomerTelephoneNumber", "CustomerContactId", "Logo", "LogoSrcImageId", });
           return null;
         }
       };

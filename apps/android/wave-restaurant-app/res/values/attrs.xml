@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CourseFragment">
+        <attr name="title" format="string" />
+        <attr name="configurable" format="boolean" />
+    </declare-styleable>
+    
+    <declare-styleable name="Course">
+        <attr name="array_input_source">
+            <enum name="configurable_courses" value="1" />
+            <enum name="course_option" value="2" />
+            <enum name="command_option" value="3" />
+        </attr>
+        <attr name="options_configuration_type" format="string"/>
+        <attr name="configuration_section_title" format="string"/>
+        <attr name="first_number_picker_title" format="string"/>
+        <attr name="second_number_picker_title" format="string"/>
+        <attr name="third_number_picker_title" format="string"/>
+        <attr name="first_row_only" format="boolean"/>
+  
+    </declare-styleable>
+	
+	<declare-styleable name = "ArrayAdapterViewSettings">
+	    <attr name="visibility">
+	        <enum name="first_row_only" value="1" />
+	        <enum name="last_row_only" value="2" />
+	        <enum name="every_second_row" value="3" />
+	    </attr>
+	</declare-styleable>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:courseconf="http://schemas.android.com/apk/res-auto"
+     android:layout_width="wrap_content"
+     android:layout_height="match_parent"
+     android:orientation="vertical" >
+		
+		  <fragment
+		      android:name="com.maivic.restaurant.CourseConfigurationFragmentList"
+            	android:id="@+id/options_per_course"
+            	courseconf:configuration_section_title="@string/first_configuration_section"
+            	courseconf:first_number_picker_title = "@string/maximum"
+            	courseconf:second_number_picker_title = "@string/included" 
+            	courseconf:third_number_picker_title = "@string/rebate_on_waiving"
+            	courseconf:options_configuration_type="options_per_order"  
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+ 	   		 />
+		    
+		   <fragment
+		      android:name="com.maivic.restaurant.CourseConfigurationFragmentList"
+            	android:id="@+id/options_per_offer"
+            	courseconf:configuration_section_title="@string/second_configuration_section"
+            	courseconf:first_number_picker_title = "@string/maximum_per_course"
+            	courseconf:second_number_picker_title = "@string/included_per_course" 
+            	courseconf:third_number_picker_title = "@string/included_price_modifier_per_course"  
+            	courseconf:options_configuration_type="options_per_course"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+   			/>
+		
+		     <fragment
+		      android:name="com.maivic.restaurant.CourseConfigurationFragmentList"
+            	android:id="@+id/options_per_order"
+            	courseconf:configuration_section_title="@string/third_configuration_section"
+            	courseconf:first_number_picker_title = "@string/maximum_per_order"
+            	courseconf:second_number_picker_title = "@string/included_per_order" 
+            	courseconf:third_number_picker_title = "@string/included_price_modifier_per_order"
+            	courseconf:options_configuration_type="options_per_offer"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+   			/>
+	
+		
+		
+ </LinearLayout>  

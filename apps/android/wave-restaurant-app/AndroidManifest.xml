@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.restaurantapp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    
+    
+    <uses-feature android:name="android.hardware.camera"></uses-feature> 
+    <uses-feature android:name="android.hardware.camera.front" />
+
+    <application
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.maivic.restaurant.LoginActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan" >
+
+            <!-- android:screenOrientation="reversePortrait" -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+         <activity
+            android:name="com.maivic.restaurant.MainMenu"
+            android:label="@string/main_menu"
+            android:parentActivityName="com.maivic.restaurant.LoginActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maivic.restaurant.LoginActivity" />
+            <!--  here, in meta-data, it used to be android:value="com.maivic.restaurant.MainActivity"  -->
+        </activity>
+        <activity
+            android:name="com.maivic.restaurant.WebViewActivity"
+            android:label="@string/webviewActivity"
+            android:parentActivityName="com.maivic.restaurant.LoginActivity" >
+           
+        </activity>
+        <activity
+            android:name="com.maivic.restaurant.ControlPanelMainActivity"
+            android:label="@string/title_activity_control_panel_main"
+            android:parentActivityName="com.maivic.restaurant.OfferActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maivic.restaurant.OfferActivity" />
+        </activity>
+        
+        <activity
+            android:name="com.maivic.restaurant.OfferActivity"
+            android:label="@string/login_activity"
+            android:parentActivityName="com.maivic.restaurant.LoginActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maivic.restaurant.MainMenu" />
+            <!--  here, in meta-data, it used to be android:value="com.maivic.restaurant.MainActivity"  -->
+        </activity>
+    </application>
+
+</manifest>

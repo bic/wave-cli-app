@@ -1,6 +1,7 @@
 package com.maivic.android.utils;
 
 import java.math.BigDecimal;
+//import net.maivic.protocol.Model.Decimal.Builder;
 /**
  * Class aggregating helper functions for the numberpicker
  * @author paul
@@ -48,7 +49,7 @@ public class Utils {
 		// http://stackoverflow.com/questions/4412179/best-way-to-make-javas-modulus-behave-like-it-should-with-negative-numbers/4412200#4412200
 		
 		BigDecimal next_step= range.remainder(step).add(step).remainder(step);
-		if (next_step.equals(zero)) {
+		if (next_step.compareTo(zero)==0) {
 			next_step = step;
 		}
 		next_step=value.add(next_step);
@@ -58,4 +59,6 @@ public class Utils {
 			return next_step;
 		}
 	}
+	
+	
 }
