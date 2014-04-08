@@ -24,7 +24,6 @@ public class ProfileActivity extends BaseActivity {
 		
 		locationPicker1.setDatasetModel(datasetModel);
 		locationPicker2.setDatasetModel(datasetModel);
-		
 	}
 
 	@Override

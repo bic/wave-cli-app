@@ -1,32 +1,46 @@
 package com.maivic.android.app.adapter;
 
-import com.maivic.android.app.R;
-import com.maivic.android.app.utils.FontUtils;
+import java.math.BigInteger;
+import java.util.List;
 
+import net.maivic.protocol.Model.Decimal;
+import net.maivic.protocol.Model.Offer;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.maivic.android.app.R;
+import com.maivic.android.app.utils.FontUtils;
+import com.maivic.android.app.utils.Formatter;
+
 public class OffersAdapter extends BaseAdapter{
 	Context mContext;
 	LayoutInflater mInflater;
+
+	List<Offer> mData;
 	
-	public OffersAdapter(Context mContext) {
+	public OffersAdapter(Context mContext, List<Offer> data) {
 		super();
 		this.mContext = mContext;
 		mInflater = LayoutInflater.from(mContext);
+		mData = data;
 	}
 
 	@Override
 	public int getCount() {
+		if(mData != null) return mData.size();
+				
 		return 10;
 	}
 
 	@Override
-	public Object getItem(int arg0) {
+	public Object getItem(int position) {
+		if(mData != null) return mData.get(position);
+		
 		return null;
 	}
 
@@ -49,6 +63,7 @@ public class OffersAdapter extends BaseAdapter{
 			tag.tvCourseDesc2 = (TextView) convertView.findViewById(R.id.tvCourseDesc2);
 			tag.tvBY = (TextView) convertView.findViewById(R.id.tvBy);
 			tag.tvRestaurant = (TextView) convertView.findViewById(R.id.tvRestaraunt);
+			tag.tvCost = (TextView) convertView.findViewById(R.id.tvCost);
 			
 			convertView.setTag(tag);
 			
@@ -58,6 +73,17 @@ public class OffersAdapter extends BaseAdapter{
 			tag = (Tag) convertView.getTag();
 		}
 		//TODO bind data
+		
+		if(mData != null && mData.get(position) != null){
+			Offer offer = mData.get(position);
+			Log.d("info", "bind offer " + offer);
+			
+			Decimal price  = offer.getPrice();
+			tag.tvCost.setText(Formatter.formatPrice(mContext, price));
+			
+			tag.tvCourseName0.setText(offer.getNameSingular());
+		}
+		
 		return convertView;
 	}
 
@@ -84,5 +110,6 @@ public class OffersAdapter extends BaseAdapter{
 		TextView tvCourseDesc2;
 		TextView tvBY;
 		TextView tvRestaurant;
+		TextView tvCost;
 	}
 }

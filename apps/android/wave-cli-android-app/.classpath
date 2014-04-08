@@ -5,14 +5,6 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry exported="true" kind="lib" path="D:/work/wave/libs/protobuf-java-2.5.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/work/wave/libs/maivic-comm-0.0.1-SNAPSHOT.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/work/wave/libs/maivic-comm-impl-0.0.1-SNAPSHOT.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/work/wave/libs/maivic-comm-protocol-0.0.1-SNAPSHOT.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/work/wave/libs/netty-buffer-4.0.9.Final.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/work/wave/libs/netty-codec-4.0.9.Final.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/work/wave/libs/netty-common-4.0.9.Final.jar" sourcepath="C:/Users/Lenovo/.m2/repository/io/netty/netty-common/4.0.9.Final/netty-common-4.0.9.Final-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/work/wave/libs/netty-handler-4.0.9.Final.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/work/wave/libs/netty-transport-4.0.9.Final.jar" sourcepath="C:/Users/Lenovo/.m2/repository/io/netty/netty-transport/4.0.9.Final/netty-transport-4.0.9.Final-sources.jar"/>
+	<classpathentry kind="lib" path="/home/lucian/maivic-server/android/Development/adt-bundle-linux-x86_64-20131030/sdk/extras/android/support/v4/android-support-v4.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

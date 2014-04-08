@@ -7,11 +7,25 @@
     android:orientation="horizontal" >
 
     <LinearLayout
-        android:id="@+id/layoutContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/layoutContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <com.maivic.android.app.custom.locationpicker.LocationActiveSearch
+            android:id="@+id/sugestion"
+            style="@style/MyAutoCompliteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0" />
     </LinearLayout>
 
     <LinearLayout

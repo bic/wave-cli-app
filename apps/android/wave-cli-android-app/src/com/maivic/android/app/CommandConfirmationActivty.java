@@ -2,26 +2,37 @@ package com.maivic.android.app;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
+import net.maivic.protocol.Model.Offer;
+import net.maivic.protocol.Model.OfferOption;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.maivic.android.app.adapter.CommandCourseAdapter;
 import com.maivic.android.app.adapter.CommandOptionsAdapter;
 import com.maivic.android.app.adapter.CommandWrapperAdapter;
+import com.maivic.android.app.api.APIHelper;
 
 public class CommandConfirmationActivty extends BaseActivity {
+	public static final String EXTRA_OFFER = "extra_offer";
 	
 	private ListView mCommandsListView;
 	private BillLayout mBillLayout;
+	private Offer mOffer; 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		Toast.makeText(this, "CommandConfirmationActivity...", Toast.LENGTH_SHORT).show();
+		
 		mCommandsListView = (ListView) findViewById(R.id.listView1);
 //		mCommandsListView.setAdapter(new CommandCourseAdapter(this));
 		
@@ -34,10 +45,9 @@ public class CommandConfirmationActivty extends BaseActivity {
 		
 		mBillLayout = new BillLayout(billView);
 		
-		List<BaseAdapter> adapters = Arrays
-				.asList(new BaseAdapter[] { new CommandCourseAdapter(this),
-						new CommandOptionsAdapter(this),
-						/*new CommandBillAdapter(this) */});
+		List<BaseAdapter> adapters = Arrays.asList(new BaseAdapter[] {
+				new CommandCourseAdapter(this),
+				new CommandOptionsAdapter(this), });
 		
 		CommandWrapperAdapter adapter = new CommandWrapperAdapter(adapters);
 		mCommandsListView.setAdapter(adapter);
@@ -49,6 +59,58 @@ public class CommandConfirmationActivty extends BaseActivity {
 				mBillLayout.showConfirmationViewWithSupplement();
 			}
 		});
+		
+		OfferOption offerOption;
+		
+		getExtras();
+		loadCommands();
+	}
+	
+	private void getExtras(){
+		Bundle extras = getIntent().getExtras();
+		
+		if(extras != null){
+			mOffer = (Offer) extras.get(EXTRA_OFFER);
+		}
+		
+	}
+	
+	private void loadCommands(){
+		new AsyncTask<Void, Void, List<OfferOption>>() {
+			
+			@Override
+			protected List<OfferOption> doInBackground(Void... params) {
+				
+				List<OfferOption> options = null;
+				try {
+					APIHelper apiHelper = APIHelper.getInstance();
+					options = apiHelper.getOfferOptions(mOffer);
+					
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} catch (ExecutionException e) {
+					e.printStackTrace();
+				}
+				
+				return options;
+			}
+
+			@Override
+			protected void onPostExecute(List<OfferOption> result) {
+				hideProgressDlg();
+				
+				Toast.makeText(CommandConfirmationActivty.this, "onPostExecute", Toast.LENGTH_SHORT).show();
+			}
+
+			@Override
+			protected void onPreExecute() {
+				showProgressDlg();
+				
+				Toast.makeText(CommandConfirmationActivty.this, "onPreExecute",
+						Toast.LENGTH_SHORT).show();
+			}
+			
+		}.execute();
 	}
 
 	@Override

@@ -7,7 +7,6 @@ import java.util.Observer;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,10 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.LinearLayout.LayoutParams;
 
 import com.maivic.android.app.R;
 import com.maivic.android.app.custom.locationpicker.DatasetModel.UpdateEvent;
@@ -59,15 +56,14 @@ public class LocationPicker extends LinearLayout implements Observer{
 		initilizeWidget(null);
 	}
 	
-	
 	private void initilizeWidget(AttributeSet attrs){
-		activeSearch = new LocationActiveSearch(getContext());
-		activeSearch.setHint("The activie search!!!");
 		
 		LayoutInflater inflater = LayoutInflater.from(getContext());
 		inflater.inflate(R.layout.view_location_picker, this);
 		mValidatorContatiner = (ViewGroup) findViewById(R.id.validationContent);
 		mContentLayout = (LinearLayout) findViewById(R.id.layoutContent);
+
+		activeSearch = (LocationActiveSearch) findViewById(R.id.sugestion);
 		
 		if(attrs != null){
 			TypedArray a = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.LocationPicker, 0, 0);
@@ -182,7 +178,7 @@ public class LocationPicker extends LinearLayout implements Observer{
 		if(locationBits != null){
 			for(int i = 0; i < locationBits.size(); i++){
 				final LocationBitDataset locationBit = locationBits.get(i);
-				boolean fixedFlag  =   pickerLevel == 0   && i < dataset.fixed_location_bits_count;
+				boolean fixedFlag  =  pickerLevel == 0 && i < dataset.fixed_location_bits_count;
 				boolean parentFlag =  pickerLevel == 0 && i == 0;
 				
 				final LocationBitView locationBitView = new LocationBitView(
@@ -197,7 +193,9 @@ public class LocationPicker extends LinearLayout implements Observer{
 		}
 		
 		if(!isValidated()){
-//			addView(activeSearch);
+			activeSearch.setVisibility(View.VISIBLE);
+		} else{
+			activeSearch.setVisibility(View.GONE);
 		}
 	}
 	
@@ -265,51 +263,6 @@ public class LocationPicker extends LinearLayout implements Observer{
 		}		
 	}
 	
-	private void updatePositionOfLocationViewOLD(){
-		int childCount = mContentLayout.getChildCount();
-		
-		if(childCount > 0){
-			LinearLayout rowContainer = (LinearLayout) mContentLayout.getChildAt(childCount - 1);
-			
-			int rowWidth = mContentLayout.getWidth();
-			int totalChildWidth = 0;
-			
-			for (int i = 0; i < rowContainer.getChildCount(); i++) {
-				View v = rowContainer.getChildAt(i);
-				v.measure(0, 0);
-				
-				v.setBackgroundColor(Color.GREEN);
-				
-				int viewWidth = v.getMeasuredWidth();
-				Log.d(T, "view: " + v + ",viewWidth: "+viewWidth);
-				totalChildWidth += viewWidth;
-				if(totalChildWidth >= rowWidth && i > 0){
-					rowContainer.removeView(v);
-					
-					for(int j = 0; j < i; j++){
-						View v2 = rowContainer.getChildAt(j);
-						if(j % 2 == 0){
-							v2.setBackgroundColor(Color.RED);
-							
-						} else{
-							v2.setBackgroundColor(Color.BLUE);
-						}
-						
-						LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT, 
-								LayoutParams.WRAP_CONTENT);
-//						params.weight = 1;
-						v2.setLayoutParams(params);
-					}
-					
-					LinearLayout ll2 = createRowContainer();
-					ll2.addView(v, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-					mContentLayout.addView(ll2);
-					break;
-				}
-			}
-		}
-	}
-	
 	private LinearLayout createRowContainer(){
 		LinearLayout layout = new LinearLayout(getContext());
 		layout.setOrientation(LinearLayout.HORIZONTAL);
@@ -325,9 +278,6 @@ public class LocationPicker extends LinearLayout implements Observer{
 		if(pickerLevel >= event.level){
 			updateDatasetState();
 		}
-		
-//		dataset = (Dataset) data;
-//		updateDatasetState();			
 	}
 	
 	// listeners

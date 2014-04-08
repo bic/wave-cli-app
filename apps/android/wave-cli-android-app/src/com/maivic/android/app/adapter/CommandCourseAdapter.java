@@ -1,5 +1,6 @@
 package com.maivic.android.app.adapter;
 
+import net.maivic.protocol.Model.OfferOption;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,8 @@ public class CommandCourseAdapter extends BaseAdapter{
 	public CommandCourseAdapter(Context context){
 		mContext = context;
 		mInflater = LayoutInflater.from(context);
+//		OfferOption option;
+//		option.
 	}
 	
 	@Override

@@ -1,5 +1,9 @@
 package com.maivic.android.app;
 
+import net.maivic.comm.RPC.OfferQuery;
+import net.maivic.protocol.Model.Menu;
+import net.maivic.protocol.Model.Offer;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
@@ -11,7 +15,10 @@ import android.widget.LinearLayout.LayoutParams;
 public class BaseActivity extends FragmentActivity {
 	protected LinearLayout containerView;
 	protected LayoutInflater mInflater;
-
+	
+	private ProgressDialog mProgressDlg;
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,9 +35,27 @@ public class BaseActivity extends FragmentActivity {
 
 			containerView.addView(content, params);
 		}
-	}
 
+		mProgressDlg = new ProgressDialog(this);
+		mProgressDlg.setCancelable(false);
+	}
+	
 	protected View getContentView() {
 		return null;
+	}
+	
+	public void showProgressDlg(){
+		mProgressDlg.show();
+//		if(!mProgressDlg.isShowing()){
+//			mProgressDlg.show();
+//		}
+	}
+	
+	public void hideProgressDlg(){
+//		if(mProgressDlg.isShowing()){
+//			mProgressDlg.dismiss();
+//		}
+		
+		mProgressDlg.dismiss();
 	}
 }
